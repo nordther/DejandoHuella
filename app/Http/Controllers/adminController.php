@@ -60,7 +60,7 @@ class adminController extends Controller
                 ]];
             }
 
-            $dataLg = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);              
+              $dataLg = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);              
 
               $dataSistem = ['lang' => $dataLg];
               
