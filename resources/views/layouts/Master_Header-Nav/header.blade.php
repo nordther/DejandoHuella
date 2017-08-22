@@ -37,7 +37,7 @@
 
 						<img src="{{asset('img/logo.png')}}" class="img-dm-8 img-margin-top-4 img-margin-left-1" id="logo">
 
-						<label class="label-color-header-1 label-margin-left-2 label-margin-top-1 label-font-size-6 label-hide-movil" style="cursor: pointer;">Dejando Huellas s</label>
+						<label class="label-color-header-1 label-margin-left-2 label-margin-top-1 label-font-size-6 label-hide-movil" style="cursor: pointer;">Dejando Huellas kid's</label>
 
 					</a>	
 
