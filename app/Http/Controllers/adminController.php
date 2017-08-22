@@ -42,16 +42,16 @@ class adminController extends Controller
 
             foreach ($datasession as $rows) {
                $dataChargen = [
-               'id' => $rows->dp_id,
-               'nombre' => $rows->dp_nombre,
+               'id'       => $rows->dp_id,
+               'nombre'   => $rows->dp_nombre,
                'apellido' => $rows->dp_apellido,
-               'fe_naci' => $rows->dp_fe_nacimiento,
+               'fe_naci'  => $rows->dp_fe_nacimiento,
                'telefono' => $rows->dp_telefono,
-               'address' => $rows->dp_direccion,               
-               'roll' => $rows->rl_wordkey_name,
-               'edad' => $rows->dp_edad,
-               'genero' => $rows->g_wordkey_genero,
-               'status' => $rows->estp_activeordesable,
+               'address'  => $rows->dp_direccion,               
+               'roll'     => $rows->rl_wordkey_name,
+               'edad'     => $rows->dp_edad,
+               'genero'   => $rows->g_wordkey_genero,
+               'status'   => $rows->estp_activeordesable,
                'permisos' => [
                         'create' => $rows->pm_create,
                         'ready'  => $rows->pm_ready,
@@ -71,13 +71,13 @@ class adminController extends Controller
               }
 
             $data = [
-                "id" => $dataChargen['id'],
-                "icon" => "",
-                "nombre" => $dataChargen['nombre'],
-                "apellido" => $dataChargen['apellido'],
-                "fe_naci" => $dataChargen['fe_naci'],
-                "roll" => $dataChargen['roll'],
-                "genero" => $dataChargen['genero'],
+                "id"        => $dataChargen['id'],
+                "icon"      => "",
+                "nombre"    => $dataChargen['nombre'],
+                "apellido"  => $dataChargen['apellido'],
+                "fe_naci"   => $dataChargen['fe_naci'],
+                "roll"      => $dataChargen['roll'],
+                "genero"    => $dataChargen['genero'],
                 "permisos" => [
                         'create' => $dataChargen['permisos']['create'],
                         'ready'  => $dataChargen['permisos']['ready'],
@@ -121,16 +121,16 @@ class adminController extends Controller
 
             foreach ($datasession as $rows) {
                $dataChargen = [
-               'id' => $rows->dp_id,
-               'nombre' => $rows->dp_nombre,
+               'id'       => $rows->dp_id,
+               'nombre'   => $rows->dp_nombre,
                'apellido' => $rows->dp_apellido,
-               'fe_naci' => $rows->dp_fe_nacimiento,
+               'fe_naci'  => $rows->dp_fe_nacimiento,
                'telefono' => $rows->dp_telefono,
-               'address' => $rows->dp_direccion,               
-               'roll' => $rows->rl_wordkey_name,
-               'edad' => $rows->dp_edad,
-               'genero' => $rows->g_wordkey_genero,
-               'status' => $rows->estp_activeordesable,
+               'address'  => $rows->dp_direccion,               
+               'roll'     => $rows->rl_wordkey_name,
+               'edad'     => $rows->dp_edad,
+               'genero'   => $rows->g_wordkey_genero,
+               'status'   => $rows->estp_activeordesable,
                'permisos' => [
                         'create' => $rows->pm_create,
                         'ready'  => $rows->pm_ready,
@@ -161,13 +161,13 @@ class adminController extends Controller
               $searRoll = 1;
 
             $data = [
-                "id" => $dataChargen['id'],
-                "icon" => "",
-                "nombre" => $dataChargen['nombre'],
-                "apellido" => $dataChargen['apellido'],
-                "fe_naci" => $dataChargen['fe_naci'],
-                "roll" => $dataChargen['roll'],
-                "genero" => $dataChargen['genero'],
+                "id"         => $dataChargen['id'],
+                "icon"       => "",
+                "nombre"     => $dataChargen['nombre'],
+                "apellido"   => $dataChargen['apellido'],
+                "fe_naci"    => $dataChargen['fe_naci'],
+                "roll"       => $dataChargen['roll'],
+                "genero"     => $dataChargen['genero'],
                 "permisos" => [
                         'create' => $dataChargen['permisos']['create'],
                         'ready'  => $dataChargen['permisos']['ready'],
@@ -264,16 +264,16 @@ class adminController extends Controller
 
             foreach ($datasession as $rows) {
                $dataChargen = [
-               'id' => $rows->dp_id,
-               'nombre' => $rows->dp_nombre,
-               'apellido' => $rows->dp_apellido,
-               'fe_naci' => $rows->dp_fe_nacimiento,
-               'telefono' => $rows->dp_telefono,
-               'address' => $rows->dp_direccion,               
-               'roll' => $rows->rl_wordkey_name,
-               'edad' => $rows->dp_edad,
-               'genero' => $rows->g_wordkey_genero,
-               'status' => $rows->estp_activeordesable,
+               'id'         => $rows->dp_id,
+               'nombre'     => $rows->dp_nombre,
+               'apellido'   => $rows->dp_apellido,
+               'fe_naci'    => $rows->dp_fe_nacimiento,
+               'telefono'   => $rows->dp_telefono,
+               'address'    => $rows->dp_direccion,               
+               'roll'       => $rows->rl_wordkey_name,
+               'edad'       => $rows->dp_edad,
+               'genero'     => $rows->g_wordkey_genero,
+               'status'     => $rows->estp_activeordesable,
                'permisos' => [
                         'create' => $rows->pm_create,
                         'ready'  => $rows->pm_ready,
@@ -293,16 +293,16 @@ class adminController extends Controller
               }
 
              $data = [
-                "id" => $dataChargen['id'],
-                "icon" => "",
-                "nombre" => $dataChargen['nombre'],
-                "apellido" => $dataChargen['apellido'],
-                "fe_naci" => $dataChargen['fe_naci'],
-                "telefono" => $dataChargen['telefono'],
-                "address" => $dataChargen['address'],
-                "edad" => $dataChargen['edad'],
-                "genero" => $dataChargen['genero'],
-                "roll" => $dataChargen['roll'],
+                "id"         => $dataChargen['id'],
+                "icon"       => "",
+                "nombre"     => $dataChargen['nombre'],
+                "apellido"   => $dataChargen['apellido'],
+                "fe_naci"    => $dataChargen['fe_naci'],
+                "telefono"   => $dataChargen['telefono'],
+                "address"    => $dataChargen['address'],
+                "edad"       => $dataChargen['edad'],
+                "genero"     => $dataChargen['genero'],
+                "roll"       => $dataChargen['roll'],
                 "permisos" => [
                         'create' => $dataChargen['permisos']['create'],
                         'ready'  => $dataChargen['permisos']['ready'],
@@ -352,7 +352,7 @@ class adminController extends Controller
         
         $searRoll = 1;
              
-      $vName = $rq->input('v_formUserSearch');              
+        $vName = $rq->input('v_formUserSearch');              
 
         $data = [
                       
