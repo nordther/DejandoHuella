@@ -608,6 +608,18 @@ body{
 		padding-top: 8px;
 		color: #02E7E4;	
 	}
+
+	.form-toolt-search-article{
+		margin: 25px auto;
+		padding-left: 15px;
+	}
+
+	.form-toolts-rows{
+		margin-top: 15px;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
 	.form-content-dm-login{
 		width: 98%;
 	}
@@ -640,6 +652,7 @@ body{
 		border-collapse: separate;
 		border-spacing: 10px 5px;	
 		text-align: left;
+		z-index: 2000;
 	}
 	
 	.form-rows-group{

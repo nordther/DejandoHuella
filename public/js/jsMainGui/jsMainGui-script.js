@@ -36,6 +36,16 @@ $(document).ready(function(){
 		
 	}
 
+	$("#v_frmUserToolts_type_user_assistan").click(function(){
+		$("#formAssistanSistem").show();
+	});
+	$("#v_frmUserToolts_type_user_normal").click(function(){
+		$("#formAssistanSistem").hide();
+	});
+
+	
+
+
 });
 
 function classGuiMain(){
@@ -66,4 +76,6 @@ function classGuiMain(){
 			$("#form-user-profesor").hide();
 		}
 	}
+
+	
 } 
