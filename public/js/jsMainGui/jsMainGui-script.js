@@ -38,11 +38,17 @@ $(document).ready(function(){
 
 	$("#v_frmUserToolts_type_user_assistan").click(function(){
 		$("#formAssistanSistem").show();
+		$("#formUsersNormals").hide();
 	});
 	$("#v_frmUserToolts_type_user_normal").click(function(){
 		$("#formAssistanSistem").hide();
+		$("#formUsersNormals").show();
+
 	});
 
+	if ($("#v_frmUserToolts_type_user_assistan").is(':checked')) {
+		$("#formUsersNormals").hide();
+	}
 	
 
 

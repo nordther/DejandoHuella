@@ -64,6 +64,17 @@
 
 					<div class="form-toolts-rows" id="formUsersNormals">
 						
+						<div class="form-toolts-rows">
+							
+							{!! Form::label(null,'Tipo usuario normal') !!}
+
+						</div>
+
+						<div class="form-toolts-rows">
+					
+							{!! Form::select('v_frmCrtUs_typeusers_searchToolts',$data['dll']['comboTypeUsersTooltSearch'],null,['class' => 'input-dm-2','id' => 'v_frmCrtUs_typeusers']); !!}
+
+						</div>
 
 					</div>
 
@@ -76,9 +87,10 @@
 				
 				<div class="form-toolt-action">
 					
-					{!! Form::Button(null,['class' => 'button-form-tool-arrowShowToolt button-dm-1','id' => 'btnShowToolts', 'title' => 'Herramientas de Filtros']) !!}
-
+					{!! Form::Button(null,['class' => 'button-form-tool-arrowShowToolt button-dm-1','id' => 'btnShowToolts', 'title' => 'Herramientas de busqueda']) !!}
 				</div>
+
+				
 
 			</div>
 	
@@ -102,7 +114,7 @@
 				
 				<div class="form-toolt-action">
 					
-					{!! Form::Button(null,['class' => 'button-form-tool-arrowShowToolt button-dm-1','id' => 'btnShowToolts', 'title' => 'Herramientas de Filtros']) !!}
+					{!! Form::Button(null,['class' => 'button-form-tool-arrowShowToolt button-dm-1','id' => 'btnShowToolts', 'title' => 'Herramientas de busqueda']) !!}
 
 				</div>
 

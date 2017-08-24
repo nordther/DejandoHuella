@@ -185,18 +185,11 @@ class adminController extends Controller
                                     ->join('guitypes','guitexts.gtxt_id_gtype','=','guitypes.gtype_id')
                                     ->join('languages','guitexts.gtxt_id_language','=','languages.lg_id')
                                     ->where('guitexts.gtxt_id_language','=',$lgId)->get(),
-
-
-                                    
-
                             'comboTypeDocument' => \DB::table('guitexts')->select('*')
                                     ->join('typedocuments','guitexts.gtxt_paramt_wordkey','=','typedocuments.td_wordkey_name')
                                     ->join('guitypes','guitexts.gtxt_id_gtype','=','guitypes.gtype_id')
                                     ->join('languages','guitexts.gtxt_id_language','=','languages.lg_id')
                                     ->where('guitexts.gtxt_id_language','=',$lgId)->lists('gtxt_text','td_id'),
-
-
-
                             'comboGender' => \DB::table('guitexts')->select('*')
                                     ->join('generos','guitexts.gtxt_paramt_wordkey','=','generos.g_wordkey_genero')
                                     ->join('guitypes','guitexts.gtxt_id_gtype','=','guitypes.gtype_id')
@@ -214,6 +207,13 @@ class adminController extends Controller
                                     ->join('languages','guitexts.gtxt_id_language','=','languages.lg_id') 
                                     ->where('guitexts.gtxt_id_language','=',$lgId)
                                     ->where('guitexts.gtxt_id_gtype','=',2)->lists('gtxt_text','tus_id'),
+                            'comboTypeUsersTooltSearch'=> \DB::table('guitexts')->select('*')
+                                    ->join('typeusers','guitexts.gtxt_paramt_wordkey','=','typeusers.tus_wordkey_name')
+                                    ->join('guitypes','guitexts.gtxt_id_gtype','=','guitypes.gtype_id')
+                                    ->join('languages','guitexts.gtxt_id_language','=','languages.lg_id') 
+                                    ->where('guitexts.gtxt_id_language','=',$lgId)
+                                    ->where('guitexts.gtxt_id_gtype','=',2)
+                                    ->where('typeusers.tus_id','<>',1)->lists('gtxt_text','tus_id'),        
                             'comboCategoPrograms' => \DB::table('guitexts')->select('*')
                                     ->join('categoriaprogramas','guitexts.gtxt_paramt_wordkey','=','categoriaprogramas.cp_wordkey_name')
                                     ->join('guitypes','guitexts.gtxt_id_gtype','=','guitypes.gtype_id')
