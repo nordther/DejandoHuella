@@ -78,7 +78,35 @@
 
 					</div>
 
-				</div>			
+					<div class="form-toolts-rows">
+					
+					<div class="form-toolts-rows">
+						
+						{!! Form::label(null,'Estado de los usuarios') !!}
+
+					</div>
+
+					<div class="form-toolts-rows">
+						
+						{!! Form::radio('v_frmUserToolts_status_users',1,true,['id' => 'v_frmUserToolts_status_active']); !!}
+
+						{!! Form::label(null,'Activos',['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
+
+					</div>
+
+					<div class="form-toolts-rows">
+						
+						{!! Form::radio('v_frmUserToolts_status_users',0,false,['id' => 'v_frmUserToolts_status_inhable']); !!}
+
+						{!! Form::label(null,'Deshabilitados',['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
+
+					</div>
+
+				</div>	
+
+				</div>	
+
+					
 
 
 			</div>
@@ -93,7 +121,8 @@
 				
 
 			</div>
-	
+
+
 		@elseif($data['type-modul'] == 'buscar-agenda')
 			
 			<div class="form-content-toolt-search" id="TooltsSearch">

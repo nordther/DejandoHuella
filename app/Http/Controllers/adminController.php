@@ -222,11 +222,7 @@ class adminController extends Controller
                                     ->where('guitexts.gtxt_id_gtype','=',2)->lists('gtxt_text','cp_id_categoria'),        
                             ],                   
                             "dataForm" => [
-                            'iconUserSearch' => '',
-                            'usersSearch' => \DB::table('datospersonales')->select('*')
-                                          ->join('users','datospersonales.dp_id','=','users.us_id_datospersonales')
-                                          ->join('rolls','datospersonales.dp_id_roll','=','rolls.rl_id')
-                                          ->join('estadopersonas','datospersonales.dp_id_estp','=','estadopersonas.estp_id')->where('datospersonales.dp_id_roll','=',$searRoll)->get()
+                            'iconUserSearch' => ''
                     ]                           
              ]; 
 
@@ -352,7 +348,7 @@ class adminController extends Controller
         
         $searRoll = 1;
              
-        $vName = $rq->input('v_formUserSearch');              
+                  
 
         $data = [
                       
@@ -363,13 +359,14 @@ class adminController extends Controller
                                           ->join('rolls','datospersonales.dp_id_roll','=','rolls.rl_id')
                                           ->join('estadopersonas','datospersonales.dp_id_estp','=','estadopersonas.estp_id')
                                           ->where('datospersonales.dp_id_roll','=',$searRoll)
-                                          ->where('datospersonales.dp_nombre','like','%'.$vName.'%')->get()
+                                          ->where('datospersonales.dp_nombre','like','%'.$rq->input('v_formUserSearch').'%')
+                                          ->where('estadopersonas.estp_activeordesable','=',$rq->input('v_formUserStatus'))->get()
                     ]                           
              ];
       }
 
       
-        return response()->json($data['dataForm']['usersSearch']);
+        return \Response::json($data['dataForm']['usersSearch']);
     }
 
     public function buscarAgenda(){

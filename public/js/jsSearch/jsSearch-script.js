@@ -48,9 +48,28 @@ $(document).ready(function(){
 		var port = '8000';
 		var route = "http://localhost:"+port+"/Admin/buscar-usuario/get";
 		var namesearch = $("input[name=v_search-buscar-usuario").val();
+
+		if ($("#v_frmUserToolts_status_active").is(':checked')) {var status = 1;}else if($("#v_frmUserToolts_status_inhable").is(':checked')){var status = 0;}
+
+		var status_user = status;
+
+		
 		
 		var nombre, telefono, email;
-		appendData.empty();
+		
+
+		/*$.getJSON(route,{v_formUserSearch:search,v_formUserStatus:status_user}).done(function(data,textStatus,jqXHR){
+				$.each(res)
+					appendData.append('<div class="form-search-row-effect-cardview form-search-col-dm-h-3">');
+					appendData.append('<div class="form-search-col form-search-col-dm-w-1 form-search-col-dm-h-3">'+'</div>');
+					appendData.append('<div class="form-search-col form-search-col-dm-w-2 form-search-col-dm-h-3"><label>'+usersSearch+'</label></div>');
+					appendData.append('<div class="form-search-col form-search-col-dm-w-2 form-search-col-dm-h-3"><label>'+usersSearch+'</label></div>');
+					appendData.append('<div class="form-search-col form-search-col-dm-w-3 form-search-col-dm-h-3"><label>'+usersSearch+'</label></div>');
+					appendData.append('<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<button class="button-form-tool-edit button-dm-2 cicle-bisel-1"></button>'+'</div>');
+					appendData.append('<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<button class="button-form-tool-more button-dm-2 cicle-bisel-1"></button>'+'</div>');
+					appendData.append('<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<button class="button-form-tool-disabled button-dm-2 cicle-bisel-1"></button>'+'</div>');
+					appendData.append('</div>');
+		});*/
 
 		$.ajax({
 			url:route,
@@ -58,28 +77,29 @@ $(document).ready(function(){
 			type:"GET",
 			dataType:'json',
 			data:{
-				v_formUserSearch:search},
+				v_formUserSearch:search,
+				v_formUserStatus:status_user},
+			beforeSend: function (){
+				appendData.append('<div class="form-search-row-effect-cardview form-search-col-dm-h-3">');
+				appendData.append('<div class="form-search-col form-search-col-dm-w-1 form-search-col-dm-h-3">'+'procesando'+'</div>');
+				appendData.append('</div>');
+			},	
+			success: function(usersSearch){							
+					appendData.append('<div class="form-search-row-effect-cardview form-search-col-dm-h-3">');
+					appendData.append('<div class="form-search-col form-search-col-dm-w-1 form-search-col-dm-h-3">'+'</div>');
+					appendData.append('<div class="form-search-col form-search-col-dm-w-2 form-search-col-dm-h-3"><label>'+usersSearch.dp_nombre+'</label></div>');
+					appendData.append('<div class="form-search-col form-search-col-dm-w-2 form-search-col-dm-h-3"><label>'+usersSearch.dp_telefono+'</label></div>');
+					appendData.append('<div class="form-search-col form-search-col-dm-w-3 form-search-col-dm-h-3"><label>'+usersSearch.us_email+'</label></div>');
+					appendData.append('<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<button class="button-form-tool-edit button-dm-2 cicle-bisel-1"></button>'+'</div>');
+					appendData.append('<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<button class="button-form-tool-more button-dm-2 cicle-bisel-1"></button>'+'</div>');
+					appendData.append('<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<button class="button-form-tool-disabled button-dm-2 cicle-bisel-1"></button>'+'</div>');
+					appendData.append('</div>');				
+			}	
 			
 		});
-		$.get(route, function(res){			
-							
-			$.each(res,function(key,val){
-			appendData.append(
-					'<div class="form-search-row-effect-cardview form-search-col-dm-h-3">'+
-					'<div class="form-search-col form-search-col-dm-w-1 form-search-col-dm-h-3">'+'</div>'+
-					'<div class="form-search-col form-search-col-dm-w-2 form-search-col-dm-h-3"><label>'+val.dp_nombre+'</label></div>'+
-					'<div class="form-search-col form-search-col-dm-w-2 form-search-col-dm-h-3"><label>'+val.dp_telefono+'</label></div>'+
-					'<div class="form-search-col form-search-col-dm-w-3 form-search-col-dm-h-3"><label>'+val.us_email+'</label></div>'+
-					'<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<button class="button-form-tool-edit button-dm-2 cicle-bisel-1"></button>'+'</div>'+
-				
-					'<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<button class="button-form-tool-more button-dm-2 cicle-bisel-1"></button>'+'</div>'+
-						
-					'<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<button class="button-form-tool-disabled button-dm-2 cicle-bisel-1"></button>'+'</div>'+
 
-					'</div>');
-			});
-			
-		},"json");	
+		
+		
 				
 	}); 
 
