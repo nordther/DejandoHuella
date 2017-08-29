@@ -205,8 +205,8 @@
 				'srcapp_id' => 74,				
 				'srcapp_dir' => 'css/bootstrap/',
 				'srcapp_filename' => 'bootstrap.theme.css',				
-				'srcapp_fileformat' => 'css'],					
-			];					
+				'srcapp_fileformat' => 'css']				
+								
 			];
 		}
 
