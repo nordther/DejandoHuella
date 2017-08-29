@@ -198,13 +198,13 @@
 				[
 				'srcapp_id' => 77,				
 				'srcapp_dir' => 'css/bootstrap/',
-				'srcapp_filename' => 'bootstrap.theme.min.css',				
+				'srcapp_filename' => 'bootstrap-theme.min.css',				
 				'srcapp_fileformat' => 'css'],
 
 				[
 				'srcapp_id' => 78,				
 				'srcapp_dir' => 'css/bootstrap/',
-				'srcapp_filename' => 'bootstrap.theme.css',				
+				'srcapp_filename' => 'bootstrap-theme.css',				
 				'srcapp_fileformat' => 'css']				
 								
 			];
