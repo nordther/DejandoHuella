@@ -39,24 +39,19 @@ $(document).ready(function(){
 	   		eventoClick.tooltSearchShow();
 	   });
 
-		
-			
-				if ($("#search").val() != null) {
-				$("#search").keyup(function(){			
+	if ($("#search").val() != null) {
+			$("#search").keyup(function(){			
 					eventoClick.searhFunctionShowInformation();				
-				}).keydown(function(){
+			}).keydown(function(){
 					eventoClick.searhFunctionShowInformation();
-				});
-				}
-			
-		
-		
+			});
+		}
 	
-		$("#v_frmCrtUs_roll").change(function(){
+	$("#v_frmCrtUs_roll").change(function(){
 			eventoClick.searhFunctionShowInformation();
-		});
+	});
 
-		if ($("#v_frmCrtUs_roll").selectedIndex != -1 ) {eventoClick.searhFunctionShowInformation();}
+	if ($("#v_frmCrtUs_roll").selectedIndex != -1 ) {eventoClick.searhFunctionShowInformation();}
 		
 		
 				
