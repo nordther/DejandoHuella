@@ -344,25 +344,43 @@ class adminController extends Controller
 
     public function buscarUsuario(adminRequest $rq){
 
-      if ($rq->ajax()) {         
-        
-        $searRoll = 1;
-             
-                  
+      if ($rq->ajax()) {       
+       
 
-        $data = [
+        if (strpos($rq->input('v_formUserSearch'),'@') == true ) {
+          $data = [
                       
-                            "dataForm" => [
+                       "dataForm" => [
                             'iconUserSearch' => '',
                             'usersSearch' => \DB::table('datospersonales')->select('*')
                                           ->join('users','datospersonales.dp_id','=','users.us_id_datospersonales')
                                           ->join('rolls','datospersonales.dp_id_roll','=','rolls.rl_id')
                                           ->join('estadopersonas','datospersonales.dp_id_estp','=','estadopersonas.estp_id')
-                                          ->where('datospersonales.dp_id_roll','=',$searRoll)
-                                          ->where('datospersonales.dp_nombre','like','%'.$rq->input('v_formUserSearch').'%')
+                                          ->where('datospersonales.dp_id_roll','=',$rq->input('v_formCrtUs_roll'))                                          
+                                          ->where('users.us_email','like',$rq->input('v_formUserSearch').'%')
                                           ->where('estadopersonas.estp_activeordesable','=',$rq->input('v_formUserStatus'))->get()
                     ]                           
              ];
+
+        }else{
+          $data = [
+                      
+                        "dataForm" => [
+                            'iconUserSearch' => '',
+                            'usersSearch' => \DB::table('datospersonales')->select('*')
+                                          ->join('users','datospersonales.dp_id','=','users.us_id_datospersonales')
+                                          ->join('rolls','datospersonales.dp_id_roll','=','rolls.rl_id')
+                                          ->join('estadopersonas','datospersonales.dp_id_estp','=','estadopersonas.estp_id')
+                                          ->where('datospersonales.dp_id_roll','=',$rq->input('v_formCrtUs_roll'))
+                                          ->where('datospersonales.dp_nombre','like',$rq->input('v_formUserSearch').'%')                                         
+                                          ->where('estadopersonas.estp_activeordesable','=',$rq->input('v_formUserStatus'))->get()
+                    ]                           
+             ];
+
+        }
+
+        
+
       }
 
       

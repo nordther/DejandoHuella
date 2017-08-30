@@ -56,7 +56,7 @@
 
 						<div class="form-toolts-rows" style="width: 250px;">
 							
-							{!! Form::select('v_frmCrtUs_roll',$data['dll']['comboRoll'],null,['class' => 'input-dm-2']); !!}
+							{!! Form::select('v_frmCrtUs_roll',$data['dll']['comboRoll'],null,['class' => 'input-dm-2','id' =>'v_frmCrtUs_roll']); !!}
 
 						</div>					
 
