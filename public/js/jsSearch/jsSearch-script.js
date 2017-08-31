@@ -131,21 +131,60 @@ function ClassSearchDinamy(){
     return color;
 	}
 
-	this.EnableFunction = function(){
+	this.EnableFunction = function(id,status){
 		var search = $("#search").val();	
 		var token = $("input[name=_token]").val();
 		var port = '8000';
-		var route = "http://localhost:"+port+"/Admin/buscar-usuario/setUpdateEnableDesable";
+		var route = "http://localhost:"+port+"/Admin/buscar-usuario/setUpdateEnableUser";
+		var id = id;
+		var status = status;
+		$.ajax({
+			url:route,
+			headers:{'X-CSRF-TOKEN':token},
+			type:"POST",
+			dataType:'json',
+			data:{
+				v_formIdUser : id,
+				v_formUserStatus: status
+			},
+		success:function(){
+			eventoClick.searhFunctionShowInformation();
+		}	
+		});
 		
 	}
+	this.DisableFunction = function(id,status){
+		var search = $("#search").val();	
+		var token = $("input[name=_token]").val();
+		var port = '8000';
+		var route = "http://localhost:"+port+"/Admin/buscar-usuario/setUpdateDisableUser";
+		var id = id;
+		var status = status;
+		$.ajax({
+			url:route,
+			headers:{'X-CSRF-TOKEN':token},
+			type:"POST",
+			dataType:'json',
+			data:{
+				v_formIdUser : id,
+				v_formUserStatus: status
+			},
+		success:function(){
+			eventoClick.searhFunctionShowInformation();
+		}	
+		
+	});
+
+	}	
 
 	this.EventClickSearch = function(){
 		$("button[id=btnEnable]").click(function(){
-	   		alert($(this).attr('data'));
-	   });
+	   		eventoClick.EnableFunction($(this).attr('data'),1);
+	   	});
 		$("button[id=btnDisable]").click(function(){
-	   		alert($(this).attr('data'));
-	   });
+	   		//eventoClick.DisableFunction($(this).attr('data'),0);    
+  		});
+	  
 	}
 }
 
