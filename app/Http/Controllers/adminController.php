@@ -344,9 +344,7 @@ class adminController extends Controller
 
     public function buscarUsuario(adminRequest $rq){
 
-      if ($rq->ajax()) {       
-       
-
+      if ($rq->ajax()) {  
         if (strpos($rq->input('v_formUserSearch'),'@') == true ) {
           $data = [
                       
@@ -361,7 +359,6 @@ class adminController extends Controller
                                           ->where('estadopersonas.estp_activeordesable','=',$rq->input('v_formUserStatus'))->get()
                     ]                           
              ];
-
         }else{
           $data = [
                       
@@ -376,15 +373,15 @@ class adminController extends Controller
                                           ->where('estadopersonas.estp_activeordesable','=',$rq->input('v_formUserStatus'))->get()
                     ]                           
              ];
-
         }
-
-        
-
       }
-
-      
         return \Response::json($data['dataForm']['usersSearch']);
+    }
+
+    public function activeordesable(adminRequest $rq){
+      if ($rq->ajax()) {
+        
+      }
     }
 
     public function buscarAgenda(){

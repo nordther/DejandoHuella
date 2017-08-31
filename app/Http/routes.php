@@ -7,7 +7,7 @@
 	Route::get('/Admin/subir/{idView}',['uses' => 'adminController@createViewDinamyn']);
 	Route::post('/Admin/cambioPerfil/',['uses' => 'adminController@cambiosPerfiles']);
 	Route::get('/Admin/buscar-usuario/get',['uses' => 'adminController@buscarUsuario']);
-	
+	Route::get('/Admin/buscar-usuario/setUpdateEnableDesable',['uses' => 'adminController@activeordesable']);
 	
 
 	Route::get('/',['uses' => 'mainController@index']);

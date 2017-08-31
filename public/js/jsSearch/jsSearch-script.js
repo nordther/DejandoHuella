@@ -1,6 +1,8 @@
 var eventoClick = new ClassSearchDinamy();
 
 $(document).ready(function(){
+
+
 	var v_Height = screen.height - 195;
 
 	$('#form-content-search-user').css({'width':'1255px','height':'550px'});
@@ -21,23 +23,18 @@ $(document).ready(function(){
 
 	$("div[id^=targetItem]").click(function(){
 	   		
-	   });
-
-	$("button[id=btnEdit]").click(function(){
-	   		alert('Hola ' +$(this).attr('id'));
-	   });
-	$("button[id=btnMore]").click(function(){
-	   		alert('Hola ' +$(this).attr('id'));
-	   });
-	$("button[id=btnDisable]").click(function(){
-	   		alert('Hola ' +$(this).attr('id'));
-	   });
-	$("button[id=btnSearch]").click(function(){
-	   		alert('Hola ' +$(this).attr('id'));
-	   });
-	$("button[id=btnShowToolts]").click(function(){
+	   });	
+	$("#btnShowToolts").click(function(){
 	   		eventoClick.tooltSearchShow();
 	   });
+
+	$("#v_frmUserToolts_status_active").click(function(){
+		eventoClick.searhFunctionShowInformation();
+	});	
+
+	$("#v_frmUserToolts_status_inhable").click(function(){
+		eventoClick.searhFunctionShowInformation();
+	});	
 
 	if ($("#search").val() != null) {
 			$("#search").keyup(function(){			
@@ -52,7 +49,6 @@ $(document).ready(function(){
 	});
 
 	if ($("#v_frmCrtUs_roll").selectedIndex != -1 ) {eventoClick.searhFunctionShowInformation();}
-		
 		
 				
 	}); 
@@ -83,7 +79,7 @@ function ClassSearchDinamy(){
 		var port = '8000';
 		var route = "http://localhost:"+port+"/Admin/buscar-usuario/get";
 		var namesearch = $("input[name=v_search-buscar-usuario").val();
-				if ($("#v_frmUserToolts_status_active").is(':checked')) {var status = 1;}else if($("#v_frmUserToolts_status_inhable").is(':checked')){var status = 0;}
+		if ($("#v_frmUserToolts_status_active").is(':checked')) {var status = 1;}else if($("#v_frmUserToolts_status_inhable").is(':checked')){var status = 0;}
 		var status_user = status;		
 		var roll = $("#v_frmCrtUs_roll").val();
 
@@ -96,19 +92,27 @@ function ClassSearchDinamy(){
 				v_formUserSearch:search,
 				v_formUserStatus:status_user,
 				v_formCrtUs_roll:roll},					
-			success: function(us){	
+			success: function(us){
+
 
 					appendData.empty();
 					$.each(us,function(i,r){
+						if (r.estp_activeordesable == 0){
+							var dataHTML = '<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<button id="btnEnable" class="button-form-tool-enable button-dm-2 cicle-bisel-1" data="'+r.dp_id+'"></button>'+'</div>';
+						}else if (r.estp_activeordesable == 1){
+							var dataHTML = '<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<button id="btnDisable" class="button-form-tool-disabled button-dm-2 cicle-bisel-1" data="'+r.dp_id+'"></button>'+'</div>';
+						}
 						appendData.append('<div class="form-search-row-effect-cardview form-search-col-dm-h-3">'+
 							'<div class="form-search-col form-search-col-dm-w-1 form-search-col-dm-h-3">'+'</div>'+
 							'<div class="form-search-col form-search-col-dm-w-2 form-search-col-dm-h-3"><label class="label-font-size-8 label-font-family-neutro">'+r.dp_nombre+'</label></div>'+
 							'<div class="form-search-col form-search-col-dm-w-2 form-search-col-dm-h-3"><label class="label-font-size-8 label-font-family-neutro">'+r.dp_telefono+'</label></div>'+
 							'<div class="form-search-col form-search-col-dm-w-3 form-search-col-dm-h-3"><label class="label-font-size-8 label-font-family-neutro">'+r.us_email+'</label></div>'+
-							'<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<button class="button-form-tool-edit button-dm-2 cicle-bisel-1"></button>'+'</div>'+
-							'<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<button class="button-form-tool-more button-dm-2 cicle-bisel-1"></button>'+'</div>'+
-							'<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<button class="button-form-tool-disabled button-dm-2 cicle-bisel-1"></button>'+'</div>'+'</div>');
+							'<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<button id="btnEdit" class="button-form-tool-edit button-dm-2 cicle-bisel-1" ></button>'+'</div>'+
+							'<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<button id="btnMore" class="button-form-tool-more button-dm-2 cicle-bisel-1" ></button>'+'</div>'+
+							dataHTML+'</div>');
 					});
+
+					eventoClick.EventClickSearch();
 
 		}
 	});
@@ -126,4 +130,22 @@ function ClassSearchDinamy(){
 
     return color;
 	}
+
+	this.EnableFunction = function(){
+		var search = $("#search").val();	
+		var token = $("input[name=_token]").val();
+		var port = '8000';
+		var route = "http://localhost:"+port+"/Admin/buscar-usuario/setUpdateEnableDesable";
+		
+	}
+
+	this.EventClickSearch = function(){
+		$("button[id=btnEnable]").click(function(){
+	   		alert($(this).attr('data'));
+	   });
+		$("button[id=btnDisable]").click(function(){
+	   		alert($(this).attr('data'));
+	   });
+	}
 }
+

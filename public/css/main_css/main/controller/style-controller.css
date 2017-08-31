@@ -352,6 +352,25 @@ input[type="date"]:hover{
 		 -o-transition: all 0.2s ease;
 		    transition: all 0.2s ease;	
 }
+.button-form-tool-enable{
+	cursor: pointer;
+	position: relative;
+	background-image: url('../../../../img/icon/form/enable.png');	
+	-webkit-transition: all 0.2s ease;
+	   -moz-transition: all 0.2s ease;
+		-ms-transition: all 0.2s ease;
+		 -o-transition: all 0.2s ease;
+		    transition: all 0.2s ease;	
+}
+.button-form-tool-enable:hover{
+	background-image: url('../../../../img/icon/form/enableHover.png');
+	
+	-webkit-transition: all 0.2s ease;
+	   -moz-transition: all 0.2s ease;
+		-ms-transition: all 0.2s ease;
+		 -o-transition: all 0.2s ease;
+		    transition: all 0.2s ease;	
+}
 .button-form-tool-search{
 	cursor: pointer;
 	position: relative;

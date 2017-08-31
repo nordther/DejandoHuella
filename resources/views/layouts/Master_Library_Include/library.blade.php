@@ -5,7 +5,9 @@
 			<meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1,maximum-scale=1">	
 
 			@foreach ($data['dll']['css'] as $dll)
-			    {!! Html::style($dll->srcapp_dir.$dll->srcapp_filename) !!}
+				@if (($dll->srcapp_filename != "bootstrap.css") && ($dll->srcapp_filename != "bootstrap-theme.min.css")&&($dll->srcapp_filename != "bootstrap-theme.css"))
+					{!! Html::style($dll->srcapp_dir.$dll->srcapp_filename) !!}
+				@endif			    
 			@endforeach
 
 			@foreach ($data['dll']['js'] as $dll)
