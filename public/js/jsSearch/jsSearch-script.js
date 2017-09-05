@@ -1,4 +1,5 @@
 var eventoClick = new ClassSearchDinamy();
+var result;
 
 $(document).ready(function(){
 
@@ -57,7 +58,33 @@ $(document).ready(function(){
 
 function ClassSearchDinamy(){
 	
+	var status_session;
+
+	this.confirmAuth = function(id){
+		var search = $("#search").val();	
+		var token = $("input[name=_token]").val();
+		var port = '8000';
+		var route = "http://localhost:"+port+"/Admin/buscar-usuario/authConfirm";
+		var id = id; 
+		var dataJSON = $.ajax({
+			url:route,
+			headers:{'X-CSRF-TOKEN':token},
+			type:"GET",
+			dataType:'json',
+			data:{
+				v_formIdUser: id
+			},
+			success:function(data){
+				dataJSON = data['datosAuth'];
+				console.log(dataJSON);				
+				return dataJSON = data['datosAuth'];
+			}					
+									
+		});
+		
 	
+		
+	}
 
 	this.tooltSearchShow = function(){
 		if ($("#TooltsSearch").css('display') == 'none') {			
@@ -177,12 +204,34 @@ function ClassSearchDinamy(){
 
 	}	
 
+	
+
 	this.EventClickSearch = function(){
 		$("button[id=btnEnable]").click(function(){
+			if ( confirm("Esta seguro de habilitar este usuario")) {
 	   		eventoClick.EnableFunction($(this).attr('data'),1);
+	   		}
 	   	});
 		$("button[id=btnDisable]").click(function(){
-	   		//eventoClick.DisableFunction($(this).attr('data'),0);    
+		var data = eventoClick.confirmAuth($(this).attr('data'));
+		
+		console.log(data.datosAuth);
+		
+		
+		
+
+		
+			
+				
+			//alert());		
+			/*if () {
+				alert('Este usuario no se puede deshabilitar por que esta logeado');
+			}else{
+				if ( confirm("Esta seguro de deshabilitar este usuario")) {
+					eventoClick.DisableFunction($(this).attr('data'),0);
+				}   
+			}*/		
+	   		
   		});
 	  
 	}

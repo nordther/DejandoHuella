@@ -25,6 +25,8 @@ use Lang;
 
 class adminController extends Controller
 {
+
+    private static $auth = null;
    
     public function index(){
         if (Auth::check() > 0) {
@@ -378,9 +380,16 @@ class adminController extends Controller
         return \Response::json($data['dataForm']['usersSearch']);
     }
 
+    public function confirmAuth(adminRequest $rq){
+      if ($rq->ajax()) {
+        if(Auth::user()->us_id_datospersonales == $rq->input('v_formIdUser')){$auth = true;}else{$auth = false;}              
+      }
+      return \Response::json(['datosAuth' => $auth]);
+    }
+
     public function activeordesable(adminRequest $rq){
       if ($rq->ajax()) {
-        
+        return \DB::update('update estadopersonas set estadopersonas.estp_activeordesable ='.$rq->input('v_formUserStatus').' where estadopersonas.estp_id = ?', [$rq->input('v_formIdUser')]);
       }
     }
 

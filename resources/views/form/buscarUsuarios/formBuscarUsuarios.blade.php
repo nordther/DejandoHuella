@@ -45,6 +45,8 @@
 			</div>
 
 			<div class="form-footer-search">				
+					
+					<div id="form-result-log"></div>
 
 			</div>			
 		
