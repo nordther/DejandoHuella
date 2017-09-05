@@ -3,53 +3,50 @@ var result;
 
 $(document).ready(function(){
 
+		var v_Height = screen.height - 195;
 
-	var v_Height = screen.height - 195;
+		$('#form-content-search-user').css({'width':'1255px','height':'550px'});
 
-	$('#form-content-search-user').css({'width':'1255px','height':'550px'});
+		$(".form-content-search").css({'height':''+v_Height+'px','top':'52px','position':'relative'});
 
-	$(".form-content-search").css({'height':''+v_Height+'px','top':'52px','position':'relative'});
+		$(".form-article-search").css({'height':''+(v_Height-100)+'px','top':'-4px','position':'relative'});
 
-	$(".form-article-search").css({'height':''+(v_Height-100)+'px','top':'-4px','position':'relative'});
+		$(".form-content-toolt-search").css({'height':''+(v_Height+36)+'px','top':'35px'})
 
-	$(".form-content-toolt-search").css({'height':''+(v_Height+36)+'px','top':'35px'})
+		$(".form-toolt-hide-show").css({'height':''+(v_Height+33)+'px','top':'35px'});
 
-	$(".form-toolt-hide-show").css({'height':''+(v_Height+33)+'px','top':'35px'});
+		$(".form-search-agenda").css({'height':''+(v_Height)+'px'});
 
-	$(".form-search-agenda").css({'height':''+(v_Height)+'px'});
+		$("#TooltsSearch").css({'top':'52px'});
 
-	$("#TooltsSearch").css({'top':'52px'});
+		$("#TooltsSearchShowHide").css({'top':'52px'});
 
-	$("#TooltsSearchShowHide").css({'top':'52px'});
+		$("div[id^=targetItem]").click(function(){
+		   		
+		   });	
+		$("#btnShowToolts").click(function(){
+		   		eventoClick.tooltSearchShow();
+		   });
 
-	$("div[id^=targetItem]").click(function(){
-	   		
-	   });	
-	$("#btnShowToolts").click(function(){
-	   		eventoClick.tooltSearchShow();
-	   });
-
-	$("#v_frmUserToolts_status_active").click(function(){
-		eventoClick.searhFunctionShowInformation();
-	});	
-
-	$("#v_frmUserToolts_status_inhable").click(function(){
-		eventoClick.searhFunctionShowInformation();
-	});	
-
-	if ($("#search").val() != null) {
-			$("#search").keyup(function(){			
-					eventoClick.searhFunctionShowInformation();				
-			}).keydown(function(){
-					eventoClick.searhFunctionShowInformation();
-			});
-		}
-	
-	$("#v_frmCrtUs_roll").change(function(){
+		$("#v_frmUserToolts_status_active").click(function(){
 			eventoClick.searhFunctionShowInformation();
-	});
+		});	
 
-	if ($("#v_frmCrtUs_roll").selectedIndex != -1 ) {eventoClick.searhFunctionShowInformation();}
+		$("#v_frmUserToolts_status_inhable").click(function(){
+			eventoClick.searhFunctionShowInformation();
+		});	
+
+		if ($("#search").val() != null) {
+				$("#search").keyup(function(){			
+						eventoClick.searhFunctionShowInformation();				
+				});
+			}
+		
+		$("#v_frmCrtUs_roll").change(function(){
+				eventoClick.searhFunctionShowInformation();
+		});
+
+		if ($("#v_frmCrtUs_roll").selectedIndex != -1 ) {eventoClick.searhFunctionShowInformation();}
 		
 				
 	}); 
@@ -213,24 +210,11 @@ function ClassSearchDinamy(){
 	   		}
 	   	});
 		$("button[id=btnDisable]").click(function(){
-		var data = eventoClick.confirmAuth($(this).attr('data'));
 		
-		console.log(data.datosAuth);
-		
-		
-		
-
-		
-			
-				
-			//alert());		
-			/*if () {
-				alert('Este usuario no se puede deshabilitar por que esta logeado');
-			}else{
 				if ( confirm("Esta seguro de deshabilitar este usuario")) {
 					eventoClick.DisableFunction($(this).attr('data'),0);
 				}   
-			}*/		
+					
 	   		
   		});
 	  

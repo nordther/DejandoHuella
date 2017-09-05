@@ -346,6 +346,7 @@ class adminController extends Controller
 
     public function buscarUsuario(adminRequest $rq){
 
+
       if ($rq->ajax()) {  
         if (strpos($rq->input('v_formUserSearch'),'@') == true ) {
           $data = [

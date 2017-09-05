@@ -316,6 +316,7 @@ class ComposerStaticInitcb68c7fe6d9ec93cff179ebdc286919d
         'CreatePaisesTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_24_173523_create_paises_table.php',
         'CreateParentescosTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_24_173516_create_parentescos_table.php',
         'CreatePermisosTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_24_173504_create_permisos_table.php',
+        'CreatePhotoperfilsTable' => __DIR__ . '/../..' . '/database/migrations/2017_09_05_141331_create_photoperfils_table.php',
         'CreatePostsTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_24_174149_create_posts_table.php',
         'CreateProfesoresTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_24_173614_create_profesores_table.php',
         'CreateProgramasTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_24_173512_create_programas_table.php',

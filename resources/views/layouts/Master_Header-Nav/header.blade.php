@@ -79,7 +79,7 @@
 
 					@if($data['type-modul'] == 'buscar-usuario')
 						
-						{!! Form::open(); !!}
+						{!! Form::open(['url' => 'Admin/buscar-usuario/get','method' => 'GET']); !!}
 
 						<div class="content-search">
 							<div class="content-search-col content-search-col-dm-w-1">
