@@ -383,13 +383,13 @@ class adminController extends Controller
 
     public function confirmAuth(adminRequest $rq){
       if ($rq->ajax()) {
-        if(Auth::user()->us_id_datospersonales == $rq->input('v_formIdUser')){$auth = true;}else{$auth = false;}              
+        if(Auth::user()->us_id_datospersonales == $rq->input('v_formIdUser')){$auth = 1;}else{$auth = 0;}              
       }
       return \Response::json(['datosAuth' => $auth]);
     }
 
     public function activeordesable(adminRequest $rq){
-      if ($rq->ajax()) {
+      if ($rq->ajax()) {       
         return \DB::update('update estadopersonas set estadopersonas.estp_activeordesable ='.$rq->input('v_formUserStatus').' where estadopersonas.estp_id = ?', [$rq->input('v_formIdUser')]);
       }
     }

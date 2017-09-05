@@ -81,6 +81,8 @@
 						
 						{!! Form::open(['url' => 'Admin/buscar-usuario/get','method' => 'GET']); !!}
 
+						{!! Form::hidden('_token',csrf_token(),['type' => 'hidden','id' => '_token']) !!}
+
 						<div class="content-search">
 							<div class="content-search-col content-search-col-dm-w-1">
 								{!! Form::text('v_search-'.$data['type-modul'],'',['placeholder' => 'Buscar...' , 'class' => 'form-control input-border-color-1 input-radius-square-2 input-dm-1','id' => 'search']); !!}

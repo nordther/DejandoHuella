@@ -9,6 +9,8 @@
 					{!! Html::style($dll->srcapp_dir.$dll->srcapp_filename) !!}
 				@endif			    
 			@endforeach
+			
+			{!! Html::script('https://code.jquery.com/jquery-3.2.1.min.js') !!}
 
 			@foreach ($data['dll']['js'] as $dll)
 				@if(($dll->srcapp_filename == 'jquery-3.2.1.min.js') || ($dll->srcapp_filename == 'jquery-1.10.2.js'))

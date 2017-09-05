@@ -1,7 +1,10 @@
 var eventoClick = new ClassSearchDinamy();
 var result;
 
+
 $(document).ready(function(){
+
+		var dataStatusAuths = null;
 
 		var v_Height = screen.height - 195;
 
@@ -62,7 +65,8 @@ function ClassSearchDinamy(){
 		var token = $("input[name=_token]").val();
 		var port = '8000';
 		var route = "http://localhost:"+port+"/Admin/buscar-usuario/authConfirm";
-		var id = id; 
+		var id = id;
+		var appendData = $('#formSearchIncludeInformation'); 
 		var dataJSON = $.ajax({
 			url:route,
 			headers:{'X-CSRF-TOKEN':token},
@@ -73,14 +77,12 @@ function ClassSearchDinamy(){
 			},
 			success:function(data){
 				dataJSON = data['datosAuth'];
-				console.log(dataJSON);				
-				return dataJSON = data['datosAuth'];
+				console.log(dataJSON);	
+				dataStatusAuths = "{value:"+dataJSON+", usersId:"+id+"}";
 			}					
 									
 		});
-		
-	
-		
+		return dataJSON;	
 	}
 
 	this.tooltSearchShow = function(){
@@ -97,7 +99,7 @@ function ClassSearchDinamy(){
 	}
 
 	this.searhFunctionShowInformation = function(){
-		var appendData = $('#formSearchIncludeInformation');		
+				
 		var search = $("#search").val();	
 		var token = $("input[name=_token]").val();
 		var port = '8000';
@@ -106,7 +108,7 @@ function ClassSearchDinamy(){
 		if ($("#v_frmUserToolts_status_active").is(':checked')) {var status = 1;}else if($("#v_frmUserToolts_status_inhable").is(':checked')){var status = 0;}
 		var status_user = status;		
 		var roll = $("#v_frmCrtUs_roll").val();
-
+		var appendData = $('#formSearchIncludeInformation');
 		$.ajax({
 			url:route,
 			headers:{'X-CSRF-TOKEN':token},
@@ -210,10 +212,13 @@ function ClassSearchDinamy(){
 	   		}
 	   	});
 		$("button[id=btnDisable]").click(function(){
-		
-				if ( confirm("Esta seguro de deshabilitar este usuario")) {
-					eventoClick.DisableFunction($(this).attr('data'),0);
-				}   
+			/*eventoClick.confirmAuth($(this).attr('data'));*/	
+			eventoClick.confirmAuth($(this).attr('data'));
+			
+
+		/*if (confirm("Esta seguro de deshabilitar este usuario")) {
+			eventoClick.DisableFunction($(this).attr('data'),0);
+		} */  
 					
 	   		
   		});
