@@ -315,7 +315,7 @@
 						
 						@foreach($data['dll']['icon'] as $dll)
 	
-							@if ($dll->srcapp_filename == 'help.png')
+							@if ($dll->srcapp_filename == 'settingsAbout.png')
 								<img src="{{asset($dll->srcapp_dir.$dll->srcapp_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
 							@endif
 	
@@ -350,7 +350,7 @@
 						
 						@foreach($data['dll']['icon'] as $dll)
 	
-							@if ($dll->srcapp_filename == 'help.png')
+							@if ($dll->srcapp_filename == 'donation.png')
 								<img src="{{asset($dll->srcapp_dir.$dll->srcapp_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
 							@endif
 	

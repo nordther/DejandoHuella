@@ -50,6 +50,31 @@ $(document).ready(function(){
 		$("#formUsersNormals").hide();
 	}
 	
+	var coordenada = $("#btn-toolts-perfil").position();
+	var x = coordenada.left;
+	var y = coordenada.top;
+
+	$("#btn-toolts-perfil").click(function(){
+		
+		if (($(window).width() <= 1600) || ($(window).width() >= 768)) {
+
+			$("#menuPerfil").css({'top':(y+55)+'px','left':(x+1198)+'px'});
+		}else if ($(window).width() <= 768) {
+				alert($(window).width());
+			$("#menuPerfil").css({'top':(y+55)+'px','left':(x)+'px'});
+			}
+		
+		
+
+		
+	});
+	
+
+	
+	
+
+	
+	
 
 
 });

@@ -459,6 +459,12 @@
 				'srcapp_id' => 75,				
 				'srcapp_dir' => 'img/icon/nav/',
 				'srcapp_filename' =>'administratorMulti.png',				
+				'srcapp_fileformat' => 'png'],
+
+				[
+				'srcapp_id' => 79,				
+				'srcapp_dir' => 'img/icon/nav/',
+				'srcapp_filename' =>'settingsAbout.png',				
 				'srcapp_fileformat' => 'png']
 
 				];
