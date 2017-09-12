@@ -311,6 +311,22 @@
 				</ul>
 
 				<li>
+					<a href="/Admin/acerca-de-dejando-huella-kids">
+						
+						@foreach($data['dll']['icon'] as $dll)
+	
+							@if ($dll->srcapp_filename == 'help.png')
+								<img src="{{asset($dll->srcapp_dir.$dll->srcapp_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
+							@endif
+	
+						@endforeach
+
+						Acerca de la app.
+
+					</a>
+				</li>
+
+				<li>
 
 					<a href="/Admin/manuals" class="">
 						
@@ -322,7 +338,25 @@
 	
 						@endforeach
 
-						Manual de Usuario
+						Ayuda
+
+					</a>
+
+				</li>
+
+				<li>
+					
+					<a href="/Admin/gestion-donativos">
+						
+						@foreach($data['dll']['icon'] as $dll)
+	
+							@if ($dll->srcapp_filename == 'help.png')
+								<img src="{{asset($dll->srcapp_dir.$dll->srcapp_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
+							@endif
+	
+						@endforeach
+
+						Apoyar la fundación
 
 					</a>
 
