@@ -2086,6 +2086,31 @@
 			];
 		}
 
+		public static function createPhotoPerfilDir(){
+			return $data = [
+				[
+				'pp_src_filename' => '',
+				'pp_src_dir' => 'img/iconUserSistem/1144164149',
+				'pp_src_format_file' => '',
+				'pp_id_datospersonales' => 1144164149 ],
+				[
+				'pp_src_filename' => '',
+				'pp_src_dir' => 'img/iconUserSistem/16940133',
+				'pp_src_format_file' => '',
+				'pp_id_datospersonales' => 16940133 ],
+				[
+				'pp_src_filename' => '',
+				'pp_src_dir' => 'img/iconUserSistem/1151954263',
+				'pp_src_format_file' => '',
+				'pp_id_datospersonales' => 1151954263 ],
+				[
+				'pp_src_filename' => '',
+				'pp_src_dir' => 'img/iconUserSistem/1107095631',
+				'pp_src_format_file' => '',
+				'pp_id_datospersonales' => 1107095631 ]
+			];
+		}
+
 		public static function createUserAdminAssistan(){
 			return $data = [
 				['asst_id' => 1144164149],

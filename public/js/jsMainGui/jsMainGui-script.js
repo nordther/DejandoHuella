@@ -56,13 +56,15 @@ $(document).ready(function(){
 
 	$("#btn-toolts-perfil").click(function(){
 		
-		if (($(window).width() <= 1600) || ($(window).width() >= 768)) {
+		if (($(document).width() <= 1600) || ($(document).width() >= 768)) {
 
 			$("#menuPerfil").css({'top':(y+55)+'px','left':(x+1198)+'px'});
-		}else if ($(window).width() <= 768) {
-				alert($(window).width());
-			$("#menuPerfil").css({'top':(y+55)+'px','left':(x)+'px'});
-			}
+		}
+
+		if ($(document).width() <= 768){
+				
+			$("#menuPerfil").css({'top':(y+55)+'px','left':(x-320)+'px'});
+		}
 		
 		
 

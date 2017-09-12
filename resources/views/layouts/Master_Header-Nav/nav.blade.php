@@ -321,7 +321,7 @@
 	
 						@endforeach
 
-						Acerca de la app.
+						Acerca de D.H.K.
 
 					</a>
 				</li>
@@ -356,7 +356,7 @@
 	
 						@endforeach
 
-						Apoyar la fundación
+						Apoya nuestra fundación
 
 					</a>
 

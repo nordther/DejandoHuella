@@ -5,6 +5,8 @@ namespace DejandoHuella\Http\Controllers;
 use Auth;
 use Redirect;
 use Schema;
+use File;
+use Storage;
 use Illuminate\Http\Request;
 use Illuminate\Database\Schema\Blueprint;
 use DejandoHuella\Http\Requests;
@@ -27,6 +29,7 @@ use DejandoHuella\ClassCunstom\classChargenGeographicSistemPrimary;
 use DejandoHuella\typeuser;
 use DejandoHuella\assistan;
 use DejandoHuella\categoriaprograma;
+use DejandoHuella\photoperfil;
 
 class mainController extends Controller
 {
@@ -90,7 +93,8 @@ class mainController extends Controller
             'typedocuments' => \DB::table('typedocuments')->get(),
             'typeusers' => \DB::table('typeusers')->get(),
             'assistans' => \DB::table('assistans')->get(),
-            'categoriaprogramas' => \DB::table('categoriaprogramas')->get()
+            'categoriaprogramas' => \DB::table('categoriaprogramas')->get(),
+            'photoperfils' => \DB::table('photoperfils')->get()
             ];   
 
          if ($chargenData['categoriaprogramas'] == false) {
@@ -184,6 +188,18 @@ class mainController extends Controller
             $chargen = null;
         } 
 
+        if ($chargenData['photoperfils'] == false) {
+                $chargen = \DB::table('photoperfils')->insert($v_f["class"]['ChrM']::createPhotoPerfilDir());
+
+                foreach ($v_f["class"]['ChrM']::createPhotoPerfilDir() as $rows) {
+                    File::MakeDirectory(base_path('public/img/iconUserSistem/'.$rows['pp_id_datospersonales'].'/'));
+                }
+
+        }else{
+            $chargen = null;
+        }
+
+        
         
 
    }
