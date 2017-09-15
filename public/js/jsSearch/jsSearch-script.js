@@ -128,8 +128,13 @@ function ClassSearchDinamy(){
 						}else if (r.estp_activeordesable == 1){
 							var dataHTML = '<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<button id="btnDisable" class="button-form-tool-disabled button-dm-2 cicle-bisel-1" data="'+r.dp_id+'"></button>'+'</div>';
 						}
+						if (r.pp_src_filename == '') {
+							var photo = '<img src="'+location.protocol+'//'+location.host+'/'+'img/icon/header/userDefault.png" class="img-dm-8 cicle-bisel-1">';
+						}else{
+							var photo = '<img src="'+location.protocol+'//'+location.host+'/'+r.pp_src_dir+'/'+r.pp_src_filename+'" class="img-dm-8 cicle-bisel-1">';
+						}
 						appendData.append('<div class="form-search-row-effect-cardview form-search-col-dm-h-3">'+
-							'<div class="form-search-col form-search-col-dm-w-1 form-search-col-dm-h-3">'+'</div>'+
+							'<div class="form-search-col form-search-col-dm-w-1 form-search-col-dm-h-3">'+photo+'</div>'+
 							'<div class="form-search-col form-search-col-dm-w-2 form-search-col-dm-h-3"><label class="label-font-size-8 label-font-family-neutro">'+r.dp_nombre+'</label></div>'+
 							'<div class="form-search-col form-search-col-dm-w-2 form-search-col-dm-h-3"><label class="label-font-size-8 label-font-family-neutro">'+r.dp_telefono+'</label></div>'+
 							'<div class="form-search-col form-search-col-dm-w-3 form-search-col-dm-h-3"><label class="label-font-size-8 label-font-family-neutro">'+r.us_email+'</label></div>'+

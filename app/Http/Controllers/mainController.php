@@ -38,6 +38,10 @@ class mainController extends Controller
 
     public function index(){
         
+        if (!file_exists(base_path("/public/img/iconUserSistem/"))) {
+            File::MakeDirectory(base_path('public/img/iconUserSistem'));
+        }
+
 
         if (Auth::check() > 0) {
 
@@ -193,6 +197,26 @@ class mainController extends Controller
 
                 foreach ($v_f["class"]['ChrM']::createPhotoPerfilDir() as $rows) {
                     File::MakeDirectory(base_path('public/img/iconUserSistem/'.$rows['pp_id_datospersonales'].'/'));
+                    $file = base_path('public/img/iconUserSistem/'.$rows['pp_id_datospersonales'].'/about.txt');
+                    $fp = fopen($file,'a');
+                    $dataAbout = \DB::table('datospersonales')->select('*')->where('dp_id','=',$rows['pp_id_datospersonales'])->get();
+                    foreach ($dataAbout as $rowsAbout) {
+                        if($rowsAbout->dp_td_id == 1){$valueTD='Cedula de ciudadania';}
+                        if($rowsAbout->dp_id_roll == 1){$valueR='Administrador';}
+                        fwrite($fp,'======================================================='.PHP_EOL);
+                        fwrite($fp,'======================================================='.PHP_EOL);
+                        fwrite($fp,'==               Datos del usuario                   =='.PHP_EOL);
+                        fwrite($fp,'======================================================='.PHP_EOL);
+                        fwrite($fp,'======================================================='.PHP_EOL);
+                        fwrite($fp,'Documento      : '.$rowsAbout->dp_id.'         '.PHP_EOL);
+                        fwrite($fp,'Tipod documento: '.$valueTD.'      '.PHP_EOL);
+                        fwrite($fp,'Nombre         : '.$rowsAbout->dp_nombre.'     '.PHP_EOL);
+                        fwrite($fp,'Apellido       : '.$rowsAbout->dp_apellido.'   '.PHP_EOL);
+                        fwrite($fp,'Roll           : '.$valueR.'    '.PHP_EOL); 
+                        fwrite($fp,'======================================================='.PHP_EOL);                                              
+                    }
+                    fclose($fp);             
+
                 }
 
         }else{

@@ -117,6 +117,7 @@ class adminController extends Controller
                             ->join('permisos','datospersonales.dp_id','=','permisos.pm_id')
                             ->join('generos','datospersonales.dp_id_genero','=','generos.g_id_genero')
                             ->join('estadopersonas','datospersonales.dp_id','=','estadopersonas.estp_id')
+                            ->join('photoperfils','datospersonales.dp_id','=','photoperfils.pp_id_datospersonales')
                             ->where('datospersonales.dp_id','=',Auth::user()->us_id_datospersonales,'and','estadopersonas.estp_activeordesable','=',1)
                             ->take(1)
                             ->get();
@@ -138,7 +139,8 @@ class adminController extends Controller
                         'ready'  => $rows->pm_ready,
                         'update' => $rows->pm_update,
                         'delete' => $rows->pm_delete
-                ]];
+                ],
+                'photo' => $rows->pp_src_filename];
             }
 
 
@@ -164,7 +166,7 @@ class adminController extends Controller
 
             $data = [
                 "id"         => $dataChargen['id'],
-                "icon"       => "",
+                "icon"       => $dataChargen['photo'],
                 "nombre"     => $dataChargen['nombre'],
                 "apellido"   => $dataChargen['apellido'],
                 "fe_naci"    => $dataChargen['fe_naci'],
@@ -256,6 +258,7 @@ class adminController extends Controller
                             ->join('permisos','datospersonales.dp_id','=','permisos.pm_id')
                             ->join('generos','datospersonales.dp_id_genero','=','generos.g_id_genero')
                             ->join('estadopersonas','datospersonales.dp_id','=','estadopersonas.estp_id')
+                            ->join('photoperfils','datospersonales.dp_id','=','photoperfils.pp_id_datospersonales')
                             ->where('datospersonales.dp_id','=',Auth::user()->us_id_datospersonales,'and','estadopersonas.estp_activeordesable','=',1)
                             ->take(1)
                             ->get();
@@ -277,7 +280,8 @@ class adminController extends Controller
                         'ready'  => $rows->pm_ready,
                         'update' => $rows->pm_update,
                         'delete' => $rows->pm_delete
-                ]];
+                ],
+               'photo' => $rows->pp_src_filename];
             }
 
             $dataLg = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);              
@@ -289,10 +293,10 @@ class adminController extends Controller
               foreach ($idIdioma as $rows) {
                 $lgId = $rows->lg_id;
               }
-
+              var_dump($dataChargen['photo']);
              $data = [
                 "id"         => $dataChargen['id'],
-                "icon"       => "",
+                "icon"       => $dataChargen['photo'],
                 "nombre"     => $dataChargen['nombre'],
                 "apellido"   => $dataChargen['apellido'],
                 "fe_naci"    => $dataChargen['fe_naci'],
@@ -357,6 +361,7 @@ class adminController extends Controller
                                           ->join('users','datospersonales.dp_id','=','users.us_id_datospersonales')
                                           ->join('rolls','datospersonales.dp_id_roll','=','rolls.rl_id')
                                           ->join('estadopersonas','datospersonales.dp_id_estp','=','estadopersonas.estp_id')
+                                          ->join('photoperfils','datospersonales.dp_id','=','photoperfils.pp_id_datospersonales')
                                           ->where('datospersonales.dp_id_roll','=',$rq->input('v_formCrtUs_roll'))                                          
                                           ->where('users.us_email','like',$rq->input('v_formUserSearch').'%')
                                           ->where('estadopersonas.estp_activeordesable','=',$rq->input('v_formUserStatus'))->get()
@@ -371,6 +376,7 @@ class adminController extends Controller
                                           ->join('users','datospersonales.dp_id','=','users.us_id_datospersonales')
                                           ->join('rolls','datospersonales.dp_id_roll','=','rolls.rl_id')
                                           ->join('estadopersonas','datospersonales.dp_id_estp','=','estadopersonas.estp_id')
+                                          ->join('photoperfils','datospersonales.dp_id','=','photoperfils.pp_id_datospersonales')
                                           ->where('datospersonales.dp_id_roll','=',$rq->input('v_formCrtUs_roll'))
                                           ->where('datospersonales.dp_nombre','like',$rq->input('v_formUserSearch').'%')                                         
                                           ->where('estadopersonas.estp_activeordesable','=',$rq->input('v_formUserStatus'))->get()

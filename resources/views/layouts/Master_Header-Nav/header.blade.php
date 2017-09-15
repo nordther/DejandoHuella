@@ -125,19 +125,19 @@
 
 				<div class="content-perfil-header content-perfil-header-dm header-dm-4">
 					
-					@if (($data['id'] == "") || ($data['icon'] == null))
+					@if ($data['icon'] == null)
 							
 						@foreach($data['dll']['icon'] as $icon)
 
 							@if($icon->srcapp_filename == 'userDefault.png')
 
-								<img src="{{asset($icon->srcapp_dir.$icon->srcapp_filename)}}" class="img-dm-8 img-margin-top-4  img-border-circle" style="margin-top:10px;">
+								<img src="{{asset($icon->srcapp_dir.$icon->srcapp_filename)}}" class="img-dm-8 img-margin-top-4  img-border-circle" style="margin-top:10px;" >
 
 							@endif
 
 						@endforeach
 
-					@elseif(($data['id'] != "") || ($data['icon'] != null))	
+					@else	
 						
 						<img src="{{asset("img/iconUserSistem/".$data['id']."/".$data['icon'])}}" class="img-dm-8 img-margin-top-4  img-border-circle" alt="{{$data['nombre']}}">
 
