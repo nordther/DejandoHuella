@@ -7,11 +7,11 @@
 
 		<div class="form-header form-header-dm-1 form-bg-content-5 form-border-radius-top-left form-border-radius-top-right ">
 			
-			@foreach($data['dll']['icon'] as $dll)
+			@foreach($data['dll']['nav'] as $dll)
 	
-				@if ($dll->srcapp_filename == 'openid-logo.png')
+				@if ($dll->srcnav_filename == 'openid-logo.png')
 
-					<img src="{{asset($dll->srcapp_dir.$dll->srcapp_filename)}}" alt="Ingreso al sistema" class="img-dm-6 img-margin-top-4 img-rotate-90deg">
+					<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="Ingreso al sistema" class="img-dm-6 img-margin-top-4 img-rotate-90deg">
 
 				@endif
 	

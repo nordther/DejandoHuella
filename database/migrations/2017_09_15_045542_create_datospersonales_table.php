@@ -29,7 +29,7 @@ class CreateDatospersonalesTable extends Migration
             $table->integer('dp_id_genero')->index()->nullable();
             $table->integer('dp_id_parentesco')->index()->unique()->nullable();
             $table->integer('dp_id_municipio')->index()->unique()->nullable();
-            $table->integer('dp_id_type_user')->index()->unique();
+            $table->integer('dp_id_type_user')->index();
             $table->timestamps();
 
             $table->foreign('dp_td_id')

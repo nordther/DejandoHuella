@@ -1945,51 +1945,56 @@
 		public static function craeteSubModuls(){
 			return $data = [
 			['smdls_id' =>1,
+			 'smdls_id_mdls' => 3,
              'smdls_url' => '/Admin/buscar-usuario',
 		     'smdls_patch' => 'modulos.functionAdministration.searchUsers.index',
 			 'smdls_wordkey_modul_name' => 'mdls_searchUser',
-			 'smdls_paramt_name' => 'buscar-usuario',
-			 'smdls_id_mdls' => 3,
+			 'smdls_paramt_name' => 'buscar-usuario',			 
 			 'smdls_id_srcnav' => 20], 				 
 
 			['smdls_id' =>2,
+			 'smdls_id_mdls' => 3,  
 			 'smdls_url' => '/Admin/crear/usuario',
 			 'smdls_patch' => 'modulos.functionAdministration.createUser.index',
 			 'smdls_wordkey_modul_name' => 'mdls_createUser',
 			 'smdls_paramt_name' => 'usuario',
-			 'smdls_id_mdls' => 3,
+			 
 			 'smdls_id_srcnav' =>7],
 
 			 ['smdls_id' =>3,
+			 'smdls_id_mdls' => 4,
 			 'smdls_url' => '/Admin/buscar-agenda',
 			 'smdls_patch' => 'modulos.functionAdministration.searchAgenda.index',
 			 'smdls_wordkey_modul_name' => 'mdls_searchAgenda',
 			 'smdls_paramt_name' => 'buscar-agenda',
-			 'smdls_id_mdls' => 4,
+			 
 			 'smdls_id_srcnav' =>21], 
 
 			['smdls_id' =>4,
+			'smdls_id_mdls' => 4,
 			 'smdls_url' => '/Admin/crear/agenda',
 			 'smdls_patch' => 'modulos.functionAdministration.createAgenda.index',
 			 'smdls_wordkey_modul_name' => 'mdls_createAgenda',
 			 'smdls_paramt_name' => 'agenda',
-			'smdls_id_mdls' => 4,
+			
 			 'smdls_id_srcnav' =>6],
 
 			['smdls_id' => 5,
+			'smdls_id_mdls' => 5,
 			 'smdls_url' => '/Admin/buscar-multimedia',
 			 'smdls_patch' => 'modulos.functionAdministration.searchMultimedia.index',
 			 'smdls_wordkey_modul_name' => 'mdls_search_multimedia',
 			 'smdls_paramt_name' => 'buscar-multimedia',
-			'smdls_id_mdls' => 5,
+			
 			 'smdls_id_srcnav' =>22],
 
 			['smdls_id' => 6,
+			'smdls_id_mdls' => 5,
 			 'smdls_url' => '/Admin/subir/multimedia',
 			 'smdls_patch' => 'modulos.functionAdministration.uploadMultimedia.index',
 			 'smdls_wordkey_modul_name' => 'mdls_upload_multimedia',
 			 'smdls_paramt_name' => 'subir-multimedia',
-			'smdls_id_mdls' => 5,
+			
 			 'smdls_id_srcnav' =>23]
 
 			];

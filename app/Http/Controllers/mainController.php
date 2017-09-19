@@ -67,10 +67,11 @@ class mainController extends Controller
             "roll" => "",
             "nav"  => \DB::table('moduls')->select('*')
                             ->join('submoduls','moduls.mdls_id','=','submoduls.smdls_id_mdls')
-                            ->join('srcnavs','moduls.mdls_srcnav_id','=','srcnavs.srcnavs_id')->get(),                            
+                            ->join('srcnavs','moduls.mdls_id_srcnav','=','srcnavs.srcnav_id')->get(),                            
             "dll" => [  'css' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','css')->orderBy('srcapp_id', 'asc')->get(),
                         'js' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','js')->orderBy('srcapp_id', 'asc')->get(),
-                        'icon' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','png','and','srcapp_dir','=','img/icon/nav/')->get()]
+                        'icon' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','png','and','srcapp_dir','=','img/icon/nav/')->get(),
+                        'nav' => \DB::table('srcnavs')->select('*')->where('srcnav_fileformat','=','png','and','srcapp_dir','=','img/icon/nav/')->get()]
                       
         ];
                     

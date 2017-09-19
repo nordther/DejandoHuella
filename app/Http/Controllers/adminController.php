@@ -20,6 +20,7 @@ use Auth;
 use Redirect;
 use App;
 use Lang;
+use DejandoHuella\srcnav;
 
 
 
@@ -96,7 +97,8 @@ class adminController extends Controller
                         'text' => \DB::table('guitexts')->select('*')
                                     ->join('guitypes','guitexts.gtxt_id_gtype','=','guitypes.gtype_id')
                                     ->join('languages','guitexts.gtxt_id_language','=','languages.lg_id')
-                                    ->where('guitexts.gtxt_id_language','=',$lgId)->get()]
+                                    ->where('guitexts.gtxt_id_language','=',$lgId)->get(),
+                        'nav' => \DB::table('srcnavs')->select('*')->where('srcnav_fileformat','=','png','and','srcapp_dir','=','img/icon/nav/')->get()          ]
              ];
             return view('modulos.functionAdministration.index',compact('data'));
 
@@ -223,7 +225,8 @@ class adminController extends Controller
                                     ->join('guitypes','guitexts.gtxt_id_gtype','=','guitypes.gtype_id')
                                     ->join('languages','guitexts.gtxt_id_language','=','languages.lg_id') 
                                     ->where('guitexts.gtxt_id_language','=',$lgId)
-                                    ->where('guitexts.gtxt_id_gtype','=',2)->lists('gtxt_text','cp_id_categoria'),        
+                                    ->where('guitexts.gtxt_id_gtype','=',2)->lists('gtxt_text','cp_id_categoria'),
+                            'nav' => \DB::table('srcnavs')->select('*')->where('srcnav_fileformat','=','png','and','srcapp_dir','=','img/icon/nav/')->get()                
                             ],                   
                             "dataForm" => [
                             'iconUserSearch' => ''

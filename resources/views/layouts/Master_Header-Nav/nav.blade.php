@@ -4,16 +4,139 @@
 
 	@if (($data['authconfirm'] == false) && ($data['multimediaAuth'] == false))
 		
-		<nav class="nav bg-content-neutro-opacity main-menu-hidde fade-in is-paused" id="main-menu">
-				
-			<ul class="main-menu">	
+		<nav class="nav bg-content-neutro-opacity main-menu-hidde fade-in is-paused" id="main-menu">		
 
-				@foreach($data['nav'] as $rows)
-					
-					
+			<ul class="main-menu">
 
-				@endforeach
+				<li>
 
+					<a href="/{{ $data['roll'] }}" >
+						
+					@foreach($data['dll']['nav'] as $dll)
+	
+						@if ($dll->srcnav_filename == 'about.png')
+							<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
+						@endif
+	
+					@endforeach	
+						Inicio
+					</a>
+
+				</li>	
+
+				<li id="targetLoginUsers">
+
+					<a href="#ingresar"  data="/Ingresar" id="nav_btn_login" class="">
+
+						@foreach($data['dll']['nav'] as $dll)
+	
+							@if ($dll->srcnav_filename == 'arrow-down.png')
+								<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
+							@endif
+	
+						@endforeach
+
+						Ingresar al Sistema
+
+					</a>
+
+				</li>
+
+				@yield('content-login')
+
+				@include('alerts.formAlertAuth')	
+
+				<li class="nav-form-login-hidde" id="nav-form-login-hidde" class="">
+
+					<a href="#noticias" data="/Novedades">
+
+					@foreach($data['dll']['nav'] as $dll)
+	
+						@if ($dll->srcnav_filename == 'newtopics.png')
+							<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
+						@endif
+	
+					@endforeach
+
+						Novedades
+
+					</a>
+
+				</li>
+
+				<li class="nav-form-login-hidde" id="nav-form-login-hidde" class="">
+
+					<a href="#quienessomos" data="/Quienes somos">
+
+					@foreach($data['dll']['nav'] as $dll)
+	
+						@if ($dll->srcnav_filename == 'fundacionData.png')
+							<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
+						@endif
+	
+					@endforeach
+
+						Quienes somos
+
+					</a>
+
+				</li>
+
+				<li class="nav-form-login-hidde" id="nav-form-login-hidde" class="">
+
+					<a href="#contactenos" data="/Contactenos">
+
+					@foreach($data['dll']['nav'] as $dll)
+	
+						@if ($dll->srcnav_filename == 'contact.png')
+							<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
+						@endif
+	
+					@endforeach
+
+						Contactenos 
+
+					</a>
+
+				</li>
+
+
+				<li>
+
+					<a href="#Donacion" class="">
+
+					@foreach($data['dll']['nav'] as $dll)
+	
+						@if ($dll->srcnav_filename == 'donation.png')
+							<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
+						@endif
+	
+					@endforeach
+
+						Donativo
+
+					</a>
+
+				</li>
+
+				<li>
+
+					<a href="/Multimedia" class="">
+
+					@foreach($data['dll']['nav'] as $dll)
+	
+						@if ($dll->srcnav_filename == 'media.png')
+							<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
+						@endif
+	
+					@endforeach
+
+						Multimedia
+
+					</a>
+
+				</li>	
+											
 			</ul>
 
 		</nav>
@@ -28,10 +151,10 @@
 
 					<a href="/{{ $data['roll'] }}" class="">
 
-						@foreach($data['dll']['icon'] as $dll)
+						@foreach($data['dll']['nav'] as $dll)
 	
-							@if ($dll->srcapp_filename == 'about.png')
-								<img src="{{asset($dll->srcapp_dir.$dll->srcapp_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
+							@if ($dll->srcnav_filename == 'about.png')
+								<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
 							@endif
 	
 						@endforeach	
@@ -46,10 +169,10 @@
 
 					<a class="">
 
-						@foreach($data['dll']['icon'] as $dll)
+						@foreach($data['dll']['nav'] as $dll)
 	
-							@if ($dll->srcapp_filename == 'administratorUsers.png')
-								<img src="{{asset($dll->srcapp_dir.$dll->srcapp_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
+							@if ($dll->srcnav_filename == 'administratorUsers.png')
+								<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
 							@endif
 	
 						@endforeach
@@ -66,7 +189,7 @@
 
 						<a href="/{{$data['roll']}}/buscar-usuario" class="">
 							
-							<img src="{{asset('img/icon/searchIcon.png')}}" class="img-dm-9 img-margin-top-4" >
+							<img src="{{asset('img/nav/searchnav.png')}}" class="img-dm-9 img-margin-top-4" >
 
 							Buscar Usuario
 
@@ -78,7 +201,7 @@
 
 						<a href="/Admin/crear/usuario" class="">
 							
-							<img src="{{asset('img/icon/createUsers.png')}}" class="img-dm-9 img-margin-top-4" >
+							<img src="{{asset('img/nav/createUsers.png')}}" class="img-dm-9 img-margin-top-4" >
 
 							Crear Usuario
 
@@ -95,10 +218,10 @@
 					
 					<a class="">
 
-						@foreach($data['dll']['icon'] as $dll)
+						@foreach($data['dll']['nav'] as $dll)
 	
-							@if ($dll->srcapp_filename == 'agenda.png')
-								<img src="{{asset($dll->srcapp_dir.$dll->srcapp_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
+							@if ($dll->srcnav_filename == 'agenda.png')
+								<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
 							@endif
 	
 						@endforeach
@@ -115,7 +238,7 @@
 
 						<a href="/{{$data['roll']}}/buscar-agenda" class="">
 							
-							<img src="{{asset('img/icon/searchIcon.png')}}" class="img-dm-9 img-margin-top-4" id="img-dm-8-login">
+							<img src="{{asset('img/nav/searchnav.png')}}" class="img-dm-9 img-margin-top-4" id="img-dm-8-login">
 
 							Buscar Agenda
 
@@ -127,7 +250,7 @@
 
 						<a href="/Admin/crear/agenda" class="">
 							
-							<img src="{{asset('img/icon/createAgenda.png')}}" class="img-dm-9 img-margin-top-4" id="img-dm-8-login">
+							<img src="{{asset('img/nav/createAgenda.png')}}" class="img-dm-9 img-margin-top-4" id="img-dm-8-login">
 
 							Crear Agenda
 
@@ -143,10 +266,10 @@
 					
 					<a class="">
 
-						@foreach($data['dll']['icon'] as $dll)
+						@foreach($data['dll']['nav'] as $dll)
 	
-							@if ($dll->srcapp_filename == 'administratorMulti.png')
-								<img src="{{asset($dll->srcapp_dir.$dll->srcapp_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
+							@if ($dll->srcnav_filename == 'administratorMulti.png')
+								<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
 							@endif
 	
 						@endforeach
@@ -163,7 +286,7 @@
 
 						<a href="/{{$data['roll']}}/buscar-multimedia" class="">
 							
-							<img src="{{asset('img/icon/searchIcon.png')}}" class="img-dm-9 img-margin-top-4" id="img-dm-8-login">
+							<img src="{{asset('img/nav/searchnav.png')}}" class="img-dm-9 img-margin-top-4" id="img-dm-8-login">
 
 							Buscar Multimedia
 
@@ -175,7 +298,7 @@
 
 						<a href="/Admin/subir/subir-multimedia" class="">
 							
-							<img src="{{asset('img/icon/createAgenda.png')}}" class="img-dm-9 img-margin-top-4" id="img-dm-8-login">
+							<img src="{{asset('img/nav/createAgenda.png')}}" class="img-dm-9 img-margin-top-4" id="img-dm-8-login">
 
 							Subir Multimedia
 
@@ -190,10 +313,10 @@
 				<li>
 					<a href="/Admin/acerca-de-dejando-huella-kids">
 						
-						@foreach($data['dll']['icon'] as $dll)
+						@foreach($data['dll']['nav'] as $dll)
 	
-							@if ($dll->srcapp_filename == 'settingsAbout.png')
-								<img src="{{asset($dll->srcapp_dir.$dll->srcapp_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
+							@if ($dll->srcnav_filename == 'settingsAbout.png')
+								<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
 							@endif
 	
 						@endforeach
@@ -207,10 +330,10 @@
 
 					<a href="/Admin/manuals" class="">
 						
-						@foreach($data['dll']['icon'] as $dll)
+						@foreach($data['dll']['nav'] as $dll)
 	
-							@if ($dll->srcapp_filename == 'help.png')
-								<img src="{{asset($dll->srcapp_dir.$dll->srcapp_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
+							@if ($dll->srcnav_filename == 'help.png')
+								<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
 							@endif
 	
 						@endforeach
@@ -225,10 +348,10 @@
 					
 					<a href="/Admin/gestion-donativos">
 						
-						@foreach($data['dll']['icon'] as $dll)
+						@foreach($data['dll']['nav'] as $dll)
 	
-							@if ($dll->srcapp_filename == 'donation.png')
-								<img src="{{asset($dll->srcapp_dir.$dll->srcapp_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
+							@if ($dll->srcnav_filename == 'donation.png')
+								<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
 							@endif
 	
 						@endforeach
@@ -253,10 +376,10 @@
 
 					<a href="/{{ $data['roll'] }}"  data="/Inicio" onclick="showSubMenu1()">
 
-						@foreach($data['dll']['icon'] as $dll)
+						@foreach($data['dll']['nav'] as $dll)
 	
-							@if ($dll->srcapp_filename == 'about.png')
-								<img src="{{asset($dll->srcapp_dir.$dll->srcapp_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
+							@if ($dll->srcnav_filename == 'about.png')
+								<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
 							@endif
 	
 						@endforeach	
@@ -271,7 +394,7 @@
 
 					<a href="/{{ $data["roll"] }}/Videos" class="">
 
-						<img src="{{asset('img/icon/icon9.png')}}" class="img-dm-9 img-margin-top-4" id="img-dm-8-login">
+						<img src="{{asset('img/nav/nav9.png')}}" class="img-dm-9 img-margin-top-4" id="img-dm-8-login">
 
 						Videos
 
@@ -283,7 +406,7 @@
 
 					<a href="/{{ $data["roll"] }}/Audios" class="">
 
-						<img src="{{asset('img/icon/icon10.png')}}" class="img-dm-9 img-margin-top-4" id="img-dm-8-login">
+						<img src="{{asset('img/nav/nav10.png')}}" class="img-dm-9 img-margin-top-4" id="img-dm-8-login">
 
 						Audios
 
@@ -295,7 +418,7 @@
 
 					<a href="/{{ $data["roll"] }}/Galeria" class="">
 
-						<img src="{{asset('img/icon/icon13.png')}}" class="img-dm-9 img-margin-top-4" id="img-dm-8-login">
+						<img src="{{asset('img/nav/nav13.png')}}" class="img-dm-9 img-margin-top-4" id="img-dm-8-login">
 
 						Galeria de Arte
 
