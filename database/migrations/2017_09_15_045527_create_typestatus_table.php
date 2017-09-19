@@ -15,8 +15,8 @@ class CreateTypestatusTable extends Migration
         Schema::create('typestatus', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('ts_id_typestatus')->index()->unique();
-            $table->integer('ts_id_zona')->index();
-            $table->string('ts_status_name',200); 
+            $table->integer('ts_id_zona')->index() ;
+            $table->string('ts_status_name',200);
 
             $table->foreign('ts_id_zona')
                   ->references('zn_id')

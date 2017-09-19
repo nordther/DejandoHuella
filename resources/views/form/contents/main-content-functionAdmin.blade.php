@@ -24,6 +24,10 @@
 
 
 		@yield('content-manuals')
+	
+
+		@yield('content-aboutDHK')
+
 		
 
 @endsection

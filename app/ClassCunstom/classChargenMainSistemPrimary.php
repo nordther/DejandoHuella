@@ -173,36 +173,36 @@
 				'srcapp_fileformat' => 'js'],
 
 				[
-				'srcapp_id' => 69,				
+				'srcapp_id' => 24,				
 				'srcapp_dir' => 'js/jsSelectStyle/jsSelectStyleDocument/',
 				'srcapp_filename' =>'jsSelectStyleEnv-script.js',				
 				'srcapp_fileformat' => 'js'],
 
 				[
-				'srcapp_id' => 70,				
+				'srcapp_id' => 25,				
 				'srcapp_dir' => 'js/jsAlertFunction/',
 				'srcapp_filename' =>'jsAlertFunction-script.js',				
 				'srcapp_fileformat' => 'js'],
 
 				[
-				'srcapp_id' => 71,				
+				'srcapp_id' => 26,				
 				'srcapp_dir' => 'js/jsMainGui/',
 				'srcapp_filename' =>'jsMainGui-script.js',				
 				'srcapp_fileformat' => 'js'],
 
 				[
-				'srcapp_id' => 76,				
+				'srcapp_id' => 27,				
 				'srcapp_dir' => 'css/bootstrap/',
 				'srcapp_filename' => 'bootstrap.css',				
 				'srcapp_fileformat' => 'css'],
 				[
-				'srcapp_id' => 77,				
+				'srcapp_id' => 28,				
 				'srcapp_dir' => 'css/bootstrap/',
 				'srcapp_filename' => 'bootstrap-theme.min.css',				
 				'srcapp_fileformat' => 'css'],
 
 				[
-				'srcapp_id' => 78,				
+				'srcapp_id' => 29,				
 				'srcapp_dir' => 'css/bootstrap/',
 				'srcapp_filename' => 'bootstrap-theme.css',				
 				'srcapp_fileformat' => 'css']				
@@ -213,261 +213,288 @@
 		public static function createSrcIcons(){
 			return $data = [
 				[
-				'srcapp_id' => 24,				
+				'srcapp_id' => 30,				
 				'srcapp_dir' => 'img/',
 				'srcapp_filename' => 'logo.png',				
-				'srcapp_fileformat' => 'png'],
-				[
-				'srcapp_id' => 25,				
-				'srcapp_dir' => 'img/icon/nav/',
-				'srcapp_filename' => 'about.png',				
-				'srcapp_fileformat' => 'png'],
-				[
-				'srcapp_id' => 26,				
-				'srcapp_dir' => 'img/icon/nav/',
-				'srcapp_filename' => 'arrow-down.png',				
-				'srcapp_fileformat' => 'png'],
-				[
-				'srcapp_id' => 27,				
-				'srcapp_dir' => 'img/icon/nav/',
-				'srcapp_filename' => 'audio.png',				
-				'srcapp_fileformat' => 'png'],
-				[
-				'srcapp_id' => 28,				
-				'srcapp_dir' => 'img/icon/nav/',
-				'srcapp_filename' => 'agenda.png',				
-				'srcapp_fileformat' => 'png'],
-				[
-				'srcapp_id' => 29,				
-				'srcapp_dir' => 'img/icon/nav/',
-				'srcapp_filename' => 'contact.png',				
-				'srcapp_fileformat' => 'png'],
-				[
-				'srcapp_id' => 30,				
-				'srcapp_dir' => 'img/icon/nav/',
-				'srcapp_filename' => 'createAgenda.png',				
-				'srcapp_fileformat' => 'png'],
+				'srcapp_fileformat' => 'png'],				
 				[
 				'srcapp_id' => 31,				
-				'srcapp_dir' => 'img/icon/nav/',
-				'srcapp_filename' => 'createUsers.png',				
-				'srcapp_fileformat' => 'png'],
-				[
-				'srcapp_id' => 32,				
-				'srcapp_dir' => 'img/icon/nav/',
-				'srcapp_filename' => 'createUsersSistem.png',				
-				'srcapp_fileformat' => 'png'],
-				[
-				'srcapp_id' => 33,				
-				'srcapp_dir' => 'img/icon/nav/',
-				'srcapp_filename' => 'donation.png',				
-				'srcapp_fileformat' => 'png'],
-				[
-				'srcapp_id' => 34,				
-				'srcapp_dir' => 'img/icon/nav/',
-				'srcapp_filename' => 'fundacionData.png',				
-				'srcapp_fileformat' => 'png'],
-				[
-				'srcapp_id' => 35,				
-				'srcapp_dir' => 'img/icon/nav/',
-				'srcapp_filename' => 'gallery.png',				
-				'srcapp_fileformat' => 'png'],
-				[
-				'srcapp_id' => 36,				
-				'srcapp_dir' => 'img/icon/nav/',
-				'srcapp_filename' => 'newtopics.png',				
-				'srcapp_fileformat' => 'png'],
-				[
-				'srcapp_id' => 37,				
-				'srcapp_dir' => 'img/icon/nav/',
-				'srcapp_filename' => 'userAdd.png',				
-				'srcapp_fileformat' => 'png'],
-				[
-				'srcapp_id' => 38,				
-				'srcapp_dir' => 'img/icon/nav/',
-				'srcapp_filename' => 'video.png',				
-				'srcapp_fileformat' => 'png'],
-				[
-				'srcapp_id' => 39,				
 				'srcapp_dir' => 'img/icon/header/',
 				'srcapp_filename' => 'back.png',				
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 40,				
+				'srcapp_id' => 32,				
 				'srcapp_dir' => 'img/icon/header/',
 				'srcapp_filename' => 'backHover.png',				
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 41,				
+				'srcapp_id' => 33,				
 				'srcapp_dir' => 'img/icon/header/',
 				'srcapp_filename' => 'perfilMenu.png',				
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 42,				
+				'srcapp_id' => 34,				
 				'srcapp_dir' => 'img/icon/header/',
 				'srcapp_filename' => 'perfilMenuHover.png',				
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 43,				
+				'srcapp_id' => 35,				
 				'srcapp_dir' => 'img/icon/header/',
 				'srcapp_filename' => 'searchIcon.png',				
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 44,				
+				'srcapp_id' => 36,				
 				'srcapp_dir' => 'img/icon/header/',
 				'srcapp_filename' => 'searchIconHover.png',				
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 45,				
+				'srcapp_id' => 37,				
 				'srcapp_dir' => 'img/icon/header/',
 				'srcapp_filename' => 'userDefault.png',				
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 46,				
+				'srcapp_id' => 38,				
 				'srcapp_dir' => 'img/icon/form/',
 				'srcapp_filename' => 'disable.png',				
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 47,				
+				'srcapp_id' => 39,				
 				'srcapp_dir' => 'img/icon/form/',
 				'srcapp_filename' => 'disableHover.png',				
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 48,				
+				'srcapp_id' => 40,				
 				'srcapp_dir' => 'img/icon/form/',
 				'srcapp_filename' => 'edit.png',				
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 49,			
+				'srcapp_id' => 41,			
 				'srcapp_dir' => 'img/icon/form/',
 				'srcapp_filename' => 'editHover.png',				
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 50,			
+				'srcapp_id' => 42,			
 				'srcapp_dir' => 'img/icon/form/',
 				'srcapp_filename' => 'more.png',				
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 51,			
+				'srcapp_id' => 43,			
 				'srcapp_dir' => 'img/icon/form/',
 				'srcapp_filename' => 'moreHover.png',				
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 52,			
+				'srcapp_id' => 44,			
 				'srcapp_dir' => 'img/toolts/',
 				'srcapp_filename' => 'arrowShowToolt.png',				
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 53,			
+				'srcapp_id' => 45,			
 				'srcapp_dir' => 'img/toolts/',
 				'srcapp_filename' => 'arrowShowTooltHover.png',					
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 54,				
+				'srcapp_id' => 46,				
 				'srcapp_dir' => 'img/socialIcon/',
 				'srcapp_filename' => 'facebook.png',				
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 55,				
+				'srcapp_id' => 47,				
 				'srcapp_dir' => 'img/socialIcon/',
 				'srcapp_filename' => 'instagram.png',				
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 56,				
+				'srcapp_id' => 48,				
 				'srcapp_dir' => 'img/socialIcon/',
 				'srcapp_filename' => 'twitter.png',				
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 57,				
+				'srcapp_id' => 49,				
 				'srcapp_dir' => 'img/imgTopics/header/',
 				'srcapp_filename' => 'img1.jpg',				
 				'srcapp_fileformat' => 'jpg'],
 				[
-				'srcapp_id' => 58,				
+				'srcapp_id' => 50,				
 				'srcapp_dir' => 'img/imgTopics/header/',
 				'srcapp_filename' => 'img2.jpg',			
 				'srcapp_fileformat' => 'jpg'],
 				[
-				'srcapp_id' => 59,				
+				'srcapp_id' => 51,				
 				'srcapp_dir' => 'img/imgTopics/header/',
 				'srcapp_filename' => 'img3.jpg',				
 				'srcapp_fileformat' => 'jpg'],
 				[
-				'srcapp_id' => 60,				
+				'srcapp_id' => 52,				
 				'srcapp_dir' => 'img/imgTopics/header/',			
 				'srcapp_filename' => 'img4.jpg',			
 				'srcapp_fileformat' => 'jpg'],
 				[
-				'srcapp_id' => 61,				
+				'srcapp_id' => 53,				
 				'srcapp_dir' => 'img/slider/',
 				'srcapp_filename' => 'img-slider-1.jpg',		
 				'srcapp_fileformat' => 'jpg'],
 				[
-				'srcapp_id' => 62,				
+				'srcapp_id' => 54,				
 				'srcapp_dir' => 'img/slider/',
 				'srcapp_filename' => 'img-slider-2.jpg',				
 				'srcapp_fileformat' => 'jpg'],
 				[
-				'srcapp_id' => 63,				
+				'srcapp_id' => 55,				
 				'srcapp_dir' => 'img/slider/',
 				'srcapp_filename' => 'img-slider-3.jpg',				
 				'srcapp_fileformat' => 'jpg'],
 				[
-				'srcapp_id' => 64,				
+				'srcapp_id' => 56,				
 				'srcapp_dir' => 'img/slider/',
 				'srcapp_filename' => 'img-slider-4.jpg',				
 				'srcapp_fileformat' => 'jpg'],
 				[
-				'srcapp_id' => 65,				
+				'srcapp_id' => 57,				
 				'srcapp_dir' => 'img/slider/',
 				'srcapp_filename' => 'img-slider-5.jpg',				
 				'srcapp_fileformat' => 'jpg'],
 				[
-				'srcapp_id' => 66,				
+				'srcapp_id' => 58,				
 				'srcapp_dir' => 'img/slider/',
 				'srcapp_filename' => 'img-slider-6.jpg',				
 				'srcapp_fileformat' => 'jpg'],
 				[
-				'srcapp_id' => 67,				
+				'srcapp_id' => 59,				
 				'srcapp_dir' => 'img/slider/',
 				'srcapp_filename' => 'img-slider-7.jpg',				
-				'srcapp_fileformat' => 'jpg'],
-				[
-				'srcapp_id' => 68,				
-				'srcapp_dir' => 'img/icon/nav/',
-				'srcapp_filename' => 'media.png',				
-				'srcapp_fileformat' => 'png'],
-
-				[
-				'srcapp_id' => 72,				
-				'srcapp_dir' => 'img/icon/nav/',
-				'srcapp_filename' =>'openid-logo.png',				
-				'srcapp_fileformat' => 'png'],
-
-				[
-				'srcapp_id' => 73,				
-				'srcapp_dir' => 'img/icon/nav/',
-				'srcapp_filename' =>'help.png',				
-				'srcapp_fileformat' => 'png'],
+				'srcapp_fileformat' => 'jpg']
 				
-				[
-				'srcapp_id' => 74,				
-				'srcapp_dir' => 'img/icon/nav/',
-				'srcapp_filename' =>'administratorUsers.png',				
-				'srcapp_fileformat' => 'png'],
-				[
-				'srcapp_id' => 75,				
-				'srcapp_dir' => 'img/icon/nav/',
-				'srcapp_filename' =>'administratorMulti.png',				
-				'srcapp_fileformat' => 'png'],
-
-				[
-				'srcapp_id' => 79,				
-				'srcapp_dir' => 'img/icon/nav/',
-				'srcapp_filename' =>'settingsAbout.png',				
-				'srcapp_fileformat' => 'png']
 
 				];
+		}
+
+		public static function createSrcIconNav(){
+			return $data = [
+				[
+				'srcnav_id' => 1,				
+				'srcnav_dir' => 'img/icon/nav/',
+				'srcnav_filename' => 'about.png',				
+				'srcnav_fileformat' => 'png'],
+				[
+				'srcnav_id' => 2,				
+				'srcnav_dir' => 'img/icon/nav/',
+				'srcnav_filename' => 'arrow-down.png',				
+				'srcnav_fileformat' => 'png'],
+				[
+				'srcnav_id' => 3,				
+				'srcnav_dir' => 'img/icon/nav/',
+				'srcnav_filename' => 'audio.png',				
+				'srcnav_fileformat' => 'png'],
+				[
+				'srcnav_id' => 4,				
+				'srcnav_dir' => 'img/icon/nav/',
+				'srcnav_filename' => 'agenda.png',				
+				'srcnav_fileformat' => 'png'],
+				[
+				'srcnav_id' => 5,				
+				'srcnav_dir' => 'img/icon/nav/',
+				'srcnav_filename' => 'contact.png',				
+				'srcnav_fileformat' => 'png'],
+				[
+				'srcnav_id' => 6,				
+				'srcnav_dir' => 'img/icon/nav/',
+				'srcnav_filename' => 'createAgenda.png',				
+				'srcnav_fileformat' => 'png'],
+				[
+				'srcnav_id' => 7,				
+				'srcnav_dir' => 'img/icon/nav/',
+				'srcnav_filename' => 'createUsers.png',				
+				'srcnav_fileformat' => 'png'],
+				[
+				'srcnav_id' => 8,				
+				'srcnav_dir' => 'img/icon/nav/',
+				'srcnav_filename' => 'createUsersSistem.png',				
+				'srcnav_fileformat' => 'png'],
+				[
+				'srcnav_id' => 9,				
+				'srcnav_dir' => 'img/icon/nav/',
+				'srcnav_filename' => 'donation.png',				
+				'srcnav_fileformat' => 'png'],
+				[
+				'srcnav_id' => 10,				
+				'srcnav_dir' => 'img/icon/nav/',
+				'srcnav_filename' => 'fundacionData.png',				
+				'srcnav_fileformat' => 'png'],
+				[
+				'srcnav_id' => 11,				
+				'srcnav_dir' => 'img/icon/nav/',
+				'srcnav_filename' => 'gallery.png',				
+				'srcnav_fileformat' => 'png'],
+				[
+				'srcnav_id' => 12,				
+				'srcnav_dir' => 'img/icon/nav/',
+				'srcnav_filename' => 'newtopics.png',				
+				'srcnav_fileformat' => 'png'],
+
+				[
+				'srcnav_id' => 13,				
+				'srcnav_dir' => 'img/icon/nav/',
+				'srcnav_filename' => 'video.png',				
+				'srcnav_fileformat' => 'png'],
+
+				[
+				'srcnav_id' => 14,				
+				'srcnav_dir' => 'img/icon/nav/',
+				'srcnav_filename' => 'media.png',				
+				'srcnav_fileformat' => 'png'],
+
+				[
+				'srcnav_id' => 15,				
+				'srcnav_dir' => 'img/icon/nav/',
+				'srcnav_filename' =>'openid-logo.png',				
+				'srcnav_fileformat' => 'png'],
+
+				[
+				'srcnav_id' => 16,				
+				'srcnav_dir' => 'img/icon/nav/',
+				'srcnav_filename' =>'help.png',				
+				'srcnav_fileformat' => 'png'],
+				
+				[
+				'srcnav_id' => 17,				
+				'srcnav_dir' => 'img/icon/nav/',
+				'srcnav_filename' =>'administratorUsers.png',				
+				'srcnav_fileformat' => 'png'],
+				[
+				'srcnav_id' => 18,				
+				'srcnav_dir' => 'img/icon/nav/',
+				'srcnav_filename' =>'administratorMulti.png',				
+				'srcnav_fileformat' => 'png'],
+
+				[
+				'srcnav_id' => 19,				
+				'srcnav_dir' => 'img/icon/nav/',
+				'srcnav_filename' =>'settingsAbout.png',				
+				'srcnav_fileformat' => 'png'],
+
+				[
+				'srcnav_id' => 20,				
+				'srcnav_dir' => 'img/icon/nav/',
+				'srcnav_filename' =>'userSearchIcon.png',				
+				'srcnav_fileformat' => 'png'],
+
+				[
+				'srcnav_id' => 21,				
+				'srcnav_dir' => 'img/icon/nav/',
+				'srcnav_filename' =>'agendaSearchIcon.png',				
+				'srcnav_fileformat' => 'png'],
+
+				[
+				'srcnav_id' => 22,				
+				'srcnav_dir' => 'img/icon/nav/',
+				'srcnav_filename' =>'searchMultimedia.png',				
+				'srcnav_fileformat' => 'png'],
+
+				[
+				'srcnav_id' => 23,				
+				'srcnav_dir' => 'img/icon/nav/',
+				'srcnav_filename' =>'uploadfiles.png',				
+				'srcnav_fileformat' => 'png']
+			];
 		}
 
 		public static function createLaguanges(){
@@ -1804,111 +1831,166 @@
 					 'mdls_url' => '/',
 					 'mdls_patch' => 'index',
 					 'mdls_wordkey_modul_name' => 'mdls_start',
-					 'mdls_paramt_name' => 'index'],
+					 'mdls_paramt_name' => 'index',
+					 'mdls_id_srcnav' =>1],
 
 					['mdls_id' => 2,
 					 'mdls_url' => '/Admin',
 					 'mdls_patch' => 'modulos.functionAdministration.index',
 					 'mdls_wordkey_modul_name' => 'mdls_startAdmin',
-					 'mdls_paramt_name' => 'Admin'], 
+					 'mdls_paramt_name' => 'Admin',
+					 'mdls_id_srcnav' =>1], 
 
 					['mdls_id' => 3,
-					 'mdls_url' => '/Admin/buscar-usuario',
-					 'mdls_patch' => 'modulos.functionAdministration.searchUsers.index',
-					 'mdls_wordkey_modul_name' => 'mdls_searchUser',
-					 'mdls_paramt_name' => 'buscar-usuario'], 
+					 'mdls_url' => '/',
+					 'mdls_patch' => '',
+					 'mdls_wordkey_modul_name' => 'mdls_assist_users',
+					 'mdls_paramt_name' => '',
+					 'mdls_id_srcnav' =>17], 
+					 	
+					 ['mdls_id' => 4,
+					 'mdls_url' => '/',
+					 'mdls_patch' => '',
+					 'mdls_wordkey_modul_name' => 'mdls_assist_activities',
+					 'mdls_paramt_name' => '',
+					 'mdls_id_srcnav' =>4],
 
-					['mdls_id' => 4,
-					 'mdls_url' => '/Admin/buscar-agenda',
-					 'mdls_patch' => 'modulos.functionAdministration.searchAgenda.index',
-					 'mdls_wordkey_modul_name' => 'mdls_searchAgenda',
-					 'mdls_paramt_name' => 'buscar-agenda'], 
-
-					['mdls_id' => 5,
-					 'mdls_url' => '/Admin/crear/usuario-sistema',
-					 'mdls_patch' => 'modulos.functionAdministration.createUserSistem.index',
-					 'mdls_wordkey_modul_name' => 'mdls_createUserSistem',
-					 'mdls_paramt_name' => 'usuario-sistema'],  
+					 ['mdls_id' => 5,
+					 'mdls_url' => '/',
+					 'mdls_patch' => '',
+					 'mdls_wordkey_modul_name' => 'mdls_assist_multimedia',
+					 'mdls_paramt_name' => '',
+					 'mdls_id_srcnav' =>14],					
 
 					['mdls_id' => 6,
-					 'mdls_url' => '/Admin/crear/usuario',
-					 'mdls_patch' => 'modulos.functionAdministration.createUser.index',
-					 'mdls_wordkey_modul_name' => 'mdls_createUser',
-					 'mdls_paramt_name' => 'usuario'],
-
-					['mdls_id' => 7,
-					 'mdls_url' => '/Admin/crear/agenda',
-					 'mdls_patch' => 'modulos.functionAdministration.createAgenda.index',
-					 'mdls_wordkey_modul_name' => 'mdls_createAgenda',
-					 'mdls_paramt_name' => 'agenda'],
-
-					['mdls_id' => 8,
 					 'mdls_url' => '/Multimedia',
 					 'mdls_patch' => 'modulos.functionMultimedia.index',
 					 'mdls_wordkey_modul_name' => 'mdls_multi',
-					 'mdls_paramt_name' => 'multimedia'], 
+					 'mdls_paramt_name' => 'multimedia',
+					 'mdls_id_srcnav' =>14], 
 
-					['mdls_id' => 9,
+					['mdls_id' => 7,
 					 'mdls_url' => '/Multimedia/Videos',
 					 'mdls_patch' => 'modulos.functionMultimedia.watchFunction.index',
 					 'mdls_wordkey_modul_name' => 'mdls_multi_video',
-					 'mdls_paramt_name' => 'ver-videos'],  
+					 'mdls_paramt_name' => 'ver-videos',
+					 'mdls_id_srcnav' =>18],  
 
-					['mdls_id' => 10,
+					['mdls_id' => 8,
 					 'mdls_url' => '/Multimedia/Audios',
 					 'mdls_patch' => 'modulos.functionMultimedia.audioFunction.index',
 					 'mdls_wordkey_modul_name' => 'mdls_multi_audio',
-					 'mdls_paramt_name' => 'escuchar-audio'],  
+					 'mdls_paramt_name' => 'escuchar-audio',
+					 'mdls_id_srcnav' =>3],  
 
-					['mdls_id' => 11,
+					['mdls_id' => 9,
 					 'mdls_url' => '/Multimedia/Galeria',
 					 'mdls_patch' => 'modulos.functionMultimedia.galleryFunction.index',
 					 'mdls_wordkey_modul_name' => 'mdls_multi_galeria',
-					 'mdls_paramt_name' => 'ver-galeria'],   
+					 'mdls_paramt_name' => 'ver-galeria',
+					 'mdls_id_srcnav' =>11],   
 
-					['mdls_id' => 12,
+					['mdls_id' => 10,
 					 'mdls_url' => '#noticias',
 					 'mdls_patch' => null,
 					 'mdls_wordkey_modul_name' => 'mdls_newtopics',
-					 'mdls_paramt_name' => null], 
+					 'mdls_paramt_name' => null,
+					 'mdls_id_srcnav' =>12], 
 
-					['mdls_id' => 13,
+					['mdls_id' => 11,
 					 'mdls_url' => '#quienessomos',
 					 'mdls_patch' => null,
 					 'mdls_wordkey_modul_name' => 'mdls_about_us',
-					 'mdls_paramt_name' => null],  
+					 'mdls_paramt_name' => null,
+					 'mdls_id_srcnav' =>10],  
 
-					['mdls_id' => 14,
+					['mdls_id' => 12,
 					 'mdls_url' => '#contactenos',
 					 'mdls_patch' => null,
 					 'mdls_wordkey_modul_name' => 'mdls_contact',
-					 'mdls_paramt_name' => null],
+					 'mdls_paramt_name' => null,
+					 'mdls_id_srcnav' =>6],
 
-					['mdls_id' => 15,
+					['mdls_id' => 13,
 					 'mdls_url' => '#Donacion',
 					 'mdls_patch' => null,
 					 'mdls_wordkey_modul_name' => 'mdls_donation',
-					 'mdls_paramt_name' => null],
+					 'mdls_paramt_name' => null,
+					 'mdls_id_srcnav' =>9],					
+
+					 ['mdls_id' => 14,
+					 'mdls_url' => '/Admin/ayuda',
+					 'mdls_patch' => 'modulos.functionAdministration.helper.index',
+					 'mdls_wordkey_modul_name' => 'mdls_helper_users',
+					 'mdls_paramt_name' => 'ayuda',
+					 'mdls_id_srcnav' =>16],
+
+					 ['mdls_id' => 15,
+					 'mdls_url' => '/Admin/acerca-de-dejando-huella-kids',
+					 'mdls_patch' => 'modulos.functionAdministration.aboutApp.index',
+					 'mdls_wordkey_modul_name' => 'mdls_about_dhk',
+					 'mdls_paramt_name' => 'acerca-de-dejando-huella-kids',
+					 'mdls_id_srcnav' =>19],
 
 					['mdls_id' => 16,
-					 'mdls_url' => '/Admin/buscar-multimedia',
-					 'mdls_patch' => 'modulos.functionAdministration.searchMultimedia.index',
-					 'mdls_wordkey_modul_name' => 'mdls_search_multimedia',
-					 'mdls_paramt_name' => 'buscar-multimedia'],
+					 'mdls_url' => '/',
+					 'mdls_patch' => '',
+					 'mdls_wordkey_modul_name' => 'mdls_start_session',
+					 'mdls_paramt_name' => '',
+					 'mdls_id_srcnav' =>2]				  
 
-					['mdls_id' => 17,
-					 'mdls_url' => '/Admin/subir/multimedia',
-					 'mdls_patch' => 'modulos.functionAdministration.uploadMultimedia.index',
-					 'mdls_wordkey_modul_name' => 'mdls_upload_multimedia',
-					 'mdls_paramt_name' => 'subir-multimedia'],
+			];
+		}
 
-					 ['mdls_id' => 18,
-					 'mdls_url' => '/Admin/manuals',
-					 'mdls_patch' => 'modulos.functionAdministration.manuals.index',
-					 'mdls_wordkey_modul_name' => 'mdls_manuals_users',
-					 'mdls_paramt_name' => 'manuals']      
+		public static function craeteSubModuls(){
+			return $data = [
+			['smdls_id' =>1,
+             'smdls_url' => '/Admin/buscar-usuario',
+		     'smdls_patch' => 'modulos.functionAdministration.searchUsers.index',
+			 'smdls_wordkey_modul_name' => 'mdls_searchUser',
+			 'smdls_paramt_name' => 'buscar-usuario',
+			 'smdls_id_mdls' => 3,
+			 'smdls_id_srcnav' => 20], 				 
 
-					  
+			['smdls_id' =>2,
+			 'smdls_url' => '/Admin/crear/usuario',
+			 'smdls_patch' => 'modulos.functionAdministration.createUser.index',
+			 'smdls_wordkey_modul_name' => 'mdls_createUser',
+			 'smdls_paramt_name' => 'usuario',
+			 'smdls_id_mdls' => 3,
+			 'smdls_id_srcnav' =>7],
+
+			 ['smdls_id' =>3,
+			 'smdls_url' => '/Admin/buscar-agenda',
+			 'smdls_patch' => 'modulos.functionAdministration.searchAgenda.index',
+			 'smdls_wordkey_modul_name' => 'mdls_searchAgenda',
+			 'smdls_paramt_name' => 'buscar-agenda',
+			 'smdls_id_mdls' => 4,
+			 'smdls_id_srcnav' =>21], 
+
+			['smdls_id' =>4,
+			 'smdls_url' => '/Admin/crear/agenda',
+			 'smdls_patch' => 'modulos.functionAdministration.createAgenda.index',
+			 'smdls_wordkey_modul_name' => 'mdls_createAgenda',
+			 'smdls_paramt_name' => 'agenda',
+			'smdls_id_mdls' => 4,
+			 'smdls_id_srcnav' =>6],
+
+			['smdls_id' => 5,
+			 'smdls_url' => '/Admin/buscar-multimedia',
+			 'smdls_patch' => 'modulos.functionAdministration.searchMultimedia.index',
+			 'smdls_wordkey_modul_name' => 'mdls_search_multimedia',
+			 'smdls_paramt_name' => 'buscar-multimedia',
+			'smdls_id_mdls' => 5,
+			 'smdls_id_srcnav' =>22],
+
+			['smdls_id' => 6,
+			 'smdls_url' => '/Admin/subir/multimedia',
+			 'smdls_patch' => 'modulos.functionAdministration.uploadMultimedia.index',
+			 'smdls_wordkey_modul_name' => 'mdls_upload_multimedia',
+			 'smdls_paramt_name' => 'subir-multimedia',
+			'smdls_id_mdls' => 5,
+			 'smdls_id_srcnav' =>23]
 
 			];
 		}

@@ -21,7 +21,7 @@ class CreateAssistansTable extends Migration
                   ->references('dp_id')
                   ->on('datospersonales')
                   ->onDelete('cascade')
-                  ->onUpdate('cascade');    
+                  ->onUpdate('cascade');
         });
     }
 

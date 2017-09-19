@@ -31,7 +31,7 @@ class CreateMunicipiosTable extends Migration
                   ->references('tmn_id')
                   ->on('typemunicipios')
                   ->onDelete('cascade')
-                  ->onUpdate('cascade'); 
+                  ->onUpdate('cascade');
         });
     }
 

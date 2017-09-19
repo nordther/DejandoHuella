@@ -12,6 +12,8 @@ use Illuminate\Database\Schema\Blueprint;
 use DejandoHuella\Http\Requests;
 use DejandoHuella\Http\Controllers\Controller;
 use DejandoHuella\paise;
+use DejandoHuella\srcnav;
+use DejandoHuella\submoduls;
 use DejandoHuella\genero;
 use DejandoHuella\user;
 use DejandoHuella\datospersonale;
@@ -63,6 +65,9 @@ class mainController extends Controller
             "authconfirm" => Auth::check(),
             "multimediaAuth" => false,
             "roll" => "",
+            "nav"  => \DB::table('moduls')->select('*')
+                            ->join('submoduls','moduls.mdls_id','=','submoduls.smdls_id_mdls')
+                            ->join('srcnavs','moduls.mdls_srcnav_id','=','srcnavs.srcnavs_id')->get(),                            
             "dll" => [  'css' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','css')->orderBy('srcapp_id', 'asc')->get(),
                         'js' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','js')->orderBy('srcapp_id', 'asc')->get(),
                         'icon' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','png','and','srcapp_dir','=','img/icon/nav/')->get()]
@@ -98,7 +103,9 @@ class mainController extends Controller
             'typeusers' => \DB::table('typeusers')->get(),
             'assistans' => \DB::table('assistans')->get(),
             'categoriaprogramas' => \DB::table('categoriaprogramas')->get(),
-            'photoperfils' => \DB::table('photoperfils')->get()
+            'photoperfils' => \DB::table('photoperfils')->get(),
+            'srcnavs' => \DB::table('srcnavs')->get(),
+            'submoduls' => \DB::table('submoduls')->get()
             ];   
 
          if ($chargenData['categoriaprogramas'] == false) {
@@ -166,7 +173,13 @@ class mainController extends Controller
             $chargen = \DB::table('srcapps')->insert($v_f["class"]['ChrM']::createSrcIcons());             
         }else{
             $chargen = null;
-        }         
+        } 
+
+        if ($chargenData['srcnavs'] == false) {
+                $chargen = \DB::table('srcnavs')->insert($v_f["class"]['ChrM']::createSrcIconNav());
+        }else{
+            $chargen = null;
+        }        
 
         if ($chargenData['languages'] == false) {
                 $chargen = \DB::table('languages')->insert($v_f["class"]['ChrM']::createLaguanges());
@@ -191,6 +204,12 @@ class mainController extends Controller
         }else{
             $chargen = null;
         } 
+
+        if ($chargenData['submoduls'] == false) {
+                $chargen = \DB::table('submoduls')->insert($v_f["class"]['ChrM']::craeteSubModuls());
+        }else{
+            $chargen = null;
+        }
 
         if ($chargenData['photoperfils'] == false) {
                 $chargen = \DB::table('photoperfils')->insert($v_f["class"]['ChrM']::createPhotoPerfilDir());

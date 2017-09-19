@@ -8,7 +8,7 @@
 
 @extends('form.contents.main-content-functionAdmin')
 
-@extends('form.manual.formManual')
+@extends('form.aboutApp.formDHKAbout')
 
 @extends('form.Perfil.formPerfil-header')
 

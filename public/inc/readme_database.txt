@@ -73,6 +73,17 @@ $table->foreign('gtxt_id_language')
       ->onDelete('cascade')
       ->onUpdate('cascade');
 
+Entidad [srcnavs]
+
+$table->increments('id');
+$table->integer('srcnav_id')->index();
+$table->string('srcnav_url',200)->nullable();
+$table->string('srcnav_dir',200);
+$table->string('srcnav_filename',150);
+$table->integer('srcnav_filesize')->nullable();
+$table->string('srcnav_filesizetype',100)->nullable();
+$table->string('srcnav_fileformat',100);
+
 Entidad [moduls]
 
 $table->increments('id');
@@ -81,7 +92,14 @@ $table->string('mdls_url',200);
 $table->string('mdls_patch',200)->nullable();            
 $table->string('mdls_wordkey_modul_name',120)->nullable();
 $table->string('mdls_paramt_name',120)->nullable();
+$table->integer('mdls_id_srcnav')->index()->nullanle();  
 $table->timestamps();
+
+$table->foreign('mdls_id_srcnav')
+      ->references('srcnav_id')
+      ->on('srcnavs')
+      ->onDelete('cascade')
+      ->onUpdate('cascade');
 
 Entidad [submoduls]
 
@@ -90,7 +108,8 @@ $table->integer('smdls_id')->index()->unique();
 $table->integer('smdls_id_mdls')->index();
 $table->string('smdls_url',200);
 $table->string('smdls_patch',200);            
-$table->string('smdls_wordkey_modul_name',120);            
+$table->string('smdls_wordkey_modul_name',120);
+$table->integer('smdls_id_srcnav')->index()->nullable();            
 $table->timestamps();
 
 $table->foreign('smdls_id_mdls')
@@ -98,6 +117,12 @@ $table->foreign('smdls_id_mdls')
       ->on('moduls')
       ->onDelete('cascade')
       ->onUpdate('cascade');
+
+$table->foreign('smdls_id_srcnav')
+      ->references('srcnav_id')
+      ->on('srcnavs')
+      ->onDelete('cascade')
+      ->onUpdate('cascade'); 
 
 Entidad [modultable]
 
@@ -219,7 +244,7 @@ Entidad [typestatus]
 $table->increments('id');
 $table->integer('ts_id_typestatus')->index()->unique();
 $table->integer('ts_id_zona')->index() ;
-$table->string('ts_status_name',200); <- etado, provincia, departamento, condado 
+$table->string('ts_status_name',200);
 
 $table->foreign('ts_id_zona')
       ->references('zn_id')
@@ -232,7 +257,7 @@ Entidad [typemunicipio]
 $table->increments('id');
 $table->integer('tmn_id')->index()->unique();
 $table->string('tmn_name_type',200);
-$table->timestamps(); <- pueblo, corregimiento, ciudad           
+$table->timestamps();         
 
 Entidad [municipios]
 
@@ -560,7 +585,7 @@ Entidad [users]
 
 $table->increments('id');
 $table->integer('us_id_datospersonales')->index()->unique();
-$table->integer('us_id_roll')->index()->unique();
+$table->integer('us_id_roll')->index();
 $table->integer('us_id_permiso')->index()->unique();
 $table->string('us_email')->unique();
 $table->string('us_password',60);
@@ -726,10 +751,23 @@ $table->foreign('desc_id_post')
       ->onDelete('cascade')
       ->onUpdate('cascade');
 
+Entidad [photoperfils]
 
 
+$table->increments('id');
+$table->integer('pp_id')->index()->uinque();
+$table->string('pp_src_filename',120);
+$table->string('pp_src_url',120);
+$table->string('pp_src_dir',120);
+$table->string('pp_src_format_file',120);
+$table->integer('pp_id_datospersonales')->index();
+$table->timestamps();
 
-
+$table->foreign('pp_id_datospersonales')
+      ->references('dp_id')
+      ->on('datospersonales')
+      ->onDelete('cascade')
+      ->onUpdate('cascade');
 
 
 

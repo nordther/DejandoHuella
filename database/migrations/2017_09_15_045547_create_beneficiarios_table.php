@@ -16,7 +16,7 @@ class CreateBeneficiariosTable extends Migration
             $table->increments('id');
             $table->integer('b_id_beneficiario')->index()->unique();
             $table->string('b_grado');
-            $table->boolean('b_me_trabajador');
+            $table->string('b_me_trabajador');
             $table->string('b_jornada');
             $table->string('b_acudiente');
             $table->integer('b_ins_educativa')->index()->unique();

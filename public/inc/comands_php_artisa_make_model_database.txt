@@ -4,6 +4,7 @@ php artisan make:model language -m
 php artisan make:model contentext -m
 php artisan make:model guitype -m
 php artisan make:model guitext -m
+php artisan make:model srcnav -m
 php artisan make:model moduls -m
 php artisan make:model submoduls -m
 php artisan make:model modultable -m
@@ -48,3 +49,4 @@ php artisan make:model infofamiliar -m
 php artisan make:model infoextra -m 
 php artisan make:model post -m
 php artisan make:model description -m
+php artisan make:model photoperfil -m

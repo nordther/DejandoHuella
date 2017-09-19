@@ -25,8 +25,6 @@ class CreateContentextsTable extends Migration
                   ->on('languages')
                   ->onDelete('cascade')
                   ->onUpdate('cascade');
-
-
         });
     }
 

@@ -3,140 +3,17 @@
 	
 
 	@if (($data['authconfirm'] == false) && ($data['multimediaAuth'] == false))
-
+		
 		<nav class="nav bg-content-neutro-opacity main-menu-hidde fade-in is-paused" id="main-menu">
+				
+			<ul class="main-menu">	
 
-			<ul class="main-menu">
+				@foreach($data['nav'] as $rows)
+					
+					
 
-				<li>
+				@endforeach
 
-					<a href="/{{ $data['roll'] }}" >
-						
-					@foreach($data['dll']['icon'] as $dll)
-	
-						@if ($dll->srcapp_filename == 'about.png')
-							<img src="{{asset($dll->srcapp_dir.$dll->srcapp_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
-						@endif
-	
-					@endforeach	
-						Inicio
-					</a>
-
-				</li>	
-
-				<li id="targetLoginUsers">
-
-					<a href="#ingresar"  data="/Ingresar" id="nav_btn_login" class="">
-
-						@foreach($data['dll']['icon'] as $dll)
-	
-							@if ($dll->srcapp_filename == 'arrow-down.png')
-								<img src="{{asset($dll->srcapp_dir.$dll->srcapp_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
-							@endif
-	
-						@endforeach
-
-						Ingresar al Sistema
-
-					</a>
-
-				</li>
-
-				@yield('content-login')
-
-				@include('alerts.formAlertAuth')	
-
-				<li class="nav-form-login-hidde" id="nav-form-login-hidde" class="">
-
-					<a href="#noticias" data="/Novedades">
-
-					@foreach($data['dll']['icon'] as $dll)
-	
-						@if ($dll->srcapp_filename == 'newtopics.png')
-							<img src="{{asset($dll->srcapp_dir.$dll->srcapp_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
-						@endif
-	
-					@endforeach
-
-						Novedades
-
-					</a>
-
-				</li>
-
-				<li class="nav-form-login-hidde" id="nav-form-login-hidde" class="">
-
-					<a href="#quienessomos" data="/Quienes somos">
-
-					@foreach($data['dll']['icon'] as $dll)
-	
-						@if ($dll->srcapp_filename == 'fundacionData.png')
-							<img src="{{asset($dll->srcapp_dir.$dll->srcapp_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
-						@endif
-	
-					@endforeach
-
-						Quienes somos
-
-					</a>
-
-				</li>
-
-				<li class="nav-form-login-hidde" id="nav-form-login-hidde" class="">
-
-					<a href="#contactenos" data="/Contactenos">
-
-					@foreach($data['dll']['icon'] as $dll)
-	
-						@if ($dll->srcapp_filename == 'contact.png')
-							<img src="{{asset($dll->srcapp_dir.$dll->srcapp_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
-						@endif
-	
-					@endforeach
-
-						Contactenos 
-
-					</a>
-
-				</li>
-
-
-				<li>
-
-					<a href="#Donacion" class="">
-
-					@foreach($data['dll']['icon'] as $dll)
-	
-						@if ($dll->srcapp_filename == 'donation.png')
-							<img src="{{asset($dll->srcapp_dir.$dll->srcapp_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
-						@endif
-	
-					@endforeach
-
-						Donativo
-
-					</a>
-
-				</li>
-
-				<li>
-
-					<a href="/Multimedia" class="">
-
-					@foreach($data['dll']['icon'] as $dll)
-	
-						@if ($dll->srcapp_filename == 'media.png')
-							<img src="{{asset($dll->srcapp_dir.$dll->srcapp_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
-						@endif
-	
-					@endforeach
-
-						Multimedia
-
-					</a>
-
-				</li>	
-											
 			</ul>
 
 		</nav>

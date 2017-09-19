@@ -18,12 +18,19 @@ class CreateSubmodulsTable extends Migration
             $table->integer('smdls_id_mdls')->index();
             $table->string('smdls_url',200);
             $table->string('smdls_patch',200);            
-            $table->string('smdls_wordkey_modul_name',120);            
+            $table->string('smdls_wordkey_modul_name',120);
+            $table->integer('smdls_id_srcnav')->index()->nullable();            
             $table->timestamps();
 
             $table->foreign('smdls_id_mdls')
                   ->references('mdls_id')
                   ->on('moduls')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
+
+            $table->foreign('smdls_id_srcnav')
+                  ->references('srcnav_id')
+                  ->on('srcnavs')
                   ->onDelete('cascade')
                   ->onUpdate('cascade');
         });

@@ -19,7 +19,14 @@ class CreateModulsTable extends Migration
             $table->string('mdls_patch',200)->nullable();            
             $table->string('mdls_wordkey_modul_name',120)->nullable();
             $table->string('mdls_paramt_name',120)->nullable();
+            $table->integer('mdls_id_srcnav')->index()->nullanle();  
             $table->timestamps();
+
+            $table->foreign('mdls_id_srcnav')
+                  ->references('srcnav_id')
+                  ->on('srcnavs')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
         });
     }
 
