@@ -147,12 +147,27 @@ class adminController extends Controller
 
 
 
-            $modulo = \DB::table('moduls')->select('*')->where('mdls_paramt_name','=',$idView)->take(1)->get();
-
+            $modulo = \DB::table('moduls')->select('*')
+                                          ->join('submoduls','moduls.mdls_id','=','submoduls.smdls_id_mdls')
+                                          ->where('mdls_paramt_name','=',$idView)
+                                          ->orWhere('smdls_paramt_name','=',$idView)->take(1)->get();                                        
             foreach ($modulo as $rows) {
-                $moduls = ['patch' => $rows->mdls_patch,
+                $moduls = ['patch' => [
+                                      'p1'=>$rows->mdls_patch,
+                                      'p2' => $rows->smdls_patch],
                            'title' => $idView];
+
+                if ($moduls['patch']['p1'] !=null) {
+                      $patch = $moduls['patch']['p1'];
+                }else if($moduls['patch']['p2'] !=null){
+                      $patch = $moduls['patch']['p2'];
+                }          
+
+                $viewPatch = $patch;           
+
             }
+            
+           // var_dump($viewPatch);
 
               $dataLg = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);              
 
@@ -235,7 +250,7 @@ class adminController extends Controller
 
             /*return var_dump($lgId);  */      
           
-          return view($moduls['patch'],compact('data'));
+          return view($viewPatch,compact('data'));
 
         }else{
             return Redirect::to('/'); 
@@ -324,7 +339,8 @@ class adminController extends Controller
                         'text' => \DB::table('guitexts')->select('*')
                                     ->join('guitypes','guitexts.gtxt_id_gtype','=','guitypes.gtype_id')
                                     ->join('languages','guitexts.gtxt_id_language','=','languages.lg_id')
-                                    ->where('guitexts.gtxt_id_language','=',$lgId)->get()],
+                                    ->where('guitexts.gtxt_id_language','=',$lgId)->get(),
+                        'nav' => \DB::table('srcnavs')->select('*')->where('srcnav_fileformat','=','png','and','srcapp_dir','=','img/icon/nav/')->get() ],
                 "dataForm" => [
                             'iconUserSearch' => ''
                     ],
