@@ -65,9 +65,14 @@ class mainController extends Controller
             "authconfirm" => Auth::check(),
             "multimediaAuth" => false,
             "roll" => "",
-            "nav"  => \DB::table('moduls')->select('*')
-                            ->join('submoduls','moduls.mdls_id','=','submoduls.smdls_id_mdls')
-                            ->join('srcnavs','moduls.mdls_id_srcnav','=','srcnavs.srcnav_id')->get(),                            
+            "moduls"  => \DB::table('moduls')
+                            ->join('srcnavs','moduls.mdls_id_srcnav','=','srcnavs.srcnav_id')                            
+                            ->select('*')
+                            ->get(),
+            "submoduls"  => \DB::table('submoduls')
+                            ->join('srcnavs','submoduls.smdls_id_srcnav','=','srcnavs.srcnav_id')                            
+                            ->select('*')
+                            ->get() ,                                           
             "dll" => [  'css' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','css')->orderBy('srcapp_id', 'asc')->get(),
                         'js' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','js')->orderBy('srcapp_id', 'asc')->get(),
                         'icon' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','png','and','srcapp_dir','=','img/icon/nav/')->get(),
@@ -76,6 +81,8 @@ class mainController extends Controller
         ];
                     
         return view('index',compact('data'));
+
+        //return dd($data['moduls']$data['submoduls']);
 
         }
 

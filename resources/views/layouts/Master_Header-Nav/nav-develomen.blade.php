@@ -6,10 +6,74 @@
 		
 		<nav class="nav bg-content-neutro-opacity main-menu-hidde fade-in is-paused" id="main-menu">
 				
-			<ul class="main-menu">	
+			<ul class="main-menu">
 
-				@foreach($data['nav'] as $rows)
+				<li>
+
+					<a href="/{{ $data['roll'] }}" >
+						
+					@foreach($data['dll']['nav'] as $dll)
+	
+						@if ($dll->srcnav_filename == 'about.png')
+							<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
+						@endif
+	
+					@endforeach	
+						Inicio
+					</a>
+
+				</li>	
+
+				<li id="targetLoginUsers">
+
+					<a href="#ingresar"  data="/Ingresar" id="nav_btn_login" class="">
+
+						@foreach($data['dll']['nav'] as $dll)
+	
+							@if ($dll->srcnav_filename == 'arrow-down.png')
+								<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
+							@endif
+	
+						@endforeach
+
+						Ingresar al Sistema
+
+					</a>
+
+				</li>
+
+				@yield('content-login')	
+
+				@include('alerts.formAlertAuth')
+
+				@foreach($data['moduls'] as $rows)				
 					
+						@if (($rows->mdls_wordkey_modul_name =='mdls_newtopics') 
+							||
+							($rows->mdls_wordkey_modul_name == 'mdls_about_us'))
+							<li>				
+
+								<a href="{{$rows->mdls_url}}">
+
+									@if ($rows->mdls_id_srcnav == $rows->srcnav_id)
+
+										<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
+
+									@endif									
+
+									{{ $rows->mdls_wordkey_modul_name}}
+
+								</a>
+
+							</li>
+						@endif	
+						
+
+					
+						
+
+
+				
 					
 
 				@endforeach
