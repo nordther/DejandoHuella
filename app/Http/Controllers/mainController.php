@@ -58,25 +58,38 @@ class mainController extends Controller
            
         
 
-        mainController::functionChargenPrimary();    
+        mainController::functionChargenPrimary();   
+
+        $dataLg = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);              
+
+              $dataSistem = ['lang' => $dataLg];
+              
+              $idIdioma = \DB::table('languages')->select('lg_id')->where('lg_wordkey_language','=',$dataSistem['lang'])->take(1)->get();    
+
+              foreach ($idIdioma as $rows) {
+                $lgId = $rows->lg_id;
+              }
+ 
             
         $data = [ 
             "title-modul" => null,              
             "authconfirm" => Auth::check(),
             "multimediaAuth" => false,
             "roll" => "",
-            "moduls"  => \DB::table('moduls')
-                            ->join('srcnavs','moduls.mdls_id_srcnav','=','srcnavs.srcnav_id')                            
+            "moduls"  => \DB::table('moduls')                                                        
                             ->select('*')
                             ->get(),
-            "submoduls"  => \DB::table('submoduls')
-                            ->join('srcnavs','submoduls.smdls_id_srcnav','=','srcnavs.srcnav_id')                            
+            "submoduls"  => \DB::table('submoduls')                                                       
                             ->select('*')
                             ->get() ,                                           
             "dll" => [  'css' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','css')->orderBy('srcapp_id', 'asc')->get(),
                         'js' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','js')->orderBy('srcapp_id', 'asc')->get(),
                         'icon' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','png','and','srcapp_dir','=','img/icon/nav/')->get(),
-                        'nav' => \DB::table('srcnavs')->select('*')->where('srcnav_fileformat','=','png','and','srcapp_dir','=','img/icon/nav/')->get()]
+                        'nav' => \DB::table('srcnavs')->select('*')->where('srcnav_fileformat','=','png','and','srcapp_dir','=','img/icon/nav/')->get(),
+                        'text' => \DB::table('guitexts')->select('*')
+                                    ->join('guitypes','guitexts.gtxt_id_gtype','=','guitypes.gtype_id')
+                                    ->join('languages','guitexts.gtxt_id_language','=','languages.lg_id')
+                                    ->where('guitexts.gtxt_id_language','=',$lgId)->get()]
                       
         ];
                     

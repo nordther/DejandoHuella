@@ -50,31 +50,67 @@
 					
 						@if (($rows->mdls_wordkey_modul_name =='mdls_newtopics') 
 							||
-							($rows->mdls_wordkey_modul_name == 'mdls_about_us'))
+							($rows->mdls_wordkey_modul_name == 'mdls_about_us')
+							||
+							($rows->mdls_wordkey_modul_name == 'mdls_contact')
+							||
+							($rows->mdls_wordkey_modul_name == 'mdls_donation'))
 							<li>				
 
 								<a href="{{$rows->mdls_url}}">
 
-									@if ($rows->mdls_id_srcnav == $rows->srcnav_id)
+									@foreach($data['dll']['nav'] as $rowsIcons)
 
-										<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
+									@if ( $rowsIcons->srcnav_id  == $rows->mdls_id_srcnav)
 
-									@endif									
+										<img src="{{asset($rowsIcons->srcnav_dir.$rowsIcons->srcnav_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
 
-									{{ $rows->mdls_wordkey_modul_name}}
+									@endif	
+
+									@endforeach								
+									
+									@foreach($data['dll']['text'] as $rowsText)
+										@if($rowsText->gtxt_paramt_wordkey == $rows->mdls_wordkey_modul_name)
+											{{ $rowsText->gtxt_text }}
+										@endif
+									@endforeach
+									
 
 								</a>
 
 							</li>
 						@endif	
-						
 
+				@endforeach
+
+				@foreach($data['moduls'] as $rows)				
 					
-						
+						@if($rows->mdls_wordkey_modul_name == 'mdls_multi')
+							<li>				
 
+								<a href="{{$rows->mdls_url}}">
 
-				
-					
+									@foreach($data['dll']['nav'] as $rowsIcons)
+
+									@if ( $rowsIcons->srcnav_id  == $rows->mdls_id_srcnav)
+
+										<img src="{{asset($rowsIcons->srcnav_dir.$rowsIcons->srcnav_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
+
+									@endif	
+
+									@endforeach								
+									
+									@foreach($data['dll']['text'] as $rowsText)
+										@if($rowsText->gtxt_paramt_wordkey == $rows->mdls_wordkey_modul_name)
+											{{ $rowsText->gtxt_text }}
+										@endif
+									@endforeach
+									
+
+								</a>
+
+							</li>
+						@endif	
 
 				@endforeach
 
