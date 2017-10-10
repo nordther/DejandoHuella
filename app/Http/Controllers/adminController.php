@@ -147,25 +147,32 @@ class adminController extends Controller
 
 
 
-            $modulo = \DB::table('moduls')->select('*')
-                                          ->join('submoduls','moduls.mdls_id','=','submoduls.smdls_id_mdls')
-                                          ->where('mdls_paramt_name','=',$idView)
-                                          ->orWhere('smdls_paramt_name','=',$idView)->take(1)->get();                                        
-            foreach ($modulo as $rows) {
-                $moduls = ['patch' => [
-                                      'p1'=>$rows->mdls_patch,
-                                      'p2' => $rows->smdls_patch],
+            $md_1 = \DB::table('moduls')->select('*')->where('mdls_paramt_name','=',$idView)->take(1)->get();
+
+            $md_2 = \DB::table('submoduls')->select('*')->where('smdls_paramt_name','=',$idView)->take(1)->get(); 
+
+            if ($md_1 != null) {
+              foreach ($md_1 as $rows) {
+                $moduls = ['patch' =>$rows->mdls_patch,
                            'title' => $idView];
 
-                if ($moduls['patch']['p1'] !=null) {
-                      $patch = $moduls['patch']['p1'];
-                }else if($moduls['patch']['p2'] !=null){
-                      $patch = $moduls['patch']['p2'];
-                }          
+                $viewPatch = $moduls['patch'];
+                $viewTitle = $moduls['title'];           
 
-                $viewPatch = $patch;           
-
+              }
             }
+            if ($md_2 != null) {
+              foreach ($md_2 as $rows) {
+                $moduls = ['patch' =>$rows->smdls_patch,
+                           'title' => $idView];                  
+
+                $viewPatch = $moduls['patch'];
+                $viewTitle = $moduls['title'];           
+
+              }
+            }
+
+           
             
            // var_dump($viewPatch);
 
@@ -198,7 +205,7 @@ class adminController extends Controller
                 "authconfirm" => Auth::check(),
                 "multimediaAuth" => false,
                 "title-modul" => "Admin",
-                "type-modul" => $moduls['title'],
+                "type-modul" => $viewTitle,
                 "dll" => [  'css' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','css')->orderBy('srcapp_id', 'asc')->get(),
                             'js' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','js')->orderBy('srcapp_id', 'asc')->get(),
                             'icon' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','png','and','srcapp_dir','=','img/icon/nav/')->get(),

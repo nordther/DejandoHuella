@@ -20,7 +20,8 @@ class CreateSubmodulsTable extends Migration
             $table->string('smdls_patch',200);            
             $table->string('smdls_wordkey_modul_name',120);
             $table->string('smdls_paramt_name',120)->nullable();
-            $table->integer('smdls_id_srcnav')->index()->nullable();            
+            $table->integer('smdls_id_srcnav')->index()->nullable(); 
+            $table->string('smdls_status_gui',100)->nullable();           
             $table->timestamps();
 
             $table->foreign('smdls_id_mdls')

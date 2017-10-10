@@ -78,9 +78,11 @@ class mainController extends Controller
             "roll" => "",
             "moduls"  => \DB::table('moduls')                                                        
                             ->select('*')
+                            ->orderBy('mdls_paramt_name')
                             ->get(),
             "submoduls"  => \DB::table('submoduls')                                                       
                             ->select('*')
+                            ->orderBy('smdls_paramt_name')
                             ->get() ,                                           
             "dll" => [  'css' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','css')->orderBy('srcapp_id', 'asc')->get(),
                         'js' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','js')->orderBy('srcapp_id', 'asc')->get(),
