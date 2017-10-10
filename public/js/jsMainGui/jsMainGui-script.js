@@ -58,7 +58,7 @@ $(document).ready(function(){
 		
 		if (($(document).width() <= 1600) || ($(document).width() >= 768)) {
 
-			$("#menuPerfil").css({'top':(y+55)+'px','left':(x+1198)+'px'});
+			$("#menuPerfil").css({'top':(y+55)+'px','left':(x+1203)+'px'});
 		}
 
 		if ($(document).width() <= 768){

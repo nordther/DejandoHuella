@@ -64,21 +64,21 @@ $(document).ready(function(){
 
 	//==========================================================================================
 	
-	var v_Left = 1353;
+	var v_Left = 1357;
 
 	$('#form-click-profile-me').mouseover(function(){
 		var v_IP = $('#form-click-profile-me').position();
-		$("#form-tooltip-information-user").css({'display':'block','top':+70+'px','left':+v_Left+'px'});	
+		$("#form-tooltip-information-user").css({'display':'block','top':+75+'px','left':+v_Left+'px'});	
 	});
 
 	$('#form-click-my-files').mouseover(function(){
 		var v_IP = $('#form-click-my-files').position();
-		$("#form-tooltip-my-files").css({'display':'block','top':+118+'px','left':+v_Left+'px'});		
+		$("#form-tooltip-my-files").css({'display':'block','top':+134+'px','left':+v_Left+'px'});		
 	});
 
 	$('#form-click-profile-out').mouseover(function(){
 		var v_IP = $('#form-click-profile-out').position();
-		$("#form-tooltip-close-session").css({'display':'block','top':+166+'px','left':+v_Left+'px'});
+		$("#form-tooltip-close-session").css({'display':'block','top':+190+'px','left':+v_Left+'px'});
 
 	});
 
