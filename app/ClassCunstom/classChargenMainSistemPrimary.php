@@ -1937,7 +1937,9 @@
 					 'mdls_patch' => '',
 					 'mdls_wordkey_modul_name' => 'mdls_start_session',
 					 'mdls_paramt_name' => '',
-					 'mdls_id_srcnav' =>2]				  
+					 'mdls_id_srcnav' =>2]
+
+
 
 			];
 		}

@@ -11,13 +11,19 @@
 				
 		</div>
 
-		<div class="form-tooltip form-arrow-right-tooltip form-tooltip-position-perfil-1" id="form-tooltip-information-user">
+		<div class="form-tooltip form-arrow-right-tooltip" id="form-tooltip-information-user">
 						
 			{!! Form::label(null,'Perfil del Usuario',['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
 						
 		</div>
 
-		<div class="form-tooltip form-arrow-right-tooltip form-tooltip-position-perfil-2" id="form-tooltip-close-session">
+		<div class="form-tooltip form-arrow-right-tooltip" id="form-tooltip-my-files">
+						
+			{!! Form::label(null,'Mis Archivos',['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
+						
+		</div>
+
+		<div class="form-tooltip form-arrow-right-tooltip" id="form-tooltip-close-session">
 						
 			{!! Form::label(null,'Cerrar Sesión',['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
 						
@@ -46,6 +52,19 @@
 													
 
 					</div>
+
+				</div>
+
+				<div class="form-rows" style="height: 40px; width: 40px;">
+
+					{!! Form::hidden('v_frmMyfiles_url','/'.$data['roll'].'/MyFiles/'.$data['id'],["id" => 'v_frmMyfiles_url']); !!}
+					
+					<div class="form-cell form-profile-nav-menu label-font-family-neutro" id="form-click-my-files">
+						
+						<img src="{{  asset('img/icon/form/folder.png') }}" class="img-dm-8 img-margin-top-4 img-margin-left-4" alt="">
+
+					</div>
+					
 
 				</div>
 

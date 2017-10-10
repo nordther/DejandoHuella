@@ -312,6 +312,7 @@ class ComposerStaticInitcb68c7fe6d9ec93cff179ebdc286919d
         'CreateModulsTable' => __DIR__ . '/../..' . '/database/migrations/2017_09_15_045459_create_moduls_table.php',
         'CreateModultablesTable' => __DIR__ . '/../..' . '/database/migrations/2017_09_15_045503_create_modultables_table.php',
         'CreateMunicipiosTable' => __DIR__ . '/../..' . '/database/migrations/2017_09_15_045531_create_municipios_table.php',
+        'CreateMyfilesTable' => __DIR__ . '/../..' . '/database/migrations/2017_10_10_142338_create_myfiles_table.php',
         'CreatePadresTable' => __DIR__ . '/../..' . '/database/migrations/2017_09_15_045552_create_padres_table.php',
         'CreatePaisesTable' => __DIR__ . '/../..' . '/database/migrations/2017_09_15_045521_create_paises_table.php',
         'CreateParentescosTable' => __DIR__ . '/../..' . '/database/migrations/2017_09_15_045516_create_parentescos_table.php',

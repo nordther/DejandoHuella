@@ -14,19 +14,17 @@
 
 		@yield('content-searchagenda')
 
-
 		@yield('content-createuser')
 
 		@yield('content-createusersistem')
 
 		@yield('content-createagenda')
 
-
-
-		@yield('content-manuals')
-	
+		@yield('content-manuals')	
 
 		@yield('content-aboutDHK')
+
+		@yield('content-myfiles')
 
 		
 

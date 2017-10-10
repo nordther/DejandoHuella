@@ -46,25 +46,50 @@ $(document).ready(function(){
 		window.location.href= $("#v_frmPerf_url_information").val();
 	});	
 
+	$("#form-click-my-files").click(function(){
+		window.location.href= $('#v_frmMyfiles_url').val();
+	});
+
 	$('#form-click-profile-out').click(function(){
 		window.location.href= $("#v_frmPerf_url_logout").val();
 	});
 
+
 	$("#form-tooltip-information-user").css({'display':'none'});
 
+	$("#form-tooltip-my-files").css({'display':'none'});
+
 	$("#form-tooltip-close-session").css({'display':'none'});
+
+
+	//==========================================================================================
 	
+	var v_Left = 1353;
 
 	$('#form-click-profile-me').mouseover(function(){
-		$("#form-tooltip-information-user").css({'display':'block'});	
+		var v_IP = $('#form-click-profile-me').position();
+		$("#form-tooltip-information-user").css({'display':'block','top':+70+'px','left':+v_Left+'px'});	
+	});
+
+	$('#form-click-my-files').mouseover(function(){
+		var v_IP = $('#form-click-my-files').position();
+		$("#form-tooltip-my-files").css({'display':'block','top':+118+'px','left':+v_Left+'px'});		
 	});
 
 	$('#form-click-profile-out').mouseover(function(){
-		$("#form-tooltip-close-session").css({'display':'block'});		
+		var v_IP = $('#form-click-profile-out').position();
+		$("#form-tooltip-close-session").css({'display':'block','top':+166+'px','left':+v_Left+'px'});
+
 	});
+
+	//==========================================================================================
 
 	$('#form-click-profile-me').mouseout(function(){
 		$("#form-tooltip-information-user").css({'display':'none'});
+	});
+
+	$('#form-click-my-files').mouseout(function(){
+		$("#form-tooltip-my-files").css({'display':'none'});		
 	});
 
 	$('#form-click-profile-out').mouseout(function(){

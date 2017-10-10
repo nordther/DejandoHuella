@@ -2,6 +2,7 @@
 
 	Route::get('/Admin',['uses' => 'adminController@index']);	
 	Route::get('/Admin/perfil/{id}',['uses' => 'adminController@perfil']);
+	Route::get('/Admin/MyFiles/{id}',['uses' => 'adminController@myFilesView']);
 	Route::get('/Admin/{idView}',['uses' => 'adminController@createViewDinamyn']);
 	Route::get('/Admin/crear/{idView}',['uses' => 'adminController@createViewDinamyn']);
 	Route::get('/Admin/subir/{idView}',['uses' => 'adminController@createViewDinamyn']);

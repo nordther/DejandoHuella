@@ -33,6 +33,7 @@ return array(
     'CreateModulsTable' => $baseDir . '/database/migrations/2017_09_15_045459_create_moduls_table.php',
     'CreateModultablesTable' => $baseDir . '/database/migrations/2017_09_15_045503_create_modultables_table.php',
     'CreateMunicipiosTable' => $baseDir . '/database/migrations/2017_09_15_045531_create_municipios_table.php',
+    'CreateMyfilesTable' => $baseDir . '/database/migrations/2017_10_10_142338_create_myfiles_table.php',
     'CreatePadresTable' => $baseDir . '/database/migrations/2017_09_15_045552_create_padres_table.php',
     'CreatePaisesTable' => $baseDir . '/database/migrations/2017_09_15_045521_create_paises_table.php',
     'CreateParentescosTable' => $baseDir . '/database/migrations/2017_09_15_045516_create_parentescos_table.php',

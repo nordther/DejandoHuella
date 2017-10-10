@@ -318,7 +318,7 @@ class adminController extends Controller
               foreach ($idIdioma as $rows) {
                 $lgId = $rows->lg_id;
               }
-              var_dump($dataChargen['photo']);
+              
              $data = [
                 "id"         => $dataChargen['id'],
                 "icon"       => $dataChargen['photo'],
@@ -366,6 +366,93 @@ class adminController extends Controller
                 return view('modulos.functionAdministration.perfilAdministration.index',compact('data'));
              
         }
+    }
+
+
+    public function myFilesView($id){
+
+      if ($id == null) {
+        abort(403, 'Unauthorized action.');
+      }else{
+           $datasession = 
+            \DB::table('datospersonales')
+                            ->select('*')
+                            ->join('rolls','datospersonales.dp_id_roll','=','rolls.rl_id')
+                            ->join('permisos','datospersonales.dp_id','=','permisos.pm_id')
+                            ->join('generos','datospersonales.dp_id_genero','=','generos.g_id_genero')
+                            ->join('estadopersonas','datospersonales.dp_id','=','estadopersonas.estp_id')
+                            ->join('photoperfils','datospersonales.dp_id','=','photoperfils.pp_id_datospersonales')
+                            ->where('datospersonales.dp_id','=',Auth::user()->us_id_datospersonales,'and','estadopersonas.estp_activeordesable','=',1)
+                            ->take(1)
+                            ->get();
+
+            foreach ($datasession as $rows) {
+               $dataChargen = [
+               'id'         => $rows->dp_id,
+               'nombre'     => $rows->dp_nombre,
+               'apellido'   => $rows->dp_apellido,
+               'fe_naci'    => $rows->dp_fe_nacimiento,
+               'telefono'   => $rows->dp_telefono,
+               'address'    => $rows->dp_direccion,               
+               'roll'       => $rows->rl_wordkey_name,
+               'edad'       => $rows->dp_edad,
+               'genero'     => $rows->g_wordkey_genero,
+               'status'     => $rows->estp_activeordesable,
+               'permisos' => [
+                        'create' => $rows->pm_create,
+                        'ready'  => $rows->pm_ready,
+                        'update' => $rows->pm_update,
+                        'delete' => $rows->pm_delete
+                ],
+               'photo' => $rows->pp_src_filename];
+            }
+
+            $dataLg = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);              
+
+              $dataSistem = ['lang' => $dataLg];
+              
+              $idIdioma = \DB::table('languages')->select('lg_id')->where('lg_wordkey_language','=',$dataSistem['lang'])->take(1)->get();    
+
+              foreach ($idIdioma as $rows) {
+                $lgId = $rows->lg_id;
+              } 
+              
+
+             $data = [
+                "id"         => $dataChargen['id'],
+                "icon"       => $dataChargen['photo'],
+                "nombre"     => $dataChargen['nombre'],
+                "apellido"   => $dataChargen['apellido'],
+                "fe_naci"    => $dataChargen['fe_naci'],
+                "telefono"   => $dataChargen['telefono'],
+                "address"    => $dataChargen['address'],
+                "edad"       => $dataChargen['edad'],
+                "genero"     => $dataChargen['genero'],
+                "roll"       => $dataChargen['roll'],
+                "permisos" => [
+                        'create' => $dataChargen['permisos']['create'],
+                        'ready'  => $dataChargen['permisos']['ready'],
+                        'update' => $dataChargen['permisos']['update'],
+                        'delete' => $dataChargen['permisos']['delete']
+                ],
+                "authconfirm" => Auth::check(),
+                "multimediaAuth" => false,
+                "title-modul" => "Admin",
+                "type-modul" => "perfil",
+                "dll" => [  'css' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','css')->orderBy('srcapp_id', 'asc')->get(),
+                        'js' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','js')->orderBy('srcapp_id', 'asc')->get(),
+                        'icon' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','png','and','srcapp_dir','=','img/icon/nav/')->get(),
+                        'text' => \DB::table('guitexts')->select('*')
+                                    ->join('guitypes','guitexts.gtxt_id_gtype','=','guitypes.gtype_id')
+                                    ->join('languages','guitexts.gtxt_id_language','=','languages.lg_id')
+                                    ->where('guitexts.gtxt_id_language','=',$lgId)->get(),
+                        'nav' => \DB::table('srcnavs')->select('*')->where('srcnav_fileformat','=','png','and','srcapp_dir','=','img/icon/nav/')->get() ]
+
+              ];                  
+
+          return view('modulos.functionAdministration.myfiles.index',compact('data'));
+      }
+      
     }
 
     public function cambiosPerfiles(Request $request){

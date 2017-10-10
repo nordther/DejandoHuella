@@ -1,4 +1,6 @@
 /* Valores estandar*/
+
+
 *{
 	margin: 0px;
 	padding: 0px;
@@ -395,6 +397,114 @@ body{
 
 	}
 
+	.form-content-myfiles{
+		margin:25px auto;
+	}
+	.form-myfiles-dm-1{
+		background-color: #F6F6F6;
+		
+		width: 95%;
+		box-shadow: 0 1px 1px 0 rgba(0,0,0,0.08), 0 1px 1px 0 rgba(0,0,0,0.08);
+	}
+
+	.form-myfiles-header{
+		background-color: #0FC2AF;
+		border-bottom: 1px solid rgba(0,0,0,0.08);
+		text-align: center;
+	}
+	.form-myfiles-header>h1{
+		padding-top:  20px;
+		text-shadow: 0 -1px 0 #333, 0 1px 0 #EAEAEA;
+		color: #FFFFFF;
+	}
+	
+	.form-myfiles-article{
+		height: 575px;
+		-webkit-display: grid;
+		   -moz-display: grid;
+		    -ms-display: grid;
+		     -o-display: grid;
+		        display: grid;
+		        display: -ms-grid;
+		-webkit-grid-template-columns: 75% 25%;
+		   -moz-grid-template-columns: 75% 25%;
+			-ms-grid-template-columns: 75% 25%;
+			 -o-grid-template-columns: 75% 25%;
+			    grid-template-columns: 75% 25%;
+			    grid-columns         : 75% 25%;
+	}
+
+	:root{
+		--item-width :270px;
+		--item-height:270px;
+	}
+	
+	
+	
+	.form-myfiles-files-contents{	
+		
+		-webkit-display: grid;
+		   -moz-display: grid;
+		    -ms-display: grid;
+		     -o-display: grid;
+		        display: grid;
+		        display: -ms-grid;
+		-webkit-grid-template-columns: var(--item-width) var(--item-width) var(--item-width) var(--item-width);
+		   -moz-grid-template-columns: var(--item-width) var(--item-width) var(--item-width) var(--item-width);
+			-ms-grid-template-columns: var(--item-width) var(--item-width) var(--item-width) var(--item-width);
+			 -o-grid-template-columns: var(--item-width) var(--item-width) var(--item-width) var(--item-width);
+			    grid-template-columns: var(--item-width) var(--item-width) var(--item-width) var(--item-width);
+			    grid-columns         : var(--item-width) var(--item-width) var(--item-width) var(--item-width);
+		-webkit-grid-template-rows: auto auto;
+		   -moz-grid-template-rows: auto auto;
+		    -ms-grid-template-rows: auto auto;
+		     -o-grid-template-rows: auto auto;
+		        grid-template-rows: auto auto;	    
+				grid-rows:1fr 1fr 1fr 1fr 1fr;
+
+		-webkit-grid-gap: 10px;
+		   -moz-grid-gap: 10px;
+			-ms-grid-gap: 10px;
+			 -o-grid-gap: 10px;
+			    grid-gap: 10px;
+
+		height: 575px;
+		background-color: #F1F1F1;
+	}
+	.form-myfiles-item{
+		margin-top: 10px;
+		margin-left: 10px;
+		height: var(--item-height);
+		border-bottom-left-radius : 2px;
+		border-bottom-right-radius: 2px;
+		box-shadow:  0 1px 1px 0 rgba(0,0,0,0.08), 0 1px 1px 0 rgba(0,0,0,0.08);
+	}
+	.form-myfiles-item-article{
+		height: 200px;
+	}
+	.form-myfiles-item-footer{
+		border-top: 1px solid rgba(0,0,0,0.08);
+		border-bottom-left-radius : 2px;
+		border-bottom-right-radius: 2px;
+		height: 70px;
+	}
+	.form-myfiles-item:hover{
+		background-color: #A8A8A8;
+	}
+
+	.form-myfiles-detail{
+		
+		background-color: #F1F1F1;
+		
+		border-left: 1px solid rgba(0,0,0,0.08);
+		height: 570px;
+	}
+	.form-myfiles-footer{
+		border-top: 1px solid rgba(0,0,0,0.08);
+		height: 30px;
+		border-bottom-left-radius : 5px;
+		border-bottom-right-radius: 5px;
+	}
 
 	.form-content{		
 		margin: auto;
@@ -437,8 +547,7 @@ body{
 	}
 	
 	.form-profile-nav-menu{
-		width: 98%;
-		
+		width: 98%;		
 		height: 30px;
 		box-shadow: 0 1px 1px 0 rgba(0,0,0,0.08), 0 1px 1px 0 rgba(0,0,0,0.08);	
 		background-color: #F3F3F3;
