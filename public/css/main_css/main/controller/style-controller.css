@@ -4,6 +4,10 @@
 .label-text{
 	
 }
+.input-group{
+  position: relative;
+  margin-top: 1rem;
+}
 
 input[type="submit"],
 button{

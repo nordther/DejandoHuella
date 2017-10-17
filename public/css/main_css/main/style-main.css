@@ -533,7 +533,17 @@ body{
 		box-shadow: 0 1px 1px 0 rgba(0,0,0,0.08), 0 1px 1px 0 rgba(0,0,0,0.08);
 	}
 	.form-content-dm{
-		width: 50%;
+		width: 70%;
+		padding: 30px;
+	}
+	.form-main{
+		border-top: 1px solid #efefef;
+		border-left: 1px solid #e8e8e8;
+		border-bottom: 1px solid #e2e2e2;
+		border-right:  1px solid #e8e8e8;
+		background-color: #FFFFFF;	
+		height: auto;
+		box-shadow: 0 1px 1px 0 rgba(0,0,0,0.08), 0 1px 1px 0 rgba(0,0,0,0.08); 
 	}
 
 	.form-content-dm-perfil{	
@@ -743,9 +753,15 @@ body{
 		position: relative;
 		top: 50%;
 	}
+	.form-bg-white,	
+	.form-bg-white .form-header,
+	.form-bg-white .form-article,
+	.form-bg-white .form-footer{
+		background-color: #F6F6F6;
+	}
 	.form-header{
 		width: 100%;
-		border-bottom: 1px solid;
+		border-bottom: 1px solid rgba(222,222,222,0.9);
 		border-collapse: separate;
 		border-spacing: 10px 5px;						
 	}
@@ -755,64 +771,28 @@ body{
 		padding-bottom: 20px;					
 	}	
 
-	.form-article{
-		display: table;
-		width: 100%;
-		border-collapse: separate;
-		border-spacing: 10px 5px;	
-		text-align: left;
+	.form-article{	
+		width: 100%;				
 		z-index: 2000;
+	}	
+
+	.form-details{
+		padding:20pxs;
+		height: 400px;
+	}
+	.form-toolt-form{
+		padding: 10px;
+		border-left: 1px solid rgba(222,222,222,0.9);
+		height: 400px;
 	}
 	
-	.form-rows-group{
-		display: table-row-group;
-	}
-
-	.form-rows{
-		height: 30px;					
-		display: table-row;	
-		margin-left: auto;
-		margin-right: auto;	
-	}
-
-	.form-rows-dm-1{
-		width: 245px;
-	}
-	
-	.form-rows-aling-center{		
-		margin-left: 50px;
-	}
-	.form-col{
-		display: table-column;
-	}
-	.form-cell{
-		display: table-cell;
-		/* border: 1px solid black;
-								background-color: #C4E4EE; */						
-	}
-	.form-cell-dm-w-1{
-		width: 100px;
-		padding: 0;
-		margin: 0;		
-	}
 	.label-content-form{
 		padding: 5px;
 	}
-	.form-article-dm-1{
-		height: 180px;
-	}
-	.form-article-dm-2{
-		height: 120px;
-	}
-
-	.form-footer{
-		display: table;
-		width: 100%;
-		border-collapse: separate;
-		border-spacing: 10px 5px;
-		text-align: center;
-		border-top: 1px solid;
-		
+	
+	.form-footer{		
+		width: 100%;		
+		border-top: 1px solid rgba(222,222,222,0.9);		
 	}
 
 	.form-header-dm-1{
@@ -846,26 +826,7 @@ body{
 	.form-footer-dm-4{
 		height: 20px;
 	}
-		
-	.form-bg-content-1{
-		background-color: #E5E5E5;
-	}
-
-	.form-bg-content-2{
-		background-color: #363636;
-	}
-
-	.form-bg-content-3{
-		background-color: #00B2B1;
-	}
-
-	.form-bg-content-4{
-		background-color: #646464;
-	}
-
-	.form-bg-content-5{
-		background-color: #4B4B4B;
-	}
+	
 	
 	.form-border-square-1{
 		border-radius: 15px;

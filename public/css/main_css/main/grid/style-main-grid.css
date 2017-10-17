@@ -53,7 +53,24 @@
 	background-color: transparent;		    
 } 
 
-
+.form-grid-1{
+	width: 100%;
+	-webkit-display: grid;
+	   -moz-display: grid;
+	    -ms-display: grid;
+	     -o-display: grid;
+	        display: grid;
+	 -webkit-grid-template-columns:90% 10%;       
+	    -moz-grid-template-columns:90% 10%;       
+	      -o-grid-template-columns:90% 10%;       
+	         grid-template-columns:90% 10%; 
+	 grid-columns:85% 25%;
+	 -webkit-grid-template-rows: auto auto;
+		-moz-grid-template-rows: auto auto;
+		 -ms-grid-template-rows: auto auto;
+		  -o-grid-template-rows: auto auto;
+		     grid-template-rows: auto auto;      
+}
 
 .label-dm{
 	font-size: 22px;
