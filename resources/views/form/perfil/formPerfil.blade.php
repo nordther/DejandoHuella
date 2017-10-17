@@ -20,8 +20,8 @@
 						<div class="input-group">
 							
 							<input placeholder="Placeholder" id="first_name" type="text" class="validate">
-							
-          					<label for="first_name">First Name</label>
+
+          					<label for="first_name" class="label-font-family-neutro">First Name</label>
 
 						</div>
 

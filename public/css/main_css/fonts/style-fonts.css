@@ -1,8 +1,8 @@
 @font-face {
 
-font-family: Luna;
+font-family: The_Urban_Way;
 
-src: url('../../../fonts/Luna.ttf') format('truetype');	 
+src: url('../../../fonts/The_Urban_Way.ttf') format('truetype');	 
 
 }
 
@@ -30,18 +30,18 @@ src: url('../../../fonts/Lato-Regular.ttf') format('truetype');
 
 p{
 	text-align: justify;
-	font-size: 13px;
-	font-family: "Verdana",Geneva,sans-serif;
+	font-size: 16px;
+	font-family: "Roboto",sans-serif;
 }
 h1,h2,h3,h4,h5,h6{
-	font-family: 'Luna';
+	font-family: 'The_Urban_Way';
 	text-align: center;	
 	color: #FF5700;
 	text-shadow: 0 -1px 0 rgba(255,190,25,0.2);
 }
 label{
 	position: relative;
-	font-family: 'Luna';
+	font-family: 'The_Urban_Way';
 	user-select: none;	
 }
 img{
@@ -149,7 +149,7 @@ a{
 	bottom: 25px;
 }
 .label-font-family-neutro{
-	font-family: "Verdana",Geneva,sans-serif;
+	font-family: "Roboto",sans-serif;
 }
 /***************************************/
 .footer-color-text{
