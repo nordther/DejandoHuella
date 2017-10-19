@@ -40,7 +40,7 @@
 
 						<img src="{{asset('img/logo.png')}}" class="img-dm-8 img-margin-top-4 img-margin-left-1" id="logo">
 
-						<label class="label-color-header-1 label-margin-left-2 label-margin-top-1 label-font-size-6 label-hide-movil" style="cursor: pointer;">Dejando Huellas kid's</label>
+						<label class="label-color-header-1 label-margin-left-2 label-margin-top-1 label-font-size-4 label-hide-movil" style="cursor: pointer;">Dejando Huellas kid's</label>
 
 					</a>	
 
@@ -68,7 +68,7 @@
 						
 						<img src="{{asset('img/logo.png')}}" class="img-dm-8 img-margin-top-4 img-margin-left-1" id="logo">
 
-						<label class="label-color-header-1 label-margin-left-2 label-margin-top-1 label-font-size-6 label-hide-movil" >
+						<label class="label-color-header-1 label-margin-left-2 label-margin-top-1 label-font-size-4 label-hide-movil" >
 
 							Dejando Huellas Kid's
 
@@ -132,7 +132,7 @@
 
 							@if($icon->srcapp_filename == 'userDefault.png')
 
-								<img src="{{asset($icon->srcapp_dir.$icon->srcapp_filename)}}" class="img-dm-8 img-margin-top-4  img-border-circle" style="margin-top:10px;" >
+								<img src="{{asset($icon->srcapp_dir.$icon->srcapp_filename)}}" class="img-dm-8 img-margin-top-4  img-border-circle" style="margin-top:17px;" >
 
 							@endif
 
@@ -154,7 +154,7 @@
 											
 					@endforeach					
 					
-					<button id="btn-toolts-perfil" class="button-header-perfil button-dm-1  button-margin-left-2 button-margin-bottom-2" style="top:-5px;"></button> 
+					<button id="btn-toolts-perfil" class="button-header-perfil button-dm-1  button-margin-left-2 button-margin-bottom-2" style="top:0px;"></button> 
 
 
 
@@ -182,7 +182,7 @@
 
 						<img src="{{asset('img/logo.png')}}" class="img-dm-8 img-margin-top-4 img-margin-left-1" id="logo">
 
-						<label class="label-color-header-1 label-margin-left-2 label-margin-top-1 label-font-size-6 label-hide-movil" style="cursor: pointer;">Dejando Huellas Kid's</label>
+						<label class="label-color-header-1 label-margin-left-2 label-margin-top-1 label-font-size-4 label-hide-movil" style="cursor: pointer;">Dejando Huellas Kid's</label>
 
 					</a>	
 				

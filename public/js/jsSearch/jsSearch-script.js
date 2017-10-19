@@ -63,8 +63,7 @@ function ClassSearchDinamy(){
 	this.confirmAuth = function(id){
 		var search = $("#search").val();	
 		var token = $("input[name=_token]").val();
-		var port = '8000';
-		var route = "http://localhost:"+port+"/Admin/buscar-usuario/authConfirm";
+		var route = location.protocol+"//"+location.host+"/Admin/buscar-usuario/authConfirm";
 		var id = id;
 		var appendData = $('#formSearchIncludeInformation'); 
 		var dataJSON = $.ajax({
@@ -101,9 +100,8 @@ function ClassSearchDinamy(){
 	this.searhFunctionShowInformation = function(){
 				
 		var search = $("#search").val();	
-		var token = $("input[name=_token]").val();
-		var port = '8000';
-		var route = "http://localhost:"+port+"/Admin/buscar-usuario/get";
+		var token = $("input[name=_token]").val();		
+		var route = location.protocol+"//"+location.host+"/Admin/buscar-usuario/get";
 		var namesearch = $("input[name=v_search-buscar-usuario").val();
 		if ($("#v_frmUserToolts_status_active").is(':checked')) {var status = 1;}else if($("#v_frmUserToolts_status_inhable").is(':checked')){var status = 0;}
 		var status_user = status;		
@@ -164,9 +162,8 @@ function ClassSearchDinamy(){
 
 	this.EnableFunction = function(id,status){
 		var search = $("#search").val();	
-		var token = $("input[name=_token]").val();
-		var port = '8000';
-		var route = "http://localhost:"+port+"/Admin/buscar-usuario/setUpdateEnableUser";
+		var token = $("input[name=_token]").val();		
+		var route = location.protocol+"//"+location.host+"/Admin/buscar-usuario/setUpdateEnableUser";
 		var id = id;
 		var status = status;
 		$.ajax({
@@ -186,9 +183,8 @@ function ClassSearchDinamy(){
 	}
 	this.DisableFunction = function(id,status){
 		var search = $("#search").val();	
-		var token = $("input[name=_token]").val();
-		var port = '8000';
-		var route = "http://localhost:"+port+"/Admin/buscar-usuario/setUpdateDisableUser";
+		var token = $("input[name=_token]").val();		
+		var route = location.protocol+"//"+location.host+"/Admin/buscar-usuario/setUpdateDisableUser";
 		var id = id;
 		var status = status;
 		$.ajax({

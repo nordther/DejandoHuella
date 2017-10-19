@@ -10,6 +10,27 @@
 
 				<div class="form-header form-header-dm-1">				
 					
+					<div class="form-conteint-iconPerfil">
+						
+						@if ($data['icon'] == null)
+							
+							@foreach($data['dll']['icon'] as $icon)
+
+								@if($icon->srcapp_filename == 'userDefault.png')
+
+									<img src="{{asset($icon->srcapp_dir.$icon->srcapp_filename)}}" class="img-dm-6 img-margin-top-4  img-border-circle" style="margin-top:17px;" >
+
+								@endif
+
+							@endforeach
+
+						@else	
+						
+								<img src="{{asset("img/iconUserSistem/".$data['id']."/".$data['icon'])}}" class="img-dm-6 img-margin-top-4  img-border-circle" alt="{{$data['nombre']}}">
+
+						@endif
+
+					</div>
 
 				</div>
 				
@@ -19,7 +40,7 @@
 						
 						<div class="input-group">
 							
-							<input placeholder="Placeholder" id="first_name" type="text" class="validate">
+							<input id="first_name" type="text" class="validate">
 
           					<label for="first_name" class="label-font-family-neutro">First Name</label>
 

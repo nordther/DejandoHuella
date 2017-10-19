@@ -103,10 +103,10 @@
 	margin: auto;
 }
 .content-search > .content-search-col > input[type="text"]{
-	margin-top: 8px;
+	margin-top: 16px;
 }
 .content-search > .content-search-col > button{
-	margin-top: 15px;
+	margin-top: 22px;
 }
 .content-search-col{
 	float: left;

@@ -1,8 +1,8 @@
 @font-face {
 
-font-family: The_Urban_Way;
+font-family: CFGeneralTao-Regular;
 
-src: url('../../../fonts/The_Urban_Way.ttf') format('truetype');	 
+src: url('../../../fonts/CFGeneralTao-Regular.ttf') format('truetype');	 
 
 }
 
@@ -28,20 +28,24 @@ src: url('../../../fonts/Lato-Regular.ttf') format('truetype');
   src: local('Oswald Light'), local('Oswald-Light'), url(http://fonts.gstatic.com/s/oswald/v13/HqHm7BVC_nzzTui2lzQTDVtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
 }
 
+title{
+	font-family: "CFGeneralTao-Regular"; 
+}
+
 p{
 	text-align: justify;
 	font-size: 16px;
 	font-family: "Roboto",sans-serif;
 }
 h1,h2,h3,h4,h5,h6{
-	font-family: 'The_Urban_Way';
+	font-family: 'CFGeneralTao-Regular';
 	text-align: center;	
 	color: #FF5700;
 	text-shadow: 0 -1px 0 rgba(255,190,25,0.2);
 }
 label{
 	position: relative;
-	font-family: 'The_Urban_Way';
+	font-family: 'CFGeneralTao-Regular';
 	user-select: none;	
 }
 img{
@@ -160,27 +164,27 @@ a{
 .nav > ul > li > a{
 	font-size: 13px;
 	text-align: justify;
-	font-family: 'Roboto',sans-serif;
+	font-family: "Roboto",sans-serif;
 }
 
 .nav > ul > ul > li > a{
 	font-size: 13px;
 	text-align: justify;
-	font-family: 'Roboto',sans-serif;
+	font-family: "Roboto",sans-serif;
 }
 
 .header-topic > h1{	
-	font-family: 'Luna';
+	font-family: 'CFGeneralTao-Regular';
 	color: #00dad8;
 }
 .form-header-search > .form-search-col > label{
 	top: 10px;
-	font-family: "Verdana",Geneva,sans-serif;
+	font-family: "Roboto",sans-serif;
 }
 
 .form-article-search > .form-search-row-effect-cardview > .form-search-col > label{
 	top: 15px;
-	font-family: "Verdana",Geneva,sans-serif;
+	font-family: "Roboto",sans-serif;
 }
 
 .form-article-search > .form-search-row-effect-cardview > .form-search-col > img,

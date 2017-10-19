@@ -5,15 +5,51 @@
 	
 }
 .input-group {
-    display: inline-table;
-    vertical-align: middle;
-
-    .input-group-addon,
-    .input-group-btn,
-    .form-control {
-        width: auto !important;
-    }
+	position: relative;
+	margin-bottom: 32px
 }
+.input-group > input[type="text"],
+.input-group > input[type="password"],
+.input-group > input[type="email"],
+.input-group > input[type="number"],
+.input-group > label{
+    display: block;
+}
+.input-group > input[type="text"]{
+	font-family: "Roboto",sans-serif;
+	font-size: 16px;
+	width: 100%;
+	outline: none;
+    padding: 15px;
+    background: none;
+    border: none;
+	border-bottom: 2px solid #C9C9C9;
+}
+.input-group > input[type="text"]:focus{
+	outline: none;
+	border-bottom: 2px solid #00E6D3;
+}
+.input-group > input[type="text"]:active{
+	outline: none;
+	border-bottom: 2px solid #00E6D3;
+}
+.input-group > label{
+	-webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+    margin-left: 15px;
+    font-size: 16px;
+    line-height: 16px;
+    position: absolute;
+    top: 16px;
+    left: 0;
+}
+.input-group > label:active{
+	top: -12px;
+    font-size: 12px;
+    line-height: 12px;
+}
+
 
 input[type="submit"],
 button{

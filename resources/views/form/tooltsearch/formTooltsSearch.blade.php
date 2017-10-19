@@ -46,7 +46,7 @@
 
 								@if (($rows->gtxt_paramt_wordkey == 'wordkey_roll_user') && ($rows->gtxt_id_gtype == 1))
 
-									{!! Form::label(null,$rows->gtxt_text,['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
+									{!! Form::label(null,$rows->gtxt_text,['class' => 'label-content-form']); !!}
 
 								@endif
 											

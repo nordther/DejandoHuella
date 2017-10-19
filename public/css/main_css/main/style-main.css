@@ -776,6 +776,12 @@ body{
 		z-index: 2000;
 	}	
 
+	.form-conteint-iconPerfil{
+		width: 250px;
+		height: auto;
+		padding-left:  10px;
+	}
+
 	.form-details{
 		padding:20pxs;
 		height: 400px;
