@@ -15,7 +15,10 @@
 .input-group > label{
     display: block;
 }
-.input-group > input[type="text"]{
+.input-group > input[type="text"],
+.input-group > input[type="password"],
+.input-group > input[type="email"],
+.input-group > input[type="number"]{
 	font-family: "Roboto",sans-serif;
 	font-size: 16px;
 	width: 100%;
@@ -25,13 +28,20 @@
     border: none;
 	border-bottom: 2px solid #C9C9C9;
 }
-.input-group > input[type="text"]:focus{
+.input-group > input[type="text"]:focus,
+.input-group > input[type="password"]:focus,
+.input-group > input[type="email"]:focus,
+.input-group > input[type="number"]:focus
+{
 	outline: none;
-	border-bottom: 2px solid #00E6D3;
+	border-bottom: 2px solid #00DECC;
 }
-.input-group > input[type="text"]:active{
+.input-group > input[type="text"]:active,
+.input-group > input[type="password"]:active,
+.input-group > input[type="email"]:active,
+.input-group > input[type="number"]:active{
 	outline: none;
-	border-bottom: 2px solid #00E6D3;
+	border-bottom: 2px solid #00DECC;
 }
 .input-group > label{
 	-webkit-transition: all .3s ease;
@@ -44,7 +54,14 @@
     top: 16px;
     left: 0;
 }
-.input-group > label:active{
+.input-group label.label{
+	font-family: "Roboto",sans-serif;
+	font-size: 16px;
+	color:#00DECC; 
+}
+
+.input-group  label.active{
+	color: #A2A2A2;
 	top: -12px;
     font-size: 12px;
     line-height: 12px;

@@ -70,13 +70,92 @@ $(document).ready(function(){
 
 		
 	});
-	
 
 	
 	
-
-	
-	
+	 $("form[name='formulario_registro'] label").each(function(i,k){
+	  	$("input[type=text]").focus(function(){
+			if ($(this).attr('id') === $(k).attr('for')) {
+				var label = $(k);
+				$(label).addClass('active');				
+			}
+		});
+		$("input[type=text]").focusout(function(){
+			console.log($(this).attr('id'));
+			if ($(this).val().length > 0) {
+				var label = $(k);
+				if ($(this).attr('id') === $(k).attr('for')) {					
+					$(label).addClass('active');
+				}
+			}else{
+				var label = $(k);
+				if ($(this).attr('id') === $(k).attr('for')) {					
+					$(label).removeClass('active');
+				}
+			}
+		});	
+		
+		$("input[type=password]").focus(function(){
+			if ($(this).attr('id') === $(k).attr('for')) {
+				var label = $(k);
+				console.log($(label).addClass('active'));
+			}
+		});
+		$("input[type=password]").focusout(function(){
+			console.log($(this).attr('id'));
+			if ($(this).val().length > 0) {
+				var label = $(k);
+				if ($(this).attr('id') === $(k).attr('for')) {					
+					$(label).addClass('active');
+				}
+			}else{
+				var label = $(k);
+				if ($(this).attr('id') === $(k).attr('for')) {					
+					$(label).removeClass('active');
+				}
+			}
+		});		
+		$("input[type=email]").focus(function(){
+			if ($(this).attr('id') === $(k).attr('for')) {
+				var label = $(k);
+				console.log($(label).addClass('active'));
+			}
+		});
+		$("input[type=email]").focusout(function(){
+			console.log($(this).attr('id'));
+			if ($(this).val().length > 0) {
+				var label = $(k);
+				if ($(this).attr('id') === $(k).attr('for')) {					
+					$(label).addClass('active');
+				}
+			}else{
+				var label = $(k);
+				if ($(this).attr('id') === $(k).attr('for')) {					
+					$(label).removeClass('active');
+				}
+			}
+		});	
+		$("input[type=number]").focus(function(){
+			if ($(this).attr('id') === $(k).attr('for')) {
+				var label = $(k);
+				console.log($(label).addClass('active'));
+			}
+		});
+		$("input[type=number]").focusout(function(){
+			console.log($(this).attr('id'));
+			if ($(this).val().length > 0) {
+				var label = $(k);
+				if ($(this).attr('id') === $(k).attr('for')) {					
+					$(label).addClass('active');
+				}
+			}else{
+				var label = $(k);
+				if ($(this).attr('id') === $(k).attr('for')) {					
+					$(label).removeClass('active');
+				}
+			}
+		});	
+	});
 
 
 });
