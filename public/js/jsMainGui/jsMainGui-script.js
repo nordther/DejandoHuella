@@ -50,7 +50,7 @@ $(document).ready(function(){
 		$("#formUsersNormals").hide();
 	}
 	
-	var coordenada = $("#btn-toolts-perfil").position();
+	/*var coordenada = $("#btn-toolts-perfil").position();
 	var x = coordenada.left;
 	var y = coordenada.top;
 
@@ -69,11 +69,11 @@ $(document).ready(function(){
 		
 
 		
-	});
+	});*/
 
 	
 	
-	 $("form[name='formulario_registro'] label").each(function(i,k){
+	 $("form[name='formHTML'] label").each(function(i,k){
 	  	$("input[type=text]").focus(function(){
 			if ($(this).attr('id') === $(k).attr('for')) {
 				var label = $(k);

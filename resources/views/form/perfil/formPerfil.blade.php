@@ -4,7 +4,7 @@
 	<div class="ancla-link"></div>
 
 		<div class="form-content form-content-dm">
-			{!! Form::open(['url' => '/Admin/cambioPerfil/','method' => 'POST','name' => 'formulario_registro','class' => 'formulario']); !!}
+			{!! Form::open(['url' => '/Admin/cambioPerfil/','method' => 'POST','name' => 'formHTML','class' => 'formulario']); !!}
 
 			<div class="form-main">
 
@@ -72,7 +72,7 @@
 
 						<div class="input-group">
 							
-							<input id="email" type="email" class="validate">
+							<input id="email" type="email" class="validate" >
 
 							@foreach($data['dll']['text'] as $rows)
 

@@ -3,7 +3,7 @@
 
 	<div class="form-content form-content-dm-login form-box-shadow">
 		
-		{!! Form::open(['route' => 'login.store', 'method' => 'POST','id' => 'formLogin']); !!}
+		{!! Form::open(['route' => 'login.store', 'method' => 'POST','name' => 'formHTML','class' => 'formulario']); !!}
 
 		<div class="form-header form-header-dm-1 form-bg-content-5 form-border-radius-top-left form-border-radius-top-right ">
 			
@@ -19,33 +19,23 @@
 
 		</div>
 
-		<div class="form-article form-bg-content-1 form-bc-1 " >
+		<div class="form-article form-bg-content-1" >
 			
-			<div class="form-rows">
-					
-				<div class="form-cell">					
-					
-					<div class="input-group">					
-						
-						<img src="{{ asset('img/icon/form/user-male-black-shape (1).png') }}" class="input-box-icon">		
+			<div class="input-group">				
+								
+				{!! Form::email('v_formUserNickEmail',null,['id' => 'v_formUserNickEmail','autocomplete'=>'off']); !!}	
 
-						{!! Form::text('v_formUserNickEmail',null,['placeholder' => 'Nick o correo','style' =>'border:1px solid #A3A3A3; float:left; width:80%; height:30px; border-radius: 0px 4px 4px 0px;']); !!}	
-
-					</div>
-
-				</div>
+				{!! Form::label('v_formUserNickEmail','Correo') !!}
 
 			</div>
 
-			<div class="form-rows">
-					
-				<div class="form-cell">
+			<div class="input-group">											
+							
+						
+							
+						{!! Form::password('v_formUserPass',['id' => 'v_formUserPass']); !!}	
 
-					<div class="input-group">											
-							
-						<img src="{{ asset('img/icon/form/unlocked (1).png') }}" class="input-box-icon">
-							
-						{!! Form::password('v_formUserPass',['placeholder' => 'Contraseña','style' =>'border:1px solid #A3A3A3; float:left; width:80%; height:30px; border-radius: 0px 4px 4px 0px;']); !!}							
+						{!! Form::label('v_formUserPass','Contraseña') !!}						
 						
 					</div>					
 
