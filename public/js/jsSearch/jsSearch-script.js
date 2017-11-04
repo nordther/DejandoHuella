@@ -46,12 +46,20 @@ $(document).ready(function(){
 			}
 		
 		$("#v_frmCrtUs_roll").change(function(){
+
+				//console.log($(this).val());
+
+					console.log($("#gamemode option:selected").text());
+				
+
+				
+
 				eventoClick.searhFunctionShowInformation();
 		});
 
 		if ($("#v_frmCrtUs_roll").selectedIndex != -1 ) {eventoClick.searhFunctionShowInformation();}
 		
-				
+			
 	}); 
 
 

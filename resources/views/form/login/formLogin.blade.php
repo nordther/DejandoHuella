@@ -1,66 +1,97 @@
 @section('content-login')
 <div class="content" id="content-login-user">
 
-	<div class="form-content form-content-dm-login form-box-shadow">
+	<div class="content-blurt" id="content-login-blurt">
 		
-		{!! Form::open(['route' => 'login.store', 'method' => 'POST','name' => 'formHTML','class' => 'formulario']); !!}
-
-		<div class="form-header form-header-dm-1 form-bg-content-5 form-border-radius-top-left form-border-radius-top-right ">
+		<div class="content-ctrl">		
 			
-			@foreach($data['dll']['nav'] as $dll)
-	
-				@if ($dll->srcnav_filename == 'openid-logo.png')
-
-					<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="Ingreso al sistema" class="img-dm-6 img-margin-top-4 img-rotate-90deg">
-
-				@endif
-	
-			@endforeach	
-
-		</div>
-
-		<div class="form-article form-bg-content-1" >
-			
-			<div class="input-group">				
-								
-				{!! Form::email('v_formUserNickEmail',null,['id' => 'v_formUserNickEmail','autocomplete'=>'off']); !!}	
-
-				{!! Form::label('v_formUserNickEmail','Correo') !!}
-
-			</div>
-
-			<div class="input-group">											
-							
-						
-							
-						{!! Form::password('v_formUserPass',['id' => 'v_formUserPass']); !!}	
-
-						{!! Form::label('v_formUserPass','Contraseña') !!}						
-						
-					</div>					
-
-				</div>
+			<div class="input-group-btn input-circle-btn button-dm-3">
+				
+				{!! Form::button('',['id'=>'close','class' => 'button-form-closeLogin','style'=>'transform:rotate(270deg); width:100%; height:100%; border-radius:50%;']) !!}
 
 			</div>
 
 		</div>
 
-		<div class="form-footer form-footer-dm-1 form-bg-content-1 form-bc-1 form-border-radius-bottom-left form-border-radius-bottom-right">
-			
-			<div class="form-rows form-rows-aling-center">				
+	    <div class="form-content">
+
+	    	<div class="form-wrap fc-dm">    	
+		
+			{!! Form::open(['route' => 'login.store', 'method' => 'POST','name' => 'formHTML','class' => 'formulario']); !!}
+
+			<div class="form-header form-header-dm-1">
+				
+				<div>
 					
-				<div class="form-cell">	
+					@foreach($data['dll']['nav'] as $dll)
+		
+						@if ($dll->srcnav_filename == 'about.png')
 
-					{!! Form::button('Ingresar',['class' => 'form-control input-border-color-1 button-radius-square-2 button-bg-color-1 button-dm-estandar-5','type' => 'submit']); !!}
-								
+							<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="Ingreso al sistema" class="icon-login">
+
+						@endif
+		
+					@endforeach	
+					
+					
+
 				</div>
+								
+				<div style="position:relative;top: -75px;">
+
+					{!! Form::label('','Ingreso al sistema',['class' => 'label-font-size-4','style' => 'color:#0FDAD3;']) !!}
+
+				</div>					
+
+			</div>
+
+			<div class="form-article" id="form-article">
+				
+				<div class="input-group inp-dm-1">				
+									
+					{!! Form::email('v_formUserNickEmail',null,['id' => 'v_formUserNickEmail','autocomplete'=>'off']); !!}	
+
+					{!! Form::label('v_formUserNickEmail','Correo',['class' => 'label']) !!}
+
+				</div>
+
+				<div class="input-group inp-dm-1">					
+							
+					{!! Form::password('v_formUserPass',['id' => 'v_formUserPass']); !!}	
+
+					{!! Form::label('v_formUserPass','Contraseña',['class' => 'label']) !!}						
+							
+				</div>					
+
+			</div>			
+
+			<div class="form-footer form-footer-dm-1">			
+				
+				<div class="form-ctrl-resetPass">
+					
+					{!! Html::link('#','¿Olvido su contraseña?') !!}
+
+				</div>
+
+				<div class="input-group-btn input-circle-btn button-dm-5 input-group-btn-m-t">
+					
+					{!! Form::button('',['class' => 'button-form-login ','style'=>'transform:rotate(270deg); width:100%; height:100%; border-radius:50%;','type' => 'submit']); !!}
+
+				</div>			
+
+			</div>
+			
+			{!! Form::close(); !!}
 
 			</div>
 
 		</div>
-		
-		{!! Form::close(); !!}
+
+		@include('alerts.formAlertAuth')
+
 	</div>
+
+	
 	
 </div>
 

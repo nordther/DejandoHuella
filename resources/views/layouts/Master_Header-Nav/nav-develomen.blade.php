@@ -42,9 +42,9 @@
 
 				</li>
 
-				@yield('content-login')	
+					
 
-				@include('alerts.formAlertAuth')
+				
 
 				@foreach($data['moduls'] as $rows)				
 					

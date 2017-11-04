@@ -11,7 +11,7 @@
 	Route::post('/Admin/buscar-usuario/setUpdateEnableUser',['uses' => 'adminController@activeordesable']);	
 	Route::post('/Admin/buscar-usuario/setUpdateDisableUser',['uses' => 'adminController@activeordesable']);
 	Route::get('/Admin/buscar-usuario/authConfirm',['uses' =>'adminController@confirmAuth']);
-
+	Route::get('/LoadConfig/{id}',['uses' => 'loginController@load']);
 	
 
 	Route::get('/',['uses' => 'mainController@index']);

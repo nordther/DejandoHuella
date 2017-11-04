@@ -8,6 +8,25 @@
 	position: relative;
 	margin-bottom: 32px
 }
+.input-group-btn{	
+	position: relative;
+	cursor:pointer;
+	margin: auto;
+}
+.input-group-btn>button[type="submit"],
+.input-group-btn>button[type="reset"],
+.input-group-btn>button[type="button"]{
+	cursor:pointer;
+}
+.input-circle-btn{
+	border-radius: 50%;
+	background-color: #F6F6F6; 
+	padding: 8px;
+	box-shadow: 0 1px 1px 2px rgba(0,0,0,0.08), 0 1px 1px 2px rgba(0,0,0,0.08);
+}
+.input-group-btn-m-t{
+	top: 60px;
+}
 .input-group > input[type="text"],
 .input-group > input[type="password"],
 .input-group > input[type="email"],
@@ -26,7 +45,7 @@
     padding: 15px;
     background: none;
     border: none;
-	border-bottom: 2px solid #C9C9C9;
+	border-bottom: 2px solid #004E48;
 }
 .input-group > input[type="text"]:focus,
 .input-group > input[type="password"]:focus,
@@ -34,20 +53,20 @@
 .input-group > input[type="number"]:focus
 {
 	outline: none;
-	border-bottom: 2px solid #00DECC;
+	border-bottom: 2px solid #20FAE8;
 }
 .input-group > input[type="text"]:active,
 .input-group > input[type="password"]:active,
 .input-group > input[type="email"]:active,
 .input-group > input[type="number"]:active{
 	outline: none;
-	border-bottom: 2px solid #00DECC;
+	border-bottom: 2px solid #20FAE8;
 }
 .input-group > label{
 	-webkit-transition: all .3s ease;
     -o-transition: all .3s ease;
     transition: all .3s ease;
-    margin-left: 15px;
+    margin-left: 8px;
     font-size: 16px;
     line-height: 16px;
     position: absolute;
@@ -59,7 +78,7 @@
 .input-group label.label{
 	font-family: "Roboto",sans-serif;
 	font-size: 16px;
-	color:#00DECC; 
+	color:#004E48; 
 }
 
 .input-group  label.active{
@@ -136,6 +155,11 @@ input[type="date"]:hover{
 	border: none;
 	border-radius: 50%;
 	box-shadow: 4px 0 8px 0 rgba(0,0,0,0.3);
+}
+.cicle-bisel-3{
+	border: none;
+	border-radius: 50%;
+	box-shadow: 0px 0px 3px 2px rgba(0,0,0,0.3);
 }
 .button-dm-estandar-1{
 	width: 320px;
@@ -462,7 +486,25 @@ input[type="date"]:hover{
 		    transition: all 0.2s ease;	
 }
 
+.button-form-login{
+	background-image: url('../../../../img/icon/form/loginHover.png');
+	background-color: transparent;
+}
 
+.button-form-login:hover{	
+	background-image: url('../../../../img/icon/form/login.png');
+		
+}
+
+.button-form-closeLogin{
+	background-image: url('../../../../img/icon/form/closelogin.png');
+	background-color: transparent;
+}
+
+.button-form-closeLogin:hover{	
+	background-image: url('../../../../img/icon/form/closeloginHover.png');
+		
+}
 
 .button-form-tool-arrowShowToolt{
 	cursor: pointer;
@@ -476,7 +518,7 @@ input[type="date"]:hover{
 }
 .button-form-tool-arrowShowToolt:hover{
 	background-image: url('../../../../img/icon/toolts/arrowShowTooltHover.png');
-
+	
 	-webkit-transition: all 0.2s ease;
 	   -moz-transition: all 0.2s ease;
 		-ms-transition: all 0.2s ease;

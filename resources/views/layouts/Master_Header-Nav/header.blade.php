@@ -49,6 +49,8 @@
 				</div>						
 
 			</div>
+
+			@yield('content-login')
 			
 		@elseif (($data['authconfirm'] == true)&&($data["multimediaAuth"] == false))
 			

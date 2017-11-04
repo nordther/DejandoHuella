@@ -1,11 +1,20 @@
 var btn_login = new Login();
-var colorTarger = "#6C6C6C";
+var colorTarger = {active:"#6C6C6C",desactive:'#4B4B4B'};
+var articleActivate,articleDesactive;
 
 $(document).ready(function(){
-	$("#content-login-user").css({'display':'none'});	
+
+	
+
+	$("#content-login-user").css({'display':'none'});
+	$("#form-article").css({'height':'0px','display':'none'});	
 
 	$("a[id=nav_btn_login]").click(function(){
 		btn_login.showFormLoginUser();
+	});
+
+	$("#close").click(function(){
+		btn_login.closeLogin();
 	});
 
 	$("button[id=btn-submit-user").mouseover(function(){
@@ -34,17 +43,61 @@ $(document).ready(function(){
 
 function Login(){
 	this.showFormLoginUser = function(){
-		if($('#content-login-user').css('display') == 'none'){
-			$("#content-login-user").fadeIn(500);
-			$("#content-login-user").css({'display':'block'});
-			$("#targetLoginUsers").fadeIn();
-			$("#targetLoginUsers").css({'background-color':''+colorTarger+''});
-		}else{
-			$("#content-login-user").fadeOut(500);
-			$("#targetLoginUsers").css({'background-color':'#4B4B4B'});
+		var v_windows_h = $(window).height();	
+		$("#form-article").css({'height':'0px'});	
+		if($('#content-login-user').css('display') == 'none'){	
 			
+		    this.articleAnimate();		
+				
+			$("#content-login-user").toggle(300, function() {
+				$("#content-login-user").css({'display':'block'}).slideDown(100);
+				$(".content-blurt").css({'height':v_windows_h+'px'});
+			$("#targetLoginUsers").fadeIn();
+			$("#targetLoginUsers").css({'background-color':''+colorTarger['active']+''});
+			});			
 		}
 
+	}
+	this.articleAnimate = function(){
+	var v_height = 0;
+
+		articleActivate = setInterval(function(){
+			
+			v_height=v_height+5;
+
+			if (v_height <= 150) {											
+				$("#form-article").css({'height':v_height+'px'}).fadeIn('slow');
+				console.log(v_height);
+			}
+
+		},13); 		
+		
+	}
+	this.resetArticle = function(){
+		var v_height = 0;
+		articleDesactive = setInterval(function(){
+			
+			v_height=$("#form-article").height()-10;
+
+			if (v_height == 0) {											
+				$("#form-article").css({'height':v_height+'px'}).fadeIn('slow');
+				console.log(v_height);
+			}
+
+		},10);
+		
+		
+		clearInterval(articleActivate);
+		clearInterval(articleDesactive);			
+	}
+	this.closeLogin = function(){
+		if ($('#content-login-user').css('display') == 'block') {
+			this.resetArticle();
+			$("#targetLoginUsers").fadeIn();
+			$("#targetLoginUsers").css({'background-color':''+colorTarger['desactive']+''});
+			$('#content-login-user').toggle('slow');
+
+		}
 	}
 	/*this.loginFormFunction = function(){
 		var token = $("input[name=_token]").val();

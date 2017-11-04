@@ -255,7 +255,9 @@ class adminController extends Controller
                     ]                           
              ]; 
 
-            /*return var_dump($lgId);  */      
+            /*return var_dump($lgId);  */  
+
+                
           
           return view($viewPatch,compact('data'));
 
