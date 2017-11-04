@@ -1,6 +1,7 @@
 var eventoClick = new ClassSearchDinamy();
 var result;
-
+var timeLoad = 0;
+var cant = 0;
 
 $(document).ready(function(){
 
@@ -125,10 +126,17 @@ function ClassSearchDinamy(){
 				v_formUserStatus:status_user,
 				v_formCrtUs_roll:roll},					
 			success: function(us){
-
-
-					appendData.empty();
-					$.each(us,function(i,r){
+				appendData.html('<div class="loader" style="top:155px;">Cargando...</div>');	
+				setTimeout(function(){				
+					cant = $(us).length;
+					console.log('Cantidad de registro:'+cant);
+					timeLoad = cant*75/100;
+					console.log('Cantidad de tiempo  :'+timeLoad);
+					eventoClick.EventClickSearch();
+					console.log('Tiempo:'+(1000+timeLoad));
+					setTimeout(function(){
+						appendData.empty();
+						$.each(us,function(i,r){
 						if (r.estp_activeordesable == 0){
 							var dataHTML = '<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<button id="btnEnable" class="button-form-tool-enable button-dm-2 cicle-bisel-1" data="'+r.dp_id+'"></button>'+'</div>';
 						}else if (r.estp_activeordesable == 1){
@@ -147,9 +155,13 @@ function ClassSearchDinamy(){
 							'<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<button id="btnEdit" class="button-form-tool-edit button-dm-2 cicle-bisel-1" ></button>'+'</div>'+
 							'<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<button id="btnMore" class="button-form-tool-more button-dm-2 cicle-bisel-1" ></button>'+'</div>'+
 							dataHTML+'</div>');
-					});
+					});				
 
-					eventoClick.EventClickSearch();
+					
+					},(1000+timeLoad));
+					
+				},100);
+					
 
 		}
 	});
