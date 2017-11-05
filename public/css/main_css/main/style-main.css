@@ -572,23 +572,70 @@ body{
 		background-color:#FFFFFF;		
 		box-shadow: 0 1px 1px 2px rgba(0,0,0,0.08), 0 1px 1px 2px rgba(0,0,0,0.08);
 	}
+	.content-alert{
+		position:relative; 
+		float:right; 
+		top:-215px; 
+		width: 485px; 
+		height: auto; 
+		margin: 15px;
+
+	}
 	.form-alert{
+		position: absolute;
+		display: block;
 		width: 100%;
-		height: auto;
-		padding-top: 15px;
-		padding-bottom: 15px;
+		height: auto;				
 		text-align: left;
+		background-color: #EEEEEE;
+
+		
 	}
-	
-	.form-alert-color-danger{
-		background-color: #EE8A8A;
+	.form-alert > div{
+		float: left;
 	}
-	.form-alert-color-success{
-		background-color: #00CAB9;
+	.conent-alert-text,
+	.content-alert-ctrl,
+	.content-icon-alert{		
+		padding: 10px;
+	}
+	.content-alert-ctrl{
+	   width: 35px;	
+	   height: auto;
+	}
+	.content-icon-alert{
+	   width: 35px;	
+	   height: auto;
+	}
+	.conent-alert-text{
+		width: 350px;
+		padding-top: 25px;	
+	}
+
+	.content-alert-ctrl{
+		padding-top: 20px;
+		margin-left: -10px;
+	}
+	.content-alert-ctrl > button{
+		position: relative;
+		float: right;
+	}
+	.content-icon-alert{
+		border-right: 1px solid rgba(222,222,222,0.9);
+	}
+	.content-icon-alert > img{
+		width: 35px;
+		height: 35px;
+	}
+	.form-alert-color-danger > div > label{
+		color: #D62121;
+	}
+	.form-alert-color-success  > div > label{
+		color: #00CAB9;
 	}
 
 	.form-alert-square-radius{
-		border-radius: 5px;
+		border-radius: 2px;
 	}
 	
 	.form-alert-cardview{

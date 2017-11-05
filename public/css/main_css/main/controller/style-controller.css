@@ -317,7 +317,7 @@ input[type="date"]:hover{
 .button-toolt-close{
 	position: relative;
 	cursor: pointer;
-	background-image: url('../../../../img/icon/form/cancel.png');	
+	background-image: url('../../../../img/icon/form/closelogin.png');	
 	-webkit-transition: all 0.2s ease;
 	   -moz-transition: all 0.2s ease;
 		-ms-transition: all 0.2s ease;
@@ -325,7 +325,7 @@ input[type="date"]:hover{
 		    transition: all 0.2s ease;	
 }
 .button-toolt-close:hover{
-	background-image: url('../../../../img/icon/form/cancelHover.png');
+	background-image: url('../../../../img/icon/form/closeloginHover.png');
 	-webkit-transition: all 0.2s ease;
 	   -moz-transition: all 0.2s ease;
 		-ms-transition: all 0.2s ease;

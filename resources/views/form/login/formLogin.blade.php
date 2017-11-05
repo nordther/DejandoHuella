@@ -87,7 +87,7 @@
 
 		</div>
 
-		@include('alerts.formAlertAuth')
+		
 
 	</div>
 

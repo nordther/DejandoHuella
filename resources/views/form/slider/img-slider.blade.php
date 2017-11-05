@@ -83,6 +83,12 @@
 			
 			@endfor
 
+			
+
 		</div>	
+
+		<div class="content-alert">
+			@include('alerts.formAlertAuth')
+		</div>
 
 @endsection
