@@ -95,7 +95,7 @@ function Login(){
 			this.resetArticle();
 			$("#targetLoginUsers").fadeIn();
 			$("#targetLoginUsers").css({'background-color':''+colorTarger['desactive']+''});
-			$('#content-login-user').toggle('slow');
+			$('#content-login-user').hide();
 
 		}
 	}

@@ -10,7 +10,7 @@
 			setTimeout(function(){
 				var url = document.location=location.protocol+"//"+location.host+'/'+id;
 				console.log(url);
-			}, 2000);
+			}, 1500);
 		}
 		
 	</script>

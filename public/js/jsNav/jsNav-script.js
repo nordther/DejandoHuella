@@ -7,7 +7,7 @@ $(document).ready(function(){
 	$("button[id=btn-toolts-nav]").click(function(){
 		btn_nav.showMenu();
 	});
-	$("button[id=btn-toolts-perfil").click(function(){
+	$("img[id=btn-showPerfil").click(function(){
 		btn_nav.showPerfil();
 
 	});

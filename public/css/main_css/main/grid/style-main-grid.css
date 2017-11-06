@@ -52,7 +52,62 @@
 			    grid-gap: 100px;	
 	background-color: transparent;		    
 } 
+.grid-3{
+		background-color: transparent; 
+		width: 95%;
+		-webkit-display: grid;
+		   -moz-display: grid;
+		    -ms-display: grid;
+		     -o-display: grid;
+		        display: grid;
+		        display: -ms-grid;
+		-webkit-grid-template-columns: 47% 50%;
+		   -moz-grid-template-columns: 47% 50%;
+			-ms-grid-template-columns: 47% 50%;
+			 -o-grid-template-columns: 47% 50%;
+			    grid-template-columns: 47% 50%;
+			    grid-columns         : 47% 50%;		
+		-webkit-grid-template-rows: auto auto;
+		   -moz-grid-template-rows: auto auto;
+		    -ms-grid-template-rows: auto auto;
+		     -o-grid-template-rows: auto auto;
+		        grid-template-rows: auto auto;
+		        grid-rows:1fr;
+		-webkit-grid-gap: 50px;
+		   -moz-grid-gap: 50px;
+			-ms-grid-gap: 50px;
+			 -o-grid-gap: 50px;
+			    grid-gap: 50px;	
+			    
+} 
+.grid-4{
 
+		width: 100%;
+		-webkit-display: grid;
+		   -moz-display: grid;
+		    -ms-display: grid;
+		     -o-display: grid;
+		        display: grid;
+		        display: -ms-grid;
+		-webkit-grid-template-columns: 95%;
+		   -moz-grid-template-columns: 95%;
+			-ms-grid-template-columns: 95%;
+			 -o-grid-template-columns: 95%;
+			    grid-template-columns: 95%;
+			    grid-columns         : 95%;		
+		-webkit-grid-template-rows: auto auto auto;
+		   -moz-grid-template-rows: auto auto auto;
+		    -ms-grid-template-rows: auto auto auto;
+		     -o-grid-template-rows: auto auto auto;
+		        grid-template-rows: auto auto auto;
+		        grid-rows:1fr;
+		-webkit-grid-gap: 50px;
+		   -moz-grid-gap: 50px;
+			-ms-grid-gap: 50px;
+			 -o-grid-gap: 50px;
+			    grid-gap: 50px;	
+	background-color: transparent;		    
+} 
 .form-grid-1{
 	width: 100%;
 	-webkit-display: grid;

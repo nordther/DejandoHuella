@@ -62,7 +62,7 @@ body{
 	position:fixed;
 	width: 100%;
 	
-	z-index: 30000;
+	z-index: 300000;
 }
 .header-topic{
 	position: relative;
@@ -125,17 +125,21 @@ body{
 }
 .content-perfil-header{
 	position: relative;
-	top: -54px;
 	float: right;
-	margin-right: 40px;		
+    box-sizing: border-box;
+	margin: -40px 40px 0 0;
+	padding: 5px;
+	border-radius: 50%;
+	background-color: #505050;
+	box-shadow:0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
 }
-.content-perfil-header-dm{
-	width: 350px;
+.content-perfil-header > img{
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	float: right;
+}
 
-}
-.content-logo-position-dm{
-	width: 430px;
-}
 
 
 
@@ -160,7 +164,7 @@ body{
 }
 .header-fixed{
 	position: fixed;
-	z-index: 4000;
+	z-index: 100000;
 }
 .header-relative{
 	position: relative;
@@ -352,7 +356,8 @@ body{
 }
 
 .img-border-circle{
-	border-radius: 50%;
+	cursor: pointer;
+	border-radius: 50%;	
 }
 
 .img-box-shadow{
@@ -570,13 +575,17 @@ body{
 	}
 	.icon-login:hover{
 		background-color:#FFFFFF;		
-		box-shadow: 0 1px 1px 2px rgba(0,0,0,0.08), 0 1px 1px 2px rgba(0,0,0,0.08);
+		box-shadow:
+	0 2px 2px 0 rgba(0,0,0,0.14), 
+	0 1px 5px 0 rgba(0,0,0,0.12), 
+	0 3px 1px -2px rgba(0,0,0,0.2);
 	}
 	.content-alert{
 		position:relative; 
+		z-index: 50000;
 		float:right; 
-		top:-215px; 
-		width: 485px; 
+		top:-320px; 
+		width: 450px; 
 		height: auto; 
 		margin: 15px;
 
@@ -709,7 +718,7 @@ body{
 	.form-search-col-border{
 		border-left:.002px solid rgba(225,225,225,0.8);
 		border-right:.002px solid rgba(225,225,225,0.8);
-
+		
 	}
 
 	.form-search-col-dm-w-1{
@@ -801,15 +810,11 @@ body{
 		margin-top: 8px;
 	}
 	.form-search-row-effect-cardview{
-		margin: auto;
-		border-top: 1px solid #efefef;
-		border-left: 1px solid #e8e8e8;
-		border-bottom: 1px solid #e2e2e2;
-		border-right:  1px solid #e8e8e8;	
-		
+		margin: auto;	
+		border-bottom: 1px solid #e0e0e0;
 		background-color: rgb(255,255,255);
 		width: 99%;		
-		box-shadow: 0 1px 1px 0 rgba(0,0,0,0.08), 0 1px 1px 0 rgba(0,0,0,0.08); 
+		box-shadow:0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2); 
 	}
 	.form-search-row-effect-cardview:hover{
 		background-color: #00898C;

@@ -57,7 +57,7 @@
 							($rows->mdls_wordkey_modul_name == 'mdls_donation'))
 							<li>				
 
-								<a href="{{$rows->mdls_url}}">
+								<a href="{{$rows->mdls_url}}" id="{{ $rows->mdls_wordkey_modul_name }}">
 
 									@foreach($data['dll']['nav'] as $rowsIcons)
 

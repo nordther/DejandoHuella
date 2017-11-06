@@ -15,9 +15,12 @@ new Notification( title, extra);
 
 });*/
 
-
+var btn_actionEvents = new classGuiMain();
 
 $(document).ready(function(){
+
+	$("div[id=content-noticias]").hide();
+	$("div[id=content-about]").hide();
 
 
      $('a[href*=#]').click(function() {
@@ -33,7 +36,7 @@ $(document).ready(function(){
 
                  var targetOffset = $target.offset().top;
 
-                 $('html,body').animate({scrollTop: targetOffset}, 1100);
+                 $('html,body').animate({scrollTop: targetOffset}, 400);
 
                  return false;
 
@@ -42,6 +45,23 @@ $(document).ready(function(){
        }
 
    });
+
+     /*$("a[id=mdls_newtopics").click(function(){
+     	btn_actionEvents.showNewTopics();
+     });
+
+     $("a[id=mdls_about_us").click(function(){
+     	btn_actionEvents.showAbout();
+     });*/
+
+     $("#start-noticias").click(function() {
+
+     	btn_actionEvents.showNewTopics();
+     });
+
+     $("#start-about").click(function() {
+     	btn_actionEvents.showAbout();
+     });
 
 
 	var actionClassDinamyForm =  new classGuiMain();
@@ -189,6 +209,26 @@ $(document).ready(function(){
 });
 
 function classGuiMain(){
+	this.showNewTopics = function(){
+		console.log('algo');
+     	if ($("#content-noticias").css('display') == 'none') {
+     		$("#content-noticias").fadeIn('slow'); 
+     		$('#start-noticias').css({'transform':'rotate(0deg)','transition':'transform 1s'});    		
+     	}else{
+     		$("#content-noticias").hide();
+     		$('#start-noticias').css({'transform':'rotate(180deg)','transition':'transform 1s'}); 
+     	}
+	}
+	this.showAbout = function(){
+		console.log('algo');
+     	if ($("#content-about").css('display') == 'none') {
+     		$("#content-about").fadeIn('slow');
+     		$('#start-about').css({'transform':'rotate(0deg)','transition':'transform 1s'});     		
+     	}else{
+     		$("#content-about").hide();
+     		$('#start-about').css({'transform':'rotate(180deg)','transition':'transform 1s'});
+     	}
+	}
 	this.showFormAssistan = function(){
 		if ($("#v_frmCrtUs_typeusers").val() == "1") {
 			$("#form-user-sistem").show();

@@ -91,12 +91,7 @@
 						<div class="content-search">
 							<div class="content-search-col content-search-col-dm-w-1">
 								{!! Form::text('v_search-'.$data['type-modul'],'',['placeholder' => 'Buscar...' , 'class' => 'form-control input-border-color-1 input-radius-square-2 input-dm-1','id' => 'search']); !!}
-							</div>
-							
-							<div class="content-search-col content-search-col-dm-w-5">
-								{!! Form::button(null,['class' => 'button-form-tool-search button-dm-2','style' => 'left:20px','id' => 'btnSearch','id' => 'search']); !!}
-							</div>
-								
+							</div>							
 						
 						</div>		
 
@@ -126,7 +121,7 @@
 
 				@endif	
 
-				<div class="content-perfil-header content-perfil-header-dm header-dm-4">
+				<div class="content-perfil-header">
 					
 					@if ($data['icon'] == null)
 							
@@ -134,7 +129,7 @@
 
 							@if($icon->srcapp_filename == 'userDefault.png')
 
-								<img src="{{asset($icon->srcapp_dir.$icon->srcapp_filename)}}" class="img-dm-8 img-margin-top-4  img-border-circle" style="margin-top:17px;" >
+								<img src="{{asset($icon->srcapp_dir.$icon->srcapp_filename)}}"   id="btn-showPerfil">
 
 							@endif
 
@@ -142,23 +137,9 @@
 
 					@else	
 						
-						<img src="{{asset("img/iconUserSistem/".$data['id']."/".$data['icon'])}}" class="img-dm-8 img-margin-top-4  img-border-circle" alt="{{$data['nombre']}}">
+						<img src="{{asset("img/iconUserSistem/".$data['id']."/".$data['icon'])}}" alt="{{$data['nombre']}}" id="btn-showPerfil">
 
-					@endif			
-					
-					@foreach ($data['dll']['text'] as $rows)
-
-						@if (($rows->gtxt_paramt_wordkey == 'wordkey_welcome') && ($rows->gtxt_id_gtype == 1))
-
-							{!! Form::label(null,$rows->gtxt_text.' '.$data['nombre'],['class' => 'label-color-header-1 label-margin-left-2 label-margin-top-1 label-font-size-7 label-hide-movil label-float-right label-font-family-neutro']); !!}
-
-						@endif
-											
-					@endforeach					
-					
-					<button id="btn-toolts-perfil" class="button-header-perfil button-dm-1  button-margin-left-2 button-margin-bottom-2" style="top:0px;"></button> 
-
-
+					@endif	
 
 				</div>					
 
