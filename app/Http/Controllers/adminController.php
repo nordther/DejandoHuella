@@ -208,7 +208,7 @@ class adminController extends Controller
                 "type-modul" => $viewTitle,
                 "dll" => [  'css' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','css')->orderBy('srcapp_id', 'asc')->get(),
                             'js' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','js')->orderBy('srcapp_id', 'asc')->get(),
-                            'icon' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','png','and','srcapp_dir','=','img/icon/nav/')->get(),
+                            'icon' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','png')->get(),
                             'text' => \DB::table('guitexts')->select('*')
                                     ->join('guitypes','guitexts.gtxt_id_gtype','=','guitypes.gtype_id')
                                     ->join('languages','guitexts.gtxt_id_language','=','languages.lg_id')

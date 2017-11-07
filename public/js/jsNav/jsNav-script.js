@@ -42,16 +42,16 @@ $(document).ready(function(){
 
 	$('#lang').attr({'lang':''+ln[0]+ln[1]+''});
 	
-	$('#form-click-profile-me').click(function(){
-		window.location.href= $("#v_frmPerf_url_information").val();
+	$('#frmlCtrl_perfil').click(function(){
+		window.location.href= $("#v_frmlUrl_perfil").val();
 	});	
 
-	$("#form-click-my-files").click(function(){
-		window.location.href= $('#v_frmMyfiles_url').val();
+	$("#frmlCtrl_files").click(function(){
+		window.location.href= $('#v_frmlUrl_files').val();
 	});
 
-	$('#form-click-profile-out').click(function(){
-		window.location.href= $("#v_frmPerf_url_logout").val();
+	$('#frmlCtrl_logout').click(function(){
+		window.location.href= $("#v_frmlUrl_logout").val();
 	});
 
 

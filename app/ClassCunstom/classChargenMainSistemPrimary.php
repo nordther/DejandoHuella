@@ -361,8 +361,28 @@
 				'srcapp_id' => 59,				
 				'srcapp_dir' => 'img/slider/',
 				'srcapp_filename' => 'img-slider-7.jpg',				
-				'srcapp_fileformat' => 'jpg']
-				
+				'srcapp_fileformat' => 'jpg'],
+				[
+				'srcapp_id' => 60,				
+				'srcapp_dir' => 'img/icon/form/',
+				'srcapp_filename' => 'userFemale.png',				
+				'srcapp_fileformat' => 'png'],
+				[
+				'srcapp_id' => 61,				
+				'srcapp_dir' => 'img/icon/form/',
+				'srcapp_filename' => 'userMale.png',				
+				'srcapp_fileformat' => 'png'],
+				[
+				'srcapp_id' => 62,				
+				'srcapp_dir' => 'img/icon/form/',
+				'srcapp_filename' => 'logout.png',				
+				'srcapp_fileformat' => 'png'],
+				[
+				'srcapp_id' => 63,				
+				'srcapp_dir' => 'img/icon/form/',
+				'srcapp_filename' => 'folder.png',				
+				'srcapp_fileformat' => 'png']
+
 
 				];
 		}

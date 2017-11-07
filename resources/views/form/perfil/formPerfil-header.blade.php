@@ -2,96 +2,123 @@
 	
 <div class="content bg-content">
 
-	<div class="form-content form-content-dm-perfil form-bg-content-4 form-border-square-3 form-position-fixed form-z-index-static form-content-perfil-position" id="menuPerfil">
+	<div class="form-content" id="menuPerfil" style="padding: 0px;">		
 		
-		
-		<div class="form-header form-bc-1 form-triagle-1 form-border-radius-top-left form-border-radius-top-right" style="height: 10px;">
-
-						
-				
-		</div>
-
-		<div class="form-tooltip form-arrow-right-tooltip" id="form-tooltip-information-user">
-						
-			{!! Form::label(null,'Perfil del Usuario',['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-						
-		</div>
-
-		<div class="form-tooltip form-arrow-right-tooltip" id="form-tooltip-my-files">
-						
-			{!! Form::label(null,'Mis Archivos',['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-						
-		</div>
-
-		<div class="form-tooltip form-arrow-right-tooltip" id="form-tooltip-close-session">
-						
-			{!! Form::label(null,'Cerrar Sesión',['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-						
-		</div>
-
-		<div class="form-article form-article-dm-1 scroll form-bc-1 form-bg-content-1">	
-
-				
-					
+		<div class="form-wrap" style="z-index: 4250000; width:345px; position:fixed; top:-48px; left: 1245px; padding: 0px;">
 			
-				<div class="form-rows" style="height: 40px; width: 40px;">
+			<div class="form-header form-header-dm-1" style="position: relative; height: 70px; display: flex; align-items:  center;">						
+				
+				<div class="icon-login" style="width: 55px; height: 55px; top: -15px; left: 5px;">
+					
+					@if ($data['icon'] == null)
+							
+						@foreach($data['dll']['icon'] as $icon)
 
+							@if($icon->srcapp_filename == 'userDefault.png')
 
-					{!! Form::hidden('v_frmPerf_url_information','/'.$data['roll'].'/perfil/'.$data['id'],["id" => 'v_frmPerf_url_information']); !!}					
+								<img src="{{asset($icon->srcapp_dir.$icon->srcapp_filename)}}" >
 
-					<div class="form-cell form-profile-nav-menu label-font-family-neutro" id="form-click-profile-me">					
-						@if($data['genero'] == "wordkey_fm")
+							@endif
 
-							<img src="{{ asset('img/icon/form/userFemale.png')}}" class="img-dm-8 img-margin-top-4 img-margin-left-4">
+						@endforeach
 
-						@elseif($data['genero'] == "wordkey_mc")
-								
-							<img src="{{ asset('img/icon/form/userMale.png')}}" class="img-dm-8 img-margin-top-4 img-margin-left-4">
-								
-						@endif							
-													
+					@else	
+						
+						<img src="{{asset("img/iconUserSistem/".$data['id']."/".$data['icon'])}}" alt="{{$data['nombre']}}" >
 
-					</div>
+					@endif				
 
 				</div>
 
-				<div class="form-rows" style="height: 40px; width: 40px;">
+				@foreach ($data['dll']['text'] as $rows)
 
-					{!! Form::hidden('v_frmMyfiles_url','/'.$data['roll'].'/MyFiles/'.$data['id'],["id" => 'v_frmMyfiles_url']); !!}
-					
-					<div class="form-cell form-profile-nav-menu label-font-family-neutro" id="form-click-my-files">
+					@if (($rows->gtxt_paramt_wordkey == 'wordkey_welcome') && ($rows->gtxt_id_gtype == 1))
+
+						{!! Form::label(null,$rows->gtxt_text.' '.$data['nombre'],['style' => 'left:15px;']); !!}
+
+					@endif
+											
+				@endforeach	
+
+			</div>		
+
+			<div class="form-article" style="padding-top:0px; padding-bottom: 0px;">			
 						
-						<img src="{{  asset('img/icon/form/folder.png') }}" class="img-dm-8 img-margin-top-4 img-margin-left-4" alt="">
+					<div class="form-rows" id="frmlCtrl_perfil">
+
+						{!! Form::hidden('v_frmlUrl_perfil','/Admin/perfil/'.$data['id'],['id' =>'v_frmlUrl_perfil']) !!}				
+
+						@foreach($data['dll']['icon'] as $rows)
+
+						@if($data['genero'] == 'wordkey_fm')
+
+							@if($rows->srcapp_filename == 'userFemale.png')
+							
+								<img src="{{ asset($rows->srcapp_dir.$rows->srcapp_filename) }}" alt="" width="35" height="35" style="border-radius: 50%;" id="frmlCtrl_perfil">
+
+							@endif
+
+						@endif			
+
+						@if($data['genero'] == 'wordkey_mc')
+
+							@if($rows->srcapp_filename == 'userMale.png')									
+
+								<img src="{{ asset($rows->srcapp_dir.$rows->srcapp_filename) }}" alt="" width="35" height="35" style="border-radius: 50%;" id="frmlCtrl_perfil">
+
+							@endif
+
+						@endif		
+
+						@endforeach
+
+						{!! Form::label(null,'Información personal',['style' => 'left:10px; font-family:"Roboto",sanf-serif;','id' =>'frmlCtrl_perfil']) !!}
 
 					</div>
-					
 
-				</div>
+					<div class="form-rows" id="frmlCtrl_files">
 
-				
+						{!! Form::hidden('v_frmlUrl_files','/Admin/MyFiles/'.$data['id'],['id' =>'v_frmlUrl_files']) !!}				
 
-				<div class="form-rows" style="height: 40px; width: 40px;">							
-					
-					{!! Form::hidden('v_frmPerf_url_logout','/logout',["id" => 'v_frmPerf_url_logout']); !!}		
+						@foreach($data['dll']['icon'] as $rows)
 
-					<div class="form-cell form-profile-nav-menu label-font-family-neutro" id="form-click-profile-out">						
-						
-						<img src="{{ asset('img/icon/form/logout.png')}}" class="img-dm-8 img-margin-top-4 img-margin-left-4" style="transform:rotate(90deg);">	
+						@if($rows->srcapp_filename == 'folder.png')									
 
-					</div>					
-					
-				</div>		
+							
+							<img src="{{ asset($rows->srcapp_dir.$rows->srcapp_filename) }}" alt="" width="35" height="35" style="border-radius: 50%;" id="frmlCtrl_files">
 
-				
+						@endif
 
-			
-				
-				
+						@endforeach
+
+						{!! Form::label(null,'Mi imagenes',['style' => 'left:10px; font-family:"Roboto",sanf-serif;','id' =>'frmlCtrl_files']) !!}
+
+					</div>
+
+					<div class="form-rows" id="frmlCtrl_logout">
+
+						{!! Form::hidden('v_frmlUrl_logout','/logout',['id' =>'v_frmlUrl_logout']) !!}				
+
+						@foreach($data['dll']['icon'] as $rows)
+
+						@if($rows->srcapp_filename == 'logout.png')									
+
+							
+							<img src="{{ asset($rows->srcapp_dir.$rows->srcapp_filename) }}" alt="" width="35" height="35" style="transform: rotate(90deg);border-radius: 50%;" id="frmlCtrl_logout">
+
+						@endif
+
+						@endforeach
+
+						{!! Form::label(null,'Cerrar sesión',['style' => 'left:10px; font-family:"Roboto",sanf-serif;','id' =>'frmlCtrl_logout']) !!}
+
+					</div>
+
+			</div>	
+
 		</div>
 
-		<div class="form-footer form-bc-1 form-border-radius-bottom-left form-border-radius-bottom-right form-bg-content-1" style="height: 15px;">
 			
-		</div>
 
 	</div>
 

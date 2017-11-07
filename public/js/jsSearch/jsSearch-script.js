@@ -8,7 +8,7 @@ $(document).ready(function(){
 		var dataStatusAuths = null;
 
 		var v_Height_content = screen.height - 355;
-		var v_Height = screen.height - 210;
+		var v_Height = screen.height - 195;
 		var url = location.href;
 		console.log(url);
 		if(url == location.protocol+"//"+location.host+"/Admin"){			

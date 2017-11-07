@@ -552,13 +552,13 @@ body{
 		border-radius: 2px;
 		box-shadow:0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
 	}
+
 	.form-wrap,
 	.form-wrap .form-header,
 	.form-wrap .form-article,
 	.form-wrap .form-footer{
 		background: #FFFFFF;
-	}
-	
+	}	
 	.fc-dm{
 		width: 30%;	
 	}
@@ -590,6 +590,11 @@ body{
 		border-radius: 50%; 
 		top: -85px; 		
 		transition: background-color 1.0s, box-shadow 1.0s; 
+	}
+	.icon-login > img{
+		width: 100%;
+		height: 100%;
+		background-size: 100% 100%;
 	}
 	.icon-login:hover{
 		background-color:#FFFFFF;		
@@ -706,7 +711,39 @@ body{
 		background-color: #AEAEAE;
 	}
 	
+	.form-rows{
+		height: 55px; 
+		width: 100%; 
+		display: flex; 
+		align-items:  center; 
+		border-bottom: 1px solid #CFCFCF; 
+		background-color: #EEEEEE; 
+		padding-left: 15px; 
+		box-sizing: border-box;
+		transition: background 0.8s ease;
+		cursor: pointer;
+	}
+	.form-rows > img,
+	.form-rows > label{
+		cursor: pointer;
+	}
+	.form-rows:hover{
+		background-color: #FFFFFF;
+	}
+	.form-rows  img{
+		padding: 5px;	
+		
+		border:1px solid transparent;
+		transition: all 0.55s ease;
 
+	}
+	.form-rows:hover  img{
+		border:1px solid #EDEDED;
+		background-color: #FFFFFF;
+		box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 
+	0 1px 5px 0 rgba(0,0,0,0.12), 
+	0 3px 1px -2px rgba(0,0,0,0.2);
+	}
 	.form-content-search{
 		width: 99%;
 		margin: auto;
@@ -933,6 +970,7 @@ body{
 		padding: 5px;	
 		border-top: 1px solid rgba(222,222,222,0.9);		
 	}
+
 
 	.form-header-dm-1{
 		height: 80px;
