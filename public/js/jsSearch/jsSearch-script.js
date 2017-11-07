@@ -7,13 +7,25 @@ $(document).ready(function(){
 
 		var dataStatusAuths = null;
 
-		var v_Height = screen.height - 195;
+		var v_Height_content = screen.height - 355;
+		var v_Height = screen.height - 210;
+		var url = location.href;
+		console.log(url);
+		if(url == location.protocol+"//"+location.host+"/Admin"){			
+			$(".content-perfil-header").css({'margin-top':'-52px'});
+			console.log('index');
+		}else if( url == location.protocol+"//"+location.host+"/Admin/buscar-usuario") {			
+			$(".content-perfil-header").css({'margin-top':'-200px'});
+			console.log('buscar');
+		}
+		
+		
 
 		$('#form-content-search-user').css({'width':'1255px','height':'550px'});
 
-		$(".form-content-search").css({'height':''+v_Height+'px','top':'52px','position':'relative'});
+		$(".form-content-search").css({'height':'250px','top':'40px','left':'185px','position':'fixed'});
 
-		$(".form-article-search").css({'height':''+(v_Height-100)+'px','top':'-4px','position':'relative'});
+		$(".form-article-search").css({'height':''+(v_Height_content-100)+'px','top':'-4px','position':'relative'});
 
 		$(".form-content-toolt-search").css({'height':''+(v_Height+36)+'px','top':'35px'})
 
@@ -40,8 +52,8 @@ $(document).ready(function(){
 			eventoClick.searhFunctionShowInformation();
 		});	
 
-		if ($("#search").val() != null) {
-				$("#search").keyup(function(){			
+		if ($("#v_search-buscar-usuario").val() != null) {
+				$("#v_search-buscar-usuario").keyup(function(){			
 						eventoClick.searhFunctionShowInformation();				
 				});
 			}
@@ -70,7 +82,7 @@ function ClassSearchDinamy(){
 	var status_session;
 
 	this.confirmAuth = function(id){
-		var search = $("#search").val();	
+		var search = $("#v_search-buscar-usuario").val();	
 		var token = $("input[name=_token]").val();
 		var route = location.protocol+"//"+location.host+"/Admin/buscar-usuario/authConfirm";
 		var id = id;
@@ -108,7 +120,7 @@ function ClassSearchDinamy(){
 
 	this.searhFunctionShowInformation = function(){
 				
-		var search = $("#search").val();	
+		var search = $("#v_search-buscar-usuario").val();	
 		var token = $("input[name=_token]").val();		
 		var route = location.protocol+"//"+location.host+"/Admin/buscar-usuario/get";
 		var namesearch = $("input[name=v_search-buscar-usuario").val();
@@ -126,7 +138,7 @@ function ClassSearchDinamy(){
 				v_formUserStatus:status_user,
 				v_formCrtUs_roll:roll},					
 			success: function(us){
-				appendData.html('<div class="loader" style="top:155px;">Cargando...</div>');	
+				appendData.html('<div class="loader" style="top:115px;">Cargando...</div>');	
 				setTimeout(function(){				
 					cant = $(us).length;
 					console.log('Cantidad de registro:'+cant);
@@ -138,9 +150,9 @@ function ClassSearchDinamy(){
 						appendData.empty();
 						$.each(us,function(i,r){
 						if (r.estp_activeordesable == 0){
-							var dataHTML = '<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<button id="btnEnable" class="button-form-tool-enable button-dm-2 cicle-bisel-1" data="'+r.dp_id+'"></button>'+'</div>';
+							var dataHTML = '<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3 align-items-center">'+'<div class="input-group-btn button-dm-2">'+'<button type="button" id="btnEnable" class="button-form-tool-enable button-align-items" data="'+r.dp_id+'"></button>'+'</div>'+'</div>';
 						}else if (r.estp_activeordesable == 1){
-							var dataHTML = '<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<button id="btnDisable" class="button-form-tool-disabled button-dm-2 cicle-bisel-1" data="'+r.dp_id+'"></button>'+'</div>';
+							var dataHTML = '<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3 align-items-center">'+'<div class="input-group-btn button-dm-2">'+'<button type="button" id="btnDisable" class="button-form-tool-disabled button-align-items" data="'+r.dp_id+'"></button>'+'</div>'+'</div>';
 						}
 						if (r.pp_src_filename == '') {
 							var photo = '<img src="'+location.protocol+'//'+location.host+'/'+'img/icon/header/userDefault.png" class="img-dm-8 cicle-bisel-1" style="margin-top:6.5px;">';
@@ -152,8 +164,8 @@ function ClassSearchDinamy(){
 							'<div class="form-search-col form-search-col-dm-w-2 form-search-col-dm-h-3"><label class="label-font-size-8 label-font-family-neutro">'+r.dp_nombre+'</label></div>'+
 							'<div class="form-search-col form-search-col-dm-w-2 form-search-col-dm-h-3"><label class="label-font-size-8 label-font-family-neutro">'+r.dp_telefono+'</label></div>'+
 							'<div class="form-search-col form-search-col-dm-w-3 form-search-col-dm-h-3"><label class="label-font-size-8 label-font-family-neutro">'+r.us_email+'</label></div>'+
-							'<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<button id="btnEdit" class="button-form-tool-edit button-dm-2 cicle-bisel-1" ></button>'+'</div>'+
-							'<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<button id="btnMore" class="button-form-tool-more button-dm-2 cicle-bisel-1" ></button>'+'</div>'+
+							'<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3 align-items-center">'+'<div class="input-group-btn button-dm-2">'+'<button type="button" id="btnEdit" class="button-form-tool-edit button-align-items" ></button>'+'</div>'+'</div>'+
+							'<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3 align-items-center">'+'<div class="input-group-btn button-dm-2">'+'<button type="button" id="btnMore" class="button-form-tool-more button-align-items" ></button>'+'</div>'+'</div>'+
 							dataHTML+'</div>');
 					});				
 

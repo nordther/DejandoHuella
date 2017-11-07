@@ -111,11 +111,11 @@
 
 			</div>
 
-			<div class="form-toolt-hide-show" id="TooltsSearchShowHide">
+			<div class="form-toolt-hide-show align-items-center" id="TooltsSearchShowHide">
 				
-				<div class="form-toolt-action">
+				<div class="input-group-btn button-dm-1">
 					
-					{!! Form::Button(null,['class' => 'button-form-tool-arrowShowToolt button-dm-1','id' => 'btnShowToolts', 'title' => 'Herramientas de busqueda']) !!}
+					{!! Form::Button(null,['class' => 'button-form-tool-arrowShowToolt','id' => 'btnShowToolts', 'title' => 'Herramientas de busqueda','type' => "button"]) !!}
 				</div>
 
 				

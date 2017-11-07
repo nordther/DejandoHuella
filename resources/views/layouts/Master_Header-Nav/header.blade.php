@@ -32,19 +32,19 @@
 			header-box-shadow 
 			bg-content-8-opacity" id="header">
 
-				<div class="content-logo-position content-logo-position-dm">
+				<div class="content-logo">
+					<div class="input-group-btn button-dm-1">
+						{!! Form::button('',['class' => 'button-header-tool','id' => 'btn-toolts-nav','type' => 'button','style' => 'top: 0px;']); !!}
+					</div>
 					
-					{!! Form::button('',['class' => 'button-header-tool button-dm-1','id' => 'btn-toolts-nav','type' => 'button','style' => 'top: -5px;']); !!}
 
 					<a href="/" style="cursor: pointer;">
 
-						<img src="{{asset('img/logo.png')}}" class="img-dm-8 img-margin-top-4 img-margin-left-1" id="logo">
+						<img src="{{asset('img/logo.png')}}" class="img-dm-8" id="logo">
 
 						<label class="label-color-header-1 label-margin-left-2 label-margin-top-1 label-font-size-4 label-hide-movil" style="cursor: pointer;">Dejando Huellas kid's</label>
 
-					</a>	
-
-					
+					</a>
 
 				</div>						
 
@@ -62,38 +62,71 @@
 			header-box-shadow 
 			bg-content-neutro-opacity">
 
-				<div class="content-logo-position content-logo-position-dm" >
+				<div class="content-logo">
+
+					<div class="input-group-btn button-dm-1">
+						{!! Form::button('',['class' => 'button-header-tool','id' => 'btn-toolts-nav','type' => 'button','style' => 'top: 0px;']); !!}
+					</div>
 					
-					{!! Form::button('',['class' => 'button-header-tool button-dm-1','id' => 'btn-toolts-nav','type' => 'button','style' => 'top: -5px;']); !!}
 
-					<a href="/">
-						
-						<img src="{{asset('img/logo.png')}}" class="img-dm-8 img-margin-top-4 img-margin-left-1" id="logo">
+					<a href="/" style="cursor: pointer;">
 
-						<label class="label-color-header-1 label-margin-left-2 label-margin-top-1 label-font-size-4 label-hide-movil" >
+						<img src="{{asset('img/logo.png')}}" class="img-dm-8" id="logo">
 
-							Dejando Huellas Kid's
+						<label class="label-color-header-1 label-margin-left-2 label-margin-top-1 label-font-size-4 label-hide-movil" style="cursor: pointer;">Dejando Huellas kid's</label>
 
-						</label>
-
-					</a>					
-
+					</a>
+					
 				</div>
 
 				@if($data['type-modul'] !=null)
 
 					@if($data['type-modul'] == 'buscar-usuario')
 						
-						{!! Form::open(['url' => 'Admin/buscar-usuario/get','method' => 'GET']); !!}
+						{!! Form::open(['url' => 'Admin/buscar-usuario/get','method' => 'GET' , 'name' =>'formHTML']); !!}
 
-						{!! Form::hidden('_token',csrf_token(),['type' => 'hidden','id' => '_token']) !!}
+						{!! Form::hidden('_token',csrf_token(),['type' => 'hidden','id' => '_token']) !!}						
+					
+						<div class="form-wrap dm-col-1" style="margin-top: -65px; background-color: rgba(60,60,60,1);height: 55px;">
+							
+							<div class="form-article" style="background-color: rgba(60,60,60,1); padding-bottom: 0px; padding-top: 0px;">
+							
+								<div class="input-group">
 
-						<div class="content-search">
-							<div class="content-search-col content-search-col-dm-w-1">
-								{!! Form::text('v_search-'.$data['type-modul'],'',['placeholder' => 'Buscar...' , 'class' => 'form-control input-border-color-1 input-radius-square-2 input-dm-1','id' => 'search']); !!}
-							</div>							
+									{!! Form::text('v_search-'.$data['type-modul'],null,['id' =>'v_search-'.$data['type-modul'],'autocomplete'=>'off','style'=>'color:#FFFFFF;']) !!}
+
+									{!! Form::label('v_search-'.$data['type-modul'],'Buscar',['class' => 'label']) !!}
+
+								</div>
+
+							</div>
+
+							<div class="form-header" style="height: 1px; background-color: rgba(60,60,60,1); border-bottom: 1px solid rgba(75,75,75,0.75);  padding-bottom: 0px; padding-top: 0px;">
+				
+								<div>
+									
+									@foreach($data['dll']['nav'] as $dll)
 						
-						</div>		
+										@if ($dll->srcnav_filename == 'about.png')
+
+											<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="Ingreso al sistema" class="icon-login" style="top: -30px; background-color: rgba(60,60,60,1); width: 50px; height: 50px;">
+
+										@endif
+						
+									@endforeach	
+
+								</div>											
+
+						</div>
+						
+
+
+
+							
+
+						</div>
+
+							
 
 						{!! Form::close(); !!}
 

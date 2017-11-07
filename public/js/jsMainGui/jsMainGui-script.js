@@ -203,6 +203,26 @@ $(document).ready(function(){
 				}
 			}
 		});	
+		$("textarea").focus(function(){
+			if ($(this).attr('id') === $(k).attr('for')) {
+				var label = $(k);
+				console.log($(label).addClass('active'));
+			}
+		});
+		$("textarea").focusout(function(){
+			console.log($(this).attr('id'));
+			if ($(this).val().length > 0) {
+				var label = $(k);
+				if ($(this).attr('id') === $(k).attr('for')) {					
+					$(label).addClass('active');
+				}
+			}else{
+				var label = $(k);
+				if ($(this).attr('id') === $(k).attr('for')) {					
+					$(label).removeClass('active');
+				}
+			}
+		});
 	});
 
 

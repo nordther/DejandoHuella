@@ -46,9 +46,22 @@ body{
 .footer{
 	width:  100%;
 }
-.content-logo-position{			
-	vertical-align:middle;
+.align-items-center{
+	display: flex;
+	align-content: center;
+}
+.content-logo{			
+	position: relative;
 	margin-left: 40px;
+	padding: 10px;
+}
+
+.content-logo>div{
+	float: left;
+}
+.content-logo div.input-group-btn{
+	margin-top: 10px;
+	padding-right:  10px;
 }
 /*Contenedores de los topic*/
 .content-topic{
@@ -125,9 +138,9 @@ body{
 }
 .content-perfil-header{
 	position: relative;
-	float: right;
-    box-sizing: border-box;
-	margin: -40px 40px 0 0;
+	float: right;	
+	margin-right: 40px;
+    box-sizing: border-box;	
 	padding: 5px;
 	border-radius: 50%;
 	background-color: #505050;
@@ -231,7 +244,7 @@ body{
 	/**#3C3C3C*/
 }
 .bg-content{	 
-    background-color: #F8F8F8;
+    background-color: #f2f2f2;
 }
 .img-margin-auto{
 	margin: 0px 0px 0px 7.5px;
@@ -534,11 +547,16 @@ body{
 		height: auto;
 	}
 	.form-wrap{
-		padding: 30px;
-		background-color: #F6F6F6;
+		padding: 30px;		
 		margin: 100px auto;
 		border-radius: 2px;
-		box-shadow: 0 1px 5px 0 rgba(0,0,0,0.8), 0 1px 5px 0 rgba(0,0,0,0.8);
+		box-shadow:0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+	}
+	.form-wrap,
+	.form-wrap .form-header,
+	.form-wrap .form-article,
+	.form-wrap .form-footer{
+		background: #FFFFFF;
 	}
 	
 	.fc-dm{
@@ -568,7 +586,7 @@ body{
 		padding: 8px; 
 		width: 100px; 
 		height: 100px; 
-		background-color: #F6F6F6; 
+		background-color: #FFFFFF; 
 		border-radius: 50%; 
 		top: -85px; 		
 		transition: background-color 1.0s, box-shadow 1.0s; 

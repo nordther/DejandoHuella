@@ -4,7 +4,7 @@
 
 	<div class="content bg-content">		
 
-		<div class="card">
+		<div class="card card-bg-white">
 
 			<div class="header-topic-dm-2 label-start" >
 				<h2>
