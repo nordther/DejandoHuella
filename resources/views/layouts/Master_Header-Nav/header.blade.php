@@ -81,14 +81,14 @@
 
 				@if($data['type-modul'] !=null)
 
-					@if($data['type-modul'] == 'buscar-usuario')
-						
-						{!! Form::open(['url' => 'Admin/buscar-usuario/get','method' => 'GET' , 'name' =>'formHTML']); !!}
-
-						{!! Form::hidden('_token',csrf_token(),['type' => 'hidden','id' => '_token']) !!}						
+					@if($data['type-modul'] == 'buscar-usuario')											
 					
 						<div class="form-wrap dm-col-1" style="margin-top: -65px; background-color: rgba(60,60,60,1);height: 55px;">
 							
+						{!! Form::open(['url' => 'Admin/buscar-usuario/get','method' => 'GET' , 'name' =>'formHTML']); !!}
+						
+						{!! Form::hidden('_token',csrf_token(),['type' => 'hidden','id' => '_token']) !!}
+						
 							<div class="form-article" style="background-color: rgba(60,60,60,1); padding-bottom: 0px; padding-top: 0px;">
 							
 								<div class="input-group">

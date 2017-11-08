@@ -2,13 +2,16 @@
 	
 <div class="content bg-content">
 
-	<div class="form-content" id="menuPerfil" style="padding: 0px;">		
+	<div class="form-content-perfil" id="menuPerfil" style="padding: 0px;">		
 		
-		<div class="form-wrap" style="z-index: 4250000; width:345px; position:fixed; top:-48px; left: 1245px; padding: 0px;">
+		<div class="form-wrap form-wrap-perfil" >
 			
-			<div class="form-header form-header-dm-1" style="position: relative; height: 70px; display: flex; align-items:  center;">						
-				
-				<div class="icon-login" style="width: 55px; height: 55px; top: -15px; left: 5px;">
+			<div class="form-header form-header-dm-1" style="position: relative; height: auto; display: flex; align-items:  center;  overflow: hidden;">						
+				<div class="card-img">
+					<img src="{{ asset('img/imgTopics/searchBackground/header.jpg') }}" style="width: 100%; height: 150px;">
+
+					<div style="height: 25px;">
+						<div class="icon-login" style="width: 55px; height: 55px; top: -45px; left: 5px;">
 					
 					@if ($data['icon'] == null)
 							
@@ -26,7 +29,9 @@
 						
 						<img src="{{asset("img/iconUserSistem/".$data['id']."/".$data['icon'])}}" alt="{{$data['nombre']}}" >
 
-					@endif				
+					@endif
+					</div>
+									
 
 				</div>
 
@@ -34,11 +39,12 @@
 
 					@if (($rows->gtxt_paramt_wordkey == 'wordkey_welcome') && ($rows->gtxt_id_gtype == 1))
 
-						{!! Form::label(null,$rows->gtxt_text.' '.$data['nombre'],['style' => 'left:15px;']); !!}
+						{!! Form::label(null,$rows->gtxt_text.' '.$data['nombre'],['style' => 'left:20px; top: -10px;']); !!}
 
 					@endif
 											
 				@endforeach	
+				</div>			
 
 			</div>		
 
@@ -54,7 +60,7 @@
 
 							@if($rows->srcapp_filename == 'userFemale.png')
 							
-								<img src="{{ asset($rows->srcapp_dir.$rows->srcapp_filename) }}" alt="" width="35" height="35" style="border-radius: 50%;" id="frmlCtrl_perfil">
+								<img src="{{ asset($rows->srcapp_dir.$rows->srcapp_filename) }}" alt="" width="25" height="25" style="border-radius: 50%;" id="frmlCtrl_perfil">
 
 							@endif
 
@@ -64,7 +70,7 @@
 
 							@if($rows->srcapp_filename == 'userMale.png')									
 
-								<img src="{{ asset($rows->srcapp_dir.$rows->srcapp_filename) }}" alt="" width="35" height="35" style="border-radius: 50%;" id="frmlCtrl_perfil">
+								<img src="{{ asset($rows->srcapp_dir.$rows->srcapp_filename) }}" alt="" width="25" height="25" style="border-radius: 50%;" id="frmlCtrl_perfil">
 
 							@endif
 
@@ -85,7 +91,7 @@
 						@if($rows->srcapp_filename == 'folder.png')									
 
 							
-							<img src="{{ asset($rows->srcapp_dir.$rows->srcapp_filename) }}" alt="" width="35" height="35" style="border-radius: 50%;" id="frmlCtrl_files">
+							<img src="{{ asset($rows->srcapp_dir.$rows->srcapp_filename) }}" alt="" width="25" height="25" style="border-radius: 50%;" id="frmlCtrl_files">
 
 						@endif
 
@@ -104,7 +110,7 @@
 						@if($rows->srcapp_filename == 'logout.png')									
 
 							
-							<img src="{{ asset($rows->srcapp_dir.$rows->srcapp_filename) }}" alt="" width="35" height="35" style="transform: rotate(90deg);border-radius: 50%;" id="frmlCtrl_logout">
+							<img src="{{ asset($rows->srcapp_dir.$rows->srcapp_filename) }}" alt="" width="25" height="25" style="transform: rotate(90deg);border-radius: 50%;" id="frmlCtrl_logout">
 
 						@endif
 

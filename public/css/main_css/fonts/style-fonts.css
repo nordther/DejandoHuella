@@ -6,32 +6,6 @@ src: url('../../../fonts/CFGeneralTao-Regular.ttf') format('truetype');
 
 }
 
-@font-face{
-
-font-family: Lato-Regular;	
-
-src: url('../../../fonts/Lato-Regular.ttf') format('truetype');
-
-}
-
-@font-face {
-  font-family: 'Lobster Two';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Lobster Two Bold'), local('LobsterTwo-Bold'), url(http://fonts.gstatic.com/s/lobstertwo/v9/bmdxOflBqMqjEC0-kGsIiIlIZu-HDpmDIZMigmsroc4.woff2) format('woff2');
-}
-
-@font-face {
-  font-family: 'Oswald';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Oswald Light'), local('Oswald-Light'), url(http://fonts.gstatic.com/s/oswald/v13/HqHm7BVC_nzzTui2lzQTDVtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
-}
-
-title{
-	font-family: "CFGeneralTao-Regular"; 
-}
-
 p{
 	text-align: justify;
 	font-size: 16px;

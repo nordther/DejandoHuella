@@ -130,10 +130,10 @@ function navFunction(){
 
 	this.showPerfil = function(){
 		if ($("#menuPerfil").css('display') == 'none') {
-			$("#menuPerfil").fadeIn();
+			$("#menuPerfil").fadeIn(225);
 			$("#menuPerfil").css({'display':'block'});
 		}else{			
-			$("#menuPerfil").fadeOut();
+			$("#menuPerfil").fadeOut(225);
 		}
 	}
 

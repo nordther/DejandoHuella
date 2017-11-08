@@ -10,13 +10,41 @@ $(document).ready(function(){
 		var v_Height_content = screen.height - 355;
 		var v_Height = screen.height - 195;
 		var url = location.href;
-		console.log(url);
+		var numerId = location.href;
+		var dataId_1 = numerId.replace(location.protocol+"//"+location.host+"/Admin/perfil/","");
+		var dataId_2 = numerId.replace(location.protocol+"//"+location.host+"/Admin/MyFiles/","");
+
+		var urlDato = null;
+			if (dataId_1 == numerId.replace(location.protocol+"//"+location.host+"/Admin/perfil/","")) {
+				var idData = dataId_1;
+				urlDato = numerId.replace(dataId_1,"");				
+			}
+			if(dataId_2 == numerId.replace(location.protocol+"//"+location.host+"/Admin/MyFiles/","")){
+				var idData = dataId_2;
+				urlDato = numerId.replace(dataId_2,"");				
+			}
+
+
+
+		console.log(urlDato);
+
+		
+		
+		
+		//console.log(url);
+		
 		if(url == location.protocol+"//"+location.host+"/Admin"){			
 			$(".content-perfil-header").css({'margin-top':'-52px'});
 			console.log('index');
 		}else if( url == location.protocol+"//"+location.host+"/Admin/buscar-usuario") {			
-			$(".content-perfil-header").css({'margin-top':'-200px'});
+			$(".content-perfil-header").css({'margin-top':'-202px'});
 			console.log('buscar');
+		}else if(url== location.protocol+"//"+location.host+"/Admin/crear/usuario"){
+			$(".content-perfil-header").css({'margin-top':'-52px'});
+			console.log('crear usuario');
+		}else if(url== urlDato+idData){
+			$(".content-perfil-header").css({'margin-top':'-52px'});
+			console.log('crear usuario');
 		}
 		
 		
