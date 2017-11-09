@@ -5,10 +5,10 @@
 
 		<div class="form-content">
 			
-			<div class="card-img">
+			<div class="card-img" style="position: relative; top:-45px;">
 					<img src="{{ asset('img/imgTopics/searchBackground/header.jpg') }}" style="width: 100%; height: 300px;">	
 			</div>
-			<div class="form-wrap" style="position: relative; top: -140px; box-sizing: content-box;">
+			<div class="form-wrap" style="position: relative; top: -150px; box-sizing: content-box;">
 				
 				{!! Form::open(['url' => '/Admin/cambioPerfil/','method' => 'POST','name' => 'formHTML','class' => 'formulario']); !!}
 				
@@ -28,7 +28,7 @@
 
 					</div>
 								
-					<div style="position:relative;top: -75px;">
+					<div style="position:relative;top: -85px;">
 
 						{!! Form::label('','Información del perfil',['class' => 'label-font-size-4','style' => 'color:#0FDAD3;']) !!}
 
