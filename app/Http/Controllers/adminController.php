@@ -286,6 +286,7 @@ class adminController extends Controller
                             ->join('generos','datospersonales.dp_id_genero','=','generos.g_id_genero')
                             ->join('estadopersonas','datospersonales.dp_id','=','estadopersonas.estp_id')
                             ->join('photoperfils','datospersonales.dp_id','=','photoperfils.pp_id_datospersonales')
+                            ->join('users','datospersonales.dp_id','=','users.us_id_datospersonales')
                             ->where('datospersonales.dp_id','=',Auth::user()->us_id_datospersonales,'and','estadopersonas.estp_activeordesable','=',1)
                             ->take(1)
                             ->get();
@@ -297,7 +298,8 @@ class adminController extends Controller
                'apellido'   => $rows->dp_apellido,
                'fe_naci'    => $rows->dp_fe_nacimiento,
                'telefono'   => $rows->dp_telefono,
-               'address'    => $rows->dp_direccion,               
+               'address'    => $rows->dp_direccion,  
+               'email'      => $rows->us_email,       
                'roll'       => $rows->rl_wordkey_name,
                'edad'       => $rows->dp_edad,
                'genero'     => $rows->g_wordkey_genero,
@@ -329,6 +331,7 @@ class adminController extends Controller
                 "fe_naci"    => $dataChargen['fe_naci'],
                 "telefono"   => $dataChargen['telefono'],
                 "address"    => $dataChargen['address'],
+                "email"      => $dataChargen['email'],
                 "edad"       => $dataChargen['edad'],
                 "genero"     => $dataChargen['genero'],
                 "roll"       => $dataChargen['roll'],

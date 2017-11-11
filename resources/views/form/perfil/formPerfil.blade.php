@@ -38,10 +38,66 @@
 
 				<div class="form-article">
 					
+					<div class="col dm-col-1">
+						
+						<div class="input-group">
+						
+							{!! Form::text('v_frmCtrl_Name_User',$data['nombre'],['id' => 'v_frmCtrl_Name_User','placeholder' => 'algo']) !!}
+
+							{!! Form::label('v_frmCtrl_Name_User','Nombre',['class' => 'label']) !!}
+
+						</div>
+
+					</div>
+
+					<div class="col dm-col-1">
+						
+						<div class="input-group">
+						
+							{!! Form::text('v_frmCtrl_LastName_User',$data['apellido'],['id' => 'v_frmCtrl_LastName_User']) !!}
+
+							{!! Form::label('v_frmCtrl_LastName_User','Apellido',['class' => 'label']) !!}
+
+						</div>
+
+					</div>
+
+					<div class="col dm-col-2">
+						
+						<div class="input-group">
+						
+							{!! Form::text('v_frmCtrl_Address_User',$data['address'],['id' => 'v_frmCtrl_Address_User']) !!}
+
+							{!! Form::label('v_frmCtrl_Address_User','Dirección',['class' => 'label']) !!}
+
+						</div>
+
+					</div>
+					
+					<div class="col dm-col-1">
+						
+						<div class="input-group">
+						
+							{!! Form::text('v_frmCtrl_Email_User',$data['email'],['id' => 'v_frmCtrl_Email_User']) !!}
+
+							{!! Form::label('v_frmCtrl_Email_User','Correo',['class' => 'label']) !!}
+
+						</div>
+
+					</div>
+
 
 				</div>
 
+				<div class="form-footer">
+					
+					<div class="input-group-btn input-esquare-btn btn-dm-5 input-group-btn-top-form">
+					
+						{!! Form::button('',['class' => 'btn btn-save','type' => 'submit']); !!}
 
+					</div>
+
+				</div>
 
 				{!! Form::close(); !!}
 

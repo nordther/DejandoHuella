@@ -37,7 +37,7 @@ $(document).ready(function(){
 			$(".content-perfil-header").css({'margin-top':'-52px'});
 			console.log('index');
 		}else if( url == location.protocol+"//"+location.host+"/Admin/buscar-usuario") {			
-			$(".content-perfil-header").css({'margin-top':'-202px'});
+			$(".content-perfil-header").css({'margin-top':'-230px'});
 			console.log('buscar');
 		}else if(url== location.protocol+"//"+location.host+"/Admin/crear/usuario"){
 			$(".content-perfil-header").css({'margin-top':'-52px'});
@@ -80,8 +80,8 @@ $(document).ready(function(){
 			eventoClick.searhFunctionShowInformation();
 		});	
 
-		if ($("#v_search-buscar-usuario").val() != null) {
-				$("#v_search-buscar-usuario").keyup(function(){			
+		if ($("#v_frmCtrl_searchUser").val() != null) {
+				$("#v_frmCtrl_searchUser").keyup(function(){			
 						eventoClick.searhFunctionShowInformation();				
 				});
 			}
@@ -110,7 +110,7 @@ function ClassSearchDinamy(){
 	var status_session;
 
 	this.confirmAuth = function(id){
-		var search = $("#v_search-buscar-usuario").val();	
+		var search = $("#v_frmCtrl_searchUser").val();	
 		var token = $("input[name=_token]").val();
 		var route = location.protocol+"//"+location.host+"/Admin/buscar-usuario/authConfirm";
 		var id = id;
@@ -148,7 +148,7 @@ function ClassSearchDinamy(){
 
 	this.searhFunctionShowInformation = function(){
 				
-		var search = $("#v_search-buscar-usuario").val();	
+		var search = $("#v_frmCtrl_searchUser").val();	
 		var token = $("input[name=_token]").val();		
 		var route = location.protocol+"//"+location.host+"/Admin/buscar-usuario/get";
 		var namesearch = $("input[name=v_search-buscar-usuario").val();

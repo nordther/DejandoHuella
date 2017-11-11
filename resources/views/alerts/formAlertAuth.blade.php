@@ -10,7 +10,13 @@
 			
 			</div>
 			<div class="card-action">
-				{!! Form::button(null,['id' => 'formButtonClosesAlert','class' => 'button-toolt-close button-dm-2 cicle-bisel-1 button-top-right-position-absolute']); !!}
+
+				<div class="input-group-btn input-circle-btn btn-dm-2">
+						
+					{!! Form::button(null,['id' => 'formButtonClosesAlert','class' => 'btn btn-close']); !!}
+
+				</div>			
+				
 			</div>
 		</div>	
 		

@@ -11,8 +11,8 @@
 			<h2>
 				Novedades Nuevas
 			</h2>
-			<div class="input-group-btn input-circle-btn button-dm-5" style="top:25px; z-index: 20000;">
-				{!! Form::button('',['class' => 'button-form-topics-index','style'=>'transform:rotate(180deg); width:100%; height:100%; border-radius:50%;' ,'id' => 'start-noticias']) !!}			
+			<div class="input-group-btn input-circle-btn btn-dm-5 input-group-btn-top">
+				{!! Form::button('',['class' => 'btn btn-arrow-down','id' => 'start-noticias']) !!}			
 			</div>
 
 		</div>
@@ -30,9 +30,9 @@
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque sit dolorum repellat laborum, illum nesciunt eius accusantium aliquam iste, ipsum labore excepturi numquam obcaecati iure tempora, dolore vero perspiciatis eligendi!</p>
 				</div>
 				<div class="card-action">
-					<button class="button-s-f button-dm-2 button-radius-circle button-margin-left" onclick="f_social_face()"></button>
-					<button class="button-s-t button-dm-2 button-radius-circle button-margin-left" onclick="f_social_twt()"></button>
-					<button class="button-s-i button-dm-2 button-radius-circle button-margin-left" onclick="f_social_inst()"></button>
+					<div class="input-group-btn input-circle-btn btn-dm-2"> <button type="button" class="btn button-s-f " onclick="f_social_face()"></button></div>
+					<div class="input-group-btn input-circle-btn btn-dm-2"> <button type="button" class="btn button-s-t " onclick="f_social_twt()"></button></div>
+					<div class="input-group-btn input-circle-btn btn-dm-2"> <button type="button" class="btn button-s-i " onclick="f_social_inst()"></button></div>
 				</div>		
 					
 			</div>
@@ -47,9 +47,10 @@
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque sit dolorum repellat laborum, illum nesciunt eius accusantium aliquam iste, ipsum labore excepturi numquam obcaecati iure tempora, dolore vero perspiciatis eligendi!</p>
 				</div>
 				<div class="card-action">
-					<button class="button-s-f button-dm-2 button-radius-circle button-margin-left" onclick="f_social_face()"></button>
-					<button class="button-s-t button-dm-2 button-radius-circle button-margin-left" onclick="f_social_twt()"></button>
-					<button class="button-s-i button-dm-2 button-radius-circle button-margin-left" onclick="f_social_inst()"></button>
+					
+					<div class="input-group-btn input-circle-btn btn-dm-2"> <button type="button" class="btn button-s-f " onclick="f_social_face()"></button></div>
+					<div class="input-group-btn input-circle-btn btn-dm-2"> <button type="button" class="btn button-s-t " onclick="f_social_twt()"></button></div>
+					<div class="input-group-btn input-circle-btn btn-dm-2"> <button type="button" class="btn button-s-i " onclick="f_social_inst()"></button></div>
 				</div>		
 					
 			</div>

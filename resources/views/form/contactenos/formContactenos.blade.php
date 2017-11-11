@@ -9,7 +9,7 @@
 			<div class="form-wrap">
 				{!! Form::open(['url' => '..' , 'method' => 'post','name' => 'formHTML']); !!}
 
-					<div class="form-header form-header-dm-1 ">	
+					<div class="form-header ">	
 							
 							<div>
 								
@@ -37,38 +37,47 @@
 
 					<div class="form-article">
 
-						<div class="input-group inp-dm-1">				
-									
-							{!! Form::text('v_formUserContactName',null,['id' => 'v_formUserContactName','autocomplete'=>'off']); !!}	
+						
+							
+							<div class="col dm-col-1">
+								<div class="input-group">				
+										
+								{!! Form::text('v_formUserContactName',null,['id' => 'v_formUserContactName','autocomplete'=>'off']); !!}	
 
-							{!! Form::label('v_formUserContactName','Ingrese su nombre',['class' => 'label']) !!}
+								{!! Form::label('v_formUserContactName','Ingrese su nombre',['class' => 'label']) !!}
 
-						</div>
+								</div>
+						   </div>
+	                         <div class="col dm-col-1">          
+								<div class="input-group">					
+										
+								{!! Form::email('v_formUserContactEmail',null,['id' => 'v_formUserContactEmail']); !!}	
 
-						<div class="input-group inp-dm-1">					
-									
-							{!! Form::email('v_formUserContactEmail',null,['id' => 'v_formUserContactEmail']); !!}	
+								{!! Form::label('v_formUserContactEmail','Ingrese su e-mail',['class' => 'label']) !!}						
+										
+								</div>
+						   </div>
+	                         <div class="col dm-col-2">    
+								<div class="input-group">
 
-							{!! Form::label('v_formUserContactEmail','Ingrese su e-mail',['class' => 'label']) !!}						
-									
-						</div>
+								{!! Form::textarea('v_formUserContactDesc',null,['id' =>'v_formUserContactDesc','cols'=>"0",'rows'=>'0']) !!}
 
-						<div class="input-group inp-dm-1">
+								{!! Form::label('v_formUserContactDesc','Descripción',['class' => 'label']) !!}
 
-							{!! Form::textarea('v_formUserContactDesc',null,['id' =>'v_formUserContactDesc']) !!}
+								</div>
+						   </div>
 
-							{!! Form::label('v_formUserContactDesc','Descripción',['class' => 'label']) !!}
-
-						</div>
+						
+						
 
 					</div>	
 						
 
-					<div class="form-footer form-footer-dm-1 form-bc-1">	
+					<div class="form-footer">	
 						
-						<div class="input-group-btn input-circle-btn button-dm-5 input-group-btn-m-t">
+						<div class="input-group-btn input-circle-btn btn-dm-5 input-group-btn-top-form">
 					
-							{!! Form::button('',['class' => 'button-form-send','style'=>'width:100%; height:100%; border-radius:50%;','type' => 'submit']); !!}
+							{!! Form::button('',['class' => 'btn btn-send','type' => 'submit']); !!}
 
 						</div>	
 

@@ -33,8 +33,8 @@
 			bg-content-8-opacity" id="header">
 
 				<div class="content-logo">
-					<div class="input-group-btn button-dm-1">
-						{!! Form::button('',['class' => 'button-header-tool','id' => 'btn-toolts-nav','type' => 'button','style' => 'top: 0px;']); !!}
+					<div class="input-group-btn btn-dm-1">
+						{!! Form::button('',['class' => 'btn btn-menu','id' => 'btn-toolts-nav','type' => 'button','style' => 'top: 0px;']); !!}
 					</div>
 					
 
@@ -64,8 +64,8 @@
 
 				<div class="content-logo">
 
-					<div class="input-group-btn button-dm-1">
-						{!! Form::button('',['class' => 'button-header-tool','id' => 'btn-toolts-nav','type' => 'button','style' => 'top: 0px;']); !!}
+					<div class="input-group-btn btn-dm-1">
+						{!! Form::button('',['class' => 'btn btn-menu','id' => 'btn-toolts-nav','type' => 'button','style' => 'top: 0px;']); !!}
 					</div>
 					
 
@@ -81,23 +81,27 @@
 
 				@if($data['type-modul'] !=null)
 
-					@if($data['type-modul'] == 'buscar-usuario')											
+					@if($data['type-modul'] == 'buscar-usuario')
+
+					{!! Form::open(['url' => 'Admin/buscar-usuario/get','method' => 'GET' , 'name' =>'formHTML']); !!}				
 					
-						<div class="form-wrap dm-col-1" style="margin-top: -65px; background-color: rgba(60,60,60,1);height: 55px;">
-							
-						{!! Form::open(['url' => 'Admin/buscar-usuario/get','method' => 'GET' , 'name' =>'formHTML']); !!}
+						<div class="form-wrap" style="margin-top: -55px; background-color: rgba(60,60,60,1);height: 72px; width: 300px;">
 						
 						{!! Form::hidden('_token',csrf_token(),['type' => 'hidden','id' => '_token']) !!}
 						
-							<div class="form-article" style="background-color: rgba(60,60,60,1); padding-bottom: 0px; padding-top: 0px;">
-							
+							<div class="form-article" style="background-color: rgba(60,60,60,1); padding-bottom: 0px; padding-top: 0px; height: 100px;">
+								
+							<div class="dm-col-2">
+								
 								<div class="input-group">
 
-									{!! Form::text('v_search-'.$data['type-modul'],null,['id' =>'v_search-'.$data['type-modul'],'autocomplete'=>'off','style'=>'color:#FFFFFF;']) !!}
+									{!! Form::text('v_frmCtrl_searchUser',null,['id' =>'v_frmCtrl_searchUser','autocomplete'=>'off','style'=>'color:#FFFFFF;']) !!}
 
-									{!! Form::label('v_search-'.$data['type-modul'],'Buscar',['class' => 'label']) !!}
+									{!! Form::label('v_frmCtrl_searchUser','Buscar',['class' => 'label']) !!}
 
 								</div>
+
+							</div>								
 
 							</div>
 
@@ -138,7 +142,7 @@
 
 						<div class="content-search" id="content-search">
 							<div class="content-search-col content-search-col-dm-w-1">
-								{!! Form::text('v_search-'.$data['type-modul'],'',['placeholder' => 'Buscar...' , 'class' => 'form-control input-border-color-1 input-radius-square-2 input-dm-1']); !!}
+								{!! Form::text('v_search-','',['placeholder' => 'Buscar...' , 'class' => 'form-control input-border-color-1 input-radius-square-2 input-dm-1']); !!}
 							</div>
 							
 							<div class="content-search-col content-search-col-dm-w-5">

@@ -10,8 +10,8 @@
 				<h2>
 					Quienes Somos
 				</h2>
-				<div class="input-group-btn input-circle-btn button-dm-5" style="top:25px; z-index: 1000;">
-					{!! Form::button('',['class' => 'button-form-topics-index','style'=>'transform:rotate(180deg); width:100%; height:100%; border-radius:50%;' ,'id' => 'start-about']) !!}			
+				<div class="input-group-btn input-circle-btn btn-dm-5 input-group-btn-top" >
+					{!! Form::button('',['class' => 'btn btn-arrow-down','id' => 'start-about']) !!}			
 				</div>
 			</div>
 			

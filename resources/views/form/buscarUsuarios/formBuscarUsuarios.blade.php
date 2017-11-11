@@ -60,6 +60,7 @@
 		@yield('content-tools-search')
 	
 	</div>
-
+	
+	
 
 @endsection

@@ -32,7 +32,7 @@ class loginController extends Controller
              return Redirect::to('/');
 
          }else{
-            $mgs = 'Sus credenciales son incorrectos';
+            $mgs = 'Sus credenciales son incorrectos Sus credenciales son incorrectos Sus credenciales son incorrectos Sus credenciales son incorrectos Sus credenciales son incorrectos Sus credenciales son incorrectos';
             Session::flash('authmenssage',$mgs);           
              return Redirect::to('/');
          }

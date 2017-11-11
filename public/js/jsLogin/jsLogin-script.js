@@ -65,7 +65,7 @@ function Login(){
 			
 			v_height=v_height+5;
 
-			if (v_height <= 150) {											
+			if (v_height <= 200) {											
 				$("#form-article").css({'height':v_height+'px'}).fadeIn('slow');
 				console.log(v_height);
 			}

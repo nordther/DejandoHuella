@@ -5,9 +5,9 @@
 		
 		<div class="content-ctrl">		
 			
-			<div class="input-group-btn input-circle-btn button-dm-3">
+			<div class="input-group-btn input-circle-btn btn-dm-3">
 				
-				{!! Form::button('',['id'=>'close','class' => 'button-form-closeLogin','style'=>'transform:rotate(270deg); width:100%; height:100%; border-radius:50%;']) !!}
+				{!! Form::button('',['id'=>'close','class' => 'btn btn-close']) !!}
 
 			</div>
 
@@ -19,7 +19,7 @@
 		
 			{!! Form::open(['route' => 'login.store', 'method' => 'POST','name' => 'formHTML','class' => 'formulario']); !!}
 
-			<div class="form-header form-header-dm-1">
+			<div class="form-header">
 				
 				<div>
 					
@@ -45,37 +45,52 @@
 
 			</div>
 
-			<div class="form-article" id="form-article">
-				
-				<div class="input-group inp-dm-1">				
+			<div class="form-article" id="form-article">			
+					
+					<div class="col dm-col-2">
+					
+					<div class="input-group">				
 									
-					{!! Form::email('v_formUserNickEmail',null,['id' => 'v_formUserNickEmail','autocomplete'=>'off']); !!}	
+						{!! Form::email('v_formUserNickEmail',null,['id' => 'v_formUserNickEmail','autocomplete'=>'off']); !!}	
 
-					{!! Form::label('v_formUserNickEmail','Correo',['class' => 'label']) !!}
+						{!! Form::label('v_formUserNickEmail','Correo',['class' => 'label']) !!}
 
-				</div>
+					</div>
 
-				<div class="input-group inp-dm-1">					
-							
-					{!! Form::password('v_formUserPass',['id' => 'v_formUserPass']); !!}	
+					</div>
+					
+					<div class="col dm-col-2">
 
-					{!! Form::label('v_formUserPass','Contraseña',['class' => 'label']) !!}						
-							
-				</div>					
+						<div class="input-group">					
+									
+							{!! Form::password('v_formUserPass',['id' => 'v_formUserPass']); !!}	
 
+							{!! Form::label('v_formUserPass','Contraseña',['class' => 'label']) !!}						
+									
+						</div>	
+
+					</div>
+					
+					<div class="col dm-col-2">
+						
+						<div class="form-ctrl">
+						
+							{!! Html::link('#','¿Olvido su contraseña?') !!}
+
+						</div>			
+						
+					</div>
+
+				
 			</div>			
 
-			<div class="form-footer form-footer-dm-1">			
+			<div class="form-footer">			
 				
-				<div class="form-ctrl-resetPass">
-					
-					{!! Html::link('#','¿Olvido su contraseña?') !!}
+				
 
-				</div>
-
-				<div class="input-group-btn input-circle-btn button-dm-5 input-group-btn-m-t">
+				<div class="input-group-btn input-circle-btn btn-dm-5 input-group-btn-top-form">
 					
-					{!! Form::button('',['class' => 'button-form-login ','style'=>'transform:rotate(270deg); width:100%; height:100%; border-radius:50%;','type' => 'submit']); !!}
+					{!! Form::button('',['class' => 'btn btn-login ','type' => 'submit']); !!}
 
 				</div>			
 
