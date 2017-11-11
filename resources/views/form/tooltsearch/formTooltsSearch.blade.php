@@ -1,153 +1,102 @@
 @section('content-tools-search')
 
 		@if ($data['type-modul'] == 'buscar-usuario')
+
+		<div class="form-content-toolts">
 			
-			<div class="form-content-toolt-search" id="TooltsSearch">
+			<div class="form-content-filters scroll">
 				
-				<div class="form-toolt-search-header">
+				<div class="form-content">
 					
-					<h3>
+					<div class="form-wrap">
 						
-						Herramientas
+						<div class="form-header ">	
+								
+							<div>
+									
+								@foreach($data['dll']['nav'] as $dll)
+						
+									@if ($dll->srcnav_filename == 'about.png')
 
-					</h3>
+										<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="Ingreso al sistema" class="icon-login">
+
+									@endif
+						
+								@endforeach					
+
+							</div>
+									
+							<div style="position:relative;top: -85px;">
+
+								{!! Form::label('','Filtro de busqueda',['class' => 'label-font-size-5','style' => 'color:#0FDAD3;']) !!}
+
+							</div>
+
+						</div>
+
+						<div class="form-article">
+							
+							<div class="col dm-col-2">
+								
+								<div class="input-group">
+									{!! Form::select('v_frmCtrl_Document',$data['dll']['comboTypeDocument'],null,['style'=>'display:none;']) !!}
+									
+									<div class="selectWrap">
+										<div class="selectSpanText desactivateSelect" id="v_frmCtrl_Document"></div>
+										<div class="selectContent" id="v_frmCtrl_Document_content"></div>
+									</div>
+
+								</div>
+
+							</div>
+
+							<div class="col dm-col-2">
+								
+								<div class="input-group">
+									{!! Form::select('v_frmCtrl_Gender',$data['dll']['comboGender'],null,['style'=>'display:none;']) !!}
+									
+									<div class="selectWrap">
+										<div class="selectSpanText desactivateSelect" id="v_frmCtrl_Gender"></div>
+										<div class="selectContent" id="v_frmCtrl_Gender_content"></div>
+									</div>
+
+								</div>
+
+							</div>
+
+							
+
+						</div>
+
+						<div class="form-footer">
+							
+						</div>
+
+
+					</div>
 
 				</div>
 
-				<div class="form-toolt-search-article" >
-					
-					<div class="form-toolts-rows">
-					
-						{!! Form::label(null,'Tipo de Usuario'); !!}	
-					
-					</div>
-
-					<div class="form-toolts-rows">
-						
-						{!! Form::radio('v_frmUserToolts_type_user',1,true,['id' => 'v_frmUserToolts_type_user_assistan']); !!}
-
-						{!! Form::label(null,'Asistentes del Sistema',['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-
-					</div>
-
-					<div class="form-toolts-rows">
-						
-						{!! Form::radio('v_frmUserToolts_type_user',2,false,['id' => 'v_frmUserToolts_type_user_normal']); !!}
-
-						{!! Form::label(null,'Usuario Normal',['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-
-					</div>
-					
-					<div class="form-toolts-rows" id="formAssistanSistem">
-						
-						<div class="form-toolts-rows">
-							
-							@foreach ($data['dll']['text'] as $rows)
-
-								@if (($rows->gtxt_paramt_wordkey == 'wordkey_roll_user') && ($rows->gtxt_id_gtype == 1))
-
-									{!! Form::label(null,$rows->gtxt_text,['class' => 'label-content-form']); !!}
-
-								@endif
-											
-							@endforeach
-
-						</div>
-
-						<div class="form-toolts-rows" style="width: 250px;">
-							
-							{!! Form::select('v_frmCrtUs_roll',$data['dll']['comboRoll'],null,['class' => 'input-dm-2','id' =>'v_frmCrtUs_roll']); !!}
-
-						</div>					
-
-					</div>
-
-					<div class="form-toolts-rows" id="formUsersNormals">
-						
-						<div class="form-toolts-rows">
-							
-							{!! Form::label(null,'Tipo usuario normal') !!}
-
-						</div>
-
-						<div class="form-toolts-rows">
-					
-							{!! Form::select('v_frmCrtUs_typeusers_searchToolts',$data['dll']['comboTypeUsersTooltSearch'],null,['class' => 'input-dm-2','id' => 'v_frmCrtUs_typeusers']); !!}
-
-						</div>
-
-					</div>
-
-					<div class="form-toolts-rows">
-					
-					<div class="form-toolts-rows">
-						
-						{!! Form::label(null,'Estado de los usuarios') !!}
-
-					</div>
-
-					<div class="form-toolts-rows">
-						
-						{!! Form::radio('v_frmUserToolts_status_users',1,true,['id' => 'v_frmUserToolts_status_active']); !!}
-
-						{!! Form::label(null,'Activos',['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-
-					</div>
-
-					<div class="form-toolts-rows">
-						
-						{!! Form::radio('v_frmUserToolts_status_users',0,false,['id' => 'v_frmUserToolts_status_inhable']); !!}
-
-						{!! Form::label(null,'Deshabilitados',['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-
-					</div>
-
-				</div>	
-
-				</div>	
-
-					
-
-
 			</div>
 
-			<div class="form-toolt-hide-show align-items-center" id="TooltsSearchShowHide">
+			<div class="form-content-ctrls">
 				
-				<div class="input-group-btn button-dm-1">
+				<div class="input-group-btn input-circle-btn btn-dm-1">
 					
-					{!! Form::Button(null,['class' => 'button-form-tool-arrowShowToolt','id' => 'btnShowToolts', 'title' => 'Herramientas de busqueda','type' => "button"]) !!}
+					{!! Form::button('',['id' => 'v_frmCrls_btn_showFilters','class'=>'btn btn-arrow-right','type' =>'button']) !!}
+
 				</div>
 
-				
-
 			</div>
+
+		</div>
+			
+			
 
 
 		@elseif($data['type-modul'] == 'buscar-agenda')
 			
-			<div class="form-content-toolt-search" id="TooltsSearch">
-				
-				<div class="form-toolt-search-header">
-					
-					<h3>
-						
-						Herramientas
-
-					</h3>
-
-				</div>
-
-			</div>
-
-			<div class="form-toolt-hide-show" id="TooltsSearchShowHide">
-				
-				<div class="form-toolt-action">
-					
-					{!! Form::Button(null,['class' => 'button-form-tool-arrowShowToolt button-dm-1','id' => 'btnShowToolts', 'title' => 'Herramientas de busqueda']) !!}
-
-				</div>
-
-			</div>
+			
 	
 		@endif
 

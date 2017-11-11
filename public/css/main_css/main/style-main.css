@@ -16,8 +16,8 @@ body{
 	background-repeat: repeat;	
 }
 form{
-	width: auto;
-	height: auto;
+	width: 100%;
+	height: 100%;
 	padding: 0px;
 	margin: 0px;
 }
@@ -52,10 +52,7 @@ form{
 .footer{
 	width:  100%;
 }
-.align-items-center{
-	display: flex;
-	align-content: center;
-}
+
 .content-logo{			
 	position: relative;
 	margin-left: 40px;
@@ -568,7 +565,7 @@ form{
 		z-index: 4250000; 
 		width:285px; 
 		position:fixed; 
-		top:-48px; 
+		top:-18px; 
 		left: 1275px; 
 		padding: 0px;
 	}
@@ -712,15 +709,9 @@ form{
 		box-shadow: 0 1px 1px 0 rgba(0,0,0,0.08), 0 1px 1px 0 rgba(0,0,0,0.08); 
 	}
 
-	.form-content-dm-perfil{	
-		
-		width: 70px;	
-		z-index: 4000;	
-	}
 	
-	.form-content-perfil-position{
-		
-	}
+	
+	
 	
 	.form-profile-nav-menu{
 		width: 98%;		
@@ -822,128 +813,52 @@ form{
 		margin: auto;
 		background-color: #EEEEEE;		
 	}
+	
+	
+	.form-conteint-iconPerfil{
+		width: 250px;
+		height: auto;
+		padding-left:  10px;
+	}
 
-	.form-agenda-content{
-		width: 210px;		
-		margin: 25px;
+	.form-content-toolts{
+		display: flex;
+		width: auto;
+		height: auto;
 		float: left;
-		display: table;
-		border-top: 1px solid #efefef;
-		border-left: 1px solid #e8e8e8;
-		border-bottom: 1px solid #e2e2e2;
-		border-right:  1px solid #e8e8e8;
-		background-color: rgb(255,255,255);
-		box-shadow: 0 1px 1px 0 rgba(0,0,0,0.08), 0 1px 1px 0 rgba(0,0,0,0.08); 
-	}
-	.form-agenda-content:hover{
-		cursor: pointer;
-		background-color: #00686A;	
-		color: #FFFFFF;
-	}
-	.form-agenda-content:hover > .form-agenda-header{
-		border-bottom: 1px solid #00BFB8;
-	}
-	.form-agenda-content:hover > .form-agenda-footer{
-		border-top: 1px solid #00BFB8;
-	}
-	
-	.form-agenda-rows{
-		display: table-row;
-		
+		overflow: hidden;
+		align-content: center;
+		z-index: 4000;
 	}
 
-	.form-agenda-cell{
-		display: table-cell;
-		padding-left: 10px;
-		padding-right: 10px;
+	.form-content-filters{
+		position: relative;
+		display: block;
+		width: 400px;
+		background-color: #EBEBEB;	
 	}
-	
-	.form-agenda-header{
-		height: 50px;
-		border-bottom: 1px solid #e2e2e2;
-	}
-	.form-agenda-article{
-		text-align: left;
-		height: 150px;
-	}
-	.form-agenda-footer{
-		display: table;
-		height: 50px;
-		border-top: 1px solid #e2e2e2;
-	}
-	.form-agenda-footer > .form-agenda-rows{
+
+	.form-content-ctrls{
+		position: relative;
+		display: flex;
+		top: 50px;
 		float: left;
-	}
-	.form-agenda-footer > .form-agenda-rows > .form-agenda-cell >   p{		
-		text-align: left;
-		font-size: 12px;
-		margin-top: 8px;
-	}
-	.form-agenda-header > .form-agenda-rows > .form-agenda-cell > h5{
-		color: #02E7E4;
-		margin-top: 8px;
-	}
-	.form-search-row-effect-cardview{
-		margin: auto;	
-		border-bottom: 1px solid #e0e0e0;
-		background-color: rgb(255,255,255);
-		width: 99%;		
-		box-shadow:0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2); 
-	}
-	.form-search-row-effect-cardview:hover{
-		background-color: #00898C;
-
-		color: #FFFFFF;	
-	}
-	.form-content-toolt-search{
-		position: absolute;
-		display: none;		
-		width: 280px;
-		background-color: #DFDFDF;		
-	}
-	.form-toolt-search-header{
-		position: relative;
-		height: 50px;
-		width: 95%;
-		top: 10px;
-		margin: auto;
-		text-align: center;
-		background-color: #F2F2F2;		
-		box-shadow: 0 1px 1px 0 rgba(0,0,0,0.08), 0 1px 1px 0 rgba(0,0,0,0.08);
-	}
-	.form-toolt-search-header > h3 {
-		padding-top: 8px;
-		color: #02E7E4;	
+		width: 34.5px;		
+		align-content: center;
+		background-color: #FFFFFF;
+		border-right:  1px solid #E7E7E7;
+		box-shadow:	0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
 	}
 
-	.form-toolt-search-article{
-		margin: 25px auto;
-		padding-left: 15px;
-	}
 
-	.form-toolts-rows{
-		margin-top: 15px;
-		padding-left: 5px;
-		padding-right: 5px;
-	}
+
+
+
+/*********************************************************************************************************************************/
+
+
+
 	
-	.form-toolt-hide-show{
-		position: absolute;		
-		width: 25px;
-		background-color: #DFDFDF;
-		border: 2px solid #AFAFAF;
-		margin: auto;
-	}
-	.form-toolt-action{
-		position: relative;
-		top: 50%;
-	}
-	.form-bg-white/* ,	
-	.form-bg-white .form-header,
-	.form-bg-white .form-article,
-	.form-bg-white .form-footer */{
-		background-color: #F6F6F6;
-	}
 	.form-header{
 		width: 100%;
 		border-bottom: 1px solid rgba(222,222,222,0.9);			
@@ -956,28 +871,8 @@ form{
 		margin: auto;	
 		padding-top: 15px;
 		padding-bottom: 15px;
-	}	
-	
-	.form-conteint-iconPerfil{
-		width: 250px;
-		height: auto;
-		padding-left:  10px;
 	}
 
-	.form-details{
-		padding:20px;
-		height: 400px;
-	}
-	.form-toolt-form{
-		padding: 10px;
-		border-left: 1px solid rgba(222,222,222,0.9);
-		height: 400px;
-	}
-	
-	.label-content-form{
-		padding: 5px;
-	}
-	
 	.form-footer{		
 		width: 100%;
 		text-align:center;		

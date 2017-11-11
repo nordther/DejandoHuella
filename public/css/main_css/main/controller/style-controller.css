@@ -284,7 +284,7 @@ textarea{
 		    transition: all 0.2s ease;	
 }
 
-.button-header-perfil{
+.btn-more{
 	margin-top: 25px;
 	float: right;
 	cursor: pointer;
@@ -296,7 +296,7 @@ textarea{
 		 -o-transition: all 0.2s ease;
 		    transition: all 0.2s ease;	
 }
-.button-header-perfil:hover{
+.btn-more:hover{
 	background-image: url('../../../../img/icon/header/perfilMenuHover.png');
 	-webkit-transition: all 0.2s ease;
 	   -moz-transition: all 0.2s ease;
@@ -305,7 +305,7 @@ textarea{
 		    transition: all 0.2s ease;	
 }
 
-.button-header-tool-back{
+.btn-back{
 	cursor: pointer;
 	position: relative;
 	background-image: url('../../../../img/icon/header/back.png');	
@@ -315,7 +315,7 @@ textarea{
 		 -o-transition: all 0.2s ease;
 		    transition: all 0.2s ease;	
 }
-.button-header-tool-back:hover{
+.btn-back:hover{
 	background-image: url('../../../../img/icon/header/backHover.png');
 	-webkit-transition: all 0.2s ease;
 	   -moz-transition: all 0.2s ease;
@@ -324,7 +324,7 @@ textarea{
 		    transition: all 0.2s ease;	
 }
 
-.button-form-tool-edit{
+.btn-edit{
 	cursor: pointer;
 	position: relative;
 	background-image: url('../../../../img/icon/form/edit.png');	
@@ -334,7 +334,7 @@ textarea{
 		 -o-transition: all 0.2s ease;
 		    transition: all 0.2s ease;	
 }
-.button-form-tool-edit:hover{
+.btn-edit:hover{
 	background-image: url('../../../../img/icon/form/editHover.png');
 	-webkit-transition: all 0.2s ease;
 	   -moz-transition: all 0.2s ease;
@@ -342,7 +342,7 @@ textarea{
 		 -o-transition: all 0.2s ease;
 		    transition: all 0.2s ease;	
 }
-.button-form-tool-more{
+.btn-more_frm{
 	cursor: pointer;
 	position: relative;
 	transform: rotate(90deg);
@@ -353,7 +353,7 @@ textarea{
 		 -o-transition: all 0.2s ease;
 		    transition: all 0.2s ease;	
 }
-.button-form-tool-more:hover{
+.btn-more_frm:hover{
 	background-image: url('../../../../img/icon/form/moreHover.png');
 	-webkit-transition: all 0.2s ease;
 	   -moz-transition: all 0.2s ease;
@@ -458,7 +458,7 @@ textarea{
 		
 }
 .btn-arrow-left{
-	transform:rotate(90deg);
+	transform:rotate(0deg);
 	background-image: url('../../../../img/icon/form/arrow.png');
 	background-color: transparent;
 }
@@ -467,6 +467,37 @@ textarea{
 	background-image: url('../../../../img/icon/form/arrowHover.png');
 		
 }
+
+.btn-arrow-right{
+	transform:rotate(90deg);
+	background-image: url('../../../../img/icon/form/arrow.png');
+	background-color: transparent;
+}
+
+.btn-arrow-right:hover{	
+	background-image: url('../../../../img/icon/form/arrowHover.png');
+		
+}
+.select_icon_circle{
+	left: 55px;
+	padding: 5.5px;
+	background-color: #FFFFFF;
+	border-radius: 50%;
+	box-shadow:	0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
+}
+.select_icon-dm-1{
+	width: 20px;
+	height: 20px;
+	
+}
+.select_icon{
+	width: 100%;
+	height: 100%;
+	background-color: transparent;
+	background-size: 100% 100%;
+	
+}
+
 .button-s-f{
 	background-image: url('../../../../img/icon/socialicon/facebook.png');		
 }
@@ -476,8 +507,80 @@ textarea{
 .button-s-i{
 	background-image: url('../../../../img/icon/socialicon/instagram.png');		
 }
+.selectWrap{
+	width: 100%;
+	height: auto;
+}
+.selectSpanText{
+	position: relative;
+	cursor: pointer;
+	width: 100%;			
+	text-align: left;
+	font-family: "Roboto", sans-serif;
+	padding: 10px;
+	background-color: #FFFFFF;
+	border-radius: 2px;
+	border-bottom: 2px solid #E7E7E7;	
+	overflow: hidden;
+}
+.selectSpanText:hover{
+	background-color: #F5F5F5;
+}
+.selectSpanText:active{
+	background-color: #F5F5F5;
+	color: #26a69a;
+	border-bottom: 2px solid #26a69a;
+}
+.activateSelect{
+	background-color: #F5F5F5;
+	color: #26a69a;
+	border-bottom: 2px solid #26a69a;
+}
+.selectSpanText > div,
+.selectSpanText > span{
+	position: relative;
+	cursor: pointer;
+	float: left;	
+	user-select: none;		
+}
+.selectContent{
+	position: relative;
+	display: none;
+	width: 104%;	
+	font-family: "Roboto", sans-serif;
+	text-align: left;	
+	height: auto;
+	z-index: 5000;
+	overflow: hidden;
+	background-color: #ffffff;
+	box-shadow:	0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
+}
+.selectContent > div{
+	width: 100%;
+	height: 30px;
+	padding-top: 10px;
+	padding-left: 10px;
+	float: left;
+	border-bottom: 1px solid #E7E7E7;
+	box-sizing: content-box;
+	cursor: pointer;
+	transition: all .7s ease;
+}
+.selectContent > div.hover:hover{
+	background-color: #DEDEDE;
+	color:#26a69a;
+}
+.selectContent > span{	
+	position: relative;
+	cursor: pointer;
+	float: left;	
+	user-select: none;		
+}
 
-
+.disableSelectChouse{
+	background-color: #F5F5F5;
+	color: #26a69a;
+}
 
 
 

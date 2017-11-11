@@ -4,11 +4,13 @@ var timeLoad = 0;
 var cant = 0;
 
 $(document).ready(function(){
-
+		eventoClick.selectPerformaceMaterialize('v_frmCtrl_Document');
+		eventoClick.selectPerformaceMaterialize('v_frmCtrl_Gender');
 		var dataStatusAuths = null;
 
 		var v_Height_content = screen.height - 355;
-		var v_Height = screen.height - 195;
+		var v_Height = screen.height -156.8 ;
+		console.log(v_Height);
 		var url = location.href;
 		var numerId = location.href;
 		var dataId_1 = numerId.replace(location.protocol+"//"+location.host+"/Admin/perfil/","");
@@ -24,20 +26,16 @@ $(document).ready(function(){
 				urlDato = numerId.replace(dataId_2,"");				
 			}
 
+		
 
 
-		console.log(urlDato);
-
 		
-		
-		
-		//console.log(url);
 		
 		if(url == location.protocol+"//"+location.host+"/Admin"){			
 			$(".content-perfil-header").css({'margin-top':'-52px'});
 			console.log('index');
 		}else if( url == location.protocol+"//"+location.host+"/Admin/buscar-usuario") {			
-			$(".content-perfil-header").css({'margin-top':'-230px'});
+			$(".content-perfil-header").css({'margin-top':'-45px'});
 			console.log('buscar');
 		}else if(url== location.protocol+"//"+location.host+"/Admin/crear/usuario"){
 			$(".content-perfil-header").css({'margin-top':'-52px'});
@@ -55,22 +53,30 @@ $(document).ready(function(){
 
 		$(".form-article-search").css({'height':''+(v_Height_content-100)+'px','top':'-4px','position':'relative'});
 
-		$(".form-content-toolt-search").css({'height':''+(v_Height+36)+'px','top':'35px'})
+		
 
 		$(".form-toolt-hide-show").css({'height':''+(v_Height+33)+'px','top':'35px'});
 
 		$(".form-search-agenda").css({'height':''+(v_Height)+'px'});
 
-		$("#TooltsSearch").css({'top':'52px'});
 
-		$("#TooltsSearchShowHide").css({'top':'52px'});
+
+
+		$(".form-content-filters").css({'display':'none','top':'52px','height':''+(v_Height+36)+'px'});
+
+		$(".form-content-ctrls").css({'top':'52px','height':''+(v_Height+36)+'px'});
+
+
 
 		$("div[id^=targetItem]").click(function(){
 		   		
-		   });	
-		$("#btnShowToolts").click(function(){
-		   		eventoClick.tooltSearchShow();
 		   });
+
+		  	
+		$("button[id=v_frmCrls_btn_showFilters]").click(function(){
+				console.log($(this).attr("id"));
+		   		eventoClick.tooltSearchShow();
+		   });	
 
 		$("#v_frmUserToolts_status_active").click(function(){
 			eventoClick.searhFunctionShowInformation();
@@ -134,14 +140,13 @@ function ClassSearchDinamy(){
 	}
 
 	this.tooltSearchShow = function(){
-		if ($("#TooltsSearch").css('display') == 'none') {			
-			$("#btnShowToolts").css({'transform':'rotate(180deg)'});
-			$("#TooltsSearch").fadeIn();
-			$("#TooltsSearch").css({'left':'25px'});	
+		if ($(".form-content-filters").css('display') == 'none') {			
+			$("#v_frmCrls_btn_showFilters").css({'transform':'rotate(270deg)'});
+			$(".form-content-filters").fadeIn(100);				
 
 		}else{			
-			$("#btnShowToolts").css({'transform':'rotate(0deg)'});
-			$("#TooltsSearch").fadeOut();
+			$("#v_frmCrls_btn_showFilters").css({'transform':'rotate(90deg)'});			
+			$(".form-content-filters").fadeOut(100);
 			
 		}
 	}
@@ -244,7 +249,7 @@ function ClassSearchDinamy(){
 	this.DisableFunction = function(id,status){
 		var search = $("#search").val();	
 		var token = $("input[name=_token]").val();		
-		var route = location.protocol+"//"+location.host+"/Admin/buscar-usuario/setUpdateDisableUser";
+		var route = location.protocol+"//"+location.host+"/Admin/<busca></busca>r-usuario/setUpdateDisableUser";
 		var id = id;
 		var status = status;
 		$.ajax({
@@ -264,7 +269,44 @@ function ClassSearchDinamy(){
 
 	}	
 
-	
+	this.selectPerformaceMaterialize = function(id){
+		var selectAppend = null;
+		$.each($("select[name="+id+"] option"),function(indx,elements){
+			var v_value = elements.value;
+			var v_text = elements.text;
+			console.log(v_value+':'+v_text);
+			if (indx == 0) {
+				$("#"+id).html('<span data-value="'+v_value+'">'+v_text+'</span><div class="select_icon_circle select_icon-dm-1"><img src="'+location.protocol+'//'+location.host+'/img/icon/form/arrowHover.png" class="select_icon" id="select_arrow'+id+'"></div>');
+				$("#select_arrow"+id).css({'transform':'rotate(180deg)'});
+			}			
+
+		});
+		$("#"+id).click(function(){
+			if($("#"+id).hasClass('desactivateSelect')){
+				$("#"+id).removeClass('desactivateSelect').addClass('activateSelect');	
+				$("#select_arrow"+id).css({'transform':'rotate(0deg)'}).fadeIn('slow');
+				$("#select_arrow"+id).attr('src',location.protocol+'//'+location.host+'/img/icon/form/arrowselectUp.png').fadeIn('slow');			
+			}else if($("#"+id).hasClass('activateSelect')){
+				$("#"+id).removeClass('activateSelect').addClass('desactivateSelect');
+				$("#select_arrow"+id).css({'transform':'rotate(180deg)'}).fadeIn('slow');
+				$("#select_arrow"+id).attr('src',location.protocol+'//'+location.host+'/img/icon/form/arrowHover.png').fadeIn('slow');
+			}
+			$("#"+id+"_content").empty();
+			$("#"+id+"_content").append('<div class="disableSelectChouse"><span>Seleccione una opción</span></div>');
+			if ($("#"+id+"_content").css('display') == 'none') {
+				$("#"+id+"_content").show();								
+			}else{
+				$("#"+id+"_content").fadeOut(10);
+			}
+			$.each($("select[name="+id+"] option"),function(indx,elements){
+			var v_value = elements.value;
+			var v_text = elements.text;
+			console.log(v_value+':'+v_text);
+			$("#"+id+"_content").append('<div class="hover"><span data-value="'+v_value+'">'+v_text+'</span></div>');					
+			});
+			
+		});
+	}
 
 	this.EventClickSearch = function(){
 		$("button[id=btnEnable]").click(function(){
