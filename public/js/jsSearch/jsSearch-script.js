@@ -2,15 +2,25 @@ var eventoClick = new ClassSearchDinamy();
 var result;
 var timeLoad = 0;
 var cant = 0;
+var roll = null;
 
 $(document).ready(function(){
-		eventoClick.selectPerformaceMaterialize('v_frmCtrl_Document');
-		eventoClick.selectPerformaceMaterialize('v_frmCtrl_Gender');
+		if (roll == null) {
+			roll=1;
+		}
+		eventoClick.searchInformation();
+
+		$.each($("select"),function(i,k){
+			var selector = $(k).attr('name');
+			//console.log(selector);
+			eventoClick.selectPerformaceMaterialize(selector);
+		});
+		
 		var dataStatusAuths = null;
 
 		var v_Height_content = screen.height - 355;
 		var v_Height = screen.height -156.8 ;
-		console.log(v_Height);
+		//console.log(v_Height);
 		var url = location.href;
 		var numerId = location.href;
 		var dataId_1 = numerId.replace(location.protocol+"//"+location.host+"/Admin/perfil/","");
@@ -33,16 +43,16 @@ $(document).ready(function(){
 		
 		if(url == location.protocol+"//"+location.host+"/Admin"){			
 			$(".content-perfil-header").css({'margin-top':'-52px'});
-			console.log('index');
+			//console.log('index');
 		}else if( url == location.protocol+"//"+location.host+"/Admin/buscar-usuario") {			
 			$(".content-perfil-header").css({'margin-top':'-45px'});
-			console.log('buscar');
+			//console.log('buscar');
 		}else if(url== location.protocol+"//"+location.host+"/Admin/crear/usuario"){
 			$(".content-perfil-header").css({'margin-top':'-52px'});
-			console.log('crear usuario');
+			//console.log('crear usuario');
 		}else if(url== urlDato+idData){
 			$(".content-perfil-header").css({'margin-top':'-52px'});
-			console.log('crear usuario');
+			//console.log('crear usuario');
 		}
 		
 		
@@ -74,7 +84,7 @@ $(document).ready(function(){
 
 		  	
 		$("button[id=v_frmCrls_btn_showFilters]").click(function(){
-				console.log($(this).attr("id"));
+				//console.log($(this).attr("id"));
 		   		eventoClick.tooltSearchShow();
 		   });	
 
@@ -88,23 +98,13 @@ $(document).ready(function(){
 
 		if ($("#v_frmCtrl_searchUser").val() != null) {
 				$("#v_frmCtrl_searchUser").keyup(function(){			
-						eventoClick.searhFunctionShowInformation();				
+						eventoClick.searchInformation();				
 				});
 			}
 		
-		$("#v_frmCrtUs_roll").change(function(){
+		
 
-				//console.log($(this).val());
-
-					console.log($("#gamemode option:selected").text());
-				
-
-				
-
-				eventoClick.searhFunctionShowInformation();
-		});
-
-		if ($("#v_frmCrtUs_roll").selectedIndex != -1 ) {eventoClick.searhFunctionShowInformation();}
+		if ($("select[name=v_frmCrt_Roll]").selectedIndex != -1 ) {eventoClick.searchInformation();}
 		
 			
 	}); 
@@ -151,15 +151,15 @@ function ClassSearchDinamy(){
 		}
 	}
 
-	this.searhFunctionShowInformation = function(){
+	this.searchInformation = function(){
 				
 		var search = $("#v_frmCtrl_searchUser").val();	
 		var token = $("input[name=_token]").val();		
 		var route = location.protocol+"//"+location.host+"/Admin/buscar-usuario/get";
 		var namesearch = $("input[name=v_search-buscar-usuario").val();
 		if ($("#v_frmUserToolts_status_active").is(':checked')) {var status = 1;}else if($("#v_frmUserToolts_status_inhable").is(':checked')){var status = 0;}
-		var status_user = status;		
-		var roll = $("#v_frmCrtUs_roll").val();
+		var status_user = status;					
+		//console.log(roll);
 		var appendData = $('#formSearchIncludeInformation');
 		$.ajax({
 			url:route,
@@ -168,24 +168,24 @@ function ClassSearchDinamy(){
 			dataType:'json',
 			data:{
 				v_formUserSearch:search,
-				v_formUserStatus:status_user,
+				v_formUserStatus:1,
 				v_formCrtUs_roll:roll},					
 			success: function(us){
 				appendData.html('<div class="loader" style="top:115px;">Cargando...</div>');	
 				setTimeout(function(){				
 					cant = $(us).length;
-					console.log('Cantidad de registro:'+cant);
+					//console.log('Cantidad de registro:'+cant);
 					timeLoad = cant*75/100;
-					console.log('Cantidad de tiempo  :'+timeLoad);
+					//console.log('Cantidad de tiempo  :'+timeLoad);
 					eventoClick.EventClickSearch();
-					console.log('Tiempo:'+(1000+timeLoad));
+					//console.log('Tiempo:'+(1000+timeLoad));
 					setTimeout(function(){
 						appendData.empty();
 						$.each(us,function(i,r){
 						if (r.estp_activeordesable == 0){
-							var dataHTML = '<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3 align-items-center">'+'<div class="input-group-btn button-dm-2">'+'<button type="button" id="btnEnable" class="button-form-tool-enable button-align-items" data="'+r.dp_id+'"></button>'+'</div>'+'</div>';
+							var dataHTML = '<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<div class="input-group-btn btn-dm-2">'+'<button type="button" id="btnEnable" class="btn btn-enable" data="'+r.dp_id+'"></button>'+'</div>'+'</div>';
 						}else if (r.estp_activeordesable == 1){
-							var dataHTML = '<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3 align-items-center">'+'<div class="input-group-btn button-dm-2">'+'<button type="button" id="btnDisable" class="button-form-tool-disabled button-align-items" data="'+r.dp_id+'"></button>'+'</div>'+'</div>';
+							var dataHTML = '<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<div class="input-group-btn btn-dm-2">'+'<button type="button" id="btnDisable" class="btn btn-disabled" data="'+r.dp_id+'"></button>'+'</div>'+'</div>';
 						}
 						if (r.pp_src_filename == '') {
 							var photo = '<img src="'+location.protocol+'//'+location.host+'/'+'img/icon/header/userDefault.png" class="img-dm-8 cicle-bisel-1" style="margin-top:6.5px;">';
@@ -197,8 +197,8 @@ function ClassSearchDinamy(){
 							'<div class="form-search-col form-search-col-dm-w-2 form-search-col-dm-h-3"><label class="label-font-size-8 label-font-family-neutro">'+r.dp_nombre+'</label></div>'+
 							'<div class="form-search-col form-search-col-dm-w-2 form-search-col-dm-h-3"><label class="label-font-size-8 label-font-family-neutro">'+r.dp_telefono+'</label></div>'+
 							'<div class="form-search-col form-search-col-dm-w-3 form-search-col-dm-h-3"><label class="label-font-size-8 label-font-family-neutro">'+r.us_email+'</label></div>'+
-							'<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3 align-items-center">'+'<div class="input-group-btn button-dm-2">'+'<button type="button" id="btnEdit" class="button-form-tool-edit button-align-items" ></button>'+'</div>'+'</div>'+
-							'<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3 align-items-center">'+'<div class="input-group-btn button-dm-2">'+'<button type="button" id="btnMore" class="button-form-tool-more button-align-items" ></button>'+'</div>'+'</div>'+
+							'<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<div class="input-group-btn btn-dm-2">'+'<button type="button" id="btnEdit" class="btn btn-edit" ></button>'+'</div>'+'</div>'+
+							'<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<div class="input-group-btn btn-dm-2">'+'<button type="button" id="btnMore" class="btn btn-more_frm" ></button>'+'</div>'+'</div>'+
 							dataHTML+'</div>');
 					});				
 
@@ -241,7 +241,7 @@ function ClassSearchDinamy(){
 				v_formUserStatus: status
 			},
 		success:function(){
-			eventoClick.searhFunctionShowInformation();
+			eventoClick.searchInformation();
 		}	
 		});
 		
@@ -262,7 +262,7 @@ function ClassSearchDinamy(){
 				v_formUserStatus: status
 			},
 		success:function(){
-			eventoClick.searhFunctionShowInformation();
+			eventoClick.searchInformation();
 		}	
 		
 	});
@@ -274,25 +274,25 @@ function ClassSearchDinamy(){
 		$.each($("select[name="+id+"] option"),function(indx,elements){
 			var v_value = elements.value;
 			var v_text = elements.text;
-			console.log(v_value+':'+v_text);
-			if (indx == 0) {
-				$("#"+id).html('<span data-value="'+v_value+'">'+v_text+'</span><div class="select_icon_circle select_icon-dm-1"><img src="'+location.protocol+'//'+location.host+'/img/icon/form/arrowHover.png" class="select_icon" id="select_arrow'+id+'"></div>');
-				$("#select_arrow"+id).css({'transform':'rotate(180deg)'});
-			}			
-
+			//console.log(v_value+':'+v_text);
+			$("#"+id).html('<div class="select_Content_Title"><span data-value="'+'">Seleccione una opción</span></div><div class="select_Icon select_icon_circle select_icon-dm-1"><img src="'+location.protocol+'//'+location.host+'/img/icon/form/arrowHover.png" class="select_icon" id="select_arrow'+id+'"></div>');
+			$("#select_arrow"+id).css({'transform':'rotate(180deg)'});
 		});
 		$("#"+id).click(function(){
 			if($("#"+id).hasClass('desactivateSelect')){
-				$("#"+id).removeClass('desactivateSelect').addClass('activateSelect');	
+				$("#"+id).removeClass('desactivateSelect').addClass('activateSelect');
+				$("#"+id+"_Title").removeClass('selectTitleDesactivate').addClass('selectTitleActive');	
 				$("#select_arrow"+id).css({'transform':'rotate(0deg)'}).fadeIn('slow');
 				$("#select_arrow"+id).attr('src',location.protocol+'//'+location.host+'/img/icon/form/arrowselectUp.png').fadeIn('slow');			
 			}else if($("#"+id).hasClass('activateSelect')){
 				$("#"+id).removeClass('activateSelect').addClass('desactivateSelect');
+				$("#"+id+"_Title").removeClass('selectTitleActive').addClass('selectTitleDesactivate');	
 				$("#select_arrow"+id).css({'transform':'rotate(180deg)'}).fadeIn('slow');
 				$("#select_arrow"+id).attr('src',location.protocol+'//'+location.host+'/img/icon/form/arrowHover.png').fadeIn('slow');
 			}
+			$(".selectContent").css({'width':($(".selectSpanText").width()+9)+"px"})
 			$("#"+id+"_content").empty();
-			$("#"+id+"_content").append('<div class="disableSelectChouse"><span>Seleccione una opción</span></div>');
+			$("#"+id+"_content").append('<div class="select_Content_Title disableSelectChouse"><span>Seleccione una opción</span></div>');
 			if ($("#"+id+"_content").css('display') == 'none') {
 				$("#"+id+"_content").show();								
 			}else{
@@ -301,11 +301,47 @@ function ClassSearchDinamy(){
 			$.each($("select[name="+id+"] option"),function(indx,elements){
 			var v_value = elements.value;
 			var v_text = elements.text;
-			console.log(v_value+':'+v_text);
-			$("#"+id+"_content").append('<div class="hover"><span data-value="'+v_value+'">'+v_text+'</span></div>');					
+			//console.log(v_value+':'+v_text);
+			$("#"+id+"_content").append('<div class="select_Content_Title hover" id="'+id+'_'+v_value+'"><span data-value="'+v_value+'">'+v_text+'</span></div>');	
+				eventoClick.SelectOption(id,v_value);			
 			});
 			
+			
 		});
+
+	}
+	this.SelectOption = function(id,value){
+		$("#"+id+'_'+value).click(function(){
+			var data = $(this).attr('id');
+			var text = $(this).text();			
+			var tamstring = data.length;
+			var inictial = "v_frmCtrl_";
+			var tamini = inictial.length;
+			var sustringData = data.substring(tamini,(tamstring-2));				
+								
+					$("select[name="+id+"]").val(value).change();					
+					$("#"+id).html('<div class="select_Content_Title"><span data-value="'+'">'+text+'</span></div><div class="select_Icon select_icon_circle select_icon-dm-1"><img src="'+location.protocol+'//'+location.host+'/img/icon/form/arrowHover.png" class="select_icon" id="select_arrow'+id+'"></div>');
+					$("#select_arrow"+id).css({'transform':'rotate(180deg)'});
+					$("#"+id+"_content").fadeOut(10);
+					$("#"+id).removeClass('activateSelect').addClass('desactivateSelect');
+					$("#"+id+"_Title").removeClass('selectTitleActive').addClass('selectTitleDesactivate');
+					
+
+						if (($("select[name="+id+"] option[value="+value+"]").text() == 'Administrador')||
+							($("select[name="+id+"] option[value="+value+"]").text() == 'Administrator')) {
+							roll = 1;
+						console.log(roll);
+						}
+						if (($("select[name="+id+"] option[value="+value+"]").text() == 'Auxiliar')||
+							($("select[name="+id+"] option[value="+value+"]").text() == 'Assistan')) {
+							roll = 2;
+						console.log(roll);
+						}
+					
+					eventoClick.searchInformation();
+					
+			});			
+			
 	}
 
 	this.EventClickSearch = function(){

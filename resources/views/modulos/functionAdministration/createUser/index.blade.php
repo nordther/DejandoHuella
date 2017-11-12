@@ -8,6 +8,7 @@
 
 @extends('form.contents.main-content-functionAdmin')
 
+@extends('form.registroUsuarios.formCreateUsuarios')
+
 @extends('form.Perfil.formPerfil-header')
 
-@extends('form.registroUsuarios.formCreateUsuarios')

@@ -269,6 +269,10 @@ class adminController extends Controller
        
     }
 
+    public function chequeoDatos(adminRequest $request){
+       
+    }
+
     public function perfil($id){  
 
         if ($id == null) {            

@@ -39,32 +39,20 @@
 							<div class="col dm-col-2">
 								
 								<div class="input-group">
-									{!! Form::select('v_frmCtrl_Document',$data['dll']['comboTypeDocument'],null,['style'=>'display:none;']) !!}
+									{!! Form::select('v_frmCtrl_Roll',$data['dll']['comboRoll'],null,['style'=>'display:none;']) !!}
 									
 									<div class="selectWrap">
-										<div class="selectSpanText desactivateSelect" id="v_frmCtrl_Document"></div>
-										<div class="selectContent" id="v_frmCtrl_Document_content"></div>
+										<div class="selectTitle selectTitleDesactivate" id="v_frmCtrl_Roll_Title">
+											{!! Form::label(null,"Tipo de Usuario") !!}
+										</div>
+										<div class="selectSpanText desactivateSelect" id="v_frmCtrl_Roll"></div>
+										<div class="selectContent" id="v_frmCtrl_Roll_content"></div>
 									</div>
+
 
 								</div>
 
-							</div>
-
-							<div class="col dm-col-2">
-								
-								<div class="input-group">
-									{!! Form::select('v_frmCtrl_Gender',$data['dll']['comboGender'],null,['style'=>'display:none;']) !!}
-									
-									<div class="selectWrap">
-										<div class="selectSpanText desactivateSelect" id="v_frmCtrl_Gender"></div>
-										<div class="selectContent" id="v_frmCtrl_Gender_content"></div>
-									</div>
-
-								</div>
-
-							</div>
-
-							
+							</div>							
 
 						</div>
 

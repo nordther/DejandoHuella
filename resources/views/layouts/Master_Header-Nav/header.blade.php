@@ -214,6 +214,6 @@
 
 		@endif
 
-			@yield('content-nav')			
+		@yield('content-nav')			
 
 @endsection

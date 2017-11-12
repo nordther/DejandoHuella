@@ -68,6 +68,12 @@ $(document).ready(function(){
 
 	});
 
+	$.each($("form[name=formHTML] div[id]"),function(i,k){			
+		$("#frm_system_user_"+(i+1)).css({'display':'none'});		
+	});
+
+	
+
 	if ($("#v_frmUserToolts_type_user_assistan").is(':checked')) {
 		$("#formUsersNormals").hide();
 	}
@@ -125,7 +131,7 @@ function classGuiMain(){
 	this.validityInputEmptyOrFull = function(id){
 		
 		$("form[name='formHTML'] label").each(function(i,k){
-		if (($('#'+id).val().length > 0)|| ($('#'+id).attr('placeholder') !== undefined)) {			
+		if (($('#'+id).val() != '')|| ($('#'+id).attr('placeholder') !== undefined)) {			
 			if(($('#'+id).attr('id') === $(k).attr('for')) ) {	
 			    				
 				$(k).addClass('active');
@@ -141,27 +147,28 @@ function classGuiMain(){
 	this.inputMaterialize = function(){
 		 $("form[name='formHTML'] label").each(function(i,k){		 	
 		  	$(selectorInput).focus(function(){
-		  		var $this = $(this);
+		  		var inputSelector = $(this);
+
 		  		var label = $(k);
-				if ($this.attr('id') === $(label).attr('for')) {
-									
+				if (inputSelector.attr('id') === $(label).attr('for')) {							
 					$(label).addClass('active');				
 				}
 			});
 			$(selectorInput).focusout(function(){
-				var $this = $(this);
+				var inputSelector = $(this);
 				var label = $(k);
 								
-				if (($this.val().length > 0)|| ($this.attr('placeholder') !== undefined)) {
-					if(($this.attr('id') === $(label).attr('for')) ) {					
+				if ((inputSelector.val() != '')|| (inputSelector.attr('placeholder') !== undefined)) {
+					if((inputSelector.attr('id') === $(label).attr('for')) ) {					
 						$(label).addClass('active');	
 						}
 					
-				}else if($(this).attr('id') === $(label).attr('for')) {					
+				}else if(inputSelector.attr('id') === $(label).attr('for')) {					
 						$(label).removeClass('active');
 					}				
 							
-			});				
+			});	
+
 
 		 });		
 

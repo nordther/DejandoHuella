@@ -1,742 +1,216 @@
 @section('content-createuser')
 
-	<div class="content bg-content content-padding">
+	<div class="content bg-content">				
+		<div class="ancla-link">
 			
-			<div class="ancla-link">
-				
-			</div>
-
-			<div class="form-content form-content-dm form-bg-content-1 form-border-square-4">
-				{!! Form::open(); !!}
-				
-				<div class="form-header form-bc-1 form-header-dm-2 form-header-padding-auto ">	
+		</div>		
+		<div class="form-content">
+			
+			<div class="form-wrap">
+				{!! Form::open(['url'=>'/Admin/registrar/usuario','method'=>'POST','name' => 'formHTML']) !!}
+				<div class="form-header">
+					
+					<div>
+									
+						@foreach($data['dll']['nav'] as $dll)
 						
-						@foreach ($data['dll']['text'] as $rows)
+							@if ($dll->srcnav_filename == 'about.png')
 
-							@if (($rows->gtxt_paramt_wordkey == 'wordkey_resguser') && ($rows->gtxt_id_gtype == 13))
-
-								<h1>{{ $rows->gtxt_text }}</h1>
+								<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="Ingreso al sistema" class="icon-login">
 
 							@endif
-											
-						@endforeach
-
-				</div>
-
-				<div class="form-article">	
-					
-						<div class="form-rows-group">
-
-							<div class="form-rows">								
-
-								<div class="form-cell form-cell-dm-w-1">
-									
-									<div class="form-rows">
-										
-										@foreach ($data['dll']['text'] as $rows)
-
-											@if (($rows->gtxt_paramt_wordkey == 'wordkey_type_user') && ($rows->gtxt_id_gtype == 1))
-
-											{!! Form::label(null,$rows->gtxt_text,['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-
-											@endif
-											
-										@endforeach									
-
-									</div>
-
-									<div class="form-rows">
-										
-										{!! Form::select('v_frmCrtUs_typeusers',$data['dll']['comboTypeUsers'],null,['class' => 'selectStyle input-dm-2','id' => 'v_frmCrtUs_typeusers']); !!}
-
-									</div>
-
-								</div>
-
-							</div>
-
-							<div class="form-rows">
-								
-								<div class="form-cell form-cell-dm-w-1">
-									
-									<div class="form-rows">
-										
-										@foreach ($data['dll']['text'] as $rows)
-
-											@if (($rows->gtxt_paramt_wordkey == 'wordkey_document') && ($rows->gtxt_id_gtype == 1))
-
-											{!! Form::label(null,$rows->gtxt_text,['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-
-											@endif
-											
-										@endforeach									
-
-									</div>
-
-									<div class="form-rows">
-
-										{!! Form::hidden('v_frmCrtUs_roll',3,null); !!}
-
-										{!! Form::hidden('v_frmCrtUs_status_user',1,null); !!}
-										
-										{!! Form::text('v_frmCrtUs_doc',null,['class' => 'form-control input-border-color-1 input-radius-square-2 input-dm-2']); !!}
-
-									</div>
-
-								</div>
-
-								<div class="form-cell form-cell-dm-w-1">
-									
-									<div class="form-rows">
-										
-										@foreach ($data['dll']['text'] as $rows)
-
-											@if (($rows->gtxt_paramt_wordkey == 'wordkey_type_document') && ($rows->gtxt_id_gtype == 1))
-
-											{!! Form::label(null,$rows->gtxt_text,['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-
-											@endif
-											
-										@endforeach									
-
-									</div>
-
-									<div class="form-rows">
-										
-										{!! Form::select('v_frmCrtUs_document',$data['dll']['comboTypeDocument'],null,['class' => 'selectStyle input-dm-2']); !!}
-
-									</div>
-
-								</div>
-
-							</div>
-							
-							<div class="form-rows">
-								
-								<div class="form-cell form-cell-dm-w-1 form-col">
-									
-									<div class="form-rows">
-										
-										@foreach ($data['dll']['text'] as $rows)
-
-											@if (($rows->gtxt_paramt_wordkey == 'wordkey_name_user') && ($rows->gtxt_id_gtype == 1))
-
-											{!! Form::label(null,$rows->gtxt_text,['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-
-											@endif
-											
-										@endforeach									
-
-									</div>
-
-									<div class="form-rows">
-										
-										{!! Form::text('v_frmCrtUs_name',null,['class' => 'form-control input-border-color-1 input-radius-square-2 input-dm-2']); !!}
-
-									</div>
-
-								</div>
-
-								<div class="form-cell form-cell-dm-w-1 form-col">
-									
-									<div class="form-rows">
-										
-										@foreach ($data['dll']['text'] as $rows)
-
-											@if (($rows->gtxt_paramt_wordkey == 'wordkey_lastname_user') && ($rows->gtxt_id_gtype == 1))
-
-											{!! Form::label(null,$rows->gtxt_text,['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-
-											@endif
-											
-										@endforeach									
-
-									</div>
-
-									<div class="form-rows">
-										
-										{!! Form::text('v_frmCrtUs_lastname',null,['class' => 'form-control input-border-color-1 input-radius-square-2 input-dm-2']); !!}
-
-									</div>
-
-								</div>
-
-							</div>							
 						
-						</div>						
+						@endforeach					
 
-				</div>
-
-				<div class="form-article">
-
-					<div class="form-rows-group">
-
-						<div class="form-rows">
-								
-							<div class="form-cell">
+					</div>
 									
-								<div class="form-rows">
-										
-									@foreach ($data['dll']['text'] as $rows)
+					<div style="position:relative;top: -85px;">
 
-										@if (($rows->gtxt_paramt_wordkey == 'wordkey_address_user') && ($rows->gtxt_id_gtype == 1))
-
-											{!! Form::label(null,$rows->gtxt_text,['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-
-										@endif
-											
-									@endforeach	
-
-								</div>
-
-								<div class="form-rows">
-										
-									{!! Form::text('v_frmCrtUs_address_user',null,['class' => 'form-control input-border-color-1 input-radius-square-2 input-dm-1']); !!}
-
-								</div>
-
-							</div>
-
-						</div>
+						{!! Form::label('','Registrar Usuario',['class' => 'label-font-size-4','style' => 'color:#0FDAD3;']) !!}
 
 					</div>
 
 				</div>
 
 				<div class="form-article">
-					
-					<div class="form-rows-group">
-						
-						<div class="form-rows">
-							
-							<div class="form-cell form-cell-dm-w-1">
+
+					<div class="col dm-col-1">
+								
+						<div class="input-group">
+
+							{!! Form::select('v_frmCtrl_TypeUser',$data['dll']['comboTypeUsers'],null,['style'=>'display:none;']) !!}
 									
-									<div class="form-rows">
-										
-										@foreach ($data['dll']['text'] as $rows)
-
-											@if (($rows->gtxt_paramt_wordkey == 'wordkey_gender_user') && ($rows->gtxt_id_gtype == 1))
-
-											{!! Form::label(null,$rows->gtxt_text,['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-
-											@endif
-											
-										@endforeach									
-
-									</div>
-
-									<div class="form-rows">
-										
-										{!! Form::select('v_frmCrtUs_gender',$data['dll']['comboGender'],null,['class' => 'selectStyle input-dm-2']); !!}
-
-									</div>
-
-								</div>						
-					
-							<div class="form-cell form-cell-dm-w-1 form-col">
-									
-								<div class="form-rows">
-											
-									@foreach ($data['dll']['text'] as $rows)
-
-										@if (($rows->gtxt_paramt_wordkey == 'wordkey_Birthdate_user') && ($rows->gtxt_id_gtype == 1))
-
-										{!! Form::label(null,$rows->gtxt_text,['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-
-										@endif
-												
-									@endforeach									
-
-								</div>
-
-								<div class="form-rows">
-											
-									{!! Form::date('v_frmCrtUs_dateBirthdate', \Carbon\Carbon::now(),['class' => 'form-control input-dm-1 input-border-color-1 input-radius-square-2']); !!}
-
-								</div>
-
+							<div class="selectWrap">
+								<div class="selectTitle selectTitleDesactivate" id="v_frmCtrl_TypeUser_Title">
+									{!! Form::label(null,"Tipo de Usuario") !!}
+							    </div>
+							    <div class="selectSpanText desactivateSelect" id="v_frmCtrl_TypeUser"></div>
+							    <div class="selectContent" id="v_frmCtrl_TypeUser_content"></div>
 							</div>
 
-						</div>
 
-						<div class="form-rows">
-
-								<div class="form-cell">
-									
-									<div class="form-rows">
-										
-										@foreach ($data['dll']['text'] as $rows)
-
-											@if (($rows->gtxt_paramt_wordkey == 'wordkey_phone_user') && ($rows->gtxt_id_gtype == 1))
-
-											{!! Form::label(null,$rows->gtxt_text,['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-
-											@endif
-											
-										@endforeach	
-
-									</div>
-
-									<div class="form-rows">
-										
-										{!! Form::text('v_frmCrtUs_phone_user',null,['class' => 'form-control input-border-color-1 input-radius-square-2 input-dm-2']); !!}
-
-									</div>
-
-								</div>
-
-								<div class="form-cell">
-									
-									<div class="form-rows">
-										
-										@foreach ($data['dll']['text'] as $rows)
-
-											@if (($rows->gtxt_paramt_wordkey == 'wordkey_cellphone_user') && ($rows->gtxt_id_gtype == 1))
-
-											{!! Form::label(null,$rows->gtxt_text.' (optional)',['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-
-											@endif
-											
-										@endforeach	
-
-									</div>
-
-									<div class="form-rows">
-										
-										{!! Form::text('v_frmCrtUs_cellphone_user',null,['class' => 'form-control input-border-color-1 input-radius-square-2 input-dm-2']); !!}
-
-									</div>
-
-								</div>
-
-						</div>	
-
-						<div class="form-rows">
-							
-							<div class="form-cell">
-									
-								<div class="form-rows">
-										
-									@foreach ($data['dll']['text'] as $rows)
-
-										@if (($rows->gtxt_paramt_wordkey == 'wordkey_age_user') && ($rows->gtxt_id_gtype == 1))
-
-										{!! Form::label(null,$rows->gtxt_text,['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-
-										@endif
-											
-									@endforeach	
-
-								</div>
-
-								<div class="form-rows">
-										
-									{!! Form::text('v_frmCrtUs_age_user',null,['class' => 'form-control input-border-color-1 input-radius-square-2 input-dm-6']); !!}
-
-								</div>
-
-							</div>
-
-						</div>
-
-					</div> 
-
-				</div>
-<!---- 
-
-		form cuando se selecciona el tipo "usuario del sistema"
-
----->
-
-				<div class="form-article" id="form-user-sistem">
-					
-					<div class="form-rows">
-							
-							<div class="form-cell form-cell-dm-w-1">
-									
-									<div class="form-rows">
-										
-										@foreach ($data['dll']['text'] as $rows)
-
-											@if (($rows->gtxt_paramt_wordkey == 'wordkey_password_user') && ($rows->gtxt_id_gtype == 1))
-
-											{!! Form::label(null,$rows->gtxt_text,['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-
-											@endif
-											
-										@endforeach									
-
-									</div>
-
-									<div class="form-rows">
-										
-										{!! Form::text('v_frmCrtUs_password',null,['class' => 'form-control input-border-color-1 input-radius-square-2 input-dm-2']); !!}
-
-									</div>
-
-							</div>						
-					
-							<div class="form-cell form-cell-dm-w-1 form-col">
-									
-								<div class="form-rows">
-											
-									@foreach ($data['dll']['text'] as $rows)
-
-										@if (($rows->gtxt_paramt_wordkey == 'wordkey_email_user') && ($rows->gtxt_id_gtype == 1))
-
-										{!! Form::label(null,$rows->gtxt_text,['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-
-										@endif
-												
-									@endforeach									
-
-								</div>
-
-								<div class="form-rows">
-											
-									{!! Form::text('v_frmCrtUs_email',null,['class' => 'form-control input-border-color-1 input-radius-square-2 input-dm-2']); !!}
-
-								</div>
-
-							</div>
+					    </div>
 
 					</div>
 
-					<div class="form-rows">
-						
-						<div class="form-cell form-cell-dm-w-1">
-									
-									<div class="form-rows">
-										
-										@foreach ($data['dll']['text'] as $rows)
-
-											@if (($rows->gtxt_paramt_wordkey == 'wordkey_roll_user') && ($rows->gtxt_id_gtype == 1))
-
-											{!! Form::label(null,$rows->gtxt_text,['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-
-											@endif
-											
-										@endforeach									
-
-									</div>
-
-									<div class="form-rows">
-										
-										{!! Form::select('v_frmCrtUs_roll',$data['dll']['comboRoll'],null,['class' => 'selectStyle input-dm-2']); !!}
-
-									</div>
-
-							</div>	
-
-					</div>
-
-				</div>
-				
-<!---- 
-
-		form cuando se selecciona el tipo "beneficiario"
-
----->
-				<div class="form-article" id="form-user-beneficier">
-					
-					<div class="form-rows-group">
-
-						<div class="form-rows">
-							
-							<div class="form-cell">
+					<div class="col dm-col-1">
 								
-								<div class="form-rows">
+						<div class="input-group">
 
-									@foreach ($data['dll']['text'] as $rows)
-
-										@if (($rows->gtxt_paramt_wordkey == 'wordkey_id_institute') && ($rows->gtxt_id_gtype == 1))
-
-										{!! Form::label(null,$rows->gtxt_text,['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-
-										@endif
-											
-									@endforeach	
-
-								</div>
-
-								<div class="form-rows">
+							{!! Form::select('v_frmCtrl_Document',$data['dll']['comboTypeDocument'],null,['style'=>'display:none;']) !!}
 									
-									{!! Form::text('v_frmCrtUs_id_institute',null,['class' => 'form-control input-border-color-1 input-radius-square-2 input-dm-1']); !!}
-
-								</div>
-
+							<div class="selectWrap">
+								<div class="selectTitle selectTitleDesactivate" id="v_frmCtrl_Document_Title">
+									{!! Form::label(null,"Tipo de Documento") !!}
+							    </div>
+							    <div class="selectSpanText desactivateSelect" id="v_frmCtrl_Document"></div>
+							    <div class="selectContent" id="v_frmCtrl_Document_content"></div>
 							</div>
 
-							<div class="form-cell">
-								
-								<div class="form-rows">	
 
-									@foreach ($data['dll']['text'] as $rows)
+					    </div>
 
-										@if (($rows->gtxt_paramt_wordkey == 'wordkey_study_grade') && ($rows->gtxt_id_gtype == 1))
-
-										{!! Form::label(null,$rows->gtxt_text,['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-
-										@endif
-											
-									@endforeach	
-
-								</div>
-
-								<div class="form-rows">
-									
-									{!! Form::text('v_frmCrtUs_study_grade',null,['class' => 'form-control input-border-color-1 input-radius-square-2 input-dm-6']); !!}
-									
-								</div>
-
-							</div>
-
-						</div>
-
-						
-						<div class="form-rows">
-							
-							<div class="form-cell">
-								
-								<div class="form-rows">
-
-									@foreach ($data['dll']['text'] as $rows)
-
-										@if (($rows->gtxt_paramt_wordkey == 'wordkey_name_institute') && ($rows->gtxt_id_gtype == 1))
-
-										{!! Form::label(null,$rows->gtxt_text,['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-
-										@endif
-											
-									@endforeach	
-
-								</div>
-
-								<div class="form-rows">
-									
-									{!! Form::text('v_frmCrtUs_name_institute',null,['class' => 'form-control input-border-color-1 input-radius-square-2 input-dm-1']); !!}
-
-								</div>
-
-							</div>
-
-							<div class="form-cell">
-								
-								<div class="form-rows">
-
-									@foreach ($data['dll']['text'] as $rows)
-
-										@if (($rows->gtxt_paramt_wordkey == 'wordkey_acudiente') && ($rows->gtxt_id_gtype == 1))
-
-										{!! Form::label(null,$rows->gtxt_text,['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-
-										@endif
-											
-									@endforeach	
-
-								</div>
-
-								<div class="form-rows">
-									
-									{!! Form::text('v_frmCrtUs_acudiente',null,['class' => 'form-control input-border-color-1 input-radius-square-2 input-dm-1']); !!}
-
-								</div>
-
-							</div>
-
-							<div class="form-cell">
-								
-								<div class="form-rows">
-
-									@foreach ($data['dll']['text'] as $rows)
-
-										@if (($rows->gtxt_paramt_wordkey == 'wordkey_address_institute') && ($rows->gtxt_id_gtype == 1))
-
-										{!! Form::label(null,$rows->gtxt_text,['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-
-										@endif
-											
-									@endforeach	
-
-								</div>
-
-								<div class="form-rows">
-									
-									{!! Form::text('v_frmCrtUs_address_institute',null,['class' => 'form-control input-border-color-1 input-radius-square-2 input-dm-1']); !!}
-									
-								</div>
-
-							</div>
-
-						</div>
-
-						<div class="form-rows">
-							
-							<div class="form-cell">
-								
-								<div class="form-rows">
-
-									@foreach ($data['dll']['text'] as $rows)
-
-										@if (($rows->gtxt_paramt_wordkey == 'wordkey_phone_institute') && ($rows->gtxt_id_gtype == 1))
-
-										{!! Form::label(null,$rows->gtxt_text,['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-
-										@endif
-											
-									@endforeach	
-
-								</div>
-
-								<div class="form-rows">
-									
-									{!! Form::text('v_frmCrtUs_phone_institute',null,['class' => 'form-control input-border-color-1 input-radius-square-2 input-dm-1']); !!}
-
-								</div>
-
-							</div>
-
-							<div class="form-cell">
-								
-								<div class="form-rows">
-
-									@foreach ($data['dll']['text'] as $rows)
-
-										@if (($rows->gtxt_paramt_wordkey == 'wordkey_email_institute') && ($rows->gtxt_id_gtype == 1))
-
-										{!! Form::label(null,$rows->gtxt_text,['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-
-										@endif
-											
-									@endforeach	
-
-								</div>
-
-								<div class="form-rows">
-									
-									{!! Form::text('v_frmCrtUs_email_institute',null,['class' => 'form-control input-border-color-1 input-radius-square-2 input-dm-1']); !!}
-									
-								</div>
-
-							</div>							
-
-						</div>
-
-						<div class="form-rows">
-							
-							<div class="form-cell">
-
-								<div class="form-rows">
-									
-									@foreach ($data['dll']['text'] as $rows)
-
-										@if (($rows->gtxt_paramt_wordkey == 'wordkey_less_job') && ($rows->gtxt_id_gtype == 1))
-
-										{!! Form::label(null,$rows->gtxt_text,['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-
-										@endif
-											
-									@endforeach	
-
-								</div>
-
-								<div class="form-rows">
-								
-									{!! Form::radio('v_frmCrtUs_checklessjob',1,true,['id' => 'v_frmCrtUs_checklessjob_yea']); !!}
-
-									@foreach ($data['dll']['text'] as $rows)
-
-										@if (($rows->gtxt_paramt_wordkey == 'wordkey_yea_check') && ($rows->gtxt_id_gtype == 8))
-
-											{!! Form::label(null,$rows->gtxt_text,['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-
-										@endif
-											
-									@endforeach		
-								</div>
-
-								<div class="form-rows">
-
-									{!! Form::radio('v_frmCrtUs_checklessjob',0,false,['id' => 'v_frmCrtUs_checklessjob_not']); !!}
-
-									@foreach ($data['dll']['text'] as $rows)
-
-										@if (($rows->gtxt_paramt_wordkey == 'wordkey_not_check') && ($rows->gtxt_id_gtype == 8))
-
-											{!! Form::label(null,$rows->gtxt_text,['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-
-										@endif
-											
-									@endforeach		
-								</div>
-
-							</div>
-
-						</div>
-
-					</div>
-
-				</div>
-
-<!---- 
-
-		form cuando se selecciona el tipo "Profesor"
-
----->				
-
-				<div class="form-article" id="form-user-profesor">
-					<div class="form-rows-group">
-						<div class="form-cell form-cell-dm-w-1">
-									
-							<div class="form-rows">
-										
-								@foreach ($data['dll']['text'] as $rows)
-
-									@if (($rows->gtxt_paramt_wordkey == 'wordkey_categoria_programs') && ($rows->gtxt_id_gtype == 1))
-
-									{!! Form::label(null,$rows->gtxt_text,['class' => 'label-font-size-8 label-font-family-neutro label-content-form']); !!}
-
-									@endif
-											
-								@endforeach									
-
-							</div>
-
-							<div class="form-rows">
-										
-								{!! Form::select('v_frmCrtUs_categoriaPrograms',$data['dll']['comboCategoPrograms'],null,['class' => 'selectStyle input-dm-2']); !!}
-
-							</div>
-
-						</div>	
 					</div>	
-	
-				</div>
 
-				<div class="form-footer form-footer-dm-3 form-bc-1 ">					
-				
-					<div class="form-rows-group">						
+					<div class="col dm-col-1" id="frm_system_user_1">
+								
+						<div class="input-group">
 
-						<div class="form-cell form-cell-dm-w-1 form-col">
+							{!! Form::select('v_frmCtrl_Roll',$data['dll']['comboRoll'],null,['style'=>'display:none;']) !!}
+									
+							<div class="selectWrap">
+								<div class="selectTitle selectTitleDesactivate" id="v_frmCtrl_Roll_Title">
+									{!! Form::label(null,"Cargo") !!}
+							    </div>
+							    <div class="selectSpanText desactivateSelect" id="v_frmCtrl_Roll"></div>
+							    <div class="selectContent" id="v_frmCtrl_Roll_content"></div>
+							</div>
+
+
+					    </div>
+
+					</div>
+
+					<div class="col dm-col-1">
 						
-							{!! Form::button('Registrar Usuario',['type' =>'submit','class' => 'form-control input-border-color-1 button-radius-square-2 button-bg-color-1 button-dm-estandar-1']); !!}
+						<div class="input-group">				
+									
+							{!! Form::text('v_formCtrl_User_Document',null,['id' => 'v_formCtrl_User_Document','autocomplete'=>'off']); !!}	
+
+							{!! Form::label('v_formCtrl_User_Document','Numero de Documento',['class' => 'label']) !!}
 
 						</div>
 
-						<div class="form-cell form-cell-dm-w-1 form-col">
+					</div>
+					
+					<div class="col dm-col-1">
 						
-							{!! Form::button('Limpiar campos',['type' =>'reset', 'class' => 'form-control input-border-color-1 button-radius-square-2 button-bg-color-1 button-dm-estandar-1']); !!}
+						<div class="input-group">				
+									
+							{!! Form::text('v_formCtrl_User_name',null,['id' => 'v_formCtrl_User_name','autocomplete'=>'off']); !!}	
+
+							{!! Form::label('v_formCtrl_User_name','Nombre',['class' => 'label']) !!}
 
 						</div>
 
 					</div>
 
+					<div class="col dm-col-1">
+						
+						<div class="input-group">				
+									
+							{!! Form::text('v_formCtrl_User_lastname',null,['id' => 'v_formCtrl_User_lastname','autocomplete'=>'off']); !!}	
+
+							{!! Form::label('v_formCtrl_User_lastname','Apellido',['class' => 'label']) !!}
+
+						</div>
+
+					</div>
+
+					<div class="col dm-col-1" id="frm_system_user_2">
+								
+						<div class="input-group">
+
+							{!! Form::select('v_frmCtrl_Gender',$data['dll']['comboGender'],null,['style'=>'display:none;']) !!}
+									
+							<div class="selectWrap">
+								<div class="selectTitle selectTitleDesactivate" id="v_frmCtrl_Gender_Title">
+									{!! Form::label(null,"Genero") !!}
+							    </div>
+							    <div class="selectSpanText desactivateSelect" id="v_frmCtrl_Gender"></div>
+							    <div class="selectContent" id="v_frmCtrl_Gender_content"></div>
+							</div>
+
+
+					    </div>
+
+					</div>
+
+					<div class="col dm-col-2">
+						
+						<div class="input-group">				
+									
+							{!! Form::text('v_formCtrl_User_address',null,['id' => 'v_formCtrl_User_address','autocomplete'=>'off']); !!}	
+
+							{!! Form::label('v_formCtrl_User_address','Dirección de Residencia',['class' => 'label']) !!}
+
+						</div>
+
+					</div>	
+
+					<div class="col dm-col-1" id="frm_system_user_3">
+						
+						<div class="input-group">				
+									
+							{!! Form::email('v_formCtrl_User_email',null,['id' => 'v_formCtrl_User_email','autocomplete'=>'off']); !!}	
+
+							{!! Form::label('v_formCtrl_User_email','Correo Electronico',['class' => 'label']) !!}
+
+						</div>
+
+					</div>
+
+					<div class="col dm-col-1" id="frm_system_user_4">
+						
+						<div class="input-group">				
+									
+							{!! Form::password('v_formCtrl_User_password',['id' => 'v_formCtrl_User_password','autocomplete'=>'off']); !!}	
+
+							{!! Form::label('v_formCtrl_User_password','Contraseña',['class' => 'label']) !!}
+
+						</div>
+
+					</div>	
+
+					<div class="col dm-col-1" id="frm_system_user_5">
+						
+						<div class="input-group">				
+									
+							{!! Form::password('v_formCtrl_User_passwordConfirm',['id' => 'v_formCtrl_User_passwordConfirm','autocomplete'=>'off']); !!}	
+
+							{!! Form::label('v_formCtrl_User_passwordConfirm','Confirmar contraseña',['class' => 'label']) !!}
+
+						</div>
+
+					</div>				
+
 				</div>
 
-				{!! Form::close(); !!}
+				<div class="form-footer">
+					
+					<div class="input-group-btn input-esquare-btn btn-dm-5 input-group-btn-top-form">
+					
+						{!! Form::button('',['class' => 'btn btn-save','type' => 'submit']); !!}
+
+					</div>
+
+				</div>
+				
+				{!! Form::close() !!}
 
 			</div>
-				
+
+		</div>		
 
 	</div>
 

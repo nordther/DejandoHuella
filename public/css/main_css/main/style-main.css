@@ -542,11 +542,7 @@ form{
 		border-bottom-right-radius: 5px;
 	}
 
-	.form-content{			
-		margin: 0 auto;
-	    max-width: 1280px;
-	    width: 90%;
-	} 
+	 
 	
 	.content-ctrl{
 		float: right;
@@ -555,30 +551,9 @@ form{
 		width: auto;
 		height: auto;
 	}
-	.form-wrap{					
-		margin: 70px auto;
-		padding: 45px;
-		border-radius: 2px;
-		box-shadow:0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
-	}
-	.form-wrap-perfil{
-		z-index: 4250000; 
-		width:285px; 
-		position:fixed; 
-		top:-18px; 
-		left: 1275px; 
-		padding: 0px;
-	}
-	.form-wrap,
-	.form-wrap .form-header,
-	.form-wrap .form-article,
-	.form-wrap .form-footer{
-		background: #FFFFFF;
-	}
-	.form-wrap .form-header,
-	.form-wrap .form-footer{
-		height: 90px;
-	}	
+	
+	
+		
 	.fc-dm{
 		width: 30%;	
 	}
@@ -695,10 +670,7 @@ form{
 	.form-alert-cardview{
 		box-shadow: 0 1px 1px 0 rgba(0,0,0,0.08), 0 1px 1px 0 rgba(0,0,0,0.08);
 	}
-	.form-content-dm{
-		width: 70%;
-		padding: 30px;
-	}
+	
 	.form-main{
 		border-top: 1px solid #efefef;
 		border-left: 1px solid #e8e8e8;
@@ -796,6 +768,8 @@ form{
 		width: 350px;
 	}
 	.form-search-col-small-dm-w-1{
+		display: flex;
+		align-content: center;
 		width: 45px;
 	}
 	.form-search-col-dm-h-1{
@@ -821,6 +795,10 @@ form{
 		padding-left:  10px;
 	}
 
+/*********************************************************************************************************************************/
+/** Contenedores para los filtros */
+/*********************************************************************************************************************************/
+
 	.form-content-toolts{
 		display: flex;
 		width: auto;
@@ -834,7 +812,7 @@ form{
 	.form-content-filters{
 		position: relative;
 		display: block;
-		width: 400px;
+		width: 370px;
 		background-color: #EBEBEB;	
 	}
 
@@ -851,26 +829,56 @@ form{
 	}
 
 
-
-
-
 /*********************************************************************************************************************************/
-
-
-
-	
+/** Contenedores para los formularios */
+/*********************************************************************************************************************************/
+	.form-content{			
+		margin: 0 auto;
+		width: 90%;
+	    max-width: 1280px;	    
+	}
+	.form-content-dm{
+		width: 70%;
+		padding: 30px;
+	}
+	.form-wrap{					
+		margin: 70px auto;
+		padding: 45px;
+		border-radius: 2px;
+		box-shadow:0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+	}
+	.form-wrap-perfil{
+		z-index: 4250000; 
+		width:285px; 
+		position:fixed; 
+		top:-18px; 
+		left: 1275px; 
+		padding: 0px;
+	}
+	.form-wrap,
+	.form-wrap .form-header,
+	.form-wrap .form-article,
+	.form-wrap .form-footer{
+		background: #FFFFFF;
+	}
+	.form-wrap .form-header,
+	.form-wrap .form-footer{
+		height: 90px;
+	}	
 	.form-header{
 		width: 100%;
 		border-bottom: 1px solid rgba(222,222,222,0.9);			
 		text-align: center;				
 	}	
 
-	.form-article{	
-		overflow: hidden;		
+	.form-article{					
 		width: auto;
-		margin: auto;	
+		margin: auto;
+		height: auto;	
 		padding-top: 15px;
 		padding-bottom: 15px;
+		overflow: hidden;
+		box-sizing: border-box;
 	}
 
 	.form-footer{		
@@ -917,63 +925,6 @@ form{
 		}
 	}
 	
-
-/* Apartado de border style*/
-
-	.br-radius-top-left-st-1{
-        border-top-left-radius: 50px;
-	}
-	.br-radius-top-left-st-2{
-        border-top-left-radius: 20px;		
-	}
-	.br-radius-top-left-st-3{
-        border-top-left-radius: 10px;		
-	}
-	.br-radius-top-left-st-4{
-        border-top-left-radius: 3px;		
-	}
-
-	.br-radius-top-right-st-1{
-        border-top-right-radius: 50px;
-	}
-	.br-radius-top-right-st-2{
-        border-top-right-radius: 20px;		
-	}
-	.br-radius-top-right-st-3{
-        border-top-right-radius: 10px;		
-	}
-	.br-radius-top-right-st-4{
-        border-top-right-radius: 3px; 		
-	}
-
-	.br-radius-bottom-left-st-1{
-       border-bottom-left-radius: 50px; 
-	}
-	.br-radius-bottom-left-st-2{
-       border-bottom-left-radius: 20px;		
-	}
-	.br-radius-bottom-left-st-3{
-       border-bottom-left-radius: 10px; 		
-	}
-	.br-radius-bottom-left-st-4{
-       border-bottom-left-radius: 3px;		
-	}
-
-	.br-radius-bottom-right-st-1{
-        border-bottom-right-radius: 50px;
-	}
-	.br-radius-bottom-right-st-2{
-        border-bottom-right-radius: 20px;		
-	}
-	.br-radius-bottom-right-st-3{
-        border-bottom-right-radius: 10px;		
-	}
-	.br-radius-bottom-right-st-4{
-        border-bottom-right-radius: 3px;		
-	}
-
-/*****************************/
-
 	.ancla-link{
 		width: 100%;
 		height: 2cm;	
