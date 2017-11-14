@@ -883,8 +883,23 @@ form{
 
 	.form-footer{		
 		width: 100%;
+		display: inline-flex;
+		align-content: center;
 		text-align:center;		
 		border-top: 1px solid rgba(222,222,222,0.9);		
+	}
+
+	.form-ctrl-content{
+		position: relative;
+		margin: auto;
+		top:24mm;
+				
+		overflow: hidden;
+	}
+
+	.form-ctrl-content>div.input-group-btn{
+		margin:  5px;
+		float: left;
 	}
 
 	.form-position-fixed{

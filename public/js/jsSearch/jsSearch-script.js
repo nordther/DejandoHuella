@@ -106,6 +106,21 @@ $(document).ready(function(){
 
 		if ($("select[name=v_frmCrt_Roll]").selectedIndex != -1 ) {eventoClick.searchInformation();}
 		
+		$("button[type=reset]").click(function() {
+			var selectName;
+			$.each($("form[name='formHTML'] select"),function(indx,elements){
+					selectName = $(elements).attr('name');					
+					$.each($('form[name=formHTML] div'),function(indx,elements){
+					if ((selectName) == $(elements).attr('id')) {
+						//console.log(elements);
+						$("#"+$(elements).attr('id')).html('<div class="select_Content_Title"><span data-value="'+'">Seleccione una opción</span></div><div class="select_Icon select_icon_circle select_icon-dm-1"><img src="'+location.protocol+'//'+location.host+'/img/icon/form/arrowHover.png" class="select_icon" id="select_arrow'+$(elements).attr('id')+'"></div>');
+						$("#select_arrow"+$(elements).attr('id')).css({'transform':'rotate(180deg)'});
+					}
+					
+				});
+			});
+			
+		});
 			
 	}); 
 

@@ -86,13 +86,16 @@
 
 			<div class="form-footer">			
 				
-				
+				<div class="form-ctrl-content">	
 
-				<div class="input-group-btn input-circle-btn btn-dm-5 input-group-btn-top-form">
-					
-					{!! Form::button('',['class' => 'btn btn-login ','type' => 'submit']); !!}
+					<div class="input-group-btn input-circle-btn btn-dm-5 input-group-btn-top-form">
+						
+						{!! Form::button('',['class' => 'btn btn-login ','type' => 'submit']); !!}
 
-				</div>			
+					</div>			
+
+				</div>
+
 
 			</div>
 			

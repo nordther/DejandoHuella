@@ -74,12 +74,24 @@
 						
 
 					<div class="form-footer">	
-						
-						<div class="input-group-btn input-circle-btn btn-dm-5 input-group-btn-top-form">
-					
-							{!! Form::button('',['class' => 'btn btn-send','type' => 'submit']); !!}
 
-						</div>	
+						<div class="form-ctrl-content">	
+								
+							<div class="input-group-btn input-circle-btn btn-dm-5 input-group-btn-top-form">
+					
+									{!! Form::button('',['class' => 'btn btn-send','type' => 'submit']); !!}
+
+							</div>
+
+							<div class="input-group-btn input-circle-btn btn-dm-5 input-group-btn-top-form">
+						
+									{!! Form::button('',['class' => 'btn btn-clean','type' => 'reset']); !!}
+
+							</div>	
+
+						</div>
+						
+						
 
 					</div>
 

@@ -26,7 +26,7 @@ textarea{
 	top: 5mm;
 }
 .input-group-btn-top-form{
-	top: 24mm;
+	top: 0px;
 }
 .btn{
 	width:100%; height:100%;
@@ -451,6 +451,16 @@ textarea{
 	background-image: url('../../../../img/icon/form/saveHover.png');
 		
 }
+.btn-clean{
+	background-image: url('../../../../img/icon/form/clean.png');
+	background-color: transparent;
+}
+
+.btn-clean:hover{	
+	background-image: url('../../../../img/icon/form/cleanHover.png');
+		
+}
+
 .btn-arrow-down{
 	transform:rotate(180deg);
 	background-image: url('../../../../img/icon/form/arrow.png');
