@@ -164,7 +164,7 @@
 									
 							{!! Form::email('v_formCtrl_User_email',null,['id' => 'v_formCtrl_User_email','autocomplete'=>'off']); !!}	
 
-							{!! Form::label('v_formCtrl_User_email','Correo Electronico',['class' => 'label']) !!}
+							{!! Form::label('v_formCtrl_User_email','Correo Electronico',['class' => 'label','id'=>'v_formCtrl_User_email_title']) !!}
 
 						</div>
 
@@ -174,7 +174,7 @@
 						
 						<div class="input-group">				
 									
-							{!! Form::password('v_formCtrl_User_password',['id' => 'v_formCtrl_User_password','autocomplete'=>'off']); !!}	
+							{!! Form::password('v_formCtrl_User_password',['id' => 'v_formCtrl_User_password','autocomplete'=>'cc-exp']); !!}	
 
 							{!! Form::label('v_formCtrl_User_password','Contraseña',['class' => 'label']) !!}
 
@@ -186,9 +186,9 @@
 						
 						<div class="input-group">				
 									
-							{!! Form::password('v_formCtrl_User_passwordConfirm',['id' => 'v_formCtrl_User_passwordConfirm','autocomplete'=>'off']); !!}	
+							{!! Form::password('v_formCtrl_User_passwordConfirm',['id' => 'v_formCtrl_User_passwordConfirm','autocomplete'=>'cc-exp']); !!}	
 
-							{!! Form::label('v_formCtrl_User_passwordConfirm','Confirmar contraseña',['class' => 'label']) !!}
+							{!! Form::label('v_formCtrl_User_passwordConfirm','Confirmar contraseña',['class' => 'label','id'=>'v_formCtrl_User_passwordConfirm_title']) !!}
 
 						</div>
 

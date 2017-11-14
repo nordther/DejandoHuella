@@ -1,7 +1,7 @@
 @section('content-header')
 	@parent
 	
-	 <!DOCTYPE html>
+	 <!DOCTYPE html >
 	 <html id="lang" lang="">	 
 	    <head>
 
@@ -11,6 +11,8 @@
 		        {{$data["title-modul"]}} 
 		        @endif
 	        </title>
+
+	        <meta content="email=no" name="format-detection">
 
 	        @yield('content-library')
 

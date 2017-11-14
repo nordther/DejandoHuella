@@ -13,7 +13,7 @@
 			{!! Html::script('https://code.jquery.com/jquery-3.2.1.min.js') !!}
 
 			@foreach ($data['dll']['js'] as $dll)
-				@if(($dll->srcapp_filename == 'jquery-3.2.1.min.js') || ($dll->srcapp_filename == 'jquery-1.10.2.js'))
+				@if(($dll->srcapp_filename == 'jquery-3.2.1.min.js') || ($dll->srcapp_filename == 'jquery-1.10.2.js') || ($dll->srcapp_filename == 'jsMainGui-script.js'))
 					{!! Html::script($dll->srcapp_dir.$dll->srcapp_filename) !!}
 				@else
 					{!! Html::script($dll->srcapp_dir.$dll->srcapp_filename) !!}

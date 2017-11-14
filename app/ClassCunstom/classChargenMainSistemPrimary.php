@@ -126,9 +126,9 @@
 
 				[
 				'srcapp_id' => 16,				
-				'srcapp_dir' => 'js/jsNav/',
-				'srcapp_filename' =>'jsNav-script.js',
-				'srcapp_fileformat' => 'js'],
+				'srcapp_dir' => 'js/jsMainGui/',
+				'srcapp_filename' =>'jsMainGui-script.js',				
+				'srcapp_fileformat' => 'js'],				
 
 				[
 				'srcapp_id' => 17,				
@@ -186,8 +186,8 @@
 
 				[
 				'srcapp_id' => 26,				
-				'srcapp_dir' => 'js/jsMainGui/',
-				'srcapp_filename' =>'jsMainGui-script.js',				
+				'srcapp_dir' => 'js/jsNav/',
+				'srcapp_filename' =>'jsNav-script.js',
 				'srcapp_fileformat' => 'js'],
 
 				[
