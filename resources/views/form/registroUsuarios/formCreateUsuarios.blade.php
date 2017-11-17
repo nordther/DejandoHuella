@@ -5,8 +5,10 @@
 			
 		</div>		
 		<div class="form-content">
-			
-			<div class="form-wrap">
+			<div class="card-img" style="position: relative; top:-45px;">
+					<img src="{{ asset('img/imgTopics/searchBackground/header.jpg') }}" style="width: 100%; height: 300px;">	
+			</div>
+			<div class="form-wrap" style="position: relative; top: -150px; box-sizing: content-box;">
 				{!! Form::open(['url'=>'/Admin/registrar/usuario','method'=>'POST','name' => 'formHTML']) !!}
 				<div class="form-header">
 					
@@ -97,7 +99,7 @@
 									
 							{!! Form::text('v_formCtrl_User_Document',null,['id' => 'v_formCtrl_User_Document','autocomplete'=>'off']); !!}	
 
-							{!! Form::label('v_formCtrl_User_Document','Numero de Documento',['class' => 'label']) !!}
+							{!! Form::label('v_formCtrl_User_Document','Numero de Documento',['class' => 'label','id' => 'v_formCtrl_User_Document_title']) !!}
 
 						</div>
 
@@ -109,7 +111,7 @@
 									
 							{!! Form::text('v_formCtrl_User_name',null,['id' => 'v_formCtrl_User_name','autocomplete'=>'off']); !!}	
 
-							{!! Form::label('v_formCtrl_User_name','Nombre',['class' => 'label']) !!}
+							{!! Form::label('v_formCtrl_User_name','Nombre',['class' => 'label','id' => 'v_formCtrl_User_name_title']) !!}
 
 						</div>
 
@@ -121,7 +123,7 @@
 									
 							{!! Form::text('v_formCtrl_User_lastname',null,['id' => 'v_formCtrl_User_lastname','autocomplete'=>'off']); !!}	
 
-							{!! Form::label('v_formCtrl_User_lastname','Apellido',['class' => 'label']) !!}
+							{!! Form::label('v_formCtrl_User_lastname','Apellido',['class' => 'label','id' => 'v_formCtrl_User_lastname_title']) !!}
 
 						</div>
 
@@ -152,7 +154,7 @@
 									
 							{!! Form::text('v_formCtrl_User_address',null,['id' => 'v_formCtrl_User_address','autocomplete'=>'off']); !!}	
 
-							{!! Form::label('v_formCtrl_User_address','Dirección de Residencia',['class' => 'label']) !!}
+							{!! Form::label('v_formCtrl_User_address','Dirección de Residencia',['class' => 'label','id' =>'v_formCtrl_User_address_title']) !!}
 
 						</div>
 
@@ -192,7 +194,7 @@
 
 						</div>
 
-					</div>				
+					</div>
 
 				</div>
 

@@ -5,10 +5,25 @@ var inputElements = [];
 var selectorInput = "input[type='text'],input[type='password'],input[type='email'],input[type='number'],input[type='search'],textarea";
 
 $(document).ready(function(){
+	
 	btn_actionEvents.iniSetup();
 });
 
 function ClassMain(){
+	/*this.scrollShow = function(id){
+		var title = $(id).replace('start-','');
+		$(window).scroll(function() {
+			var windowHeight = $(window).scrollTop();
+			var contenido = $("#start-"+title).offset();
+			contenido = contenido.top;
+			console.log(contenido);
+			if (windowHeight >=contenido) {
+				btn_actionEvents.showNewTopics();
+			}else{
+				btn_actionEvents.showNewTopics();
+			}
+		});
+	}*/
 	this.iniSetup = function(){
 		btn_actionEvents.inputMaterialize();	
 	$("form[name=formHTML] "+selectorInput).each(function(indx,element){		
@@ -83,18 +98,21 @@ function ClassMain(){
 	$("button[type=reset]").click(function() {
 			var selectName;
 			$.each($("form[name='formHTML'] select"),function(indx,elements){
-					selectName = $(elements).attr('name');					
+					selectName = $(elements).attr('name');
+					$(selectName).val(1).change();					
 					$.each($('form[name=formHTML] div'),function(indx,elements){
 					if ((selectName) == $(elements).attr('id')) {
 						//console.log(elements);
+						
 						$("#"+$(elements).attr('id')).html('<div class="select_Content_Title"><span data-value="'+'">Seleccione una opción</span></div><div class="select_Icon select_icon_circle select_icon-dm-1"><img src="'+location.protocol+'//'+location.host+'/img/icon/form/arrowHover.png" class="select_icon" id="select_arrow'+$(elements).attr('id')+'"></div>');
 						$("#select_arrow"+$(elements).attr('id')).css({'transform':'rotate(180deg)'});
 					}
 					
 				});					
 			});
+			var formHTML = $("form[name=formHTML] label[id]");
+			$(formHTML).each(function(indx,element){			
 
-			$("form[name=formHTML] label[id]").each(function(indx,element){
 				$("#"+element.id).removeClass('active');	
 			});			
 		});

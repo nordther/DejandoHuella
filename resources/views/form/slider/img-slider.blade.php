@@ -4,36 +4,54 @@
 			
 			<div id="element_slider_1" class="element_slider element_slider_show">						
 					
-					<div class="
-					content-topic  
-					content-topic-dm-1 
-					content-bg-topic-1">	
+					<div class="content-topic-main">
 
-					<div class="					
-					header-topic 
-					header-topic-dm-3
-					br-radius-top-left-st-1
-					br-radius-bottom-left-st-4
-					br-radius-top-right-st-4
-					br-radius-bottom-right-st-1">	
+						<div id="element_topic_1" class="content-topic-wrap">
+							
+							<div class="content-topic-header">
+
+								<div class="semi-circulo">
+								
+									@foreach($data['dll']['nav'] as $dll)
+							
+										@if ($dll->srcnav_filename == 'about.png')
+
+											<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="Ingreso al sistema" class="icon-topic">
+
+										@endif
+							
+									@endforeach						
+
+								</div>
+								
+								<div style="position:relative;top: -30px;">
+
+									{!! Form::label('','Titulo 1',['class' => 'label-font-size-2','style' => 'color:#0FDAD3;']) !!}
+
+								</div>
+								
+								<div class="semi-circulo-invertido">
+									
+									<div class="input-group-btn input-circle-btn btn-dm-5 input-group-btn-top" >
+
+										{!! Form::button('',['class' => 'btn btn-arrow-down','id' => 'v_formCtrl_btn_topic_1','data_content' => 'content_topic_article_1']) !!}
+
+									</div>
+
+								</div>
+
+							</div>
+
+							<div class="content-topic-article" id="content_topic_article_1">
+								<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, voluptatum enim excepturi dolores, quam fuga architecto quae quis laboriosam provident aliquid corporis repellendus quisquam cupiditate. Veritatis nobis necessitatibus vel exercitationem.</div>
+								<div>Incidunt possimus a, labore recusandae doloribus distinctio magni facilis suscipit, eveniet sint esse qui saepe inventore laborum, laudantium dolorum quisquam minima, temporibus rem pariatur! Explicabo omnis excepturi sapiente dolorem enim.</div>
+								<div>Ea, blanditiis, quae. Natus sit, alias deserunt aperiam quam. Officiis fugit blanditiis voluptatibus cumque atque delectus deserunt mollitia reprehenderit modi incidunt in, sed reiciendis similique recusandae totam eveniet vel? Eius.</div>
+								<div>Molestiae vitae quia consequatur voluptas dolores mollitia laboriosam error, nisi eveniet laudantium nam vero at tenetur. Eaque deserunt facilis adipisci harum fuga officiis ab id quasi non, molestias veniam nostrum?</div>
+								<div>Facilis placeat tempore fugiat nesciunt ab, veniam similique deserunt delectus quisquam sit, nostrum provident maiores nulla repellendus, expedita voluptas, deleniti. Placeat tempore praesentium sint voluptas sed mollitia eum odio possimus?</div>
+							</div>
+
+						</div>
 						
-						<h1 class="label-dm">Titulo del tema 1</h1>
-
-					</div>	
-
-					<div class="
-					content-text-topic
-					br-radius-top-left-st-4
-					br-radius-bottom-left-st-4
-					br-radius-top-right-st-4
-					br-radius-bottom-right-st-4">	
-						
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel odio eaque exercitationem, facere, impedit rerum sequi earum, omnis aut neque vitae voluptate eligendi in dolorum quidem. Cum doloremque repellat inventore.
-						Vero obcaecati aliquid rerum dolorem numquam illo earum, repellat sint similique quaerat minus accusantium quae consequatur vitae, enim ipsum, sequi amet sunt voluptatum. Quos error assumenda, quidem! Veritatis, at, sapiente!
-						Eius inventore, hic, eveniet enim.</p>
-
-					</div>
-
 					</div>
 
 					<img src="{{asset('img/slider/img-slider-1.jpg')}}" class="img-xl-dm-1" >
@@ -44,37 +62,52 @@
 			
 			<div id="element_slider_{{($i+1)}}" class="element_slider">				
 					
-					<div class="
-						content-topic  
-						content-topic-dm-1 
-						content-bg-topic-1">	
-			
-						<div class="											
-							header-topic 
-							header-topic-dm-3
-							br-radius-top-left-st-1
-							br-radius-bottom-left-st-4
-							br-radius-top-right-st-4
-							br-radius-bottom-right-st-1">	
+					<div class="content-topic-main">
+
+						<div id="element_topic_{{($i+1)}}" class="content-topic-wrap">
 							
-							<h1 class="label-dm">Titulo del tema {{$i+1}}</h1>
-			
-						</div>	
-			
-						<div class="
-							content-text-topic
-							br-radius-top-left-st-4
-							br-radius-bottom-left-st-4
-							br-radius-top-right-st-4
-							br-radius-bottom-right-st-4">
+							<div class="content-topic-header">
+
+								<div class="semi-circulo">
+								
+								@foreach($data['dll']['nav'] as $dll)
+						
+									@if ($dll->srcnav_filename == 'about.png')
+
+										<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="Ingreso al sistema" class="icon-topic">
+
+									@endif
+						
+								@endforeach						
+
+								</div>
+								
+								<div style="position:relative;top: -30px;">
+
+									{!! Form::label('','Titulo '.($i+1),['class' => 'label-font-size-2','style' => 'color:#0FDAD3;']) !!}
+
+								</div>
+
+								<div class="semi-circulo-invertido">
+									
+									<div class="input-group-btn input-circle-btn btn-dm-5 input-group-btn-top" >
+										{!! Form::button('',['class' => 'btn btn-arrow-down','id' => 'v_formCtrl_btn_topic_'.($i+1),'data_content' => 'content_topic_article_'.($i+1)]) !!}			
+									</div>
+
+								</div>
 							
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel odio eaque exercitationem, facere, impedit rerum sequi earum, omnis aut neque vitae voluptate eligendi in dolorum quidem. Cum doloremque repellat inventore.
-						Vero obcaecati aliquid rerum dolorem numquam illo earum, repellat sint similique quaerat minus accusantium quae consequatur vitae, enim ipsum, sequi amet sunt voluptatum. Quos error assumenda, quidem! Veritatis, at, sapiente!
-						Eius inventore, hic, eveniet enim consequatur autem dolorum odio amet eum tempore excepturi cupiditate neque similique! Quidem ducimus id nesciunt iusto voluptate veritatis praesentium perferendis, repudiandae harum hic, ea assumenda!
-						Sit porro minima rerum assumenda reprehenderit perferendis culpa totam pariatur expedita aspernatur, unde commodi delectus, odio provident reiciendis voluptatem quos numquam at tempore. Consectetur nesciunt veritatis doloremque, id enim?.</p>
-			
+							</div>
+
+							<div class="content-topic-article" id="content_topic_article_{{ ($i+1) }}">
+								<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, voluptatum enim excepturi dolores, quam fuga architecto quae quis laboriosam provident aliquid corporis repellendus quisquam cupiditate. Veritatis nobis necessitatibus vel exercitationem.</div>
+								<div>Incidunt possimus a, labore recusandae doloribus distinctio magni facilis suscipit, eveniet sint esse qui saepe inventore laborum, laudantium dolorum quisquam minima, temporibus rem pariatur! Explicabo omnis excepturi sapiente dolorem enim.</div>
+								<div>Ea, blanditiis, quae. Natus sit, alias deserunt aperiam quam. Officiis fugit blanditiis voluptatibus cumque atque delectus deserunt mollitia reprehenderit modi incidunt in, sed reiciendis similique recusandae totam eveniet vel? Eius.</div>
+								<div>Molestiae vitae quia consequatur voluptas dolores mollitia laboriosam error, nisi eveniet laudantium nam vero at tenetur. Eaque deserunt facilis adipisci harum fuga officiis ab id quasi non, molestias veniam nostrum?</div>
+								<div>Facilis placeat tempore fugiat nesciunt ab, veniam similique deserunt delectus quisquam sit, nostrum provident maiores nulla repellendus, expedita voluptas, deleniti. Placeat tempore praesentium sint voluptas sed mollitia eum odio possimus?</div>
+							</div>
+
 						</div>
-			
+						
 					</div>
 			
 					<img src="{{asset('img/slider/img-slider-'.($i+1).'.jpg')}}" class="img-xl-dm-1" >

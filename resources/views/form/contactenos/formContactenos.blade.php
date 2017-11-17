@@ -11,17 +11,17 @@
 
 					<div class="form-header ">	
 							
-							<div>
+						<div>
 								
-								@foreach($data['dll']['nav'] as $dll)
+							@foreach($data['dll']['nav'] as $dll)
 					
-									@if ($dll->srcnav_filename == 'about.png')
+								@if ($dll->srcnav_filename == 'about.png')
 
-										<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="Ingreso al sistema" class="icon-login">
+									<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="Ingreso al sistema" class="icon-login">
 
-									@endif
+								@endif
 					
-								@endforeach	
+							@endforeach	
 					
 					
 
@@ -44,7 +44,7 @@
 										
 								{!! Form::text('v_formUserContactName',null,['id' => 'v_formUserContactName','autocomplete'=>'off']); !!}	
 
-								{!! Form::label('v_formUserContactName','Ingrese su nombre',['class' => 'label']) !!}
+								{!! Form::label('v_formUserContactName','Ingrese su nombre',['class' => 'label','id' => 'v_formUserContactName_title']) !!}
 
 								</div>
 						   </div>
@@ -53,7 +53,7 @@
 										
 								{!! Form::email('v_formUserContactEmail',null,['id' => 'v_formUserContactEmail']); !!}	
 
-								{!! Form::label('v_formUserContactEmail','Ingrese su e-mail',['class' => 'label']) !!}						
+								{!! Form::label('v_formUserContactEmail','Ingrese su e-mail',['class' => 'label','id' => 'v_formUserContactEmail_title']) !!}						
 										
 								</div>
 						   </div>
@@ -62,7 +62,7 @@
 
 								{!! Form::textarea('v_formUserContactDesc',null,['id' =>'v_formUserContactDesc','cols'=>"0",'rows'=>'0']) !!}
 
-								{!! Form::label('v_formUserContactDesc','Descripción',['class' => 'label']) !!}
+								{!! Form::label('v_formUserContactDesc','Descripción',['class' => 'label','id' => 'v_formUserContactDesc_title']) !!}
 
 								</div>
 						   </div>
