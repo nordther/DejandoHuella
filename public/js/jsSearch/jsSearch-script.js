@@ -12,12 +12,7 @@ $(document).ready(function(){
 		
 
 		$("#frmCtrl_Roll").css({'display':'none'});
-
-		if ($("#v_frmCtrl_switchBtn_statusUser").is(':checked')) {
-			statusUsers = 1;
-			$("#v_frmCtrl_switchBtn_statusUser_title").html('On');
-			eventoClick.searchInformation();
-		}
+		
 
 		$("#v_frmCtrl_switchBtn_statusUser").click(function() {
 			if ($("#v_frmCtrl_switchBtn_statusUser").is(':checked')) {
@@ -323,8 +318,7 @@ function ClassSearchDinamy(){
 			}
 			$.each($("select[name="+id+"] option"),function(indx,elements){
 			var v_value = elements.value;
-			var v_text = elements.text;
-			//console.log(v_value+':'+v_text);
+			var v_text = elements.text;			
 			$("#"+id+"_content").append('<div class="select_Content_Title hover" id="'+id+'_'+v_value+'"><span data-value="'+v_value+'">'+v_text+'</span></div>');	
 				eventoClick.SelectOption(id,v_value);			
 			});
@@ -377,12 +371,55 @@ function ClassSearchDinamy(){
 							$("#frm_system_user_3").show('slow');
 							$("#frm_system_user_4").show('slow');
 							$("#frm_system_user_5").show('slow');
-
+							$("#frm_beneficier_1").hide('slow');
+							$("#frm_beneficier_2").hide('slow');
+							$("#frm_beneficier_3").hide('slow');
+							$("#frm_beneficier_4").hide('slow');
+							$("#frm_beneficier_5").hide('slow');
 							roll = 1;
 						break;
-						case "Beneficiario":
+						case "Beneficiario":						
+							$("#frmCtrl_Roll").css({'transition':'all .5s ease','display':'none'});
+							$("#frm_system_user_1").hide('slow');
+							$("#frm_system_user_2").hide('slow');
+							$("#frm_system_user_3").hide('slow');
+							$("#frm_system_user_4").hide('slow');
+							$("#frm_system_user_5").hide('slow');
+							$("#frm_beneficier_1").show('slow');
+							$("#frm_beneficier_2").show('slow');
+							$("#frm_beneficier_3").show('slow');
+							$("#frm_beneficier_4").show('slow');
+							$("#frm_beneficier_5").show('slow');
+							roll = 3;
+						break;						
 						case "Profesor":
+							$("#frmCtrl_Roll").css({'transition':'all .5s ease','display':'none'});
+							$("#frm_system_user_1").hide('slow');
+							$("#frm_system_user_2").hide('slow');
+							$("#frm_system_user_3").hide('slow');
+							$("#frm_system_user_4").hide('slow');
+							$("#frm_system_user_5").hide('slow');
+							$("#frm_beneficier_1").hide('slow');
+							$("#frm_beneficier_2").hide('slow');
+							$("#frm_beneficier_3").hide('slow');
+							$("#frm_beneficier_4").hide('slow');
+							$("#frm_beneficier_5").hide('slow');
+							roll = 3;
+						break;
 						case "Padre o Madre":
+							$("#frmCtrl_Roll").css({'transition':'all .5s ease','display':'none'});
+							$("#frm_system_user_1").hide('slow');
+							$("#frm_system_user_2").hide('slow');
+							$("#frm_system_user_3").hide('slow');
+							$("#frm_system_user_4").hide('slow');
+							$("#frm_system_user_5").hide('slow');
+							$("#frm_beneficier_1").hide('slow');
+							$("#frm_beneficier_2").hide('slow');
+							$("#frm_beneficier_3").hide('slow');
+							$("#frm_beneficier_4").hide('slow');
+							$("#frm_beneficier_5").hide('slow');
+							roll = 3;
+						break;
 						case "Voluntario":
 							$("#frmCtrl_Roll").css({'transition':'all .5s ease','display':'none'});
 							$("#frm_system_user_1").hide('slow');
@@ -390,6 +427,11 @@ function ClassSearchDinamy(){
 							$("#frm_system_user_3").hide('slow');
 							$("#frm_system_user_4").hide('slow');
 							$("#frm_system_user_5").hide('slow');
+							$("#frm_beneficier_1").hide('slow');
+							$("#frm_beneficier_2").hide('slow');
+							$("#frm_beneficier_3").hide('slow');
+							$("#frm_beneficier_4").hide('slow');
+							$("#frm_beneficier_5").hide('slow');
 							roll = 3;
 						break;
 						

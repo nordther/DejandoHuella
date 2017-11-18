@@ -40,8 +40,8 @@ class mainController extends Controller
 
     public function index(){
         
-        if (!file_exists(base_path("/public/img/iconUserSistem/"))) {
-            File::MakeDirectory(base_path('public/img/iconUserSistem'));
+        if (!file_exists(base_path("/public/workspaceUsers/"))) {
+            File::MakeDirectory(base_path('public/workspaceUsers'));
         }
 
 
@@ -238,28 +238,39 @@ class mainController extends Controller
                 $chargen = \DB::table('photoperfils')->insert($v_f["class"]['ChrM']::createPhotoPerfilDir());
 
                 foreach ($v_f["class"]['ChrM']::createPhotoPerfilDir() as $rows) {
-                    File::MakeDirectory(base_path('public/img/iconUserSistem/'.$rows['pp_id_datospersonales'].'/'));
-                    $file = base_path('public/img/iconUserSistem/'.$rows['pp_id_datospersonales'].'/about.txt');
-                    $fp = fopen($file,'a');
+                    File::MakeDirectory(base_path('public/workspaceUsers/'.$rows['pp_id_datospersonales'].'/'));
+                    $Datafile = base_path('public/workspaceUsers/'.$rows['pp_id_datospersonales'].'/about.txt');
+                    $Configfile = base_path('public/workspaceUsers/'.$rows['pp_id_datospersonales'].'/config.json');
+                    $fileData = fopen($Datafile,'a');
                     $dataAbout = \DB::table('datospersonales')->select('*')->where('dp_id','=',$rows['pp_id_datospersonales'])->get();
                     foreach ($dataAbout as $rowsAbout) {
                         if($rowsAbout->dp_td_id == 1){$valueTD='Cedula de ciudadania';}
                         if($rowsAbout->dp_id_roll == 1){$valueR='Administrador';}
-                        fwrite($fp,'======================================================='.PHP_EOL);
-                        fwrite($fp,'======================================================='.PHP_EOL);
-                        fwrite($fp,'==               Datos del usuario                   =='.PHP_EOL);
-                        fwrite($fp,'======================================================='.PHP_EOL);
-                        fwrite($fp,'======================================================='.PHP_EOL);
-                        fwrite($fp,'Documento      : '.$rowsAbout->dp_id.'         '.PHP_EOL);
-                        fwrite($fp,'Tipod documento: '.$valueTD.'      '.PHP_EOL);
-                        fwrite($fp,'Nombre         : '.$rowsAbout->dp_nombre.'     '.PHP_EOL);
-                        fwrite($fp,'Apellido       : '.$rowsAbout->dp_apellido.'   '.PHP_EOL);
-                        fwrite($fp,'Roll           : '.$valueR.'    '.PHP_EOL); 
-                        fwrite($fp,'======================================================='.PHP_EOL);                                              
+                        fwrite($fileData,'======================================================='.PHP_EOL);
+                        fwrite($fileData,'======================================================='.PHP_EOL);
+                        fwrite($fileData,'==               Datos del usuario                   =='.PHP_EOL);
+                        fwrite($fileData,'======================================================='.PHP_EOL);
+                        fwrite($fileData,'======================================================='.PHP_EOL);
+                        fwrite($fileData,'Documento      : '.$rowsAbout->dp_id.'         '.PHP_EOL);
+                        fwrite($fileData,'Tipod documento: '.$valueTD.'      '.PHP_EOL);
+                        fwrite($fileData,'Nombre         : '.$rowsAbout->dp_nombre.'     '.PHP_EOL);
+                        fwrite($fileData,'Apellido       : '.$rowsAbout->dp_apellido.'   '.PHP_EOL);
+                        fwrite($fileData,'Roll           : '.$valueR.'    '.PHP_EOL); 
+                        fwrite($fileData,'======================================================='.PHP_EOL);                                              
                     }
-                    fclose($fp);             
+                    fclose($fileData);
+                    $atributesConfig = 
+                    ['ConfigFilters' => [
+                                'statusUser' => 0,
+                                'statusSelectTypeUser' => 0,
+                                'statusSelectRoll' => 0 
+                             ]       
+
+                         ];
+                    file_put_contents($Configfile,json_encode($atributesConfig).PHP_EOL,FILE_APPEND);             
 
                 }
+
 
         }else{
             $chargen = null;

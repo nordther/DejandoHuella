@@ -129,24 +129,49 @@
 
 					</div>
 
-					<div class="col dm-col-1" >
-								
-						<div class="input-group">
-
-							{!! Form::select('v_frmCtrl_Gender',$data['dll']['comboGender'],null,['style'=>'display:none;']) !!}
+					<div class="col dm-col-2">
+						
+					</div>	
+					
+					<div class="col dm-col-3">
+						
+						<div class="input-group-box dm-col-2">
 									
-							<div class="selectWrap">
-								<div class="selectTitle selectTitleDesactivate" id="v_frmCtrl_Gender_Title">
-									{!! Form::label(null,"Genero") !!}
-							    </div>
-							    <div class="selectSpanText desactivateSelect" id="v_frmCtrl_Gender"></div>
-							    <div class="selectContent" id="v_frmCtrl_Gender_content"></div>
-							</div>
+							<label class="label">Genero</label>
+										
+								<div class="col dm-col-1">
 
+									<label class="label">Femenino</label>
 
-					    </div>
+									<label class="switchBtn">
+
+										   	<input type="radio" name="v_frmCtrl_switchBtn_gender" value="1" id="v_frmCtrl_switchBtn_fm">
+
+										   	<div class="slide round" id="v_frmCtrl_switchBtn_fm_title">F.</div>
+
+									</label>
+
+								</div>
+
+								<div class="col dm-col-1">
+
+									<label class="label">Madculino</label>
+
+									<label class="switchBtn">										
+
+										<input type="radio" name="v_frmCtrl_switchBtn_gender" value="2" id="v_frmCtrl_switchBtn_mc">
+	 
+										<div class="slide round" id="v_frmCtrl_switchBtn_mc_title">M.</div>
+
+									</label>
+
+							</div>																	
+	
+						</div>
 
 					</div>
+
+					
 
 					<div class="col dm-col-2">
 						
@@ -195,37 +220,64 @@
 						</div>
 
 					</div>
+					
+					<div class="col dm-col-1" id="frm_beneficier_1">
+						
+						<div class="input-group">				
+									
+							{!! Form::text('v_formCtrl_UserBeneficier_nit_institute',null,['id' => 'v_formCtrl_UserBeneficier_nit_institute','autocomplete'=>'off']); !!}	
 
-					<div class="col dm-col-1">
-
-						<div class="input-group-box dm-col-1">
-							
-							<label class="label">Roll</label>
-
-							<label class="switchBtn">
-
-							    <input type="checkbox" id="v_frmCtrl_switchBtn_roll" value="1">
-
-							    <div class="slide round" id="v_frmCtrl_switchBtn_roll_title">Off</div>
-
-							</label>
+							{!! Form::label('v_formCtrl_UserBeneficier_nit_institute','Nit de la inst. Edu.',['class' => 'label','id' => 'v_formCtrl_UserBeneficier_nit_institute_title']) !!}
 
 						</div>
+
+					</div>
+
+					<div class="col dm-col-1" id="frm_beneficier_2">
 						
-						<div class="input-group-box dm-col-1">
-							
-							<label class="label">User Data</label>
+						<div class="input-group">				
+									
+							{!! Form::text('v_formCtrl_UserBeneficier_name_institute',null,['id' => 'v_formCtrl_UserBeneficier_name_institute','autocomplete'=>'off']); !!}	
 
-							<label class="switchBtn">
-
-							    <input type="checkbox" id="v_frmCtrl_switchBtn_UserData" value="1">
-
-							    <div class="slide round" id="v_frmCtrl_switchBtn_UserData_title">Off</div>
-
-							</label>
+							{!! Form::label('v_formCtrl_UserBeneficier_name_institute','Nombre de la inst. Edu.',['class' => 'label','id' => 'v_formCtrl_UserBeneficier_name_institute_title']) !!}
 
 						</div>
+
+					</div>
+
+					<div class="col dm-col-2" id="frm_beneficier_3">
 						
+						<div class="input-group">				
+									
+							{!! Form::text('v_formCtrl_UserBeneficier_address_institute',null,['id' => 'v_formCtrl_UserBeneficier_address_institute','autocomplete'=>'off']); !!}	
+
+							{!! Form::label('v_formCtrl_UserBeneficier_address_institute','Dirección de la inst. Edu.',['class' => 'label','id' => 'v_formCtrl_UserBeneficier_address_institute_title']) !!}
+
+						</div>
+
+					</div>
+
+					<div class="col dm-col-1" id="frm_beneficier_4">
+						
+						<div class="input-group">				
+									
+							{!! Form::text('v_formCtrl_UserBeneficier_phone_institute',null,['id' => 'v_formCtrl_UserBeneficier_phone_institute','autocomplete'=>'off']); !!}	
+
+							{!! Form::label('v_formCtrl_UserBeneficier_phone_institute','Telefono de la inst. Edu.',['class' => 'label','id' => 'v_formCtrl_UserBeneficier_phone_institute_title']) !!}
+
+						</div>
+
+					</div>
+
+					<div class="col dm-col-1" id="frm_beneficier_5">
+						
+						<div class="input-group">				
+									
+							{!! Form::email('v_formCtrl_UserBeneficier_email_institute',null,['id' => 'v_formCtrl_UserBeneficier_email_institute','autocomplete'=>'off']); !!}	
+
+							{!! Form::label('v_formCtrl_UserBeneficier_email_institute','Correo electronico de la inst. Edu.',['class' => 'label','id' => 'v_formCtrl_UserBeneficier_email_institute_title']) !!}
+
+						</div>
 
 					</div>
 

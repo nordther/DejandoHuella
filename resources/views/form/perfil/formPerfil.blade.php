@@ -62,7 +62,7 @@
 
 					</div>
 
-					<div class="col dm-col-2">
+					<div class="col dm-col-1">
 						
 						<div class="input-group">
 						
@@ -84,7 +84,104 @@
 
 						</div>
 
+					</div>						
+					
+
+					<div class="col dm-col-1">
+						
+						<div class="input-group">
+						
+							{!! Form::text('v_frmCtrl_Phone_User',$data['telefono'],['id' => 'v_frmCtrl_Phone_User']) !!}
+
+							{!! Form::label('v_frmCtrl_Phone_User','telefono',['class' => 'label']) !!}
+
+						</div>
+
 					</div>
+
+					<div class="col dm-col-2"></div>
+
+					<div class="col dm-col-3">
+						
+						<div class="input-group-box dm-col-2">
+								
+							@foreach ($data['dll']['text'] as $rows)
+
+								@if (($rows->gtxt_paramt_wordkey == 'wordkey_gender_user') && ($rows->gtxt_id_gtype == 1))
+
+									{!! Form::label(null,$rows->gtxt_text,['class' => 'label']); !!}		
+
+								@endif
+
+							@endforeach
+										
+								<div class="col dm-col-1">
+
+									<div style="display: none;">
+										
+										@if($data['genero'] == 'wordkey_fm')
+									
+											{{$isCheckedFm = "checked disabled",
+											  $isDisableFm = "disabled",
+											  $isCheckedMc = "disabled",
+											  $isDisableMc = "disabled"}}
+
+										@elseif($data['genero'] == 'wordkey_mc')
+											
+											{{$isCheckedFm = "disabled",
+											  $isDisableFm = "disabled",
+											  $isCheckedMc = "checked disabled",
+											  $isDisableMc = "disabled"}}
+
+										@endif
+
+									</div>
+
+									@foreach ($data['dll']['text'] as $rows)
+
+										@if (($rows->gtxt_paramt_wordkey == 'wordkey_fm') && ($rows->gtxt_id_gtype == 2))
+
+											{!! Form::label(null,$rows->gtxt_text,['class' => 'label']); !!}		
+
+										@endif
+
+									@endforeach	
+
+									<label class="switchBtn">
+
+										   	<input type="radio" name="v_frmCtrl_switchBtn_gender" value="1" id="v_frmCtrl_switchBtn_fm" {{$isCheckedFm }}>
+
+										   	<div class="slide round" id="v_frmCtrl_switchBtn_fm_title" {{$isDisableFm }}>F.</div>
+
+									</label>
+
+								</div>
+
+								<div class="col dm-col-1">
+									
+									@foreach ($data['dll']['text'] as $rows)
+
+										@if (($rows->gtxt_paramt_wordkey == 'wordkey_mc') && ($rows->gtxt_id_gtype == 2))
+
+											{!! Form::label(null,$rows->gtxt_text,['class' => 'label']); !!}		
+
+										@endif
+										
+									@endforeach	
+
+									<label class="switchBtn">
+
+										<input type="radio" name="v_frmCtrl_switchBtn_gender" value="2" id="v_frmCtrl_switchBtn_mc" {{$isCheckedMc }}>
+	 
+										<div class="slide round" id="v_frmCtrl_switchBtn_mc_title" {{$isDisableMc }}>M.</div>
+
+									</label>
+
+							</div>																	
+	
+						</div>
+
+					</div>	
 
 
 				</div>
@@ -96,6 +193,12 @@
 						<div class="input-group-btn input-esquare-btn btn-dm-5 input-group-btn-top-form">
 						
 							{!! Form::button('',['class' => 'btn btn-save','type' => 'submit']); !!}
+
+						</div>
+
+						<div class="input-group-btn input-esquare-btn btn-dm-5 input-group-btn-top-form">
+						
+							{!! Form::button('',['class' => 'btn btn-cv','type' => 'button']); !!}
 
 						</div>
 

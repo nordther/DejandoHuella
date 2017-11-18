@@ -22,31 +22,35 @@ textarea{
 	width: 100%;
 	height: auto;
 	right: 10px;
-	overflow: hidden;
 	float: left;
 	
 }
 .input-group-box > label.label{
+	display: flex;
+	font-size:  14px;  
+	font-family: "Roboto",sans-serif; 
+    top: 0;
+    left: 0;
+    padding-top:  8px; 
+    padding-bottom:   8px; 
+    font-weight: 700; 	
+}
+.input-group-box >.switchBtn{	
+	position: relative;
+	display: inline-block;
+	float: left;
+}
+
+.input-group-box >  div > label.label{
 	display: flex;
 	font-size:  12px;  
 	font-family: "Roboto",sans-serif; 
     top: 0;
     left: 0;
     padding-top:  8px; 
-    padding-bottom:   8px;   
-    
+    padding-bottom:   8px; 
+}
 
-	
-}
-.input-group-box label .switchBtn{
-	
-	position: relative;
-	display: flex;
-	
-	
-	float: left;
-	
-}
 .input-group-btn{	
 	position: relative;
 	cursor:pointer;
@@ -239,6 +243,13 @@ textarea{
 	width: 100%;
 }
 
+.dm-col-3{
+	margin-left: auto;
+    left: auto;
+    right: auto;	
+	width: 20%;
+}
+
 .dm-col-left{
 	border: 1px solid #8C4A4A;
 	box-sizing: border-box;
@@ -281,7 +292,24 @@ textarea{
 	width: 100px;
 	height: 100px;
 }
-
+img,
+label,
+div,
+p,
+h1,h2,h3,h4,h5,h6,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="checkbox"],
+input[type="radio"],
+button[type="button"],
+button[type="reset"],
+button[type="submit"]{
+	text-rendering: geometricPrecision;
+	image-rendering: optimizeSpeed;
+}
 .btn-close{
 	position: relative;
 	cursor: pointer;
@@ -458,30 +486,37 @@ textarea{
 	background-image: url('../../../../img/icon/form/loginHover.png');
 	background-color: transparent;
 	transform:rotate(270deg);
+	image-rendering: pixelated;
 }
 
 .btn-login:hover{	
 	background-image: url('../../../../img/icon/form/login.png');
+	image-rendering: pixelated;
 		
 }
+.btn-cv{
+	background-image: url('../../../../img/icon/form/viewJob.png');
+	background-color: transparent;		
+}
 
+.btn-cv:hover{	
+	background-image: url('../../../../img/icon/form/viewJobHover.png');
+}
 .btn-send{
-	background-image: url('../../../../img/icon/form/send.png');
+	background-image: url('../../../../img/icon/form/send.png');	
 	background-color: transparent;
 }
 
 .btn-send:hover{	
-	background-image: url('../../../../img/icon/form/sendHover.png');
-		
+	background-image: url('../../../../img/icon/form/sendHover.png');		
 }
 .btn-save{
-	background-image: url('../../../../img/icon/form/save.png');
+	background-image: url('../../../../img/icon/form/save.png');	
 	background-color: transparent;
 }
 
 .btn-save:hover{	
-	background-image: url('../../../../img/icon/form/saveHover.png');
-		
+	background-image: url('../../../../img/icon/form/saveHover.png');		
 }
 .btn-clean{
 	background-image: url('../../../../img/icon/form/clean.png');
@@ -489,29 +524,26 @@ textarea{
 }
 
 .btn-clean:hover{	
-	background-image: url('../../../../img/icon/form/cleanHover.png');
-		
+	background-image: url('../../../../img/icon/form/cleanHover.png');	
 }
 
 .btn-arrow-down{
 	transform:rotate(180deg);
-	background-image: url('../../../../img/icon/form/arrow.png');
+	background-image: url('../../../../img/icon/form/arrow.png');	
 	background-color: transparent;
 }
 
 .btn-arrow-down:hover{	
-	background-image: url('../../../../img/icon/form/arrowHover.png');
-		
+	background-image: url('../../../../img/icon/form/arrowHover.png');		
 }
 .btn-arrow-left{
 	transform:rotate(0deg);
-	background-image: url('../../../../img/icon/form/arrow.png');
+	background-image: url('../../../../img/icon/form/arrow.png');	
 	background-color: transparent;
 }
 
 .btn-arrow-left:hover{	
-	background-image: url('../../../../img/icon/form/arrowHover.png');
-		
+	background-image: url('../../../../img/icon/form/arrowHover.png');	
 }
 
 .btn-arrow-right{
@@ -521,8 +553,7 @@ textarea{
 }
 
 .btn-arrow-right:hover{	
-	background-image: url('../../../../img/icon/form/arrowHover.png');
-		
+	background-image: url('../../../../img/icon/form/arrowHover.png');		
 }
 .select_icon_circle{
 	left: -10px;
@@ -654,9 +685,14 @@ textarea{
     position: relative;
     display: inline-block;
     width: 80px;
-    height: 26px;
+    height: 22px;
     font-family: "Roboto",sans-serif;
     font-size: 14px;
+    color: #ffffff;
+    font-weight: 999;
+    text-rendering: geometricPrecision;
+    text-shadow: 0 1px 1px #333, 0 -1px 1px #EAEAEA;
+    margin-top: 7px;
 
 }
 .switchBtn input {display:none;}
@@ -667,33 +703,55 @@ textarea{
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #EEEEEE;
+    background: rgba(204,204,204,1);
+	background: -moz-linear-gradient(45deg, rgba(204,204,204,1) 0%, rgba(240,240,240,1) 15%, rgba(242,242,242,1) 50%, rgba(209,209,209,1) 85%, rgba(204,204,204,1) 100%);
+	background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(204,204,204,1)), color-stop(15%, rgba(240,240,240,1)), color-stop(50%, rgba(242,242,242,1)), color-stop(85%, rgba(209,209,209,1)), color-stop(100%, rgba(204,204,204,1)));
+	background: -webkit-linear-gradient(45deg, rgba(204,204,204,1) 0%, rgba(240,240,240,1) 15%, rgba(242,242,242,1) 50%, rgba(209,209,209,1) 85%, rgba(204,204,204,1) 100%);
+	background: -o-linear-gradient(45deg, rgba(204,204,204,1) 0%, rgba(240,240,240,1) 15%, rgba(242,242,242,1) 50%, rgba(209,209,209,1) 85%, rgba(204,204,204,1) 100%);
+	background: -ms-linear-gradient(45deg, rgba(204,204,204,1) 0%, rgba(240,240,240,1) 15%, rgba(242,242,242,1) 50%, rgba(209,209,209,1) 85%, rgba(204,204,204,1) 100%);
+	background: linear-gradient(45deg, rgba(204,204,204,1) 0%, rgba(240,240,240,1) 15%, rgba(242,242,242,1) 50%, rgba(209,209,209,1) 85%, rgba(204,204,204,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', endColorstr='#cccccc', GradientType=1 );
     -webkit-transition: .4s;
     transition: .4s;
-    padding: 5px;
-    color: #343434;
+    padding-top: 1px;
+    padding-left: 10px;
+    padding-bottom: 3px;
+    color: #ffffff;
+    font-weight: 999;
+    text-shadow: 0 1px 1px #333, 0 -1px 1px #EAEAEA;
     box-sizing: border-box;
-
+	text-rendering: geometricPrecision;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
+    color-rendering:optimizeSpeed;
+    border: 1px inset #D5D5D5;
 }
 .slide:before {
     position: absolute;
     content: "";
-    height: 20px;
-    width: 20px;
+    height: 30px;
+    width: 30px;
     left: 72%;
-    bottom: 3px;
+    bottom: -7px;
     background-image: url('../../../../img/texture/metal.jpg');
-    border: 0.1px inset #ABABAB;
+    image-rendering: pixelated;
+    border: 2px ridge #D5D5D5;
     background-size: 100% 100%;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
     -webkit-transition: .4s;
     transition: .4s;
 }
 input:checked + .slide {
-    background-color: #26a69a;
+    background: rgba(2,168,154,1);
+	background: -moz-linear-gradient(45deg, rgba(2,168,154,1) 0%, rgba(0,199,189,1) 15%, rgba(102,255,247,1) 50%, rgba(0,199,189,1) 85%, rgba(2,168,154,1) 100%);
+	background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(2,168,154,1)), color-stop(15%, rgba(0,199,189,1)), color-stop(50%, rgba(102,255,247,1)), color-stop(85%, rgba(0,199,189,1)), color-stop(100%, rgba(2,168,154,1)));
+	background: -webkit-linear-gradient(45deg, rgba(2,168,154,1) 0%, rgba(0,199,189,1) 15%, rgba(102,255,247,1) 50%, rgba(0,199,189,1) 85%, rgba(2,168,154,1) 100%);
+	background: -o-linear-gradient(45deg, rgba(2,168,154,1) 0%, rgba(0,199,189,1) 15%, rgba(102,255,247,1) 50%, rgba(0,199,189,1) 85%, rgba(2,168,154,1) 100%);
+	background: -ms-linear-gradient(45deg, rgba(2,168,154,1) 0%, rgba(0,199,189,1) 15%, rgba(102,255,247,1) 50%, rgba(0,199,189,1) 85%, rgba(2,168,154,1) 100%);
+	background: linear-gradient(45deg, rgba(2,168,154,1) 0%, rgba(0,199,189,1) 15%, rgba(102,255,247,1) 50%, rgba(0,199,189,1) 85%, rgba(2,168,154,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#02a89a', endColorstr='#02a89a', GradientType=1 );
     color: #FFFFFF;  
-    padding-left: 35px;
+    padding-left: 40px;
+    border: 1px inset #14C8B7;
 }
 input:focus + .slide {
     box-shadow: 0 0 1px #01aeed;
@@ -702,7 +760,7 @@ input:checked + .slide:before {
     -webkit-transform: translateX(20px);
     -ms-transform: translateX(20px);
     transform: translateX(20px);
-    left: -22%;
+    left: -32%;
 }
 .slide.round {
 

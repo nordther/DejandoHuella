@@ -14,20 +14,7 @@ $(document).ready(function(){
 });
 
 function ClassMain(){
-	/*this.scrollShow = function(id){
-		var title = $(id).replace('start-','');
-		$(window).scroll(function() {
-			var windowHeight = $(window).scrollTop();
-			var contenido = $("#start-"+title).offset();
-			contenido = contenido.top;
-			console.log(contenido);
-			if (windowHeight >=contenido) {
-				btn_actionEvents.showNewTopics();
-			}else{
-				btn_actionEvents.showNewTopics();
-			}
-		});
-	}*/
+	
 	this.iniSetup = function(){
 		btn_actionEvents.inputMaterialize();	
 	$("form[name=formHTML] "+selectorInput).each(function(indx,element){		
@@ -93,7 +80,8 @@ function ClassMain(){
 	});
 
 	$.each($("form[name=formHTML] div[id]"),function(i,k){			
-		$("#frm_system_user_"+(i+1)).css({'display':'none'});		
+		$("#frm_system_user_"+(i+1)).css({'display':'none'});
+		$("#frm_beneficier_"+(i+1)).css({'display':'none'});		
 	});
 
 	
@@ -126,7 +114,12 @@ function ClassMain(){
 			$("#frm_system_user_2").hide('fast');
 			$("#frm_system_user_3").hide('fast');
 			$("#frm_system_user_4").hide('fast');
-			$("#frm_system_user_5").hide('fast');		
+			$("#frm_system_user_5").hide('fast');
+			$("#frm_beneficier_1").hide('slow');
+			$("#frm_beneficier_2").hide('slow');
+			$("#frm_beneficier_3").hide('slow');
+			$("#frm_beneficier_4").hide('slow');
+			$("#frm_beneficier_5").hide('slow');		
 		});
 
 	}
@@ -150,33 +143,7 @@ function ClassMain(){
      		$('#start-about').css({'transform':'rotate(180deg)','transition':'transform 1s'});
      	}
 	}
-	this.showFormAssistan = function(){
-		if ($("#v_frmCrtUs_typeusers").val() == "1") {
-			$("#form-user-sistem").show();
-			$("#form-user-beneficier").hide();
-			$("#form-user-profesor").hide();
-		}
-		if ($("#v_frmCrtUs_typeusers").val() == "2") {
-			$("#form-user-sistem").hide();
-			$("#form-user-beneficier").show();
-			$("#form-user-profesor").hide();
-		}
-		if ($("#v_frmCrtUs_typeusers").val() == "3") {
-			$("#form-user-sistem").hide();
-			$("#form-user-beneficier").hide();
-			$("#form-user-profesor").show();
-		}
-		if ($("#v_frmCrtUs_typeusers").val() == "4") {
-			$("#form-user-sistem").hide();
-			$("#form-user-beneficier").hide();
-			$("#form-user-profesor").hide();
-		}
-		if ($("#v_frmCrtUs_typeusers").val() == "5") {
-			$("#form-user-sistem").hide();
-			$("#form-user-beneficier").hide();
-			$("#form-user-profesor").hide();
-		}
-	}	
+		
 	this.validityInputEmptyOrFull = function(id){		
 		$("form[name='formHTML'] label").each(function(i,k){
 			if (($('#'+id).val() != '')|| ($('#'+id).attr('placeholder') !== undefined)) {			
