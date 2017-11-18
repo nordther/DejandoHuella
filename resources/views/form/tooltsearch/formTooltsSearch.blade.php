@@ -82,7 +82,7 @@
 
 									<label class="switchBtn">
 
-									    <input type="checkbox" id="v_frmCtrl_switchBtn_statusUser" checked>
+									    <input type="checkbox" id="v_frmCtrl_switchBtn_statusUser">
 
 									    <div class="slide round" id="v_frmCtrl_switchBtn_statusUser_title">Off</div>
 
@@ -124,6 +124,24 @@
 
 		@elseif($data['type-modul'] == 'buscar-agenda')
 			
+			<div class="form-content-toolts">
+
+				<div class="form-content-filters scroll">
+
+				</div>	
+				
+				<div class="form-content-ctrls">
+				
+					<div class="input-group-btn input-circle-btn btn-dm-1">
+						
+						{!! Form::button('',['id' => 'v_frmCrls_btn_showFilters','class'=>'btn btn-arrow-right','type' =>'button']) !!}
+
+					</div>
+
+				</div>
+
+
+			</div>
 			
 	
 		@endif

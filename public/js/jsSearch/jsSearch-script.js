@@ -1,4 +1,4 @@
-document.write('<script type="javascript/text" src="js/jsMainGui/jsMainGui-script.js"></script>');
+
 
 var eventoClick = new ClassSearchDinamy();
 var result;
@@ -8,16 +8,18 @@ var roll = null;
 var inputElements = [];
 var statusUsers = null;
 
-$(document).ready(function(){
+$(document).ready(function(){		
+	eventoClick.InitSetup();			
+}); 
+
+
+
+function ClassSearchDinamy(){
+	
+	var status_session;
+
+	this.InitSetup = function(){
 		
-
-		$("#frmCtrl_Roll").css({'display':'none'});
-
-		if ($("#v_frmCtrl_switchBtn_statusUser").is(':checked')) {
-			statusUsers = 1;
-			$("#v_frmCtrl_switchBtn_statusUser_title").html('On');
-			eventoClick.searchInformation();
-		}
 
 		$("#v_frmCtrl_switchBtn_statusUser").click(function() {
 			if ($("#v_frmCtrl_switchBtn_statusUser").is(':checked')) {
@@ -30,7 +32,7 @@ $(document).ready(function(){
 			}
 		});
 
-		eventoClick.searchInformation();
+		$("#frmCtrl_Roll").css({'display':'none'});		
 
 		$.each($("select"),function(i,k){
 			var selector = $(k).attr('name');
@@ -96,7 +98,7 @@ $(document).ready(function(){
 
 		$(".form-content-filters").css({'display':'none','top':'52px','height':''+(v_Height+36)+'px'});
 
-		$(".form-content-ctrls").css({'top':'52px','height':''+(v_Height+36)+'px'});
+		//$(".form-content-ctrls").css({'top':'52px','height':''+(v_Height+36)+'px'});
 
 
 
@@ -110,33 +112,14 @@ $(document).ready(function(){
 		   		eventoClick.tooltSearchShow();
 		   });	
 
-		$("#v_frmUserToolts_status_active").click(function(){
-			eventoClick.searhFunctionShowInformation();
-		});	
-
-		$("#v_frmUserToolts_status_inhable").click(function(){
-			eventoClick.searhFunctionShowInformation();
-		});	
 
 		if ($("#v_frmCtrl_searchUser").val() != null) {
 				$("#v_frmCtrl_searchUser").keyup(function(){			
 						eventoClick.searchInformation();				
 				});
-			}
+			}	
 		
-		
-
-		if ($("select[name=v_frmCrt_Roll]").selectedIndex != -1 ) {eventoClick.searchInformation();}
-		
-		
-			
-	}); 
-
-
-
-function ClassSearchDinamy(){
-	
-	var status_session;
+	}
 
 	this.confirmAuth = function(id){
 		var search = $("#v_frmCtrl_searchUser").val();	

@@ -22,7 +22,7 @@ textarea{
 	width: 100%;
 	height: auto;
 	right: 10px;
-	overflow: hidden;
+	
 	float: left;
 	
 }
@@ -653,10 +653,13 @@ textarea{
 .switchBtn {
     position: relative;
     display: inline-block;
-    width: 80px;
-    height: 26px;
+    width: 90px;
+    height: 20px;
     font-family: "Roboto",sans-serif;
     font-size: 14px;
+    color: #F9F9F9; 
+    font-weight: 950;
+    text-shadow:0 1px 1px #222222, 0 -1px 1px #F4F4F4;
 
 }
 .switchBtn input {display:none;}
@@ -667,11 +670,22 @@ textarea{
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #EEEEEE;
+    background: rgba(204,204,204,1);
+background: -moz-linear-gradient(45deg, rgba(204,204,204,1) 0%, rgba(240,240,240,1) 15%, rgba(242,242,242,1) 50%, rgba(240,240,240,1) 85%, rgba(204,204,204,1) 100%);
+background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(204,204,204,1)), color-stop(15%, rgba(240,240,240,1)), color-stop(50%, rgba(242,242,242,1)), color-stop(85%, rgba(240,240,240,1)), color-stop(100%, rgba(204,204,204,1)));
+background: -webkit-linear-gradient(45deg, rgba(204,204,204,1) 0%, rgba(240,240,240,1) 15%, rgba(242,242,242,1) 50%, rgba(240,240,240,1) 85%, rgba(204,204,204,1) 100%);
+background: -o-linear-gradient(45deg, rgba(204,204,204,1) 0%, rgba(240,240,240,1) 15%, rgba(242,242,242,1) 50%, rgba(240,240,240,1) 85%, rgba(204,204,204,1) 100%);
+background: -ms-linear-gradient(45deg, rgba(204,204,204,1) 0%, rgba(240,240,240,1) 15%, rgba(242,242,242,1) 50%, rgba(240,240,240,1) 85%, rgba(204,204,204,1) 100%);
+background: linear-gradient(45deg, rgba(204,204,204,1) 0%, rgba(240,240,240,1) 15%, rgba(242,242,242,1) 50%, rgba(240,240,240,1) 85%, rgba(204,204,204,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', endColorstr='#cccccc', GradientType=1 );
     -webkit-transition: .4s;
     transition: .4s;
-    padding: 5px;
-    color: #343434;
+    padding-left: 8px;
+    padding-top: 2px;
+    padding-bottom: 3px;
+    color: #F9F9F9; 
+    font-weight: 950;
+    text-shadow:0 1px 1px #222222, 0 -1px 1px #F4F4F4;
     box-sizing: border-box;
 
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
@@ -679,10 +693,10 @@ textarea{
 .slide:before {
     position: absolute;
     content: "";
-    height: 20px;
-    width: 20px;
+    height: 33px;
+    width: 33px;
     left: 72%;
-    bottom: 3px;
+    bottom: -6px;
     background-image: url('../../../../img/texture/metal.jpg');
     border: 0.1px inset #ABABAB;
     background-size: 100% 100%;
@@ -691,9 +705,18 @@ textarea{
     transition: .4s;
 }
 input:checked + .slide {
-    background-color: #26a69a;
-    color: #FFFFFF;  
-    padding-left: 35px;
+   background: rgba(2,168,154,1);
+background: -moz-linear-gradient(45deg, rgba(2,168,154,1) 0%, rgba(0,199,189,1) 15%, rgba(102,255,247,1) 50%, rgba(0,199,189,1) 85%, rgba(2,168,154,1) 100%);
+background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(2,168,154,1)), color-stop(15%, rgba(0,199,189,1)), color-stop(50%, rgba(102,255,247,1)), color-stop(85%, rgba(0,199,189,1)), color-stop(100%, rgba(2,168,154,1)));
+background: -webkit-linear-gradient(45deg, rgba(2,168,154,1) 0%, rgba(0,199,189,1) 15%, rgba(102,255,247,1) 50%, rgba(0,199,189,1) 85%, rgba(2,168,154,1) 100%);
+background: -o-linear-gradient(45deg, rgba(2,168,154,1) 0%, rgba(0,199,189,1) 15%, rgba(102,255,247,1) 50%, rgba(0,199,189,1) 85%, rgba(2,168,154,1) 100%);
+background: -ms-linear-gradient(45deg, rgba(2,168,154,1) 0%, rgba(0,199,189,1) 15%, rgba(102,255,247,1) 50%, rgba(0,199,189,1) 85%, rgba(2,168,154,1) 100%);
+background: linear-gradient(45deg, rgba(2,168,154,1) 0%, rgba(0,199,189,1) 15%, rgba(102,255,247,1) 50%, rgba(0,199,189,1) 85%, rgba(2,168,154,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#02a89a', endColorstr='#02a89a', GradientType=1 );
+    color: #FFFFFF; 
+    text-shadow:0 1px 1px #333, 0 -1px 1px #EAEAEA;
+    font-weight: 950;
+    padding-left: 45px;
 }
 input:focus + .slide {
     box-shadow: 0 0 1px #01aeed;
@@ -702,7 +725,7 @@ input:checked + .slide:before {
     -webkit-transform: translateX(20px);
     -ms-transform: translateX(20px);
     transform: translateX(20px);
-    left: -22%;
+    left: -25%;
 }
 .slide.round {
 
