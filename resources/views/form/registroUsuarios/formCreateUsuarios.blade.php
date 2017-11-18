@@ -82,7 +82,7 @@
 									
 							<div class="selectWrap">
 								<div class="selectTitle selectTitleDesactivate" id="v_frmCtrl_Roll_Title">
-									{!! Form::label(null,"Cargo") !!}
+									{!! Form::label(null,"Cargo del usuario") !!}
 							    </div>
 							    <div class="selectSpanText desactivateSelect" id="v_frmCtrl_Roll"></div>
 							    <div class="selectContent" id="v_frmCtrl_Roll_content"></div>
@@ -129,7 +129,7 @@
 
 					</div>
 
-					<div class="col dm-col-1" id="frm_system_user_2">
+					<div class="col dm-col-1" >
 								
 						<div class="input-group">
 
@@ -193,6 +193,39 @@
 							{!! Form::label('v_formCtrl_User_passwordConfirm','Confirmar contraseña',['class' => 'label','id'=>'v_formCtrl_User_passwordConfirm_title']) !!}
 
 						</div>
+
+					</div>
+
+					<div class="col dm-col-1">
+
+						<div class="input-group-box dm-col-1">
+							
+							<label class="label">Roll</label>
+
+							<label class="switchBtn">
+
+							    <input type="checkbox" id="v_frmCtrl_switchBtn_roll" value="1">
+
+							    <div class="slide round" id="v_frmCtrl_switchBtn_roll_title">Off</div>
+
+							</label>
+
+						</div>
+						
+						<div class="input-group-box dm-col-1">
+							
+							<label class="label">User Data</label>
+
+							<label class="switchBtn">
+
+							    <input type="checkbox" id="v_frmCtrl_switchBtn_UserData" value="1">
+
+							    <div class="slide round" id="v_frmCtrl_switchBtn_UserData_title">Off</div>
+
+							</label>
+
+						</div>
+						
 
 					</div>
 

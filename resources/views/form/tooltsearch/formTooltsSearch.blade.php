@@ -7,7 +7,7 @@
 			<div class="form-content-filters scroll">
 				
 				<div class="form-content">
-					
+					{!! Form::open(['name' =>'formHTML']) !!}
 					<div class="form-wrap">
 						
 						<div class="form-header ">	
@@ -34,22 +34,60 @@
 
 						</div>
 
-						<div class="form-article">
-							
+						<div class="form-article form-content-filters-dm">
+
 							<div class="col dm-col-2">
-								
+
 								<div class="input-group">
-									{!! Form::select('v_frmCtrl_Roll',$data['dll']['comboRoll'],null,['style'=>'display:none;']) !!}
-									
+
+									{!! Form::select('v_frmCtrl_TypeUser',$data['dll']['comboTypeUsers'],null,['style'=>'display:none;']) !!}
+											
 									<div class="selectWrap">
-										<div class="selectTitle selectTitleDesactivate" id="v_frmCtrl_Roll_Title">
+										<div class="selectTitle selectTitleDesactivate" id="v_frmCtrl_TypeUser_Title">
 											{!! Form::label(null,"Tipo de Usuario") !!}
-										</div>
-										<div class="selectSpanText desactivateSelect" id="v_frmCtrl_Roll"></div>
-										<div class="selectContent" id="v_frmCtrl_Roll_content"></div>
+									    </div>
+									    <div class="selectSpanText desactivateSelect" id="v_frmCtrl_TypeUser"></div>
+									    <div class="selectContent" id="v_frmCtrl_TypeUser_content"></div>
 									</div>
 
 
+							    </div>
+								
+							</div>
+
+							<div class="col dm-col-2" id="frmCtrl_Roll">
+
+								<div class="input-group">
+
+									{!! Form::select('v_frmCtrl_Roll',$data['dll']['comboRoll'],null,['style'=>'display:none;']) !!}
+											
+									<div class="selectWrap">
+										<div class="selectTitle selectTitleDesactivate" id="v_frmCtrl_Roll_Title">
+											{!! Form::label(null,"Cargo del Usuario") !!}
+									    </div>
+									    <div class="selectSpanText desactivateSelect" id="v_frmCtrl_Roll"></div>
+									    <div class="selectContent" id="v_frmCtrl_Roll_content"></div>
+									</div>
+
+
+							    </div>
+								
+							</div>
+							
+							<div class="col dm-col-2">
+								
+								<div class="input-group-box dm-col-2">
+									
+									<label class="label">Estado del Usuario</label>
+
+									<label class="switchBtn">
+
+									    <input type="checkbox" id="v_frmCtrl_switchBtn_statusUser" checked>
+
+									    <div class="slide round" id="v_frmCtrl_switchBtn_statusUser_title">Off</div>
+
+									</label>
+	
 								</div>
 
 							</div>							
@@ -62,6 +100,8 @@
 
 
 					</div>
+					
+					{!! Form::close() !!}
 
 				</div>
 

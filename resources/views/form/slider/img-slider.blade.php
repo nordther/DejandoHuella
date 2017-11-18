@@ -2,6 +2,25 @@
 			
 		<div class="content-slider">
 			
+			<div class="content-topic-ctrl-left">
+
+				<div class="input-group-btn  btn-dm-3" >
+
+					{!! Form::button('',['class' => 'btn btn-arrow-down','name' => 'v_formCtrl_btn_topic_left']) !!}	
+
+				</div>
+
+			</div>
+
+			<div class="content-topic-ctrl-right">
+
+				<div class="input-group-btn  btn-dm-3" >
+
+					{!! Form::button('',['class' => 'btn btn-arrow-down','name' => 'v_formCtrl_btn_topic_right']) !!}			
+				</div>
+
+			</div>
+
 			<div id="element_slider_1" class="element_slider element_slider_show">						
 					
 					<div class="content-topic-main">
@@ -26,7 +45,7 @@
 								
 								<div style="position:relative;top: -30px;">
 
-									{!! Form::label('','Titulo 1',['class' => 'label-font-size-2','style' => 'color:#0FDAD3;']) !!}
+									{!! Form::label('','Titulo 1',['class' => 'label-font-size-4','style' => 'color:#0FDAD3;']) !!}
 
 								</div>
 								
@@ -84,7 +103,7 @@
 								
 								<div style="position:relative;top: -30px;">
 
-									{!! Form::label('','Titulo '.($i+1),['class' => 'label-font-size-2','style' => 'color:#0FDAD3;']) !!}
+									{!! Form::label('','Titulo '.($i+1),['class' => 'label-font-size-4','style' => 'color:#0FDAD3;']) !!}
 
 								</div>
 

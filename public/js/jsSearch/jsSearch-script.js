@@ -6,11 +6,30 @@ var timeLoad = 0;
 var cant = 0;
 var roll = null;
 var inputElements = [];
+var statusUsers = null;
 
 $(document).ready(function(){
-		if (roll == null) {
-			roll=1;
+		
+
+		$("#frmCtrl_Roll").css({'display':'none'});
+
+		if ($("#v_frmCtrl_switchBtn_statusUser").is(':checked')) {
+			statusUsers = 1;
+			$("#v_frmCtrl_switchBtn_statusUser_title").html('On');
+			eventoClick.searchInformation();
 		}
+
+		$("#v_frmCtrl_switchBtn_statusUser").click(function() {
+			if ($("#v_frmCtrl_switchBtn_statusUser").is(':checked')) {
+				statusUsers = 1;
+				$("#v_frmCtrl_switchBtn_statusUser_title").html('On');
+				eventoClick.searchInformation();
+			}else{
+				statusUsers = 0;				
+				eventoClick.searchInformation();
+			}
+		});
+
 		eventoClick.searchInformation();
 
 		$.each($("select"),function(i,k){
@@ -172,7 +191,7 @@ function ClassSearchDinamy(){
 			dataType:'json',
 			data:{
 				v_formUserSearch:search,
-				v_formUserStatus:1,
+				v_formUserStatus:statusUsers,
 				v_formCrtUs_roll:roll},					
 			success: function(us){
 				appendData.html('<div class="loader" style="top:115px;">Cargando...</div>');	
@@ -328,24 +347,53 @@ function ClassSearchDinamy(){
 					$("#select_arrow"+id).css({'transform':'rotate(180deg)'});
 					$("#"+id+"_content").fadeOut(10);
 					$("#"+id).removeClass('activateSelect').addClass('desactivateSelect');
-					$("#"+id+"_Title").removeClass('selectTitleActive').addClass('selectTitleDesactivate');
+					$("#"+id+"_Title").removeClass('selectTitleActive').addClass('selectTitleDesactivate');													
 					
-
-						if (($("select[name="+id+"] option[value="+value+"]").text() == 'Administrador')||
-							($("select[name="+id+"] option[value="+value+"]").text() == 'Administrator')) {
-							roll = 1;
-						console.log(roll);
-						}
-						if (($("select[name="+id+"] option[value="+value+"]").text() == 'Auxiliar')||
-							($("select[name="+id+"] option[value="+value+"]").text() == 'Assistan')) {
-							roll = 2;
-						console.log(roll);
-						}
-					
+					eventoClick.SelectFunction($("select[name="+id+"] option[value="+value+"]").text());
 					eventoClick.searchInformation();
 					
 			});			
 			
+	}
+
+	this.SelectFunction = function(id){
+		switch(id){
+						case "Administrador":
+							roll = 1;		
+						break;
+						case "Administrator":
+							roll = 1;		
+						break;
+						case "Auxiliar":
+							roll = 2;							
+						break;
+						case "Assistan":
+							roll = 2;
+						break;
+						case "Asistente del sistema":						
+							$("#frmCtrl_Roll").css({'transition':'all .5s ease','display':'block'});
+							$("#frm_system_user_1").show('slow');
+							$("#frm_system_user_2").show('slow');
+							$("#frm_system_user_3").show('slow');
+							$("#frm_system_user_4").show('slow');
+							$("#frm_system_user_5").show('slow');
+
+							roll = 1;
+						break;
+						case "Beneficiario":
+						case "Profesor":
+						case "Padre o Madre":
+						case "Voluntario":
+							$("#frmCtrl_Roll").css({'transition':'all .5s ease','display':'none'});
+							$("#frm_system_user_1").hide('slow');
+							$("#frm_system_user_2").hide('slow');
+							$("#frm_system_user_3").hide('slow');
+							$("#frm_system_user_4").hide('slow');
+							$("#frm_system_user_5").hide('slow');
+							roll = 3;
+						break;
+						
+					}
 	}
 
 	this.EventClickSearch = function(){

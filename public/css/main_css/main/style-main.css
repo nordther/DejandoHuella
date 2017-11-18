@@ -143,13 +143,14 @@ form{
 	
 	border-top-right-radius: 80px;
 	border-top-left-radius: 80px;
-	border-bottom-right-radius: 70%;
-	border-bottom-left-radius: 70%;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
 	text-align: center;
 }
 @media (max-width: 375px){
 	.content-topic-wrap{
-		width: 95%;
+		width: 64%;
+		left: 2px;
 		margin: auto;
 	}
 }
@@ -211,6 +212,53 @@ form{
 .content-topic-article::-webkit-scrollbar-thumb{border-radius: 5px;background-color: #555;}
 .content-topic-article::-webkit-scrollbar-thumb-bottom{border-radius: 5px;background-color: #555;}
 
+.content-topic-ctrl-left{
+	position: absolute;
+	display: flex;
+	width: 30px;
+	height: 30px;
+	top: 50vh;
+	padding: 8px;
+	left: 1%;
+	border-radius: 2px;
+	background-color: rgba(60,60,60,.8);
+}
+
+.content-topic-ctrl-right{
+	position: absolute;
+	display: flex;
+	width: 30px;
+	height: 30px;
+	top: 50vh;
+	padding: 8px;
+	left: 96%;
+	border-radius: 2px;	
+	background-color: rgba(60,60,60,.8);
+}
+
+@media (max-width: 375px){
+	.content-topic-ctrl-right{
+		position: absolute;
+		display: flex;
+		width: 30px;
+		height: 30px;
+		top: 50vh;
+		padding: 8px;
+		left: 87%;
+		border-radius: 2px;	
+		background-color: rgba(60,60,60,.8);
+	}
+}
+
+.content-topic-ctrl-left>.input-group-btn>button[type="button"]{
+	
+	align-content: center;
+	transform: rotate(270deg);
+}
+.content-topic-ctrl-right>.input-group-btn>button[type="button"]{
+	align-content: center;
+	transform: rotate(90deg);
+}
 
 .semi-circulo {
 
@@ -231,7 +279,7 @@ form{
 .semi-circulo-invertido {
 
 	position: relative;
-	top: -9.8px;
+	top: 2.8px;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 8px;
@@ -851,6 +899,22 @@ form{
 		box-sizing: border-box;
 		transition: background 0.08s ease-in;		
 	}
+	.form-rows-span {
+		display: flex;
+		align-items:  center; 
+		padding-left: 15px; 
+		width: 100%;
+		height: 20px;	
+		border-bottom: 1px solid #CFCFCF;
+		box-sizing: border-box; 
+		background-color: #ffffff;	
+	}
+	.form-rows-span > hr{
+			
+		align-content: center;
+		width: 92%;
+		border: 1.2px inset #F6F6F6;
+	}
 	.form-rows,
 	.form-rows > img,
 	.form-rows > label{
@@ -936,6 +1000,16 @@ form{
 		padding-left:  10px;
 	}
 
+	.content-info-user{
+		display: block;
+		height: auto;
+		padding: 8px;
+		overflow: hidden;
+	}
+	.content-info-user>label{
+		float: left;
+	}
+
 /*********************************************************************************************************************************/
 /** Contenedores para los filtros */
 /*********************************************************************************************************************************/
@@ -955,6 +1029,10 @@ form{
 		display: block;
 		width: 370px;
 		background-color: #EBEBEB;	
+	}
+	
+	.form-content-filters-dm{
+		min-height: 370px;
 	}
 
 	.form-content-ctrls{
@@ -984,7 +1062,7 @@ form{
 	}
 	.form-wrap{					
 		margin: 70px auto;
-		padding: 45px;
+		padding: 35px;
 		border-radius: 2px;
 		box-shadow:0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
 	}
@@ -992,10 +1070,12 @@ form{
 		z-index: 4250000; 
 		width:270px; 
 		position:fixed; 
-		top:-18px; 
-		left: 80%; 
+		top:-27px; 
+		left: 82%; 
 		padding: 0px;
 	}
+	
+	
 	@media (max-width: 375px){
 		.form-wrap-perfil{
 			z-index: 4250000; 
@@ -1025,10 +1105,10 @@ form{
 	.form-article{					
 		width: auto;
 		margin: auto;
-		min-height: 20vh;	
+		height: auto;
 		padding-top: 15px;
 		padding-bottom: 15px;
-		overflow-y: auto;
+		overflow: hidden;
 		box-sizing: border-box;
 	}
 
@@ -1046,6 +1126,14 @@ form{
 		top:24mm;
 				
 		overflow: hidden;
+	}
+	.form-ctrl-link{
+		display: block;
+		position: relative;
+		float: left;
+		padding: 15px;
+		text-decoration: none;
+		line-height: 5px;
 	}
 
 	.form-ctrl-content>div.input-group-btn{

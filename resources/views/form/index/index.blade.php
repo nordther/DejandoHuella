@@ -21,7 +21,7 @@
 
 	<div class="content-grid grid-2" id="content-noticias" style="margin-top: 70px;">
 		@for($i = 1 ; $i<=3; $i++)
-			<div class="card card-dm-1 ">						
+			<div class="card card-dm-1 card-bg-white">						
 				<div class="card-img">					
 					<img src="{{asset('img/imgTopics/header/img'.$i.'.jpg')}}">	
 					<span class="card-title">Titulo de la noticia</span>					
@@ -38,7 +38,7 @@
 			</div>
 		@endfor	
 		@for($i = 1 ; $i<=3; $i++)
-			<div class="card card-dm-1 ">						
+			<div class="card card-dm-1 card-bg-white">						
 				<div class="card-img">					
 					<img src="{{asset('img/imgTopics/header/img'.$i.'.jpg')}}">	
 					<span class="card-title">Titulo de la noticia</span>					

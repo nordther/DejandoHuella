@@ -7,7 +7,7 @@ $(document).ready(function(){
 	
 
 	$("#content-login-user").css({'display':'none'});
-	$("#form-article").css({'height':'0px','display':'none'});	
+	
 
 	$("a[id=nav_btn_login]").click(function(){
 		btn_login.showFormLoginUser();
@@ -46,11 +46,10 @@ function Login(){
 		var v_windows_h = $(window).height();	
 		$("#form-article").css({'height':'0px'});	
 		if($('#content-login-user').css('display') == 'none'){	
-			
-		    this.articleAnimate();		
+		    		
 				
 			$("#content-login-user").toggle(300, function() {
-				$("#content-login-user").css({'display':'block'}).slideDown(100);
+				
 				$(".content-blurt").css({'height':v_windows_h+'px'});
 			$("#targetLoginUsers").fadeIn();
 			$("#targetLoginUsers").css({'background-color':''+colorTarger['active']+''});
@@ -58,21 +57,7 @@ function Login(){
 		}
 
 	}
-	this.articleAnimate = function(){
-	var v_height = 0;
-
-		articleActivate = setInterval(function(){
-			
-			v_height=v_height+5;
-
-			if (v_height <= 200) {											
-				$("#form-article").css({'height':v_height+'px'}).fadeIn('slow');
-				console.log(v_height);
-			}
-
-		},13); 		
-		
-	}
+	
 	this.resetArticle = function(){
 		var v_height = 0;
 		articleDesactive = setInterval(function(){

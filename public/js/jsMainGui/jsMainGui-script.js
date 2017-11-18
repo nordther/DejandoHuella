@@ -7,6 +7,10 @@ var selectorInput = "input[type='text'],input[type='password'],input[type='email
 $(document).ready(function(){
 	
 	btn_actionEvents.iniSetup();
+	
+
+	
+	
 });
 
 function ClassMain(){
@@ -29,6 +33,9 @@ function ClassMain(){
 	$("form[name=formHTML] "+selectorInput).each(function(indx,element){		
 		var id = $(element).attr('id');		
 		inputElements[indx] = id;
+	});
+	$("form[name=formHTML] input[type=checkbox]").each(function(indx,element){
+		btn_actionEvents.inputBoxMaterialize(element.id);
 	});
 	$.each(inputElements,function(indx,element){
 		btn_actionEvents.validityInputEmptyOrFull(element);
@@ -114,7 +121,12 @@ function ClassMain(){
 			$(formHTML).each(function(indx,element){			
 
 				$("#"+element.id).removeClass('active');	
-			});			
+			});	
+			$("#frm_system_user_1").hide('fast');
+			$("#frm_system_user_2").hide('fast');
+			$("#frm_system_user_3").hide('fast');
+			$("#frm_system_user_4").hide('fast');
+			$("#frm_system_user_5").hide('fast');		
 		});
 
 	}
@@ -174,6 +186,21 @@ function ClassMain(){
 			}else if($('#'+id).attr('id') === $(k).attr('for')) {							
 				 $(k).removeClass('active');
 			}
+		});
+	}
+	this.inputBoxMaterialize = function(id){
+		$("#"+id).click(function(){
+			if ($('#'+id).is(':checked')) {
+				if ($("#"+id+"_title").text() == 'Off') {
+					$("#"+id+"_title").html('On');
+				}
+				
+			}else{
+				if($("#"+id+"_title").text() != 'Off'){
+					$("#"+id+"_title").html('Off');
+				}
+			}
+			
 		});
 	}
 	this.inputMaterialize = function(){

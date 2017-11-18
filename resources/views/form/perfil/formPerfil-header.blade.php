@@ -10,7 +10,7 @@
 				<div class="card-img">
 					<img src="{{ asset('img/imgTopics/searchBackground/header.jpg') }}" style="width: 100%; height: 150px;">
 
-					<div style="height: 25px;">
+					<div style="height: 30px;">
 						<div class="icon-login" style="width: 55px; height: 55px; top: -45px; left: 5px;">
 					
 					@if ($data['icon'] == null)
@@ -34,22 +34,35 @@
 									
 
 				</div>
+				
+				<div class="content-info-user">
+					
+						@foreach ($data['dll']['text'] as $rows)
 
-				@foreach ($data['dll']['text'] as $rows)
+							@if (($rows->gtxt_paramt_wordkey == 'wordkey_welcome') && ($rows->gtxt_id_gtype == 1))
 
-					@if (($rows->gtxt_paramt_wordkey == 'wordkey_welcome') && ($rows->gtxt_id_gtype == 1))
+								{!! Form::label(null,$rows->gtxt_text.' '.$data['nombre'],['style' => 'left:20px; top: -10px;']); !!}		
 
-						{!! Form::label(null,$rows->gtxt_text.' '.$data['nombre'],['style' => 'left:20px; top: -10px;']); !!}
+							@endif
+						@endforeach	
+							<br>
+						
+							{!! Form::label(null,$data['email'],['style' => 'left:20px; top: -5px;font-family:"Roboto",sanf-serif; font-size:14px;']); !!}
 
-					@endif
-											
-				@endforeach	
+						
+
+				</div>
+				
 				</div>			
 
 			</div>		
 
 			<div class="form-article" style="padding-top:0px; padding-bottom: 0px;">			
-						
+					
+					<!-- <div class="form-rows-span">
+						<hr>
+					</div> -->
+
 					<div class="form-rows" id="frmlCtrl_perfil">
 
 						{!! Form::hidden('v_frmlUrl_perfil','/Admin/perfil/'.$data['id'],['id' =>'v_frmlUrl_perfil']) !!}				
@@ -101,6 +114,10 @@
 
 					</div>
 
+					<div class="form-rows-span">
+						<hr>
+					</div>
+
 					<div class="form-rows" id="frmlCtrl_logout">
 
 						{!! Form::hidden('v_frmlUrl_logout','/logout',['id' =>'v_frmlUrl_logout']) !!}				
@@ -119,6 +136,7 @@
 						{!! Form::label(null,'Cerrar sesión',['style' => 'left:10px; font-family:"Roboto",sanf-serif;','id' =>'frmlCtrl_logout']) !!}
 
 					</div>
+
 
 			</div>	
 

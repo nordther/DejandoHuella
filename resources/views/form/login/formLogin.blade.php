@@ -45,7 +45,7 @@
 
 			</div>
 
-			<div class="form-article" id="form-article">			
+			<div class="form-article">			
 					
 					<div class="col dm-col-2">
 					
@@ -73,7 +73,7 @@
 					
 					<div class="col dm-col-2">
 						
-						<div class="form-ctrl">
+						<div class="form-ctrl-link">
 						
 							{!! Html::link('#','¿Olvido su contraseña?') !!}
 
