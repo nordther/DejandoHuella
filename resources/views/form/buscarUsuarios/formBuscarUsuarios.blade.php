@@ -44,47 +44,12 @@
 			</div>	
 
 			<div class="form-article-search scroll" id="formSearchIncludeInformation">				
-				
-				<div class="form-content-logo-search">
-					
-
-
-					<div>
-					
-					@foreach($data['dll']['nav'] as $dll)
-		
-						@if ($dll->srcnav_filename == 'about.png')
-
-							<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="Ingreso al sistema" class="icon-login">
-
-						@endif
-		
-					@endforeach	
-					
-					
-
-				</div>
-								
-				<div>
-
-					{!! Form::label('','Que desea buscar...',['class' => 'label-font-size-4','style' => 'color:#0FDAD3;']) !!}
-
-				</div>
-				
-				<div>
-					
-				</div>
-
-				</div>
 
 			</div>
 
 			<div class="form-footer-search">				
 					
-					<div id="form-result-log">
-						
-
-					</div>
+					<div id="form-result-log"></div>
 
 					
 

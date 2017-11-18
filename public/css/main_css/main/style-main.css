@@ -303,7 +303,35 @@ form{
 }
 
 
+
+
+
+
+
 /*==============================================================================*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .content-perfil-header{
 	position: relative;
@@ -916,27 +944,7 @@ form{
 		background-color: #E9E9E9;
 		border-bottom: 1px solid #DBDBDB;			
 	}	
-	.form-content-logo-search{
-		position: absolute;		
-		width: 99.55%;
-		height: 98%;
-		margin: auto;
-		left: 3px;
-		background-color: #FFFFFF;			
-		text-align: center;
-		border-radius: 2px;
-		box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
-		box-sizing: border-box;
-	}
-	.form-content-logo-search > div{
-		position: relative;
-		float: left;
-		top:15vh; 
-		left: 45px;
-		
-	}
-
-
+	
 	.form-article-search{
 		background-color: #E9E9E9;
 	}
@@ -1032,8 +1040,7 @@ form{
 		display: flex;
 		top: 50px;
 		float: left;
-		width: 34.5px;
-		height: 100vh;		
+		width: 34.5px;		
 		align-content: center;
 		background-color: #FFFFFF;
 		border-right:  1px solid #E7E7E7;
