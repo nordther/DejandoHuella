@@ -151,7 +151,9 @@ function ClassSearchDinamy(){
 				config.statusUserConfig = 0;				
 				eventoClick.searchInformation();					
 			}
-
+		});
+			
+	}
 	
 
 	this.tooltSearchShow = function(){
@@ -183,8 +185,8 @@ function ClassSearchDinamy(){
 			dataType:'json',
 			data:{
 				v_formUserSearch:search,
-				v_formUserStatus:statusUsers,
-				v_formCrtUs_roll:roll},					
+				v_formUserStatus:config.statusUserConfig,
+				v_formCrtUs_roll:config.statusRollUserConfig},					
 			success: function(us){
 				appendData.html('<div class="loader" style="top:115px;">Cargando...</div>');	
 				setTimeout(function(){				
@@ -223,21 +225,21 @@ function ClassSearchDinamy(){
 				},100);
 					
 
-		}
-	});
+			}
+		});
 
 	}	
 
 	this.hexc = function(colorval) {
-    var parts = colorval.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
-    delete(parts[0]);
-    for (var i = 1; i <= 3; ++i) {
-        parts[i] = parseInt(parts[i]).toString(16);
-        if (parts[i].length == 1) parts[i] = '0' + parts[i];
-    }
-    color = '#' + parts.join('');
+	    var parts = colorval.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+	    delete(parts[0]);
+	    for (var i = 1; i <= 3; ++i) {
+	        parts[i] = parseInt(parts[i]).toString(16);
+	        if (parts[i].length == 1) parts[i] = '0' + parts[i];
+	    }
+	    color = '#' + parts.join('');
 
-    return color;
+	    return color;
 	}
 
 	this.EnableFunction = function(id,status){
@@ -255,16 +257,16 @@ function ClassSearchDinamy(){
 				v_formIdUser : id,
 				v_formUserStatus: status
 			},
-		success:function(){
-			eventoClick.searchInformation();
-		}	
+			success:function(){
+				eventoClick.searchInformation();
+			}	
 		});
 		
 	}
 	this.DisableFunction = function(id,status){
 		var search = $("#search").val();	
 		var token = $("input[name=_token]").val();		
-		var route = location.protocol+"//"+location.host+"/Admin/<busca></busca>r-usuario/setUpdateDisableUser";
+		var route = location.protocol+"//"+location.host+"/Admin/buscar-usuario/setUpdateDisableUser";
 		var id = id;
 		var status = status;
 		$.ajax({
@@ -276,11 +278,10 @@ function ClassSearchDinamy(){
 				v_formIdUser : id,
 				v_formUserStatus: status
 			},
-		success:function(){
-			eventoClick.searchInformation();
-		}	
-		
-	});
+			success:function(){
+				eventoClick.searchInformation();
+			}			
+		});
 
 	}	
 
