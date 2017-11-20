@@ -71,8 +71,7 @@ class mainController extends Controller
               }
  
             
-        $data = [
-            "idUserDataConfig" => null, 
+        $data = [ 
             "title-modul" => null,              
             "authconfirm" => Auth::check(),
             "multimediaAuth" => false,
@@ -260,7 +259,7 @@ class mainController extends Controller
                         fwrite($fileData,'Roll           : '.$valueR.'    '.PHP_EOL); 
                         fwrite($fileData,'======================================================='.PHP_EOL); 
 
-                         /*$atributesConfig = 
+                         $atributesConfig = 
                             ['ConfigFilters' => [
                                         'statusUser' => 0,
                                         'statusSelectTypeUser' => 0,
@@ -268,12 +267,11 @@ class mainController extends Controller
                                      ],
                             'ConfigWorkspace' => [
                                         'userDirtPhoton' => '/workspaceUsers/'.$rows['pp_id_datospersonales'].'/photon/',
-                                        'userPhotonName' => '',
-                                        'userID' => $rows['pp_id_datospersonales']
+                                        'userPhotonName' => ''
                                      ]
 
                                  ]; 
-                        file_put_contents($Configfile,json_encode($atributesConfig,JSON_UNESCAPED_UNICODE));*/                          
+                        file_put_contents($Configfile,json_encode($atributesConfig));                          
                                                                      
                     }
                     fclose($fileData);

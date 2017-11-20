@@ -22,7 +22,7 @@
 	        
 	        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	    </head>
-	    <body data_info_id="{{ $data['idUserDataConfig'] }}">	
+	    <body>	
 		
 		@if (($data['authconfirm'] == false)&&($data["multimediaAuth"] == false))
 			

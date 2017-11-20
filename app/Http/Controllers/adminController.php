@@ -78,7 +78,6 @@ class adminController extends Controller
               }
 
             $data = [
-                "idUserDataConfig" => Auth::user()->us_id_datospersonales,
                 "id"        => $dataChargen['id'],
                 "icon"      => "",
                 "nombre"    => $dataChargen['nombre'],
@@ -197,7 +196,6 @@ class adminController extends Controller
               $searRoll = 1;
 
             $data = [
-                "idUserDataConfig" => Auth::user()->us_id_datospersonales,
                 "id"         => $dataChargen['id'],
                 "icon"       => $dataChargen['photo'],
                 "nombre"     => $dataChargen['nombre'],
@@ -338,7 +336,6 @@ class adminController extends Controller
               }
               
              $data = [
-                "idUserDataConfig" => Auth::user()->us_id_datospersonales,
                 "id"         => $dataChargen['id'],
                 "icon"       => $dataChargen['photo'],
                 "nombre"     => $dataChargen['nombre'],
@@ -493,17 +490,6 @@ class adminController extends Controller
         return \Response::json($configData);
     }
 
-    public function setDataConfigUser($indexP,$indexC,$value,$idUser){
-      $str_datos = file_get_contents(base_path("/public/workspaceUsers/".$idUser."/config.json"));
-      $datos     = json_decode($str_datos,true);
-       
-      $datos[$indexP][$indexC] = $value;
-       
-      $fh = fopen(base_path("/public/workspaceUsers/".$idUser."/config.json"), 'w');
-      fwrite($fh, json_encode($datos,JSON_UNESCAPED_UNICODE));
-      fclose($fh);
-    }
-
     public function buscarUsuario(adminRequest $rq){
 
 
@@ -544,11 +530,10 @@ class adminController extends Controller
     }
 
     public function confirmAuth(adminRequest $rq){
-      if ($rq->ajax()) {       
-        if(Auth::user()->us_id_datospersonales == $rq->input('v_formIdUser')){$auth = 1;}else{$auth = 0;}                     
+      if ($rq->ajax()) {
+        if(Auth::user()->us_id_datospersonales == $rq->input('v_formIdUser')){$auth = 1;}else{$auth = 0;}              
       }
-      return \Response::json(['datosAuth' => $auth]); 
-      
+      return \Response::json(['datosAuth' => $auth]);
     }
 
     public function activeordesable(adminRequest $rq){

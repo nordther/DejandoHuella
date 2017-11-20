@@ -7,7 +7,38 @@ var selectorInput = "input[type='text'],input[type='password'],input[type='email
 $(document).ready(function(){
 	
 	btn_actionEvents.iniSetup();
-	
+	var token = $("input[name=_token]").val();	
+	$.ajax({
+		url: location.protocol+'//'+location.host+'/Admin/getdataconfiguser/1144164149',
+		headers:{'X-CSRF-TOKEN':token},
+		type: 'GET',
+		dataType:'json',
+		success:function(data){
+			
+			var dataConfig = $.parseJSON(data);
+
+			$.each(dataConfig,function(indx,elements){
+				if (indx == "ConfigFilters") {
+					var statusUsers = elements.statusUser;
+					var statusSelectTypeUser = elements.statusSelectTypeUser;
+					var statusSelectRoll = elements.statusSelectRoll;
+
+					console.log('statusUsers         :'+statusUsers);
+					console.log('statusSelectTypeUser:'+statusSelectTypeUser);
+					console.log('statusSelectRoll    :'+statusSelectRoll);
+				}
+				if (indx == "ConfigWorkspace") {
+					var userDirtPhoton = elements.userDirtPhoton;
+					var userPhotonName = elements.userPhotonName;
+					console.log('userDirtPhoton         :'+userDirtPhoton);
+					console.log('userPhotonName         :'+userPhotonName);					
+				}
+			});
+			
+			
+					
+		}
+	});
 	
 	
 
