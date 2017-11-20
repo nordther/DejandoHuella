@@ -372,8 +372,8 @@ function ClassSearchDinamy(){
 							$("#frm_beneficier_2").hide('slow');
 							$("#frm_beneficier_3").hide('slow');
 							$("#frm_beneficier_4").hide('slow');
-							$("#frm_beneficier_5").hide('slow');
-							config.statusRollUserConfig = 3;
+							$("#frm_beneficier_5").hide('slow');							
+							config.statusRollUserConfig = $("select[name=v_frmCtrl_Roll] option:selected").val();
 							config.statusTypeUserConfig = 1;
 						break;
 						case "Beneficiario":						

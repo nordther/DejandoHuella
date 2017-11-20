@@ -280,7 +280,7 @@ class adminController extends Controller
     }
 
     public function chequeoDatos(adminRequest $request){
-       
+       return dd($request->all());
     }
 
     public function perfil($id){  

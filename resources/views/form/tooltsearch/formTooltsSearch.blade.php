@@ -82,7 +82,7 @@
 
 									<label class="switchBtn">
 
-									    <input type="checkbox" id="v_frmCtrl_switchBtn_statusUser">
+									    <input type="checkbox" id="v_frmCtrl_switchBtn_statusUser" checked>
 
 									    <div class="slide round" id="v_frmCtrl_switchBtn_statusUser_title">Off</div>
 

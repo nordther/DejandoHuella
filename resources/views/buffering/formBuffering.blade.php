@@ -8,9 +8,8 @@
 	<script type="text/javascript">
 		function render(id){
 			setTimeout(function(){
-				var url = document.location=location.protocol+"//"+location.host+'/'+id;
-				console.log(url);
-			}, 1500);
+			   document.location=location.protocol+"//"+location.host+'/'+id;				
+			}, 500);
 		}
 		
 	</script>
