@@ -78,6 +78,7 @@ class adminController extends Controller
               }
 
             $data = [
+                "idUserDataConfig" => Auth::user()->us_id_datospersonales,
                 "id"        => $dataChargen['id'],
                 "icon"      => "",
                 "nombre"    => $dataChargen['nombre'],
@@ -196,6 +197,7 @@ class adminController extends Controller
               $searRoll = 1;
 
             $data = [
+               "idUserDataConfig" => Auth::user()->us_id_datospersonales,
                 "id"         => $dataChargen['id'],
                 "icon"       => $dataChargen['photo'],
                 "nombre"     => $dataChargen['nombre'],
@@ -336,6 +338,7 @@ class adminController extends Controller
               }
               
              $data = [
+                "idUserDataConfig" => Auth::user()->us_id_datospersonales,
                 "id"         => $dataChargen['id'],
                 "icon"       => $dataChargen['photo'],
                 "nombre"     => $dataChargen['nombre'],
@@ -439,6 +442,7 @@ class adminController extends Controller
               
 
              $data = [
+                "idUserDataConfig" => Auth::user()->us_id_datospersonales,
                 "id"         => $dataChargen['id'],
                 "icon"       => $dataChargen['photo'],
                 "nombre"     => $dataChargen['nombre'],
