@@ -239,9 +239,10 @@ class mainController extends Controller
 
                 foreach ($v_f["class"]['ChrM']::createPhotoPerfilDir() as $rows) {
                     File::MakeDirectory(base_path('public/workspaceUsers/'.$rows['pp_id_datospersonales'].'/'));
+                    File::MakeDirectory(base_path('public/workspaceUsers/'.$rows['pp_id_datospersonales'].'/photon/'));
                     $Datafile = base_path('public/workspaceUsers/'.$rows['pp_id_datospersonales'].'/about.txt');
                     $Configfile = base_path('public/workspaceUsers/'.$rows['pp_id_datospersonales'].'/config.json');
-                    $fileData = fopen($Datafile,'a');
+                    $fileData = fopen($Datafile,'a');                  
                     $dataAbout = \DB::table('datospersonales')->select('*')->where('dp_id','=',$rows['pp_id_datospersonales'])->get();
                     foreach ($dataAbout as $rowsAbout) {
                         if($rowsAbout->dp_td_id == 1){$valueTD='Cedula de ciudadania';}
@@ -256,18 +257,28 @@ class mainController extends Controller
                         fwrite($fileData,'Nombre         : '.$rowsAbout->dp_nombre.'     '.PHP_EOL);
                         fwrite($fileData,'Apellido       : '.$rowsAbout->dp_apellido.'   '.PHP_EOL);
                         fwrite($fileData,'Roll           : '.$valueR.'    '.PHP_EOL); 
-                        fwrite($fileData,'======================================================='.PHP_EOL);                                              
+                        fwrite($fileData,'======================================================='.PHP_EOL); 
+
+                         $atributesConfig = 
+                            ['ConfigFilters' => [
+                                        'statusUser' => 0,
+                                        'statusSelectTypeUser' => 0,
+                                        'statusSelectRoll' => 0 
+                                     ],
+                            'ConfigWorkspace' => [
+                                        'userDirtPhoton' => '/workspaceUsers/'.$rows['pp_id_datospersonales'].'/photon/',
+                                        'userPhotonName' => ''
+                                     ]
+
+                                 ]; 
+                        file_put_contents($Configfile,json_encode($atributesConfig));                          
+                                                                     
                     }
                     fclose($fileData);
-                    $atributesConfig = 
-                    ['ConfigFilters' => [
-                                'statusUser' => 0,
-                                'statusSelectTypeUser' => 0,
-                                'statusSelectRoll' => 0 
-                             ]       
 
-                         ];
-                    file_put_contents($Configfile,json_encode($atributesConfig).PHP_EOL,FILE_APPEND);             
+                     
+
+                              
 
                 }
 

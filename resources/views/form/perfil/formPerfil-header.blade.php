@@ -6,7 +6,8 @@
 		
 		<div class="form-wrap form-wrap-perfil" >
 			
-			<div class="form-header form-header-dm-1" style="position: relative; height: auto; display: flex; align-items:  center;  overflow: hidden;">						
+			<div class="form-header form-header-dm-1" style="position: relative; height: auto; display: flex; align-items:  center;  overflow: hidden;">
+			{!! Form::hidden('_token',csrf_token(),['type' => 'hidden','id' => '_token']) !!}						
 				<div class="card-img">
 					<img src="{{ asset('img/imgTopics/searchBackground/header.jpg') }}" style="width: 100%; height: 150px;">
 

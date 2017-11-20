@@ -28,7 +28,9 @@ class adminController extends Controller
 {
 
     private static $auth = null;
-   
+    
+
+
     public function index(){
         if (Auth::check() > 0) {
 
@@ -478,6 +480,14 @@ class adminController extends Controller
         
 
           return redirect('/'.$request['v_rollUserForm'].'/perfil/'.$request['v_idUserForm'].'');      
+    }
+
+    public function getDataConfigUser($id){
+        
+        $configData = file_get_contents(base_path("/public/workspaceUsers/".$id."/config.json"));
+        
+        
+        return \Response::json($configData);
     }
 
     public function buscarUsuario(adminRequest $rq){

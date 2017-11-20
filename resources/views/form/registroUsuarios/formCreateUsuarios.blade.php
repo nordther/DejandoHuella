@@ -74,7 +74,7 @@
 
 					</div>	
 
-					<div class="col dm-col-1" id="frm_system_user_1">
+					<div class="col dm-col-2" id="frm_system_user_1">
 								
 						<div class="input-group">
 
@@ -93,7 +93,7 @@
 
 					</div>
 
-					<div class="col dm-col-1">
+					<div class="col dm-col-2">
 						
 						<div class="input-group">				
 									
@@ -309,7 +309,9 @@
 
 			</div>
 
-		</div>		
+		</div>
+
+		<div id="contentJsonData"></div>		
 
 	</div>
 

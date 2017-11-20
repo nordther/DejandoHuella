@@ -307,8 +307,7 @@ function ClassSearchDinamy(){
 				$("#"+id+"_Title").removeClass('selectTitleActive').addClass('selectTitleDesactivate');	
 				$("#select_arrow"+id).css({'transform':'rotate(180deg)'}).fadeIn('slow');
 				$("#select_arrow"+id).attr('src',location.protocol+'//'+location.host+'/img/icon/form/arrowHover.png').fadeIn('slow');
-			}
-			$(".selectContent").css({'width':($(".selectSpanText").width()+9)+"px"})
+			}			
 			$("#"+id+"_content").empty();
 			$("#"+id+"_content").append('<div class="select_Content_Title disableSelectChouse"><span>Seleccione una opción</span></div>');
 			if ($("#"+id+"_content").css('display') == 'none') {
@@ -353,16 +352,40 @@ function ClassSearchDinamy(){
 	this.SelectFunction = function(id){
 		switch(id){
 						case "Administrador":
-							roll = 1;		
+							roll = 1;
+							var modifiJson;
+							$.getJSON(location.protocol+'//'+location.host+'/workspaceUsers/1144164149/config.json',function(json){
+								modifiJson = json;
+								console.log(modifiJson);
+								modifiJson.ConfigFilters.statusSelectRoll = roll;
+							});		
 						break;
 						case "Administrator":
-							roll = 1;		
+							roll = 1;
+							var modifiJson;
+							$.getJSON(location.protocol+'//'+location.host+'/workspaceUsers/1144164149/config.json',function(json){
+								modifiJson = json;
+								console.log(modifiJson);
+								modifiJson.ConfigFilters.statusSelectRoll = roll;
+							});		
 						break;
 						case "Auxiliar":
-							roll = 2;							
+							roll = 2;
+							var modifiJson;
+							$.getJSON(location.protocol+'//'+location.host+'/workspaceUsers/1144164149/config.json',function(json){
+								modifiJson = json;
+								console.log(modifiJson);
+								modifiJson.ConfigFilters.statusSelectRoll = roll;
+							});							
 						break;
 						case "Assistan":
 							roll = 2;
+							var modifiJson;
+							$.getJSON(location.protocol+'//'+location.host+'/workspaceUsers/1144164149/config.json',function(json){
+								modifiJson = json;
+								console.log(modifiJson);
+								modifiJson.ConfigFilters.statusSelectRoll = roll;
+							});
 						break;
 						case "Asistente del sistema":						
 							$("#frmCtrl_Roll").css({'transition':'all .5s ease','display':'block'});
@@ -377,6 +400,12 @@ function ClassSearchDinamy(){
 							$("#frm_beneficier_4").hide('slow');
 							$("#frm_beneficier_5").hide('slow');
 							roll = 1;
+							var modifiJson;
+							$.getJSON(location.protocol+'//'+location.host+'/workspaceUsers/1144164149/config.json',function(json){
+								modifiJson = json;
+								console.log(modifiJson);
+								modifiJson.ConfigFilters.statusSelectTypeUser = 1;
+							});
 						break;
 						case "Beneficiario":						
 							$("#frmCtrl_Roll").css({'transition':'all .5s ease','display':'none'});
@@ -391,6 +420,13 @@ function ClassSearchDinamy(){
 							$("#frm_beneficier_4").show('slow');
 							$("#frm_beneficier_5").show('slow');
 							roll = 3;
+							var modifiJson;
+							$.getJSON(location.protocol+'//'+location.host+'/workspaceUsers/1144164149/config.json',function(json){
+								modifiJson = json;
+								console.log(modifiJson);
+								modifiJson.ConfigFilters.statusSelectRoll = roll;
+								modifiJson.ConfigFilters.statusSelectTypeUser = 2;
+							});
 						break;						
 						case "Profesor":
 							$("#frmCtrl_Roll").css({'transition':'all .5s ease','display':'none'});
@@ -405,6 +441,13 @@ function ClassSearchDinamy(){
 							$("#frm_beneficier_4").hide('slow');
 							$("#frm_beneficier_5").hide('slow');
 							roll = 3;
+							var modifiJson;
+							$.getJSON(location.protocol+'//'+location.host+'/workspaceUsers/1144164149/config.json',function(json){
+								modifiJson = json;
+								console.log(modifiJson);
+								modifiJson.ConfigFilters.statusSelectRoll = roll;
+								modifiJson.ConfigFilters.statusSelectTypeUser = 3;
+							});
 						break;
 						case "Padre o Madre":
 							$("#frmCtrl_Roll").css({'transition':'all .5s ease','display':'none'});
@@ -419,6 +462,13 @@ function ClassSearchDinamy(){
 							$("#frm_beneficier_4").hide('slow');
 							$("#frm_beneficier_5").hide('slow');
 							roll = 3;
+							var modifiJson;
+							$.getJSON(location.protocol+'//'+location.host+'/workspaceUsers/1144164149/config.json',function(json){
+								modifiJson = json;
+								console.log(modifiJson);
+								modifiJson.ConfigFilters.statusSelectRoll = roll;
+								modifiJson.ConfigFilters.statusSelectTypeUser = 4;
+							});
 						break;
 						case "Voluntario":
 							$("#frmCtrl_Roll").css({'transition':'all .5s ease','display':'none'});
@@ -433,6 +483,13 @@ function ClassSearchDinamy(){
 							$("#frm_beneficier_4").hide('slow');
 							$("#frm_beneficier_5").hide('slow');
 							roll = 3;
+							var modifiJson;
+							$.getJSON(location.protocol+'//'+location.host+'/workspaceUsers/1144164149/config.json',function(json){
+								modifiJson = json;
+								console.log(modifiJson);
+								modifiJson.ConfigFilters.statusSelectRoll = roll;
+								modifiJson.ConfigFilters.statusSelectTypeUser = 5;
+							});
 						break;
 						
 					}
