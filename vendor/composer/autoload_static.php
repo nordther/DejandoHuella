@@ -69,6 +69,10 @@ class ComposerStaticInitcb68c7fe6d9ec93cff179ebdc286919d
         array (
             'League\\Flysystem\\' => 17,
         ),
+        'K' => 
+        array (
+            'Kim\\' => 4,
+        ),
         'I' => 
         array (
             'Illuminate\\' => 11,
@@ -81,6 +85,7 @@ class ComposerStaticInitcb68c7fe6d9ec93cff179ebdc286919d
         'D' => 
         array (
             'Doctrine\\Instantiator\\' => 22,
+            'Doctrine\\Common\\Inflector\\' => 26,
             'DejandoHuella\\' => 14,
         ),
         'C' => 
@@ -199,6 +204,10 @@ class ComposerStaticInitcb68c7fe6d9ec93cff179ebdc286919d
         array (
             0 => __DIR__ . '/..' . '/league/flysystem/src',
         ),
+        'Kim\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kim/activity/src/Kim',
+        ),
         'Illuminate\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
@@ -214,6 +223,10 @@ class ComposerStaticInitcb68c7fe6d9ec93cff179ebdc286919d
         'Doctrine\\Instantiator\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
+        ),
+        'Doctrine\\Common\\Inflector\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
         ),
         'DejandoHuella\\' => 
         array (
@@ -273,10 +286,6 @@ class ComposerStaticInitcb68c7fe6d9ec93cff179ebdc286919d
             array (
                 0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
             ),
-            'Doctrine\\Common\\Inflector\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/doctrine/inflector/lib',
-            ),
             'Diff' => 
             array (
                 0 => __DIR__ . '/..' . '/phpspec/php-diff/lib',
@@ -323,6 +332,7 @@ class ComposerStaticInitcb68c7fe6d9ec93cff179ebdc286919d
         'CreateProgramasTable' => __DIR__ . '/../..' . '/database/migrations/2017_09_15_045514_create_programas_table.php',
         'CreateRegionesTable' => __DIR__ . '/../..' . '/database/migrations/2017_09_15_045523_create_regiones_table.php',
         'CreateRollsTable' => __DIR__ . '/../..' . '/database/migrations/2017_09_15_045507_create_rolls_table.php',
+        'CreateSessionsTable' => __DIR__ . '/../..' . '/database/migrations/2017_11_20_083250_create_sessions_table.php',
         'CreateSituacionactualsTable' => __DIR__ . '/../..' . '/database/migrations/2017_09_15_045534_create_situacionactuals_table.php',
         'CreateSrcappsTable' => __DIR__ . '/../..' . '/database/migrations/2017_09_15_045444_create_srcapps_table.php',
         'CreateSrcnavsTable' => __DIR__ . '/../..' . '/database/migrations/2017_09_15_045456_create_srcnavs_table.php',
@@ -413,9 +423,12 @@ class ComposerStaticInitcb68c7fe6d9ec93cff179ebdc286919d
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
         'IlluminateQueueClosure' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php',
         'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/Assert.php',
+        'PHPUnit\\Framework\\AssertionFailedError' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/AssertionFailedError.php',
         'PHPUnit\\Framework\\BaseTestListener' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/BaseTestListener.php',
+        'PHPUnit\\Framework\\Test' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/Test.php',
         'PHPUnit\\Framework\\TestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/TestCase.php',
         'PHPUnit\\Framework\\TestListener' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/TestListener.php',
+        'PHPUnit\\Framework\\TestSuite' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/TestSuite.php',
         'PHPUnit_Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit_Extensions_GroupTestSuite' => __DIR__ . '/..' . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',
         'PHPUnit_Extensions_PhptTestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/Extensions/PhptTestCase.php',

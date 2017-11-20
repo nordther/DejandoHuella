@@ -10,10 +10,10 @@
 	Route::get('/Admin/buscar-usuario/get',['uses' => 'adminController@buscarUsuario']);
 	Route::post('/Admin/buscar-usuario/setUpdateEnableUser',['uses' => 'adminController@activeordesable']);	
 	Route::post('/Admin/buscar-usuario/setUpdateDisableUser',['uses' => 'adminController@activeordesable']);
-	Route::get('/Admin/buscar-usuario/authConfirm',['uses' =>'adminController@confirmAuth']);
-	Route::get('/LoadConfig/{id}',['uses' => 'loginController@load']);
+	Route::get('/Admin/buscar-usuario/authConfirm',['uses' =>'adminController@confirmAuth']);	
 	Route::post('/Admin/registrar/usuario',['uses' => 'adminController@chequeoDatos']);
 	Route::get('/Admin/getdataconfiguser/{id}',['uses'=>'adminController@getDataConfigUser']);
+	Route::post('/Admin/setdataconfiguser/{indexP}/{indexC}/{value}/{idUser}',['uses' => 'adminController@setDataConfigUser']);
 	
 
 	Route::get('/',['uses' => 'mainController@index']);

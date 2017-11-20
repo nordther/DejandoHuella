@@ -1,31 +1,19 @@
-document.write('<script type="javascript/text" src="js/jsMainGui/jsMainGui-script.js"></script>');
 
 var eventoClick = new ClassSearchDinamy();
 var result;
 var timeLoad = 0;
 var cant = 0;
-var roll = null;
 var inputElements = [];
-var statusUsers = null;
+var config = {statusUserConfig:null,statusTypeUserConfig:null,statusRollUserConfig:null,userPhotonName:null,userID:null,userAuthStatus:null};
+var intervalChargenConfig = null;
+
+ 
+
 
 $(document).ready(function(){
 		
 
-		$("#frmCtrl_Roll").css({'display':'none'});
-		
-
-		$("#v_frmCtrl_switchBtn_statusUser").click(function() {
-			if ($("#v_frmCtrl_switchBtn_statusUser").is(':checked')) {
-				statusUsers = 1;
-				$("#v_frmCtrl_switchBtn_statusUser_title").html('On');
-				eventoClick.searchInformation();
-			}else{
-				statusUsers = 0;				
-				eventoClick.searchInformation();
-			}
-		});
-
-		eventoClick.searchInformation();
+		$("#frmCtrl_Roll").css({'display':'none'});	
 
 		$.each($("select"),function(i,k){
 			var selector = $(k).attr('name');
@@ -123,7 +111,8 @@ $(document).ready(function(){
 
 		if ($("select[name=v_frmCrt_Roll]").selectedIndex != -1 ) {eventoClick.searchInformation();}
 		
-		
+		config.userID = $("body").attr('data_info_id');	
+		eventoClick.setupCheckBox();
 			
 	}); 
 
@@ -131,31 +120,29 @@ $(document).ready(function(){
 
 function ClassSearchDinamy(){
 	
-	var status_session;
+	var status_session;	
 
-	this.confirmAuth = function(id){
-		var search = $("#v_frmCtrl_searchUser").val();	
-		var token = $("input[name=_token]").val();
-		var route = location.protocol+"//"+location.host+"/Admin/buscar-usuario/authConfirm";
-		var id = id;
-		var appendData = $('#formSearchIncludeInformation'); 
-		var dataJSON = $.ajax({
-			url:route,
-			headers:{'X-CSRF-TOKEN':token},
-			type:"GET",
-			dataType:'json',
-			data:{
-				v_formIdUser: id
-			},
-			success:function(data){
-				dataJSON = data['datosAuth'];
-				console.log(dataJSON);	
-				dataStatusAuths = "{value:"+dataJSON+", usersId:"+id+"}";
-			}					
-									
+	this.setupCheckBox = function(){		
+		
+		if ($("#v_frmCtrl_switchBtn_statusUser").is(':checked')) {
+			$("#v_frmCtrl_switchBtn_statusUser_title").html('On');
+				config.statusUserConfig = 1;
+				eventoClick.searchInformation();
+		}
+
+		$("#v_frmCtrl_switchBtn_statusUser").click(function() {
+			if ($("#v_frmCtrl_switchBtn_statusUser").is(':checked')) {
+				
+				config.statusUserConfig = 1;
+				$("#v_frmCtrl_switchBtn_statusUser_title").html('On');
+				eventoClick.searchInformation();					
+			}else{				
+				config.statusUserConfig = 0;				
+				eventoClick.searchInformation();					
+			}
 		});
-		return dataJSON;	
 	}
+	
 
 	this.tooltSearchShow = function(){
 		if ($(".form-content-filters").css('display') == 'none') {			
@@ -174,11 +161,9 @@ function ClassSearchDinamy(){
 		var search = $("#v_frmCtrl_searchUser").val();	
 		var token = $("input[name=_token]").val();		
 		var route = location.protocol+"//"+location.host+"/Admin/buscar-usuario/get";
-		var namesearch = $("input[name=v_search-buscar-usuario").val();
-		if ($("#v_frmUserToolts_status_active").is(':checked')) {var status = 1;}else if($("#v_frmUserToolts_status_inhable").is(':checked')){var status = 0;}
-		var status_user = status;					
-		//console.log(roll);
+		var namesearch = $("input[name=v_search-buscar-usuario").val();		
 		var appendData = $('#formSearchIncludeInformation');
+		
 		$.ajax({
 			url:route,
 			headers:{'X-CSRF-TOKEN':token},
@@ -186,8 +171,8 @@ function ClassSearchDinamy(){
 			dataType:'json',
 			data:{
 				v_formUserSearch:search,
-				v_formUserStatus:statusUsers,
-				v_formCrtUs_roll:roll},					
+				v_formUserStatus:config.statusUserConfig,
+				v_formCrtUs_roll:config.statusRollUserConfig},					
 			success: function(us){
 				appendData.html('<div class="loader" style="top:115px;">Cargando...</div>');	
 				setTimeout(function(){				
@@ -195,7 +180,8 @@ function ClassSearchDinamy(){
 					//console.log('Cantidad de registro:'+cant);
 					timeLoad = cant*75/100;
 					//console.log('Cantidad de tiempo  :'+timeLoad);
-					eventoClick.EventClickSearch();
+					
+					
 					//console.log('Tiempo:'+(1000+timeLoad));
 					setTimeout(function(){
 						appendData.empty();
@@ -220,7 +206,7 @@ function ClassSearchDinamy(){
 							dataHTML+'</div>');
 					});				
 
-					
+					eventoClick.EventClickSearch();
 					},(1000+timeLoad));
 					
 				},100);
@@ -232,15 +218,15 @@ function ClassSearchDinamy(){
 	}	
 
 	this.hexc = function(colorval) {
-    var parts = colorval.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
-    delete(parts[0]);
-    for (var i = 1; i <= 3; ++i) {
-        parts[i] = parseInt(parts[i]).toString(16);
-        if (parts[i].length == 1) parts[i] = '0' + parts[i];
-    }
-    color = '#' + parts.join('');
+    	var parts = colorval.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+	    delete(parts[0]);
+	    for (var i = 1; i <= 3; ++i) {
+	        parts[i] = parseInt(parts[i]).toString(16);
+	        if (parts[i].length == 1) parts[i] = '0' + parts[i];
+	    }
+	    color = '#' + parts.join('');
 
-    return color;
+	    return color;
 	}
 
 	this.EnableFunction = function(id,status){
@@ -267,7 +253,7 @@ function ClassSearchDinamy(){
 	this.DisableFunction = function(id,status){
 		var search = $("#search").val();	
 		var token = $("input[name=_token]").val();		
-		var route = location.protocol+"//"+location.host+"/Admin/<busca></busca>r-usuario/setUpdateDisableUser";
+		var route = location.protocol+"//"+location.host+"/Admin/buscar-usuario/setUpdateDisableUser";
 		var id = id;
 		var status = status;
 		$.ajax({
@@ -349,43 +335,30 @@ function ClassSearchDinamy(){
 			
 	}
 
+	this.setConfigUser = function(indexp,indexc,value,id){
+		var token = $("input[name=_token]").val();
+		$.ajax({
+			url: location.protocol+'//'+location.host+'/Admin/setdataconfiguser/'+indexp+'/'+indexc+'/'+value+'/'+id+'/',
+			headers:{'X-CSRF-TOKEN':token},
+			type: 'POST',
+			dataType:'json',
+		});		
+		
+	}
+
 	this.SelectFunction = function(id){
 		switch(id){
-						case "Administrador":
-							roll = 1;
-							var modifiJson;
-							$.getJSON(location.protocol+'//'+location.host+'/workspaceUsers/1144164149/config.json',function(json){
-								modifiJson = json;
-								console.log(modifiJson);
-								modifiJson.ConfigFilters.statusSelectRoll = roll;
-							});		
+						case "Administrador":							
+							config.statusRollUserConfig = 1;	
 						break;
-						case "Administrator":
-							roll = 1;
-							var modifiJson;
-							$.getJSON(location.protocol+'//'+location.host+'/workspaceUsers/1144164149/config.json',function(json){
-								modifiJson = json;
-								console.log(modifiJson);
-								modifiJson.ConfigFilters.statusSelectRoll = roll;
-							});		
+						case "Administrator":							
+							config.statusRollUserConfig = 1;			
 						break;
-						case "Auxiliar":
-							roll = 2;
-							var modifiJson;
-							$.getJSON(location.protocol+'//'+location.host+'/workspaceUsers/1144164149/config.json',function(json){
-								modifiJson = json;
-								console.log(modifiJson);
-								modifiJson.ConfigFilters.statusSelectRoll = roll;
-							});							
+						case "Auxiliar":							
+							config.statusRollUserConfig = 2;								
 						break;
-						case "Assistan":
-							roll = 2;
-							var modifiJson;
-							$.getJSON(location.protocol+'//'+location.host+'/workspaceUsers/1144164149/config.json',function(json){
-								modifiJson = json;
-								console.log(modifiJson);
-								modifiJson.ConfigFilters.statusSelectRoll = roll;
-							});
+						case "Assistan":							
+							config.statusRollUserConfig = 2;	
 						break;
 						case "Asistente del sistema":						
 							$("#frmCtrl_Roll").css({'transition':'all .5s ease','display':'block'});
@@ -399,13 +372,9 @@ function ClassSearchDinamy(){
 							$("#frm_beneficier_3").hide('slow');
 							$("#frm_beneficier_4").hide('slow');
 							$("#frm_beneficier_5").hide('slow');
-							roll = 1;
-							var modifiJson;
-							$.getJSON(location.protocol+'//'+location.host+'/workspaceUsers/1144164149/config.json',function(json){
-								modifiJson = json;
-								console.log(modifiJson);
-								modifiJson.ConfigFilters.statusSelectTypeUser = 1;
-							});
+							config.statusRollUserConfig = 3;
+							config.statusTypeUserConfig = 1;						
+							
 						break;
 						case "Beneficiario":						
 							$("#frmCtrl_Roll").css({'transition':'all .5s ease','display':'none'});
@@ -419,14 +388,9 @@ function ClassSearchDinamy(){
 							$("#frm_beneficier_3").show('slow');
 							$("#frm_beneficier_4").show('slow');
 							$("#frm_beneficier_5").show('slow');
-							roll = 3;
-							var modifiJson;
-							$.getJSON(location.protocol+'//'+location.host+'/workspaceUsers/1144164149/config.json',function(json){
-								modifiJson = json;
-								console.log(modifiJson);
-								modifiJson.ConfigFilters.statusSelectRoll = roll;
-								modifiJson.ConfigFilters.statusSelectTypeUser = 2;
-							});
+							config.statusRollUserConfig = 3;
+							config.statusTypeUserConfig = 2;							
+															
 						break;						
 						case "Profesor":
 							$("#frmCtrl_Roll").css({'transition':'all .5s ease','display':'none'});
@@ -440,14 +404,8 @@ function ClassSearchDinamy(){
 							$("#frm_beneficier_3").hide('slow');
 							$("#frm_beneficier_4").hide('slow');
 							$("#frm_beneficier_5").hide('slow');
-							roll = 3;
-							var modifiJson;
-							$.getJSON(location.protocol+'//'+location.host+'/workspaceUsers/1144164149/config.json',function(json){
-								modifiJson = json;
-								console.log(modifiJson);
-								modifiJson.ConfigFilters.statusSelectRoll = roll;
-								modifiJson.ConfigFilters.statusSelectTypeUser = 3;
-							});
+							config.statusRollUserConfig = 3;							
+							config.statusTypeUserConfig = 3;
 						break;
 						case "Padre o Madre":
 							$("#frmCtrl_Roll").css({'transition':'all .5s ease','display':'none'});
@@ -461,14 +419,8 @@ function ClassSearchDinamy(){
 							$("#frm_beneficier_3").hide('slow');
 							$("#frm_beneficier_4").hide('slow');
 							$("#frm_beneficier_5").hide('slow');
-							roll = 3;
-							var modifiJson;
-							$.getJSON(location.protocol+'//'+location.host+'/workspaceUsers/1144164149/config.json',function(json){
-								modifiJson = json;
-								console.log(modifiJson);
-								modifiJson.ConfigFilters.statusSelectRoll = roll;
-								modifiJson.ConfigFilters.statusSelectTypeUser = 4;
-							});
+							config.statusRollUserConfig = 3;							
+							config.statusTypeUserConfig = 4;
 						break;
 						case "Voluntario":
 							$("#frmCtrl_Roll").css({'transition':'all .5s ease','display':'none'});
@@ -482,37 +434,52 @@ function ClassSearchDinamy(){
 							$("#frm_beneficier_3").hide('slow');
 							$("#frm_beneficier_4").hide('slow');
 							$("#frm_beneficier_5").hide('slow');
-							roll = 3;
-							var modifiJson;
-							$.getJSON(location.protocol+'//'+location.host+'/workspaceUsers/1144164149/config.json',function(json){
-								modifiJson = json;
-								console.log(modifiJson);
-								modifiJson.ConfigFilters.statusSelectRoll = roll;
-								modifiJson.ConfigFilters.statusSelectTypeUser = 5;
-							});
+							config.statusRollUserConfig = 3;
+							config.statusTypeUserConfig = 5;
 						break;
 						
 					}
 	}
 
-	this.EventClickSearch = function(){
+	this.EventClickSearch = function(){		
+
 		$("button[id=btnEnable]").click(function(){
-			if ( confirm("Esta seguro de habilitar este usuario")) {
-	   		eventoClick.EnableFunction($(this).attr('data'),1);
-	   		}
+			eventoClick.EnableFunction($(this).attr('data'),1);
 	   	});
 		$("button[id=btnDisable]").click(function(){
-			/*eventoClick.confirmAuth($(this).attr('data'));*/	
-			eventoClick.confirmAuth($(this).attr('data'));
-			
-
-		/*if (confirm("Esta seguro de deshabilitar este usuario")) {
-			eventoClick.DisableFunction($(this).attr('data'),0);
-		} */  
+			var token = $("input[name=_token]").val();
+			var id = $(this).attr('data');
+			$.ajax({
+				url:location.protocol+"//"+location.host+"/Admin/buscar-usuario/authConfirm",
+				headers:{'X-CSRF-TOKEN':token},
+				type:"GET",
+				dataType:'json',
+				data:{
+					v_formIdUser: id
+				},
 					
-	   		
+					success:function(data){
+							
+						$.each(data,function(indx,elements){
+							
+							if (elements == "1") {
+								config.userAuthStatus = true;								
+							}							
+							
+							if ((config.userAuthStatus == true)&&(config.userID == id)) {						
+								console.log('Este usuario no se puede deshabilitar por cuestion de que esta activo o a ingresado a la plataforma en este momento');
+							}else{
+								eventoClick.DisableFunction(id,0);
+								eventoClick.searchInformation();
+							}
+						});
+				
+					}					
+									
+				});
   		});
 	  
 	}
+
 }
 
