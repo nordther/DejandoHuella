@@ -2,43 +2,12 @@ var btn_actionEvents = new ClassMain();
 var inputElements = null;
 var v_JSON_inputElements = null;
 var inputElements = [];
-var selectorInput = "input[type='text'],input[type='password'],input[type='email'],input[type='number'],input[type='search'],textarea";
+var selectorInput = "input[type='text'],input[type='password'],input[type='email'],input[type='number'],input[type='search'],input[type='date'],textarea";
 
 $(document).ready(function(){
 	
 	btn_actionEvents.iniSetup();
-	var token = $("input[name=_token]").val();	
-	$.ajax({
-		url: location.protocol+'//'+location.host+'/Admin/getdataconfiguser/1144164149',
-		headers:{'X-CSRF-TOKEN':token},
-		type: 'GET',
-		dataType:'json',
-		success:function(data){
-			
-			var dataConfig = $.parseJSON(data);
-
-			$.each(dataConfig,function(indx,elements){
-				if (indx == "ConfigFilters") {
-					var statusUsers = elements.statusUser;
-					var statusSelectTypeUser = elements.statusSelectTypeUser;
-					var statusSelectRoll = elements.statusSelectRoll;
-
-					console.log('statusUsers         :'+statusUsers);
-					console.log('statusSelectTypeUser:'+statusSelectTypeUser);
-					console.log('statusSelectRoll    :'+statusSelectRoll);
-				}
-				if (indx == "ConfigWorkspace") {
-					var userDirtPhoton = elements.userDirtPhoton;
-					var userPhotonName = elements.userPhotonName;
-					console.log('userDirtPhoton         :'+userDirtPhoton);
-					console.log('userPhotonName         :'+userPhotonName);					
-				}
-			});
-			
-			
-					
-		}
-	});
+	
 	
 	
 
@@ -183,12 +152,19 @@ function ClassMain(){
 		
 	this.validityInputEmptyOrFull = function(id){		
 		$("form[name='formHTML'] label").each(function(i,k){
-			if (($('#'+id).val() != '')|| ($('#'+id).attr('placeholder') !== undefined)) {			
-				if(($('#'+id).attr('id') === $(k).attr('for')) ) {				    				
-					$(k).addClass('active');
+			if (($('#'+id).val() != '')|| ($('#'+id).attr('placeholder') !== undefined)) {					
+				if($('#'+id).attr('disabled') == "disabled"){
+					if(($('#'+id).attr('id') === $(k).attr('for')) ) {				    				
+						$(k).addClass('disabled');
+					}
+				}else{
+					if(($('#'+id).attr('id') === $(k).attr('for')) ) {				    				
+						$(k).addClass('active');
+					}
 				}				
 			}else if($('#'+id).attr('id') === $(k).attr('for')) {							
 				 $(k).removeClass('active');
+				 $(k).removeClass('desabled');
 			}
 		});
 	}

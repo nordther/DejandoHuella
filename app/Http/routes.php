@@ -13,7 +13,7 @@
 	Route::get('/Admin/buscar-usuario/authConfirm',['uses' =>'adminController@confirmAuth']);
 	Route::get('/LoadConfig/{id}',['uses' => 'loginController@load']);
 	Route::post('/Admin/registrar/usuario',['uses' => 'adminController@chequeoDatos']);
-	Route::get('/Admin/getdataconfiguser/{id}',['uses'=>'adminController@getDataConfigUser']);
+	Route::get('/Admin/viewPerfil/{id}',['uses' => 'adminController@perfilUserView']);
 	
 
 	Route::get('/',['uses' => 'mainController@index']);

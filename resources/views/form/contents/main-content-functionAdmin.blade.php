@@ -8,6 +8,8 @@
 
 		@endif
 
+		@yield('content-perfil-view-form')
+
 		@yield('content-stats')
 		
 		@yield('content-searchuser')

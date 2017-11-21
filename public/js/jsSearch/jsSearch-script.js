@@ -31,6 +31,10 @@ $(document).ready(function(){
 			//console.log(selector);
 			eventoClick.selectPerformaceMaterialize(selector);
 		});
+
+		$("#v_frmCtrl_btn_back_search").click(function(){
+			window.location = location.protocol+'//'+location.host+'/Admin/buscar-usuario';
+		});
 		
 		var dataStatusAuths = null;
 
@@ -117,8 +121,28 @@ $(document).ready(function(){
 						eventoClick.searchInformation();				
 				});
 			}
+
+			
 		
+		$("#form-mssg-alert-action-error").css({'display':'none'});
+		$("#form-mssg-alert-action-validity-disabled").css({'display':'none'});
+		$("#form-mssg-alert-action-validity-enable").css({'display':'none'});
 		
+		$("#v_frmCtrl_btn_close_mssg_alert").click(function(){
+			$("#form-mssg-alert-action-error").css({'display':'none'});
+			$("#form-mssg-alert-action-validity-disabled").css({'display':'none'});
+			$("#form-mssg-alert-action-validity-enable").css({'display':'none'});
+		});
+		$("#v_frmCtrl_btn_close_confirm_disabled_mssg_alert").click(function(){
+			$("#form-mssg-alert-action-error").css({'display':'none'});
+			$("#form-mssg-alert-action-validity-disabled").css({'display':'none'});
+			$("#form-mssg-alert-action-validity-enable").css({'display':'none'});
+		});
+		$("#v_frmCtrl_btn_close_confirm_enable_mssg_alert").click(function(){
+			$("#form-mssg-alert-action-error").css({'display':'none'});
+			$("#form-mssg-alert-action-validity-disabled").css({'display':'none'});
+			$("#form-mssg-alert-action-validity-enable").css({'display':'none'});
+		});
 
 		config.userID = $("body").attr('data_info_id');	
 		eventoClick.setupCheckBox();
@@ -188,8 +212,7 @@ function ClassSearchDinamy(){
 				v_formUserStatus:config.statusUserConfig,
 				v_formCrtUs_roll:config.statusRollUserConfig},					
 			success: function(us){
-				appendData.html('<div class="loader" style="top:115px;">Cargando...</div>');	
-				setTimeout(function(){				
+							
 					cant = $(us).length;
 					//console.log('Cantidad de registro:'+cant);
 					timeLoad = cant*75/100;
@@ -214,15 +237,15 @@ function ClassSearchDinamy(){
 							'<div class="form-search-col form-search-col-dm-w-2 form-search-col-dm-h-3"><label class="label-font-size-8 label-font-family-neutro">'+r.dp_nombre+'</label></div>'+
 							'<div class="form-search-col form-search-col-dm-w-2 form-search-col-dm-h-3"><label class="label-font-size-8 label-font-family-neutro">'+r.dp_telefono+'</label></div>'+
 							'<div class="form-search-col form-search-col-dm-w-3 form-search-col-dm-h-3"><label class="label-font-size-8 label-font-family-neutro">'+r.us_email+'</label></div>'+
-							'<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<div class="input-group-btn btn-dm-2">'+'<button type="button" id="btnEdit" class="btn btn-edit" ></button>'+'</div>'+'</div>'+
-							'<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<div class="input-group-btn btn-dm-2">'+'<button type="button" id="btnMore" class="btn btn-more_frm" ></button>'+'</div>'+'</div>'+
+							'<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<div class="input-group-btn btn-dm-2">'+'<button type="button" id="btnEdit" class="btn btn-edit" data="'+r.dp_id+'"></button>'+'</div>'+'</div>'+
+							'<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<div class="input-group-btn btn-dm-2">'+'<button type="button" id="btnMore" class="btn btn-more_frm" data="'+r.dp_id+'"></button>'+'</div>'+'</div>'+
 							dataHTML+'</div>');
 					});				
 						eventoClick.EventClickSearch();
 					
-					},(1000+timeLoad));
+					},(100+timeLoad));
 					
-				},100);
+				
 					
 
 			}
@@ -243,24 +266,30 @@ function ClassSearchDinamy(){
 	}
 
 	this.EnableFunction = function(id,status){
-		var search = $("#search").val();	
-		var token = $("input[name=_token]").val();		
-		var route = location.protocol+"//"+location.host+"/Admin/buscar-usuario/setUpdateEnableUser";
-		var id = id;
-		var status = status;
-		$.ajax({
-			url:route,
-			headers:{'X-CSRF-TOKEN':token},
-			type:"POST",
-			dataType:'json',
-			data:{
-				v_formIdUser : id,
-				v_formUserStatus: status
-			},
-			success:function(){
-				eventoClick.searchInformation();
-			}	
-		});
+
+		
+			var search = $("#search").val();	
+			var token = $("input[name=_token]").val();		
+			var route = location.protocol+"//"+location.host+"/Admin/buscar-usuario/setUpdateEnableUser";
+			var id = id;
+			var status = status;
+			$.ajax({
+				url:route,
+				headers:{'X-CSRF-TOKEN':token},
+				type:"POST",
+				dataType:'json',
+				data:{
+					v_formIdUser : id,
+					v_formUserStatus: status
+				},
+				success:function(){
+					eventoClick.searchInformation();
+				}	
+			});											
+			$("#form-mssg-alert-action-error").hide();
+			$("#form-mssg-alert-action-validity_disable").hide();
+		
+		
 		
 	}
 	this.DisableFunction = function(id,status){
@@ -442,8 +471,23 @@ function ClassSearchDinamy(){
 
 	this.EventClickSearch = function(){
 		$("button[id=btnEnable]").click(function(){
-			
-	   		eventoClick.EnableFunction($(this).attr('data'),1);
+			var id = $(this).attr('data');
+
+			if ($("div[id=form-mssg-alert-action-validity-enable]").css('display') == 'none') {
+				$("div[id=form-mssg-alert-action-validity-enable]").css({'display':'block'});
+				$("#v_frmCtrl_btn_confirm_enable_mssg_alert").attr('data-unic',id);
+			}
+			$("#v_frmCtrl_btn_confirm_enable_mssg_alert").click(function(){
+					if ($("#v_frmCtrl_btn_confirm_enable_mssg_alert").attr('data-unic') == id) {
+						eventoClick.EnableFunction(id,1);					
+				   		$("#form-mssg-alert-action-error").hide();
+						$("#form-mssg-alert-action-validity-disabled").hide();
+						$("#form-mssg-alert-action-validity-enable").hide();
+						$("#v_frmCtrl_btn_confirm_enable_mssg_alert").attr('data-unic','');
+					}		
+			   	
+			});
+				
 	   		
 	   	});
 		$("button[id=btnDisable]").click(function(){			
@@ -459,24 +503,44 @@ function ClassSearchDinamy(){
 				},	
 				success:function(data){
 									
-								$.each(data,function(indx,elements){
-									
+								$.each(data,function(indx,elements){									
 									if (elements == "1") {
 										config.userAuthStatus = true;								
-									}							
-									
-									if ((config.userAuthStatus == true)&&(config.userID == id)) {						
-										console.log('Este usuario no se puede deshabilitar por cuestion de que esta activo o a ingresado a la plataforma en este momento');
-									}else{
-										eventoClick.DisableFunction(id,0);
-										eventoClick.searchInformation();
 									}
 								});
+
+								if(config.userID != id){
+										if ($("div[id=form-mssg-alert-action-validity-disabled]").css('display') == 'none') {
+											$("div[id=form-mssg-alert-action-validity-disabled]").css({'display':'block'});	
+											$("#v_frmCtrl_btn_confirm_disabled_mssg_alert").attr('data-unic',id);										
+										}
+										$("#v_frmCtrl_btn_confirm_disabled_mssg_alert").click(function(){
+											if ($("#v_frmCtrl_btn_confirm_disabled_mssg_alert").attr('data-unic') == id) {
+												eventoClick.DisableFunction(id,0);
+												eventoClick.searchInformation();											
+												$("#form-mssg-alert-action-error").hide();
+												$("#form-mssg-alert-action-validity-disabled").hide();
+												$("#form-mssg-alert-action-validity-enable").hide();
+												$("#v_frmCtrl_btn_confirm_disabled_mssg_alert").attr('data-unic','');
+											}
+										});									
+									}							
+									
+								if ((config.userAuthStatus == true)&&(config.userID == id)) {								
+									if ($("div[id=form-mssg-alert-action-error]").css('display') == 'none') {
+										$("div[id=form-mssg-alert-action-error]").css({'display':'block'});
+									}
+								}
 						
 							}					
 											
 						});		
 	   		
+  		});
+  		$("button[id=btnMore]").click(function(){
+  			var id = $(this).attr('data');
+  			window.location = location.protocol+'//'+location.host+'/Admin/viewPerfil/'+id;
+
   		});
 	  
 	}

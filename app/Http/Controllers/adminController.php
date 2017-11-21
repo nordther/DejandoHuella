@@ -388,6 +388,156 @@ class adminController extends Controller
         }
     }
 
+    public function perfilUserView($id){
+
+      if ($id == null) {            
+               
+
+                abort(403, 'Unauthorized action.');
+
+        }else{  
+
+      $dataperfilviewinfo = 
+            \DB::table('datospersonales')
+                            ->select("*")
+                            ->join('rolls','datospersonales.dp_id_roll','=','rolls.rl_id')
+                            ->join('permisos','datospersonales.dp_id','=','permisos.pm_id')
+                            ->join('generos','datospersonales.dp_id_genero','=','generos.g_id_genero')
+                            ->join('estadopersonas','datospersonales.dp_id','=','estadopersonas.estp_id')
+                            ->join('photoperfils','datospersonales.dp_id','=','photoperfils.pp_id_datospersonales')
+                            ->join('users','datospersonales.dp_id','=','users.us_id_datospersonales')
+                            ->where('datospersonales.dp_id','=',$id,'and','estadopersonas.estp_activeordesable','=',1)
+                            ->take(1)
+                            ->get();       
+
+      $datasession = 
+            \DB::table('datospersonales')
+                            ->select('*')
+                            ->join('rolls','datospersonales.dp_id_roll','=','rolls.rl_id')
+                            ->join('permisos','datospersonales.dp_id','=','permisos.pm_id')
+                            ->join('generos','datospersonales.dp_id_genero','=','generos.g_id_genero')
+                            ->join('estadopersonas','datospersonales.dp_id','=','estadopersonas.estp_id')
+                            ->join('photoperfils','datospersonales.dp_id','=','photoperfils.pp_id_datospersonales')
+                            ->join('users','datospersonales.dp_id','=','users.us_id_datospersonales')
+                            ->where('datospersonales.dp_id','=',Auth::user()->us_id_datospersonales,'and','estadopersonas.estp_activeordesable','=',1)
+                            ->take(1)
+                            ->get();
+
+            foreach ($datasession as $rows) {
+               $dataChargen = [
+               'id'         => $rows->dp_id,
+               'nombre'     => $rows->dp_nombre,
+               'apellido'   => $rows->dp_apellido,
+               'fe_naci'    => $rows->dp_fe_nacimiento,
+               'telefono'   => $rows->dp_telefono,
+               'address'    => $rows->dp_direccion,  
+               'email'      => $rows->us_email,       
+               'roll'       => $rows->rl_wordkey_name,
+               'edad'       => $rows->dp_edad,
+               'genero'     => $rows->g_wordkey_genero,
+               'status'     => $rows->estp_activeordesable,
+               'permisos' => [
+                        'create' => $rows->pm_create,
+                        'ready'  => $rows->pm_ready,
+                        'update' => $rows->pm_update,
+                        'delete' => $rows->pm_delete
+                ],
+               'photo' => $rows->pp_src_filename];
+            }
+
+            foreach ($dataperfilviewinfo as $rows) {
+              $dataChargenUserView = [
+               'id'         => $rows->dp_id,
+               'nombre'     => $rows->dp_nombre,
+               'apellido'   => $rows->dp_apellido,
+               'fe_naci'    => $rows->dp_fe_nacimiento,
+               'telefono'   => $rows->dp_telefono,
+               'address'    => $rows->dp_direccion,  
+               'email'      => $rows->us_email,       
+               'roll'       => $rows->rl_wordkey_name,
+               'edad'       => $rows->dp_edad,
+               'genero'     => $rows->g_wordkey_genero,
+               'status'     => $rows->estp_activeordesable,
+               'permisos' => [
+                        'create' => $rows->pm_create,
+                        'ready'  => $rows->pm_ready,
+                        'update' => $rows->pm_update,
+                        'delete' => $rows->pm_delete
+                ],
+               'photo' => $rows->pp_src_filename
+                ];
+            }
+
+            $dataLg = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);              
+
+              $dataSistem = ['lang' => $dataLg];
+              
+              $idIdioma = \DB::table('languages')->select('lg_id')->where('lg_wordkey_language','=',$dataSistem['lang'])->take(1)->get();    
+
+              foreach ($idIdioma as $rows) {
+                $lgId = $rows->lg_id;
+              }
+              
+             $data = [
+                "idUserDataConfig" => Auth::user()->us_id_datospersonales,
+                "id"         => $dataChargen['id'],
+                "icon"       => $dataChargen['photo'],
+                "nombre"     => $dataChargen['nombre'],
+                "apellido"   => $dataChargen['apellido'],
+                "fe_naci"    => $dataChargen['fe_naci'],
+                "telefono"   => $dataChargen['telefono'],
+                "address"    => $dataChargen['address'],
+                "email"      => $dataChargen['email'],
+                "edad"       => $dataChargen['edad'],
+                "genero"     => $dataChargen['genero'],
+                "roll"       => $dataChargen['roll'],
+                "permisos" => [
+                        'create' => $dataChargen['permisos']['create'],
+                        'ready'  => $dataChargen['permisos']['ready'],
+                        'update' => $dataChargen['permisos']['update'],
+                        'delete' => $dataChargen['permisos']['delete']
+                ],
+                "authconfirm" => Auth::check(),
+                "multimediaAuth" => false,
+                "title-modul" => "Admin",
+                "type-modul" => "perfil",
+                "dll" => [  'css' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','css')->orderBy('srcapp_id', 'asc')->get(),
+                        'js' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','js')->orderBy('srcapp_id', 'asc')->get(),
+                        'icon' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','png','and','srcapp_dir','=','img/icon/nav/')->get(),
+                        'text' => \DB::table('guitexts')->select('*')
+                                    ->join('guitypes','guitexts.gtxt_id_gtype','=','guitypes.gtype_id')
+                                    ->join('languages','guitexts.gtxt_id_language','=','languages.lg_id')
+                                    ->where('guitexts.gtxt_id_language','=',$lgId)->get(),
+                        'nav' => \DB::table('srcnavs')->select('*')->where('srcnav_fileformat','=','png','and','srcapp_dir','=','img/icon/nav/')->get() ],
+                "dataForm" => [
+                            'iconUserSearch' => ''
+                    ],
+               
+                "userViewInfo" => [
+                     'id'       => $dataChargenUserView['id'],
+                     'nombre'   => $dataChargenUserView['nombre'],
+                     'apellido' => $dataChargenUserView['apellido'],
+                     'fe_naci'  => $dataChargenUserView['fe_naci'],
+                     'telefono' => $dataChargenUserView['telefono'],
+                     'address'  => $dataChargenUserView['address'],
+                     'email'    => $dataChargenUserView['email'],
+                     'edad'    => $dataChargenUserView['edad'],
+                     'genero'    => $dataChargenUserView['genero'],
+                     'roll'    => $dataChargenUserView['roll'],
+                     "permisos" => [
+                        'create' => $dataChargenUserView['permisos']['create'],
+                        'ready'  => $dataChargenUserView['permisos']['ready'],
+                        'update' => $dataChargenUserView['permisos']['update'],
+                        'delete' => $dataChargenUserView['permisos']['delete']
+                      ]
+                  ]                 
+             ]; 
+
+        return view('modulos.functionAdministration.perfilUser.index',compact("data"));
+
+      }
+     }
+
 
     public function myFilesView($id){
 
@@ -486,13 +636,7 @@ class adminController extends Controller
           return redirect('/'.$request['v_rollUserForm'].'/perfil/'.$request['v_idUserForm'].'');      
     }
 
-    public function getDataConfigUser($id){
-        
-        $configData = file_get_contents(base_path("/public/workspaceUsers/".$id."/config.json"));
-        
-        
-        return \Response::json($configData);
-    }
+    
 
     public function buscarUsuario(adminRequest $rq){
 
