@@ -109,9 +109,9 @@
 
 			<div class="form-content-ctrls">
 				
-				<div class="input-group-btn input-circle-btn btn-dm-1">
+				<div class="input-group-btn input-circle-btn btn-dm-1" id="v_frmCrls_btn_showFilters">
 					
-					{!! Form::button('',['id' => 'v_frmCrls_btn_showFilters','class'=>'btn btn-arrow-right','type' =>'button']) !!}
+					{!! Form::button('',['id' => 'v_frmCrls_btn_showFilters_arrow','class'=>'btn btn-arrow-right','type' =>'button']) !!}
 
 				</div>
 

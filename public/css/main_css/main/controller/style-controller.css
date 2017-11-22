@@ -137,6 +137,7 @@ textarea{
     border: none;
 	border-bottom: 2px solid #9e9e9e;
 	resize: none;
+	cursor: url(../../../../img/icon/cursor/text/text.png), text;
 }
 .input-group > textarea{
 	font-family: "Roboto",sans-serif;
@@ -178,14 +179,14 @@ textarea{
 .input-group > input[type="search"]:disabled,
 .input-group > textarea:disabled,
 .input-group > input[type="date"]:disabled{
-	cursor: not-allowed;
+	cursor: url("../../../../img/icon/cursor/not_allowed/not_allowed.cur"), not-allowed;
 	border-bottom: 2px solid #A2A2A2;
 }
 .input-group > label:after{
     box-sizing: inherit;
 }
 .input-group > label{	
-    cursor: text; 
+    cursor: url("../../../../img/icon/cursor/text/text.cur"), text; 
     font-size:  1rem;
     position: absolute;
     top: 0;
@@ -220,19 +221,22 @@ textarea{
 
 
 .cicle-bisel-1{
-	border: none;
+	border: 2px;
+	
 	border-radius: 50%;
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3), 0 0 4px rgba(0, 0, 0, 0.2);
 }
 .cicle-bisel-2{
-	border: none;
+	border: 2px;
 	border-radius: 50%;
-	box-shadow: 4px 0 8px 0 rgba(0,0,0,0.3);
+	
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3), 0 0 4px rgba(0, 0, 0, 0.2);
 }
 .cicle-bisel-3{
-	border: none;
+	border: 2px;
 	border-radius: 50%;
-	box-shadow: 0px 0px 3px 2px rgba(0,0,0,0.3);
+
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3), 0 0 4px rgba(0, 0, 0, 0.2);
 }	
 
 
@@ -326,9 +330,9 @@ button[type="submit"]{
 	text-rendering: geometricPrecision;
 	image-rendering: optimizeSpeed;
 }
+
 .btn-close{
 	position: relative;
-	cursor: pointer;
 	background-image: url('../../../../img/icon/form/closelogin.png');	
 	-webkit-transition: all 0.2s ease;
 	   -moz-transition: all 0.2s ease;
@@ -347,7 +351,6 @@ button[type="submit"]{
 
 .btn-menu{
 	position: relative;
-	cursor: pointer;
 	background-image: url('../../../../img/icon/header/menu.png');	
 	-webkit-transition: all 0.2s ease;
 	   -moz-transition: all 0.2s ease;
@@ -367,7 +370,6 @@ button[type="submit"]{
 .btn-more{
 	margin-top: 25px;
 	float: right;
-	cursor: pointer;
 	position: relative;
 	background-image: url('../../../../img/icon/header/perfilMenu.png');	
 	-webkit-transition: all 0.2s ease;
@@ -386,7 +388,6 @@ button[type="submit"]{
 }
 
 .btn-back{
-	cursor: pointer;
 	position: relative;
 	background-image: url('../../../../img/icon/header/back.png');	
 	-webkit-transition: all 0.2s ease;
@@ -405,7 +406,6 @@ button[type="submit"]{
 }
 
 .btn-edit{
-	cursor: pointer;
 	position: relative;
 	background-image: url('../../../../img/icon/form/edit.png');	
 	-webkit-transition: all 0.2s ease;
@@ -423,7 +423,6 @@ button[type="submit"]{
 		    transition: all 0.2s ease;	
 }
 .btn-form-edit{
-	cursor: pointer;
 	position: relative;
 	background-image: url('../../../../img/icon/form/editHover.png');	
 	-webkit-transition: all 0.2s ease;
@@ -442,7 +441,6 @@ button[type="submit"]{
 }
 
 .btn-form-back{
-	cursor: pointer;
 	position: relative;
 	background-image: url('../../../../img/icon/form/back.png');	
 	-webkit-transition: all 0.2s ease;
@@ -461,7 +459,6 @@ button[type="submit"]{
 }
 
 .btn-more_frm{
-	cursor: pointer;
 	position: relative;
 	transform: rotate(90deg);
 	background-image: url('../../../../img/icon/form/more.png');	
@@ -480,7 +477,6 @@ button[type="submit"]{
 		    transition: all 0.2s ease;	
 }
 .btn-disabled{
-	cursor: pointer;
 	position: relative;
 	background-image: url('../../../../img/icon/form/disabled.png');	
 	-webkit-transition: all 0.2s ease;
@@ -499,7 +495,6 @@ button[type="submit"]{
 		    transition: all 0.2s ease;	
 }
 .btn-enable{
-	cursor: pointer;
 	position: relative;
 	background-image: url('../../../../img/icon/form/enable.png');	
 	-webkit-transition: all 0.2s ease;
@@ -518,7 +513,6 @@ button[type="submit"]{
 		    transition: all 0.2s ease;	
 }
 .btn-confirm{
-	cursor: pointer;
 	position: relative;
 	background-image: url('../../../../img/icon/form/enableHover.png');	
 		
@@ -617,7 +611,7 @@ button[type="submit"]{
 	background-color: transparent;
 }
 
-.btn-arrow-right:hover{	
+#v_frmCrls_btn_showFilters:hover > .btn-arrow-right{	
 	background-image: url('../../../../img/icon/form/arrowHover.png');		
 }
 .select_icon_circle{

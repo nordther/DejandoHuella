@@ -33,7 +33,7 @@ $(document).ready(function(){
 		});
 
 		$("#v_frmCtrl_btn_back_search").click(function(){
-			window.location = location.protocol+'//'+location.host+'/Admin/buscar-usuario';
+			window.location = location.protocol+'//'+location.host+'/Admin/buscar-usuario';			
 		});
 		
 		var dataStatusAuths = null;
@@ -103,7 +103,7 @@ $(document).ready(function(){
 		   });
 
 		  	
-		$("button[id=v_frmCrls_btn_showFilters]").click(function(){
+		$("div[id=v_frmCrls_btn_showFilters]").click(function(){
 				//console.log($(this).attr("id"));
 		   		eventoClick.tooltSearchShow();
 		   });	
@@ -121,6 +121,7 @@ $(document).ready(function(){
 						eventoClick.searchInformation();				
 				});
 			}
+
 
 			
 		
@@ -150,7 +151,11 @@ $(document).ready(function(){
 		
 			
 	}); 
-
+$("#formSearchIncludeInformation").ready(function(){
+	config.statusRollUserConfig = $("select[name=v_frmCtrl_Roll] option:selected").val();
+	config.statusTypeUserConfig = $("select[name=v_frmCtrl_TypeUser] option:selected").val();
+	eventoClick.searchInformation();
+});
 
 
 function ClassSearchDinamy(){
@@ -182,11 +187,11 @@ function ClassSearchDinamy(){
 
 	this.tooltSearchShow = function(){
 		if ($(".form-content-filters").css('display') == 'none') {			
-			$("#v_frmCrls_btn_showFilters").css({'transform':'rotate(270deg)'});
+			$("#v_frmCrls_btn_showFilters_arrow").css({'transform':'rotate(270deg)'});
 			$(".form-content-filters").fadeIn(100);				
 
 		}else{			
-			$("#v_frmCrls_btn_showFilters").css({'transform':'rotate(90deg)'});			
+			$("#v_frmCrls_btn_showFilters_arrow").css({'transform':'rotate(90deg)'});			
 			$(".form-content-filters").fadeOut(100);
 			
 		}
@@ -232,16 +237,41 @@ function ClassSearchDinamy(){
 						}else{
 							var photo = '<img src="'+location.protocol+'//'+location.host+'/'+r.pp_src_dir+'/'+r.pp_src_filename+'" class="img-dm-8 cicle-bisel-1" style="margin-top:6.5px;">';
 						}
-						appendData.append('<div class="form-search-row-effect-cardview form-search-col-dm-h-3">'+
-							'<div class="form-search-col form-search-col-dm-w-1 form-search-col-dm-h-3">'+photo+'</div>'+
-							'<div class="form-search-col form-search-col-dm-w-2 form-search-col-dm-h-3"><label class="label-font-size-8 label-font-family-neutro">'+r.dp_nombre+'</label></div>'+
-							'<div class="form-search-col form-search-col-dm-w-2 form-search-col-dm-h-3"><label class="label-font-size-8 label-font-family-neutro">'+r.dp_telefono+'</label></div>'+
-							'<div class="form-search-col form-search-col-dm-w-3 form-search-col-dm-h-3"><label class="label-font-size-8 label-font-family-neutro">'+r.us_email+'</label></div>'+
-							'<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<div class="input-group-btn btn-dm-2">'+'<button type="button" id="btnEdit" class="btn btn-edit" data="'+r.dp_id+'"></button>'+'</div>'+'</div>'+
-							'<div class="form-search-col form-search-col-small-dm-w-1 form-search-col-dm-h-3">'+'<div class="input-group-btn btn-dm-2">'+'<button type="button" id="btnMore" class="btn btn-more_frm" data="'+r.dp_id+'"></button>'+'</div>'+'</div>'+
-							dataHTML+'</div>');
+						appendData.append('<div class="form-rows-card form-rows-card_'+r.dp_id+'" data-id="'+r.dp_id+'" id="form-rows-card" >'+
+								'<div class="form-search-col form-search-col-dm-w-1 form-search-col-dm-h-2 ">'
+									    +photo+
+								'</div>'+
+								'<div class="form-search-col form-search-col-dm-w-2 form-search-col-dm-h-2">'+
+									'<label>'
+										+r.dp_nombre+
+									'</label>'+	
+								'</div>'+	
+								'<div class="form-search-col form-search-col-dm-w-2 form-search-col-dm-h-2">'+
+									'<label>'
+										+r.dp_telefono+
+									'</label>'+	
+								'</div>'+
+								'<div class="form-search-col form-search-col-dm-w-3 form-search-col-dm-h-2">'+
+									'<label>'
+										+r.us_email+
+									'</label>'+	
+								'</div>'+
+								'<div class="form-search-col form-search-col-dm-w-2 form-search-col-dm-h-2">'+
+									'<div class="form-search-col-action form-search-col-dm-h-2">'+
+										'<div class="input-group-btn btn-dm-2">'+
+											'<button type="button" id="btnMore" class="btn btn-more_frm" data="'+r.dp_id+'"/>'+
+										'</div>'+
+									'</div>'+								
+									'<div class="form-search-col-action form-search-col-dm-h-2">'+
+										'<div class="input-group-btn btn-dm-2">'+
+											dataHTML+
+										'</div>'+
+									'</div>'+
+						   		'</div>'
+						+'</div>');
 					});				
 						eventoClick.EventClickSearch();
+
 					
 					},(100+timeLoad));
 					
@@ -401,8 +431,7 @@ function ClassSearchDinamy(){
 							$("#frm_beneficier_2").hide('slow');
 							$("#frm_beneficier_3").hide('slow');
 							$("#frm_beneficier_4").hide('slow');
-							$("#frm_beneficier_5").hide('slow');							
-							config.statusRollUserConfig = $("select[name=v_frmCtrl_Roll] option:selected").val();
+							$("#frm_beneficier_5").hide('slow');						
 							config.statusTypeUserConfig = 1;
 						break;
 						case "Beneficiario":						
@@ -542,6 +571,9 @@ function ClassSearchDinamy(){
   			window.location = location.protocol+'//'+location.host+'/Admin/viewPerfil/'+id;
 
   		});
+
+  		
+  		
 	  
 	}
 }

@@ -101,7 +101,7 @@
 							
 							<div class="form-ctrl-content">	
 
-								<div class="input-group-btn input-esquare-btn btn-dm-5 input-group-btn-top-form">
+								<div class="input-group-btn input-circle-btn btn-dm-5 input-group-btn-top-form">
 									
 									{!! Form::button('',['class' => 'btn btn-close ','type' => 'button','id' => 'v_frmCtrl_btn_close_mssg_alert']); !!}
 
@@ -159,14 +159,14 @@
 							
 							<div class="form-ctrl-content">	
 
-								<div class="input-group-btn input-esquare-btn btn-dm-5 input-group-btn-top-form">
+								<div class="input-group-btn input-circle-btn btn-dm-5 input-group-btn-top-form">
 									
 									{!! Form::button('',['class' => 'btn btn-confirm ','type' => 'button','id' => 'v_frmCtrl_btn_confirm_disabled_mssg_alert']); !!}
 
 								</div>	
 
 
-								<div class="input-group-btn input-esquare-btn btn-dm-5 input-group-btn-top-form">
+								<div class="input-group-btn input-circle-btn btn-dm-5 input-group-btn-top-form">
 									
 									{!! Form::button('',['class' => 'btn btn-close ','type' => 'button','id' => 'v_frmCtrl_btn_close_confirm_disabled_mssg_alert','data-unic' => '']); !!}
 
@@ -225,14 +225,14 @@
 							
 							<div class="form-ctrl-content">	
 
-								<div class="input-group-btn input-esquare-btn btn-dm-5 input-group-btn-top-form">
+								<div class="input-group-btn input-circle-btn btn-dm-5 input-group-btn-top-form">
 									
 									{!! Form::button('',['class' => 'btn btn-confirm ','type' => 'button','id' => 'v_frmCtrl_btn_confirm_enable_mssg_alert']); !!}
 
 								</div>	
 
 
-								<div class="input-group-btn input-esquare-btn btn-dm-5 input-group-btn-top-form">
+								<div class="input-group-btn input-circle-btn btn-dm-5 input-group-btn-top-form">
 									
 									{!! Form::button('',['class' => 'btn btn-close ','type' => 'button','id' => 'v_frmCtrl_btn_close_confirm_enable_mssg_alert','data-unic' => '']); !!}
 

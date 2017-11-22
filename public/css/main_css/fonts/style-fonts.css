@@ -156,16 +156,6 @@ a{
 	font-family: "Roboto",sans-serif;
 }
 
-.form-article-search > .form-search-row-effect-cardview > .form-search-col > label{
-	top: 15px;
-	font-family: "Roboto",sans-serif;
-}
-
-.form-article-search > .form-search-row-effect-cardview > .form-search-col > img,
-.form-article-search > .form-search-row-effect-cardview > .form-search-col > button{
-	margin-top: 12px;
-}
-
 .content-text-topic > p{
 	color: #00dad8;
 }

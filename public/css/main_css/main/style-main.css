@@ -775,20 +775,17 @@ form{
 		border-radius: 50%; 
 		top: -85px; 		
 		transition: background-color 1.0s, box-shadow 1.0s; 
+		box-shadow:
+	0 2px 2px 0 rgba(0,0,0,0.14), 
+	0 1px 5px 0 rgba(0,0,0,0.12), 
+	0 3px 1px -2px rgba(0,0,0,0.2);
 	}
 	.icon-login > img{
 		width: 100%;
 		height: 100%;
 		background-size: 100% 100%;
 	}
-	.icon-login:hover{
-		background-color:#FFFFFF;		
-		box-shadow:
-	0 2px 2px 0 rgba(0,0,0,0.14), 
-	0 1px 5px 0 rgba(0,0,0,0.12), 
-	0 3px 1px -2px rgba(0,0,0,0.2);
 
-	}
 	
 	.content-alert{
 		position:relative; 
@@ -955,28 +952,46 @@ form{
 		float: left;		
 		padding-right: 10px;
 		padding-left: 10px;
-	}
-
-	
+	}	
 	.form-search-col-border{
 		border-left:.002px solid rgba(225,225,225,0.8);
-		border-right:.002px solid rgba(225,225,225,0.8);
-		
+		border-right:.002px solid rgba(225,225,225,0.8);		
 	}
+	.form-rows-card{
+		background-color: #ffffff;
+		box-sizing: border-box;
+		border-radius: 1px;
+		width: 100%;		
+		height: 45px;
+		border-bottom: 0.2px solid #D2D2D2;
+		box-shadow:0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+	}
+	.form-rows-card > .form-search-col>label{
+		top: 15px;
+		font-family: "Roboto",sans-serif;
+	}
+	.form-rows-card:hover{
+		
+		background-color: #007F7C;
+	}
+	.form-rows-card:hover > .form-search-col>label{
+		color:#ffffff;
 
+	}
 	.form-search-col-dm-w-1{
 		width: 125px;
 	}
 	.form-search-col-dm-w-2{
-		width: 225px;
+		width: 225px;		
 	}
 	.form-search-col-dm-w-3{
 		width: 350px;
 	}
-	.form-search-col-small-dm-w-1{
+	.form-search-col-action{
 		display: flex;
+		float: left;
 		align-content: center;
-		width: 45px;
+		width: 50%;		
 	}
 	.form-search-col-dm-h-1{
 		height: 35px;
