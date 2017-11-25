@@ -1,5 +1,8 @@
 var btn_nav = new navFunction();
 var colorTarger = "#6C6C6C";
+var showHideMenu = false;
+var showHidePerfil = false;
+var selectorfrmlCtrl_closeWindows = "div[id=frmlCtrl_closeWindows],label[id=frmlCtrl_closeWindows],img[id=frmlCtrl_closeWindows]";
 
 var ln = x=window.navigator.language||navigator.browserLanguage;
 
@@ -11,7 +14,10 @@ $(document).ready(function(){
 		btn_nav.showPerfil();
 
 	});
-
+	
+	$(selectorfrmlCtrl_closeWindows).click(function(){		
+		btn_nav.hidePerfil();
+	});
 	$("li[id=targetGestionUsers]").click(function(){
 		btn_nav.showSubMenuGesUsers();
 	});
@@ -24,9 +30,6 @@ $(document).ready(function(){
 		btn_nav.showSubMenuGesMulti();
 	});
 
-	
-
-	$("#menuPerfil").css({'display':'none'});
 
 	$("#subMenuGestionUsers").css({'display':'none'});
 
@@ -102,39 +105,27 @@ $(document).ready(function(){
 function navFunction(){
 
 	
-	this.showMenu = function(){
-		if (($('#main-menu').hasClass('main-menu-hidde'))
-			&&($('#main-menu').hasClass('is-paused'))) {
-
-			$('#main-menu').removeClass('main-menu-hidde');
-			$('#main-menu').removeClass('is-paused');
-			
-
-			$('#main-menu').addClass('main-menu-show').fadeIn('slow');			
-			$('#header').addClass('bg-content-neutro-opacity');
-
-		}else if($('#main-menu').hasClass('main-menu-show')){
-
-			$('#main-menu').removeClass('main-menu-show');			
-			$('#header').removeClass('bg-content-neutro-opacity');
-
-
-
-			$('#main-menu').addClass('is-paused');
-			$('#main-menu').addClass('main-menu-hidde');
-
-			$('.header').addClass('bg-content-8');		
-
+	this.showMenu = function(){		
+		if (showHideMenu == false) {
+			showHideMenu = true;
+			$("#main-menu").css({'transform':'translateX(0%)'});
+			$("#header").removeClass('bg-content-8-opacity').addClass("bg-content-neutro-opacity");
+		}else{
+			showHideMenu = false;
+			$("#main-menu").css({'transform':'translateX(-100%)'});
+			$("#header").removeClass('bg-content-neutro-opacity').addClass("bg-content-8-opacity");
 		}
 	}
 
 	this.showPerfil = function(){
-		if ($("#menuPerfil").css('display') == 'none') {
-			$("#menuPerfil").fadeIn(225);
-			$("#menuPerfil").css({'display':'block'});
-		}else{			
-			$("#menuPerfil").fadeOut(225);
-		}
+		setTimeout(function() {$("#frmlCtrl_closeWindows").css({'transform':'rotate(360deg)'});}, 500);
+				
+		$("#menuPerfil").css({'transform':'translateX(493%)'});
+	}
+	this.hidePerfil = function(){
+		setTimeout(function() {$("#frmlCtrl_closeWindows").css({'transform':'rotate(270deg)'});}, 500);
+			
+		$("#menuPerfil").css({'transform':'translateX(600%)'});
 	}
 
 	this.showSubMenuGesUsers = function(){

@@ -9,6 +9,9 @@
 			<div class="form-header form-header-dm-1" style="position: relative; height: auto; display: flex; align-items:  center;  overflow: hidden;">
 			{!! Form::hidden('_token',csrf_token(),['type' => 'hidden','id' => '_token']) !!}						
 				<div class="card-img">
+					
+					<img src="{{ asset('img/icon/form/close.png') }}" alt="" width="27" height="27" style="border-radius: 50%; position: fixed; right: 4%; top: 5px; cursor:pointer; transform: rotate(270deg); transition: all .3s ease-in;" id="frmlCtrl_closeWindows">
+
 					<img src="{{ asset('img/imgTopics/searchBackground/header.jpg') }}" style="width: 100%; height: 150px;">
 
 					<div style="height: 30px;">
@@ -118,6 +121,7 @@
 					<div class="form-rows-span">
 						<hr>
 					</div>
+					
 
 					<div class="form-rows" id="frmlCtrl_logout">
 

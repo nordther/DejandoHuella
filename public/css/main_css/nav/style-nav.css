@@ -3,6 +3,8 @@
 	float: right;
 	height: 100%;
 	top: 50px;
+	transition: all .5s ease-in;
+	transform: translateX(-100%);
 	border-top: 1px solid #252525;
 	border-left: 1px solid #252525;	
 	box-sizing: border-box;

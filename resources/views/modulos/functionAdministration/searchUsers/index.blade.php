@@ -12,5 +12,7 @@
 
 @extends('form.tooltsearch.formTooltsSearch')
 
+@extends('alerts.formAlertConfirms')
+
 @extends('form.Perfil.formPerfil-header')
 

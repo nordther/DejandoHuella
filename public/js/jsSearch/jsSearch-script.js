@@ -6,9 +6,12 @@ var timeLoad = 0;
 var cant = 0;
 var inputElements = [];
 var config = {statusUserConfig:null,statusTypeUserConfig:null,statusRollUserConfig:null,userPhotonName:null,userID:null,userAuthStatus:null};
+var showFilter = false;
 
 $(document).ready(function(){
 		
+		
+		$("#v_frmCrls_btn_showFilters_arrow").css({'transition':'transform .7s ease-in'});
 
 		$("#frmCtrl_Roll").css({'display':'none'});
 		
@@ -92,7 +95,7 @@ $(document).ready(function(){
 
 
 
-		$(".form-content-filters").css({'display':'none','top':'52px','height':''+(v_Height+36)+'px'});
+		$(".form-content-filters").css({'top':'52px','height':''+(v_Height+36)+'px'});
 
 		$(".form-content-ctrls").css({'top':'52px','height':''+(v_Height+36)+'px'});
 
@@ -186,13 +189,18 @@ function ClassSearchDinamy(){
 	
 
 	this.tooltSearchShow = function(){
-		if ($(".form-content-filters").css('display') == 'none') {			
+		if (showFilter == false) {			
+			showFilter = true;
 			$("#v_frmCrls_btn_showFilters_arrow").css({'transform':'rotate(270deg)'});
-			$(".form-content-filters").fadeIn(100);				
+			$(".form-content-filters").css({'transition':'transform .7s ease-in','transform':'translateX(0%)'});
+			$(".form-content-ctrls").css({'transition':'transform .7s ease-in','transform':'translateX(0%)'});
 
-		}else{			
+
+		}else{
+			showFilter = false;			
 			$("#v_frmCrls_btn_showFilters_arrow").css({'transform':'rotate(90deg)'});			
-			$(".form-content-filters").fadeOut(100);
+			$(".form-content-filters").css({'transition':'transform .7s ease-in','transform':'translateX(-100%)'});
+			$(".form-content-ctrls").css({'transition':'transform .7s ease-in','transform':'translateX(-1035%)'});
 			
 		}
 	}
@@ -237,6 +245,11 @@ function ClassSearchDinamy(){
 						}else{
 							var photo = '<img src="'+location.protocol+'//'+location.host+'/'+r.pp_src_dir+'/'+r.pp_src_filename+'" class="img-dm-8 cicle-bisel-1" style="margin-top:6.5px;">';
 						}
+						if (r.g_wordkey_genero == "wordkey_fm") {
+							var information = '<button type="button" id="btnMore" class="btn btn-more_frm_fm" data="'+r.dp_id+'"/>';
+						}else if(r.g_wordkey_genero == "wordkey_mc"){
+							var information = '<button type="button" id="btnMore" class="btn btn-more_frm_mc" data="'+r.dp_id+'"/>';
+						}
 						appendData.append('<div class="form-rows-card form-rows-card_'+r.dp_id+'" data-id="'+r.dp_id+'" id="form-rows-card" >'+
 								'<div class="form-search-col form-search-col-dm-w-1 form-search-col-dm-h-2 ">'
 									    +photo+
@@ -259,7 +272,7 @@ function ClassSearchDinamy(){
 								'<div class="form-search-col form-search-col-dm-w-2 form-search-col-dm-h-2">'+
 									'<div class="form-search-col-action form-search-col-dm-h-2">'+
 										'<div class="input-group-btn btn-dm-2">'+
-											'<button type="button" id="btnMore" class="btn btn-more_frm" data="'+r.dp_id+'"/>'+
+											information+
 										'</div>'+
 									'</div>'+								
 									'<div class="form-search-col-action form-search-col-dm-h-2">'+

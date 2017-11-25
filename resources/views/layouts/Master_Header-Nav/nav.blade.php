@@ -4,7 +4,7 @@
 
 	@if (($data['authconfirm'] == false) && ($data['multimediaAuth'] == false))
 		
-		<nav class="nav bg-content-neutro-opacity main-menu-hidde fade-in is-paused" id="main-menu">		
+		<nav class="nav bg-content-neutro-opacity" id="main-menu">		
 
 			<ul class="main-menu">
 
@@ -143,7 +143,7 @@
 
 	@elseif(($data['authconfirm'] == true)&&($data['multimediaAuth'] == false))
 
-		<nav class="nav bg-content-neutro-opacity main-menu-hidde fade-in is-paused" id="main-menu">
+		<nav class="nav bg-content-neutro-opacity" id="main-menu">
 
 			<ul class="main-menu">
 
@@ -368,7 +368,7 @@
 
 	@elseif($data['multimediaAuth'] == true)
 
-		<nav class="nav bg-content-neutro-opacity main-menu-hidde fade-in is-paused" id="main-menu">
+		<nav class="nav bg-content-neutro-opacity" id="main-menu">
 
 			<ul class="main-menu" class="">
 
