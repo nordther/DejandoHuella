@@ -6,7 +6,7 @@
 		
 		<div class="form-search-agenda scroll">
 			
-			@for($i = 0; $i < 200; $i++)
+			@for($i = 0; $i < 25; $i++)
 			<div class="form-agenda-content form-border-radius-top-left form-border-radius-top-right form-border-radius-bottom-left form-border-radius-bottom-right">
 				
 				<div class="form-agenda-header">
