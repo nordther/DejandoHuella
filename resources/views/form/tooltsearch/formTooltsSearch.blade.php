@@ -118,13 +118,26 @@
 			</div>
 
 		</div>
-			
-			
-
 
 		@elseif($data['type-modul'] == 'buscar-agenda')
 			
-			
+			<div class="form-content-toolts">
+				
+				<div class="form-content-filters">
+					
+				</div>
+
+				<div class="form-content-ctrls">
+					
+					<div class="input-group-btn input-circle-btn btn-dm-1" id="v_frmCrls_btn_showFilters">
+					
+						{!! Form::button('',['id' => 'v_frmCrls_btn_showFilters_arrow','class'=>'btn btn-arrow-right','type' =>'button']) !!}
+
+					</div>
+
+				</div>
+
+			</div>
 	
 		@endif
 

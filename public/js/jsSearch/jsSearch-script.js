@@ -71,7 +71,7 @@ $(document).ready(function(){
 			$(".content-perfil-header").css({'margin-top':'-45px'});
 			//console.log('buscar');
 		}else if(url== location.protocol+"//"+location.host+"/Admin/buscar-agenda"){
-			$(".content-perfil-header").css({'margin-top':'-100px'});
+			$(".content-perfil-header").css({'margin-top':'-52px'});
 			//console.log('crear usuario');
 		}else if(url== location.protocol+"//"+location.host+"/Admin/crear/usuario"){
 			$(".content-perfil-header").css({'margin-top':'-52px'});

@@ -944,6 +944,119 @@ form{
 		margin: auto;
 		left: 8px;
 	}
+	.form-content-collection{
+		position: relative;
+		
+		display: block;
+		width: 80%;
+		margin-top: 10px;
+		min-height: 100vh;
+		background: #E9E9E9;
+		border-radius: 2px;
+		box-sizing: border-box;
+		box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 
+	0 1px 5px 0 rgba(0,0,0,0.12), 
+	0 3px 1px -2px rgba(0,0,0,0.2);
+	}
+	.responsive-image{
+		background-size: 100% 100%;
+		width: 100%;
+		height: 100%;
+	}
+	.form-content-collection-header > img{
+		border-radius: 5px 5px 0px 0px;
+	}
+	.form-content-collection-header{
+		border-radius: 5px 5px 0px 0px;
+		position: relative;
+		display: flex;		
+		width: 100%;
+		height: 150px;
+		z-index: 1000;
+
+	}
+	.form-content-collection-article-title-header{
+		position: relative;
+		display: flex;
+		margin: auto;
+		flex-wrap: wrap;
+
+		width: 100%;
+		height: 75px;
+		border-bottom: 3px solid #E7E5E5;
+		
+	}
+	.form-content-collection-article-title-header>div,
+	.form-content-collection-article-title-header>span{
+		border: 1px solid  #FFFFFF;
+		width: 200px;
+		padding-top: 25px;	 
+		height: 50px;
+		background: #FFFFFF;
+		
+		
+	text-align: center;
+	text-transform: uppercase;
+	font-family: "Roboto",sans-serif;
+	font-size: 10;
+	}
+	.form-content-collection-title{
+		position: absolute;
+		left: 18vh;
+		top:-50px;
+		color: #FFFFFF;		
+		font-family: "Roboto",sans-serif;
+		font-size: 20px;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+	.form-content-collection-logo{
+		position: absolute;
+		bottom: -75px;
+		left: 25px;		
+	}
+	.form-content-collection-article{
+		position: absolute;				
+		display: block;
+		width: 99%;
+		left: 10px;
+		min-height: 400px;
+		height: 50vh;			
+	}
+	.form-content-collection-scroll{
+		width: 98%;
+		height: 50vh;
+		overflow-y: scroll;
+		background: #FFFFFF;
+		
+	}
+	.form-content-collection-article-item{
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		background: #FFFFFF;
+		min-height: 50px;
+		border-top: 1px solid #D7D7D7;
+		box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 
+	0 1px 5px 0 rgba(0,0,0,0.12), 
+	0 3px 1px -2px rgba(0,0,0,0.2);
+
+	}
+	.form-content-collection-article-item>div,
+	.form-content-collection-article-item>span{
+		
+		width: 200px;		
+		height: 50px;
+				
+			
+		text-align: center;	
+		font-family: "Roboto",sans-serif;
+		font-size: 10;
+	}
+	.form-content-collection-actions{
+
+	}
 
 	.form-header-search{
 		display: inline-block;

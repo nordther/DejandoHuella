@@ -136,27 +136,7 @@
 
 						{!! Form::close(); !!}
 
-					@endif
-
-					@if($data['type-modul'] == 'buscar-agenda')
-						
-						{!! Form::open(); !!}
-
-						<div class="content-search" id="content-search">
-							<div class="content-search-col content-search-col-dm-w-1">
-								{!! Form::text('v_search-','',['placeholder' => 'Buscar...' , 'class' => 'form-control input-border-color-1 input-radius-square-2 input-dm-1']); !!}
-							</div>
-							
-							<div class="content-search-col content-search-col-dm-w-5">
-								{!! Form::button(null,['class' => 'button-form-tool-search button-dm-2','style' => 'left:20px','id' => 'btnSearch']); !!}
-							</div>
-								
-						
-						</div>
-
-						{!! Form::close(); !!}
-
-					@endif
+					@endif					
 
 				@endif	
 

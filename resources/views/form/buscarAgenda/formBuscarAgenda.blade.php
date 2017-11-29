@@ -4,90 +4,100 @@
 	
 	<div class="form-content-search" >
 		
-		<div class="form-search-agenda scroll">
+		<div class="form-content-collection">
 			
-			@for($i = 0; $i < 25; $i++)
-			<div class="form-agenda-content form-border-radius-top-left form-border-radius-top-right form-border-radius-bottom-left form-border-radius-bottom-right">
-				
-				<div class="form-agenda-header">
+			<div class="form-content-collection-header">
+
+				<img src="{{ asset('img/imgTopics/searchBackground/header.jpg') }}" class="responsive-image">				
+
+				<div class="form-content-collection-logo">
 					
-					<div class="form-agenda-rows">
+					@foreach($data['dll']['nav'] as $dll)
 						
-						<div class="form-agenda-cell">
+						@if ($dll->srcnav_filename == 'about.png')
+
+							<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="Ingreso al sistema" class="icon-login">
+
+						@endif
 							
-							<h5>
-						
-								titulo del evento {{$i}}	
-	
-							</h5>
+					@endforeach	
 
-						</div>
-
-					</div>
-
-				</div>
-
-				<div class="form-agenda-article">
+					<span class="form-content-collection-title">
 					
-					<div class="form-agenda-rows">
+						Agenda
 
-						<div class="form-agenda-cell">
-
-							<p>
-
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, quasi, itaque nulla nobis exercitationem nihil earum. 
-
-							</p>
-
-						</div>	
-
-					</div>					
-
-				</div>
-
-				<div class="form-agenda-footer">
-					
-					<div class="form-agenda-rows">
-
-						<div class="form-agenda-cell">
-							
-							<p>
-								
-								Fecha: {{ date('j'.'-'.'m'.'-'.'o')}}
-
-							</p>
-
-						</div>
-
-					</div>	
-
-					<div class="form-agenda-rows">	
-							
-						<div class="form-agenda-cell">			
-
-							<p>
-								
-								Hora: 10:00 AM - 02:35 PM
-
-							</p>
-
-						</div>					
-
-						<div class="form-agenda-cell">
-							
-							{!! Form::button(null,['class' => 'button-header-perfil button-dm-1  button-margin-left-2 button-margin-bottom-2 button-top-right-position-absolute','type' => 'button']) !!}
-
-						</div>
-						
-
-					</div>
+					</span>	
 
 				</div>
 
 			</div>
-			@endfor
-		</div>
 
+			<div class="form-content-collection-article">
+				
+				<div class="form-content-collection-article-title-header">
+					<div>
+						icono
+					</div>
+
+					<div>
+						
+						codigo del evento
+
+					</div>
+					<div>
+						
+						nombre del evento
+
+					</div>
+					<div>
+						
+						Fecha de inicio y cierre
+
+					</div>					
+					<div>
+						
+						Hora de inicio y cierre
+
+					</div>
+					<div>
+						
+						Acciones
+
+					</div>
+
+				</div>
+				<div class="form-content-collection-scroll">
+					@for ($i = 0; $i <= 400; $i++)
+					<div class="form-content-collection-article-item">				
+						<div>
+							<div style="width: 50px; height:50px; margin: auto;">
+								<img src="{{ asset('img/logo.png') }}" class="responsive-image">
+							</div>						
+						</div>
+						<div>
+							1
+						</div>
+						<div>
+							1
+						</div>
+						<div>
+							1
+						</div>
+						<div>
+							1
+						</div>
+						<div>
+							1
+						</div>
+					</div>
+				@endfor
+				</div>
+				
+
+			</div>
+
+		</div>
+		
 	</div>
 
 
