@@ -1,7 +1,7 @@
 <?php
-	
+
 	namespace DejandoHuella\ClassCunstom;
-	
+
 	class classChargenMainSistemPrimary {
 		private static $data = null;
 
@@ -20,9 +20,9 @@
 				['cp_id_categoria' => 6,
 				 'cp_wordkey_name' => 'wordkey_civica_cp'],
 				['cp_id_categoria' => 7,
-				 'cp_wordkey_name' => 'wordkey_eco_gestores_cp'], 
+				 'cp_wordkey_name' => 'wordkey_eco_gestores_cp'],
 				['cp_id_categoria' => 8,
-				 'cp_wordkey_name' => 'wordkey_foment_l_cp']     
+				 'cp_wordkey_name' => 'wordkey_foment_l_cp']
 			];
 		}
 
@@ -35,352 +35,352 @@
 		public static function createSrcLibrary(){
 			return $data = [
 				[
-				'srcapp_id' => 1,				
+				'srcapp_id' => 1,
 				'srcapp_dir' => 'css/main_css/main/',
-				'srcapp_filename' => 'style-main.css',			
+				'srcapp_filename' => 'style-main.css',
 				'srcapp_fileformat' => 'css'],
 
 				[
-				'srcapp_id' => 2,				
+				'srcapp_id' => 2,
 				'srcapp_dir' => 'css/main_css/main/grid/',
-				'srcapp_filename' => 'style-main-grid.css',				
+				'srcapp_filename' => 'style-main-grid.css',
 				'srcapp_fileformat' => 'css'],
 
 				[
-				'srcapp_id' => 3,				
+				'srcapp_id' => 3,
 				'srcapp_dir' => 'css/main_css/main/controller/',
-				'srcapp_filename' => 'style-controller.css',				
+				'srcapp_filename' => 'style-controller.css',
 				'srcapp_fileformat' => 'css'],
 
 				[
-				'srcapp_id' => 4,				
+				'srcapp_id' => 4,
 				'srcapp_dir' => 'css/main_css/nav/',
-				'srcapp_filename' => 'style-nav.css',				
+				'srcapp_filename' => 'style-nav.css',
 				'srcapp_fileformat' => 'css'],
 
 				[
-				'srcapp_id' => 5,				
+				'srcapp_id' => 5,
 				'srcapp_dir' => 'css/main_css/effects/',
-				'srcapp_filename' => 'style-effects.css',				
+				'srcapp_filename' => 'style-effects.css',
 				'srcapp_fileformat' => 'css'],
 
 				[
-				'srcapp_id' => 6,				
+				'srcapp_id' => 6,
 				'srcapp_dir' => 'css/main_css/fonts/',
-				'srcapp_filename' => 'style-fonts.css',				
+				'srcapp_filename' => 'style-fonts.css',
 				'srcapp_fileformat' => 'css'],
 
 				[
-				'srcapp_id' => 7,				
+				'srcapp_id' => 7,
 				'srcapp_dir' => 'css/main_css/scroll/',
-				'srcapp_filename' => 'style-scroll.css',				
+				'srcapp_filename' => 'style-scroll.css',
 				'srcapp_fileformat' => 'css'],
 
 				[
-				'srcapp_id' => 8,				
+				'srcapp_id' => 8,
 				'srcapp_dir' => 'css/main_css/nav/',
-				'srcapp_filename' => 'style-nav-hidde-show.css',				
+				'srcapp_filename' => 'style-nav-hidde-show.css',
 				'srcapp_fileformat' => 'css'],
 
 				[
-				'srcapp_id' => 9,				
+				'srcapp_id' => 9,
 				'srcapp_dir' => 'css/main_css/animate/',
-				'srcapp_filename' => 'style-animate.css',				
+				'srcapp_filename' => 'style-animate.css',
 				'srcapp_fileformat' => 'css'],
 
 				[
-				'srcapp_id' => 10,				
+				'srcapp_id' => 10,
 				'srcapp_dir' => 'css/main_css/slider/',
-				'srcapp_filename' => 'style-slider.css',				
+				'srcapp_filename' => 'style-slider.css',
 				'srcapp_fileformat' => 'css'],
 
 				[
-				'srcapp_id' => 11,				
+				'srcapp_id' => 11,
 				'srcapp_dir' => 'css/main_css/main/tooltip/',
-				'srcapp_filename' => 'style-tooltip.css',				
+				'srcapp_filename' => 'style-tooltip.css',
 				'srcapp_fileformat' => 'css'],
 
 				[
-				'srcapp_id' => 12,			
+				'srcapp_id' => 12,
 				'srcapp_dir' => 'js/jsJQUERY/',
-				'srcapp_filename' => 'jquery-3.2.1.min.js',				
+				'srcapp_filename' => 'jquery-3.2.1.min.js',
 				'srcapp_fileformat' => 'js'],
 
 				[
-				'srcapp_id' => 13,			
+				'srcapp_id' => 13,
 				'srcapp_dir' => 'js/jsJQUERY/',
-				'srcapp_filename' => 'jquery-1.10.2.js',				
-				'srcapp_fileformat' => 'js'],
-				
-				[
-				'srcapp_id' => 14,				
-				'srcapp_dir' => 'js/jsBootstrap/',
-				'srcapp_filename' => 'bootstrap.min.js',				
+				'srcapp_filename' => 'jquery-1.10.2.js',
 				'srcapp_fileformat' => 'js'],
 
 				[
-				'srcapp_id' => 15,				
+				'srcapp_id' => 14,
 				'srcapp_dir' => 'js/jsBootstrap/',
-				'srcapp_filename' => 'bootstrap.min.js',				
+				'srcapp_filename' => 'bootstrap.min.js',
 				'srcapp_fileformat' => 'js'],
 
 				[
-				'srcapp_id' => 16,				
+				'srcapp_id' => 15,
+				'srcapp_dir' => 'js/jsBootstrap/',
+				'srcapp_filename' => 'bootstrap.min.js',
+				'srcapp_fileformat' => 'js'],
+
+				[
+				'srcapp_id' => 16,
 				'srcapp_dir' => 'js/jsMainGui/',
-				'srcapp_filename' =>'jsMainGui-script.js',				
-				'srcapp_fileformat' => 'js'],				
+				'srcapp_filename' =>'jsMainGui-script.js',
+				'srcapp_fileformat' => 'js'],
 
 				[
-				'srcapp_id' => 17,				
+				'srcapp_id' => 17,
 	        	'srcapp_dir' => 'js/jsLogin/' ,
-	        	'srcapp_filename' =>'jsLogin-script.js',  			
+	        	'srcapp_filename' =>'jsLogin-script.js',
 	        	'srcapp_fileformat' => 'js'],
-
-	        	[
-				'srcapp_id' => 18,				
+						
+	     [
+				'srcapp_id' => 18,
 				'srcapp_dir' => 'js/jsSlider/',
-				'srcapp_filename' =>'jsSlider-script.js',				
-				'srcapp_fileformat' => 'js'], 
-
-				[
-				'srcapp_id' => 19,				
-				'srcapp_dir' => 'js/jsHtmlShiv5/',
-				'srcapp_filename' =>'jsHtmlShiv5-script.js',				
-				'srcapp_fileformat' => 'js'], 
-
-				[
-				'srcapp_id' => 20,				
-				'srcapp_dir' => 'js/jsHtmlShiv5/',
-				'srcapp_filename' =>'jsHtmlShiv5-printshiv-script.js',				
-				'srcapp_fileformat' => 'js'], 
-
-				[
-				'srcapp_id' => 21,				
-				'srcapp_dir' => 'js/jsSelectStyle/',
-				'srcapp_filename' =>'jsSelectStyle-script.js',				
-				'srcapp_fileformat' => 'js'], 
-
-				[
-				'srcapp_id' => 22,				
-				'srcapp_dir' => 'js/jsSelectStyle/',
-				'srcapp_filename' =>'jsSelectStyle-script.min.js',				
+				'srcapp_filename' =>'jsSlider-script.js',
 				'srcapp_fileformat' => 'js'],
 
 				[
-				'srcapp_id' => 23,				
+				'srcapp_id' => 19,
+				'srcapp_dir' => 'js/jsHtmlShiv5/',
+				'srcapp_filename' =>'jsHtmlShiv5-script.js',
+				'srcapp_fileformat' => 'js'],
+
+				[
+				'srcapp_id' => 20,
+				'srcapp_dir' => 'js/jsHtmlShiv5/',
+				'srcapp_filename' =>'jsHtmlShiv5-printshiv-script.js',
+				'srcapp_fileformat' => 'js'],
+
+				[
+				'srcapp_id' => 21,
+				'srcapp_dir' => 'js/jsSelectStyle/',
+				'srcapp_filename' =>'jsSelectStyle-script.js',
+				'srcapp_fileformat' => 'js'],
+
+				[
+				'srcapp_id' => 22,
+				'srcapp_dir' => 'js/jsSelectStyle/',
+				'srcapp_filename' =>'jsSelectStyle-script.min.js',
+				'srcapp_fileformat' => 'js'],
+
+				[
+				'srcapp_id' => 23,
 				'srcapp_dir' => 'js/jsSearch/',
-				'srcapp_filename' =>'jsSearch-script.js',				
+				'srcapp_filename' =>'jsSearch-script.js',
 				'srcapp_fileformat' => 'js'],
 
 				[
-				'srcapp_id' => 24,				
+				'srcapp_id' => 24,
 				'srcapp_dir' => 'js/jsSelectStyle/jsSelectStyleDocument/',
-				'srcapp_filename' =>'jsSelectStyleEnv-script.js',				
+				'srcapp_filename' =>'jsSelectStyleEnv-script.js',
 				'srcapp_fileformat' => 'js'],
 
 				[
-				'srcapp_id' => 25,				
+				'srcapp_id' => 25,
 				'srcapp_dir' => 'js/jsAlertFunction/',
-				'srcapp_filename' =>'jsAlertFunction-script.js',				
+				'srcapp_filename' =>'jsAlertFunction-script.js',
 				'srcapp_fileformat' => 'js'],
 
 				[
-				'srcapp_id' => 26,				
+				'srcapp_id' => 26,
 				'srcapp_dir' => 'js/jsNav/',
 				'srcapp_filename' =>'jsNav-script.js',
 				'srcapp_fileformat' => 'js'],
 
 				[
-				'srcapp_id' => 27,				
+				'srcapp_id' => 27,
 				'srcapp_dir' => 'css/bootstrap/',
-				'srcapp_filename' => 'bootstrap.css',				
+				'srcapp_filename' => 'bootstrap.css',
 				'srcapp_fileformat' => 'css'],
 				[
-				'srcapp_id' => 28,				
+				'srcapp_id' => 28,
 				'srcapp_dir' => 'css/bootstrap/',
-				'srcapp_filename' => 'bootstrap-theme.min.css',				
+				'srcapp_filename' => 'bootstrap-theme.min.css',
 				'srcapp_fileformat' => 'css'],
 
 				[
-				'srcapp_id' => 29,				
+				'srcapp_id' => 29,
 				'srcapp_dir' => 'css/bootstrap/',
-				'srcapp_filename' => 'bootstrap-theme.css',				
-				'srcapp_fileformat' => 'css'],				
-								
+				'srcapp_filename' => 'bootstrap-theme.css',
+				'srcapp_fileformat' => 'css'],
+
 			];
 		}
 
 		public static function createSrcIcons(){
 			return $data = [
 				[
-				'srcapp_id' => 30,				
+				'srcapp_id' => 30,
 				'srcapp_dir' => 'img/',
-				'srcapp_filename' => 'logo.png',				
-				'srcapp_fileformat' => 'png'],				
-				[
-				'srcapp_id' => 31,				
-				'srcapp_dir' => 'img/icon/header/',
-				'srcapp_filename' => 'back.png',				
+				'srcapp_filename' => 'logo.png',
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 32,				
+				'srcapp_id' => 31,
 				'srcapp_dir' => 'img/icon/header/',
-				'srcapp_filename' => 'backHover.png',				
+				'srcapp_filename' => 'back.png',
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 33,				
+				'srcapp_id' => 32,
 				'srcapp_dir' => 'img/icon/header/',
-				'srcapp_filename' => 'perfilMenu.png',				
+				'srcapp_filename' => 'backHover.png',
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 34,				
+				'srcapp_id' => 33,
 				'srcapp_dir' => 'img/icon/header/',
-				'srcapp_filename' => 'perfilMenuHover.png',				
+				'srcapp_filename' => 'perfilMenu.png',
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 35,				
+				'srcapp_id' => 34,
 				'srcapp_dir' => 'img/icon/header/',
-				'srcapp_filename' => 'searchIcon.png',				
+				'srcapp_filename' => 'perfilMenuHover.png',
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 36,				
+				'srcapp_id' => 35,
 				'srcapp_dir' => 'img/icon/header/',
-				'srcapp_filename' => 'searchIconHover.png',				
+				'srcapp_filename' => 'searchIcon.png',
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 37,				
+				'srcapp_id' => 36,
 				'srcapp_dir' => 'img/icon/header/',
-				'srcapp_filename' => 'userDefault.png',				
+				'srcapp_filename' => 'searchIconHover.png',
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 38,				
+				'srcapp_id' => 37,
+				'srcapp_dir' => 'img/icon/header/',
+				'srcapp_filename' => 'userDefault.png',
+				'srcapp_fileformat' => 'png'],
+				[
+				'srcapp_id' => 38,
 				'srcapp_dir' => 'img/icon/form/',
-				'srcapp_filename' => 'disable.png',				
+				'srcapp_filename' => 'disable.png',
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 39,				
+				'srcapp_id' => 39,
 				'srcapp_dir' => 'img/icon/form/',
-				'srcapp_filename' => 'disableHover.png',				
+				'srcapp_filename' => 'disableHover.png',
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 40,				
+				'srcapp_id' => 40,
 				'srcapp_dir' => 'img/icon/form/',
-				'srcapp_filename' => 'edit.png',				
+				'srcapp_filename' => 'edit.png',
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 41,			
+				'srcapp_id' => 41,
 				'srcapp_dir' => 'img/icon/form/',
-				'srcapp_filename' => 'editHover.png',				
+				'srcapp_filename' => 'editHover.png',
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 42,			
+				'srcapp_id' => 42,
 				'srcapp_dir' => 'img/icon/form/',
-				'srcapp_filename' => 'more.png',				
+				'srcapp_filename' => 'more.png',
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 43,			
+				'srcapp_id' => 43,
 				'srcapp_dir' => 'img/icon/form/',
-				'srcapp_filename' => 'moreHover.png',				
+				'srcapp_filename' => 'moreHover.png',
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 44,			
+				'srcapp_id' => 44,
 				'srcapp_dir' => 'img/toolts/',
-				'srcapp_filename' => 'arrowShowToolt.png',				
+				'srcapp_filename' => 'arrowShowToolt.png',
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 45,			
+				'srcapp_id' => 45,
 				'srcapp_dir' => 'img/toolts/',
-				'srcapp_filename' => 'arrowShowTooltHover.png',					
+				'srcapp_filename' => 'arrowShowTooltHover.png',
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 46,				
+				'srcapp_id' => 46,
 				'srcapp_dir' => 'img/socialIcon/',
-				'srcapp_filename' => 'facebook.png',				
+				'srcapp_filename' => 'facebook.png',
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 47,				
+				'srcapp_id' => 47,
 				'srcapp_dir' => 'img/socialIcon/',
-				'srcapp_filename' => 'instagram.png',				
+				'srcapp_filename' => 'instagram.png',
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 48,				
+				'srcapp_id' => 48,
 				'srcapp_dir' => 'img/socialIcon/',
-				'srcapp_filename' => 'twitter.png',				
+				'srcapp_filename' => 'twitter.png',
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 49,				
+				'srcapp_id' => 49,
 				'srcapp_dir' => 'img/imgTopics/header/',
-				'srcapp_filename' => 'img1.jpg',				
+				'srcapp_filename' => 'img1.jpg',
 				'srcapp_fileformat' => 'jpg'],
 				[
-				'srcapp_id' => 50,				
+				'srcapp_id' => 50,
 				'srcapp_dir' => 'img/imgTopics/header/',
-				'srcapp_filename' => 'img2.jpg',			
+				'srcapp_filename' => 'img2.jpg',
 				'srcapp_fileformat' => 'jpg'],
 				[
-				'srcapp_id' => 51,				
+				'srcapp_id' => 51,
 				'srcapp_dir' => 'img/imgTopics/header/',
-				'srcapp_filename' => 'img3.jpg',				
+				'srcapp_filename' => 'img3.jpg',
 				'srcapp_fileformat' => 'jpg'],
 				[
-				'srcapp_id' => 52,				
-				'srcapp_dir' => 'img/imgTopics/header/',			
-				'srcapp_filename' => 'img4.jpg',			
+				'srcapp_id' => 52,
+				'srcapp_dir' => 'img/imgTopics/header/',
+				'srcapp_filename' => 'img4.jpg',
 				'srcapp_fileformat' => 'jpg'],
 				[
-				'srcapp_id' => 53,				
+				'srcapp_id' => 53,
 				'srcapp_dir' => 'img/slider/',
-				'srcapp_filename' => 'img-slider-1.jpg',		
+				'srcapp_filename' => 'img-slider-1.jpg',
 				'srcapp_fileformat' => 'jpg'],
 				[
-				'srcapp_id' => 54,				
+				'srcapp_id' => 54,
 				'srcapp_dir' => 'img/slider/',
-				'srcapp_filename' => 'img-slider-2.jpg',				
+				'srcapp_filename' => 'img-slider-2.jpg',
 				'srcapp_fileformat' => 'jpg'],
 				[
-				'srcapp_id' => 55,				
+				'srcapp_id' => 55,
 				'srcapp_dir' => 'img/slider/',
-				'srcapp_filename' => 'img-slider-3.jpg',				
+				'srcapp_filename' => 'img-slider-3.jpg',
 				'srcapp_fileformat' => 'jpg'],
 				[
-				'srcapp_id' => 56,				
+				'srcapp_id' => 56,
 				'srcapp_dir' => 'img/slider/',
-				'srcapp_filename' => 'img-slider-4.jpg',				
+				'srcapp_filename' => 'img-slider-4.jpg',
 				'srcapp_fileformat' => 'jpg'],
 				[
-				'srcapp_id' => 57,				
+				'srcapp_id' => 57,
 				'srcapp_dir' => 'img/slider/',
-				'srcapp_filename' => 'img-slider-5.jpg',				
+				'srcapp_filename' => 'img-slider-5.jpg',
 				'srcapp_fileformat' => 'jpg'],
 				[
-				'srcapp_id' => 58,				
+				'srcapp_id' => 58,
 				'srcapp_dir' => 'img/slider/',
-				'srcapp_filename' => 'img-slider-6.jpg',				
+				'srcapp_filename' => 'img-slider-6.jpg',
 				'srcapp_fileformat' => 'jpg'],
 				[
-				'srcapp_id' => 59,				
+				'srcapp_id' => 59,
 				'srcapp_dir' => 'img/slider/',
-				'srcapp_filename' => 'img-slider-7.jpg',				
+				'srcapp_filename' => 'img-slider-7.jpg',
 				'srcapp_fileformat' => 'jpg'],
 				[
-				'srcapp_id' => 60,				
+				'srcapp_id' => 60,
 				'srcapp_dir' => 'img/icon/form/',
-				'srcapp_filename' => 'userFemale.png',				
+				'srcapp_filename' => 'userFemale.png',
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 61,				
+				'srcapp_id' => 61,
 				'srcapp_dir' => 'img/icon/form/',
-				'srcapp_filename' => 'userMale.png',				
+				'srcapp_filename' => 'userMale.png',
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 62,				
+				'srcapp_id' => 62,
 				'srcapp_dir' => 'img/icon/form/',
-				'srcapp_filename' => 'logout.png',				
+				'srcapp_filename' => 'logout.png',
 				'srcapp_fileformat' => 'png'],
 				[
-				'srcapp_id' => 63,				
+				'srcapp_id' => 63,
 				'srcapp_dir' => 'img/icon/form/',
-				'srcapp_filename' => 'folder.png',				
+				'srcapp_filename' => 'folder.png',
 				'srcapp_fileformat' => 'png']
 
 
@@ -390,129 +390,129 @@
 		public static function createSrcIconNav(){
 			return $data = [
 				[
-				'srcnav_id' => 1,				
+				'srcnav_id' => 1,
 				'srcnav_dir' => 'img/icon/nav/',
-				'srcnav_filename' => 'about.png',				
+				'srcnav_filename' => 'about.png',
 				'srcnav_fileformat' => 'png'],
 				[
-				'srcnav_id' => 2,				
+				'srcnav_id' => 2,
 				'srcnav_dir' => 'img/icon/nav/',
-				'srcnav_filename' => 'arrow-down.png',				
+				'srcnav_filename' => 'arrow-down.png',
 				'srcnav_fileformat' => 'png'],
 				[
-				'srcnav_id' => 3,				
+				'srcnav_id' => 3,
 				'srcnav_dir' => 'img/icon/nav/',
-				'srcnav_filename' => 'audio.png',				
+				'srcnav_filename' => 'audio.png',
 				'srcnav_fileformat' => 'png'],
 				[
-				'srcnav_id' => 4,				
+				'srcnav_id' => 4,
 				'srcnav_dir' => 'img/icon/nav/',
-				'srcnav_filename' => 'agenda.png',				
+				'srcnav_filename' => 'agenda.png',
 				'srcnav_fileformat' => 'png'],
 				[
-				'srcnav_id' => 5,				
+				'srcnav_id' => 5,
 				'srcnav_dir' => 'img/icon/nav/',
-				'srcnav_filename' => 'contact.png',				
+				'srcnav_filename' => 'contact.png',
 				'srcnav_fileformat' => 'png'],
 				[
-				'srcnav_id' => 6,				
+				'srcnav_id' => 6,
 				'srcnav_dir' => 'img/icon/nav/',
-				'srcnav_filename' => 'createAgenda.png',				
+				'srcnav_filename' => 'createAgenda.png',
 				'srcnav_fileformat' => 'png'],
 				[
-				'srcnav_id' => 7,				
+				'srcnav_id' => 7,
 				'srcnav_dir' => 'img/icon/nav/',
-				'srcnav_filename' => 'createUsers.png',				
+				'srcnav_filename' => 'createUsers.png',
 				'srcnav_fileformat' => 'png'],
 				[
-				'srcnav_id' => 8,				
+				'srcnav_id' => 8,
 				'srcnav_dir' => 'img/icon/nav/',
-				'srcnav_filename' => 'createUsersSistem.png',				
+				'srcnav_filename' => 'createUsersSistem.png',
 				'srcnav_fileformat' => 'png'],
 				[
-				'srcnav_id' => 9,				
+				'srcnav_id' => 9,
 				'srcnav_dir' => 'img/icon/nav/',
-				'srcnav_filename' => 'donation.png',				
+				'srcnav_filename' => 'donation.png',
 				'srcnav_fileformat' => 'png'],
 				[
-				'srcnav_id' => 10,				
+				'srcnav_id' => 10,
 				'srcnav_dir' => 'img/icon/nav/',
-				'srcnav_filename' => 'fundacionData.png',				
+				'srcnav_filename' => 'fundacionData.png',
 				'srcnav_fileformat' => 'png'],
 				[
-				'srcnav_id' => 11,				
+				'srcnav_id' => 11,
 				'srcnav_dir' => 'img/icon/nav/',
-				'srcnav_filename' => 'gallery.png',				
+				'srcnav_filename' => 'gallery.png',
 				'srcnav_fileformat' => 'png'],
 				[
-				'srcnav_id' => 12,				
+				'srcnav_id' => 12,
 				'srcnav_dir' => 'img/icon/nav/',
-				'srcnav_filename' => 'newtopics.png',				
-				'srcnav_fileformat' => 'png'],
-
-				[
-				'srcnav_id' => 13,				
-				'srcnav_dir' => 'img/icon/nav/',
-				'srcnav_filename' => 'video.png',				
+				'srcnav_filename' => 'newtopics.png',
 				'srcnav_fileformat' => 'png'],
 
 				[
-				'srcnav_id' => 14,				
+				'srcnav_id' => 13,
 				'srcnav_dir' => 'img/icon/nav/',
-				'srcnav_filename' => 'media.png',				
+				'srcnav_filename' => 'video.png',
 				'srcnav_fileformat' => 'png'],
 
 				[
-				'srcnav_id' => 15,				
+				'srcnav_id' => 14,
 				'srcnav_dir' => 'img/icon/nav/',
-				'srcnav_filename' =>'openid-logo.png',				
+				'srcnav_filename' => 'media.png',
 				'srcnav_fileformat' => 'png'],
 
 				[
-				'srcnav_id' => 16,				
+				'srcnav_id' => 15,
 				'srcnav_dir' => 'img/icon/nav/',
-				'srcnav_filename' =>'help.png',				
-				'srcnav_fileformat' => 'png'],
-				
-				[
-				'srcnav_id' => 17,				
-				'srcnav_dir' => 'img/icon/nav/',
-				'srcnav_filename' =>'administratorUsers.png',				
-				'srcnav_fileformat' => 'png'],
-				[
-				'srcnav_id' => 18,				
-				'srcnav_dir' => 'img/icon/nav/',
-				'srcnav_filename' =>'administratorMulti.png',				
+				'srcnav_filename' =>'openid-logo.png',
 				'srcnav_fileformat' => 'png'],
 
 				[
-				'srcnav_id' => 19,				
+				'srcnav_id' => 16,
 				'srcnav_dir' => 'img/icon/nav/',
-				'srcnav_filename' =>'settingsAbout.png',				
+				'srcnav_filename' =>'help.png',
 				'srcnav_fileformat' => 'png'],
 
 				[
-				'srcnav_id' => 20,				
+				'srcnav_id' => 17,
 				'srcnav_dir' => 'img/icon/nav/',
-				'srcnav_filename' =>'userSearchIcon.png',				
+				'srcnav_filename' =>'administratorUsers.png',
+				'srcnav_fileformat' => 'png'],
+				[
+				'srcnav_id' => 18,
+				'srcnav_dir' => 'img/icon/nav/',
+				'srcnav_filename' =>'administratorMulti.png',
 				'srcnav_fileformat' => 'png'],
 
 				[
-				'srcnav_id' => 21,				
+				'srcnav_id' => 19,
 				'srcnav_dir' => 'img/icon/nav/',
-				'srcnav_filename' =>'agendaSearchIcon.png',				
+				'srcnav_filename' =>'settingsAbout.png',
 				'srcnav_fileformat' => 'png'],
 
 				[
-				'srcnav_id' => 22,				
+				'srcnav_id' => 20,
 				'srcnav_dir' => 'img/icon/nav/',
-				'srcnav_filename' =>'searchMultimedia.png',				
+				'srcnav_filename' =>'userSearchIcon.png',
 				'srcnav_fileformat' => 'png'],
 
 				[
-				'srcnav_id' => 23,				
+				'srcnav_id' => 21,
 				'srcnav_dir' => 'img/icon/nav/',
-				'srcnav_filename' =>'uploadfiles.png',				
+				'srcnav_filename' =>'agendaSearchIcon.png',
+				'srcnav_fileformat' => 'png'],
+
+				[
+				'srcnav_id' => 22,
+				'srcnav_dir' => 'img/icon/nav/',
+				'srcnav_filename' =>'searchMultimedia.png',
+				'srcnav_fileformat' => 'png'],
+
+				[
+				'srcnav_id' => 23,
+				'srcnav_dir' => 'img/icon/nav/',
+				'srcnav_filename' =>'uploadfiles.png',
 				'srcnav_fileformat' => 'png']
 			];
 		}
@@ -524,7 +524,7 @@
 						 'lg_wordkey_language' => 'es'],
 						['lg_id' => 2,
 						 'lg_name_language' => 'English',
-						 'lg_wordkey_language' => 'en'] 
+						 'lg_wordkey_language' => 'en']
 			];
 		}
 
@@ -541,11 +541,11 @@
 						['gtype_id' => 5,
 						 'gtype_typename' => 'input[email]'],
 						['gtype_id' => 6,
-						 'gtype_typename' => 'input[number]'], 
+						 'gtype_typename' => 'input[number]'],
 						['gtype_id' => 7,
 						 'gtype_typename' => 'input[checkbox]'],
 						['gtype_id' => 8,
-						 'gtype_typename' => 'input[radiobutton]'], 
+						 'gtype_typename' => 'input[radiobutton]'],
 						['gtype_id' => 9,
 						 'gtype_typename' => 'input[submit]'],
 						['gtype_id' => 10,
@@ -559,7 +559,7 @@
 						['gtype_id' => 14,
 						 'gtype_typename' => 'h2'],
 						['gtype_id' => 15,
-						 'gtype_typename' => 'h3'], 
+						 'gtype_typename' => 'h3'],
 						['gtype_id' => 16,
 						 'gtype_typename' => 'h4'],
 						['gtype_id' => 17,
@@ -571,7 +571,7 @@
 						['gtype_id' => 20,
 						 'gtype_typename' => 'textarea'],
 						['gtype_id' => 21,
-						 'gtype_typename' => 'input[reset]']   
+						 'gtype_typename' => 'input[reset]']
 
 			];
 		}
@@ -996,7 +996,7 @@
 							 'gtxt_id_gtype' => 1,
 							 'gtxt_id_language' => 2,
 							 'gtxt_paramt_wordkey' => 'wordkey_gender_mc_user',
-							 'gtxt_text' => 'Male'],							
+							 'gtxt_text' => 'Male'],
 
 							['gtxt_id' => 71,
 							 'gtxt_id_gtype' => 1,
@@ -1349,122 +1349,122 @@
 							['gtxt_id' => 129,
 							 'gtxt_id_gtype' =>1,
 							 'gtxt_id_language' =>1,
-							 'gtxt_paramt_wordkey' =>'wordkey_welcome', 
+							 'gtxt_paramt_wordkey' =>'wordkey_welcome',
 							 'gtxt_text' =>'Bienvenido'],
 
 							['gtxt_id' => 130,
 							 'gtxt_id_gtype' =>1,
 							 'gtxt_id_language' =>2,
-							 'gtxt_paramt_wordkey' =>'wordkey_welcome', 
-							 'gtxt_text' =>'Welcome'],  
+							 'gtxt_paramt_wordkey' =>'wordkey_welcome',
+							 'gtxt_text' =>'Welcome'],
 
 							['gtxt_id' => 131,
 							 'gtxt_id_gtype' =>13,
 							 'gtxt_id_language' =>1,
-							 'gtxt_paramt_wordkey' =>'wordkey_resguser', 
+							 'gtxt_paramt_wordkey' =>'wordkey_resguser',
 							 'gtxt_text' =>'Registro de usuarios'],
 
 							['gtxt_id' => 132,
 							 'gtxt_id_gtype' =>13,
 							 'gtxt_id_language' =>2,
-							 'gtxt_paramt_wordkey' =>'wordkey_resguser', 
-							 'gtxt_text' =>'Sign Up Users'], 
+							 'gtxt_paramt_wordkey' =>'wordkey_resguser',
+							 'gtxt_text' =>'Sign Up Users'],
 
 							['gtxt_id' => 133,
 							 'gtxt_id_gtype' =>2,
 							 'gtxt_id_language' =>1,
-							 'gtxt_paramt_wordkey' =>'wordkey_cedulaciudadania', 
+							 'gtxt_paramt_wordkey' =>'wordkey_cedulaciudadania',
 							 'gtxt_text' =>'Cedula de Ciudadanía'],
 
 							['gtxt_id' => 134,
 							 'gtxt_id_gtype' =>2,
 							 'gtxt_id_language' =>2,
-							 'gtxt_paramt_wordkey' =>'wordkey_cedulaciudadania', 
+							 'gtxt_paramt_wordkey' =>'wordkey_cedulaciudadania',
 							 'gtxt_text' =>'Citizenship Card'],
 
 							['gtxt_id' => 135,
 							 'gtxt_id_gtype' =>2,
 							 'gtxt_id_language' =>1,
-							 'gtxt_paramt_wordkey' =>'wordkey_tarjetaextranjeria', 
+							 'gtxt_paramt_wordkey' =>'wordkey_tarjetaextranjeria',
 							 'gtxt_text' =>'Tarjeta de Extranjería'],
 
 							['gtxt_id' => 136,
 							 'gtxt_id_gtype' =>2,
 							 'gtxt_id_language' =>2,
-							 'gtxt_paramt_wordkey' =>'wordkey_tarjetaextranjeria', 
+							 'gtxt_paramt_wordkey' =>'wordkey_tarjetaextranjeria',
 							 'gtxt_text' =>'Foreigner Card'],
 
 							['gtxt_id' => 137,
 							 'gtxt_id_gtype' =>2,
 							 'gtxt_id_language' =>1,
-							 'gtxt_paramt_wordkey' =>'wordkey_tarjetaidentidad', 
+							 'gtxt_paramt_wordkey' =>'wordkey_tarjetaidentidad',
 							 'gtxt_text' =>'Tarjeta de Identidad'],
 
 							['gtxt_id' => 138,
 							 'gtxt_id_gtype' =>2,
 							 'gtxt_id_language' =>2,
-							 'gtxt_paramt_wordkey' =>'wordkey_tarjetaidentidad', 
+							 'gtxt_paramt_wordkey' =>'wordkey_tarjetaidentidad',
 							 'gtxt_text' =>'Identity Card'],
 
 							['gtxt_id' => 139,
 							 'gtxt_id_gtype' =>2,
 							 'gtxt_id_language' =>1,
-							 'gtxt_paramt_wordkey' =>'wordkey_tarjetapasaporte', 
+							 'gtxt_paramt_wordkey' =>'wordkey_tarjetapasaporte',
 							 'gtxt_text' =>'Tarjeta de Pasaporte'],
 
 							['gtxt_id' => 140,
 							 'gtxt_id_gtype' =>2,
 							 'gtxt_id_language' =>2,
-							 'gtxt_paramt_wordkey' =>'wordkey_tarjetapasaporte', 
+							 'gtxt_paramt_wordkey' =>'wordkey_tarjetapasaporte',
 							 'gtxt_text' =>'Passport Card'],
 
 							['gtxt_id' => 141,
 							 'gtxt_id_gtype' =>1,
 							 'gtxt_id_language' =>1,
-							 'gtxt_paramt_wordkey' =>'wordkey_type_document', 
+							 'gtxt_paramt_wordkey' =>'wordkey_type_document',
 							 'gtxt_text' =>'Tipo de documento'],
 
 							['gtxt_id' => 142,
 							 'gtxt_id_gtype' =>1,
 							 'gtxt_id_language' =>2,
-							 'gtxt_paramt_wordkey' =>'wordkey_type_document', 
+							 'gtxt_paramt_wordkey' =>'wordkey_type_document',
 							 'gtxt_text' =>'Type document'],
 
 							['gtxt_id' => 143,
 							 'gtxt_id_gtype' =>1,
 							 'gtxt_id_language' =>1,
-							 'gtxt_paramt_wordkey' =>'wordkey_document', 
+							 'gtxt_paramt_wordkey' =>'wordkey_document',
 							 'gtxt_text' =>'Numero de documento'],
 
 							['gtxt_id' => 144,
 							 'gtxt_id_gtype' =>1,
 							 'gtxt_id_language' =>2,
-							 'gtxt_paramt_wordkey' =>'wordkey_document', 
+							 'gtxt_paramt_wordkey' =>'wordkey_document',
 							 'gtxt_text' =>'Number of document'],
 
 							['gtxt_id' => 145,
 							 'gtxt_id_gtype' =>1,
 							 'gtxt_id_language' =>1,
-							 'gtxt_paramt_wordkey' =>'wordkey_password_user', 
+							 'gtxt_paramt_wordkey' =>'wordkey_password_user',
 							 'gtxt_text' =>'Contraseña'],
 
 							['gtxt_id' => 146,
 							 'gtxt_id_gtype' =>1,
 							 'gtxt_id_language' =>2,
-							 'gtxt_paramt_wordkey' =>'wordkey_password_user', 
+							 'gtxt_paramt_wordkey' =>'wordkey_password_user',
 							 'gtxt_text' =>'Password'],
 
 							['gtxt_id' => 147,
 							 'gtxt_id_gtype' =>1,
 							 'gtxt_id_language' =>1,
-							 'gtxt_paramt_wordkey' =>'wordkey_roll_user', 
+							 'gtxt_paramt_wordkey' =>'wordkey_roll_user',
 							 'gtxt_text' =>'Cargo'],
-							 
+
 							['gtxt_id' => 148,
 							 'gtxt_id_gtype' =>1,
 							 'gtxt_id_language' =>2,
-							 'gtxt_paramt_wordkey' =>'wordkey_roll_user', 
-							 'gtxt_text' =>'Roll'], 
+							 'gtxt_paramt_wordkey' =>'wordkey_roll_user',
+							 'gtxt_text' =>'Roll'],
 
 							 ['gtxt_id' => 149,
 							 'gtxt_id_gtype' =>1,
@@ -1632,7 +1632,7 @@
 							 'gtxt_id_gtype' =>1,
 							 'gtxt_id_language' =>2,
 							 'gtxt_paramt_wordkey' =>'wordkey_phone_institute',
-							 'gtxt_text' =>'Phone of institute or sede'],							 
+							 'gtxt_text' =>'Phone of institute or sede'],
 
 							 ['gtxt_id' => 177,
 							 'gtxt_id_gtype' =>1,
@@ -1681,7 +1681,7 @@
 							 'gtxt_id_language' =>2,
 							 'gtxt_paramt_wordkey' =>'wordkey_psicologia_cp',
 							 'gtxt_text' =>'Psychology'],
-								
+
 							 ['gtxt_id' => 185,
 							 'gtxt_id_gtype' =>2,
 							 'gtxt_id_language' =>1,
@@ -1692,7 +1692,7 @@
 							 'gtxt_id_gtype' =>2,
 							 'gtxt_id_language' =>2,
 							 'gtxt_paramt_wordkey' =>'wordkey_danza_cp',
-							 'gtxt_text' =>'Dance'],	
+							 'gtxt_text' =>'Dance'],
 
 							 ['gtxt_id' => 187,
 							 'gtxt_id_gtype' =>2,
@@ -1704,7 +1704,7 @@
 							 'gtxt_id_gtype' =>2,
 							 'gtxt_id_language' =>2,
 							 'gtxt_paramt_wordkey' =>'wordkey_musica_cp',
-							 'gtxt_text' =>'Music'], 
+							 'gtxt_text' =>'Music'],
 
 							 ['gtxt_id' => 189,
 							 'gtxt_id_gtype' =>2,
@@ -1728,7 +1728,7 @@
 							 'gtxt_id_gtype' =>2,
 							 'gtxt_id_language' =>2,
 							 'gtxt_paramt_wordkey' =>'wordkey_civica_cp',
-							 'gtxt_text' =>'Civic'], 
+							 'gtxt_text' =>'Civic'],
 
 							 ['gtxt_id' => 193,
 							 'gtxt_id_gtype' =>2,
@@ -1837,11 +1837,11 @@
 							 'gtxt_id_language' =>2,
 							 'gtxt_paramt_wordkey' =>'wordkey_not_check',
 							 'gtxt_text' =>'Not'],
-							   	
-							   	
-							   
-							
-			];	
+
+
+
+
+			];
 		}
 
 		public static function createModuls(){
@@ -1859,15 +1859,15 @@
 					 'mdls_patch' => 'modulos.functionAdministration.index',
 					 'mdls_wordkey_modul_name' => 'mdls_startAdmin',
 					 'mdls_paramt_name' => 'Admin',
-					 'mdls_id_srcnav' =>1], 
+					 'mdls_id_srcnav' =>1],
 
 					['mdls_id' => 3,
 					 'mdls_url' => '/',
 					 'mdls_patch' => '',
 					 'mdls_wordkey_modul_name' => 'mdls_assist_users',
 					 'mdls_paramt_name' => '',
-					 'mdls_id_srcnav' =>17], 
-					 	
+					 'mdls_id_srcnav' =>17],
+
 					 ['mdls_id' => 4,
 					 'mdls_url' => '/',
 					 'mdls_patch' => '',
@@ -1880,49 +1880,49 @@
 					 'mdls_patch' => '',
 					 'mdls_wordkey_modul_name' => 'mdls_assist_multimedia',
 					 'mdls_paramt_name' => '',
-					 'mdls_id_srcnav' =>14],					
+					 'mdls_id_srcnav' =>14],
 
 					['mdls_id' => 6,
 					 'mdls_url' => '/Multimedia',
 					 'mdls_patch' => 'modulos.functionMultimedia.index',
 					 'mdls_wordkey_modul_name' => 'mdls_multi',
 					 'mdls_paramt_name' => 'multimedia',
-					 'mdls_id_srcnav' =>14], 
+					 'mdls_id_srcnav' =>14],
 
 					['mdls_id' => 7,
 					 'mdls_url' => '/Multimedia/Videos',
 					 'mdls_patch' => 'modulos.functionMultimedia.watchFunction.index',
 					 'mdls_wordkey_modul_name' => 'mdls_multi_video',
 					 'mdls_paramt_name' => 'ver-videos',
-					 'mdls_id_srcnav' =>18],  
+					 'mdls_id_srcnav' =>18],
 
 					['mdls_id' => 8,
 					 'mdls_url' => '/Multimedia/Audios',
 					 'mdls_patch' => 'modulos.functionMultimedia.audioFunction.index',
 					 'mdls_wordkey_modul_name' => 'mdls_multi_audio',
 					 'mdls_paramt_name' => 'escuchar-audio',
-					 'mdls_id_srcnav' =>3],  
+					 'mdls_id_srcnav' =>3],
 
 					['mdls_id' => 9,
 					 'mdls_url' => '/Multimedia/Galeria',
 					 'mdls_patch' => 'modulos.functionMultimedia.galleryFunction.index',
 					 'mdls_wordkey_modul_name' => 'mdls_multi_galeria',
 					 'mdls_paramt_name' => 'ver-galeria',
-					 'mdls_id_srcnav' =>11],   
+					 'mdls_id_srcnav' =>11],
 
 					['mdls_id' => 10,
 					 'mdls_url' => '#noticias',
 					 'mdls_patch' => null,
 					 'mdls_wordkey_modul_name' => 'mdls_newtopics',
 					 'mdls_paramt_name' => null,
-					 'mdls_id_srcnav' =>12], 
+					 'mdls_id_srcnav' =>12],
 
 					['mdls_id' => 11,
 					 'mdls_url' => '#quienessomos',
 					 'mdls_patch' => null,
 					 'mdls_wordkey_modul_name' => 'mdls_about_us',
 					 'mdls_paramt_name' => null,
-					 'mdls_id_srcnav' =>10],  
+					 'mdls_id_srcnav' =>10],
 
 					['mdls_id' => 12,
 					 'mdls_url' => '#contactenos',
@@ -1936,7 +1936,7 @@
 					 'mdls_patch' => null,
 					 'mdls_wordkey_modul_name' => 'mdls_donation',
 					 'mdls_paramt_name' => null,
-					 'mdls_id_srcnav' =>9],					
+					 'mdls_id_srcnav' =>9],
 
 					 ['mdls_id' => 14,
 					 'mdls_url' => '/Admin/ayuda',
@@ -1971,16 +1971,16 @@
              'smdls_url' => '/Admin/buscar-usuario',
 		     'smdls_patch' => 'modulos.functionAdministration.searchUsers.index',
 			 'smdls_wordkey_modul_name' => 'mdls_searchUser',
-			 'smdls_paramt_name' => 'buscar-usuario',			 
-			 'smdls_id_srcnav' => 20], 				 
+			 'smdls_paramt_name' => 'buscar-usuario',
+			 'smdls_id_srcnav' => 20],
 
 			['smdls_id' =>2,
-			 'smdls_id_mdls' => 3,  
+			 'smdls_id_mdls' => 3,
 			 'smdls_url' => '/Admin/crear/usuario',
 			 'smdls_patch' => 'modulos.functionAdministration.createUser.index',
 			 'smdls_wordkey_modul_name' => 'mdls_createUser',
 			 'smdls_paramt_name' => 'usuario',
-			 
+
 			 'smdls_id_srcnav' =>7],
 
 			 ['smdls_id' =>3,
@@ -1989,8 +1989,8 @@
 			 'smdls_patch' => 'modulos.functionAdministration.searchAgenda.index',
 			 'smdls_wordkey_modul_name' => 'mdls_searchAgenda',
 			 'smdls_paramt_name' => 'buscar-agenda',
-			 
-			 'smdls_id_srcnav' =>21], 
+
+			 'smdls_id_srcnav' =>21],
 
 			['smdls_id' =>4,
 			'smdls_id_mdls' => 4,
@@ -1998,7 +1998,7 @@
 			 'smdls_patch' => 'modulos.functionAdministration.createAgenda.index',
 			 'smdls_wordkey_modul_name' => 'mdls_createAgenda',
 			 'smdls_paramt_name' => 'agenda',
-			
+
 			 'smdls_id_srcnav' =>6],
 
 			['smdls_id' => 5,
@@ -2007,7 +2007,7 @@
 			 'smdls_patch' => 'modulos.functionAdministration.searchMultimedia.index',
 			 'smdls_wordkey_modul_name' => 'mdls_search_multimedia',
 			 'smdls_paramt_name' => 'buscar-multimedia',
-			
+
 			 'smdls_id_srcnav' =>22],
 
 			['smdls_id' => 6,
@@ -2016,7 +2016,7 @@
 			 'smdls_patch' => 'modulos.functionAdministration.uploadMultimedia.index',
 			 'smdls_wordkey_modul_name' => 'mdls_upload_multimedia',
 			 'smdls_paramt_name' => 'subir-multimedia',
-			
+
 			 'smdls_id_srcnav' =>23]
 
 			];
@@ -2028,7 +2028,7 @@
 				['rl_id' => 2,'rl_wordkey_name' => 'Aux'],
 				['rl_id' => 3,'rl_wordkey_name' => 'Usn']
 			];
-		}	
+		}
 
 		public static function createTypeUsers(){
 			return $data = [
@@ -2038,14 +2038,14 @@
 				['tus_id' => 4, 'tus_wordkey_name' => 'wordkey_padre'],
 				['tus_id' => 5, 'tus_wordkey_name' => 'wordkey_voluntario']
 			];
-		}	
+		}
 
 		public static function createGeneros(){
 			return $data = [
-				['g_id_genero' => 1 ,'g_wordkey_genero' => 'wordkey_fm'], 
+				['g_id_genero' => 1 ,'g_wordkey_genero' => 'wordkey_fm'],
        			['g_id_genero' => 2 ,'g_wordkey_genero' => 'wordkey_mc']
 			];
-		}	
+		}
 
 		public static function createUserAdminDataPersonal(){
 			return $data = [
@@ -2058,10 +2058,10 @@
 					'dp_edad' => '24',
 					'dp_telefono' => '3050821',
 					'dp_direccion' => 'cll 84 #1A5 c bis - 56',
-					'dp_id_roll' => 1, 
+					'dp_id_roll' => 1,
 					'dp_id_estp' => 1144164149,
 					'dp_id_genero' => 2,
-					'dp_id_type_user' => 1 
+					'dp_id_type_user' => 1
 				],
 				[
 					'dp_id' => 16940133,
@@ -2072,10 +2072,10 @@
 					'dp_edad' => '24',
 					'dp_telefono' => '3050821',
 					'dp_direccion' => 'cll 84 #1A5 c bis - 56',
-					'dp_id_roll' => 1, 
+					'dp_id_roll' => 1,
 					'dp_id_estp' => 16940133,
 					'dp_id_genero' => 2,
-					'dp_id_type_user' => 1 
+					'dp_id_type_user' => 1
 				],
 				[
 					'dp_id' => 1151954263,
@@ -2086,10 +2086,10 @@
 					'dp_edad' => '23',
 					'dp_telefono' => '3127726799',
 					'dp_direccion' => 'Av 5 Oeste # 22-20',
-					'dp_id_roll' => 1, 
+					'dp_id_roll' => 1,
 					'dp_id_estp' => 1151954263,
 					'dp_id_genero' => 2,
-					'dp_id_type_user' => 1 
+					'dp_id_type_user' => 1
 				],
 				[
 					'dp_id' => 1107095631,
@@ -2100,10 +2100,10 @@
 					'dp_edad' => '21',
 					'dp_telefono' => '3158349763',
 					'dp_direccion' => 'cll falsa #123',
-					'dp_id_roll' => 1, 
+					'dp_id_roll' => 1,
 					'dp_id_estp' => 1107095631,
 					'dp_id_genero' => 2,
-					'dp_id_type_user' => 1 
+					'dp_id_type_user' => 1
 				]
 			];
 		}
@@ -2112,19 +2112,19 @@
 			return $data = [
 				[
 					'estp_id' => 1144164149,
-					'estp_activeordesable' => 1 
+					'estp_activeordesable' => 1
 				],
 				[
 					'estp_id' => 16940133,
-					'estp_activeordesable' => 1 
+					'estp_activeordesable' => 1
 				],
 				[
 					'estp_id' => 1151954263,
-					'estp_activeordesable' => 1 
+					'estp_activeordesable' => 1
 				],
 				[
 					'estp_id' => 1107095631,
-					'estp_activeordesable' => 1 
+					'estp_activeordesable' => 1
 				]
 			];
 		}
