@@ -3,8 +3,11 @@
 namespace DejandoHuella\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+//clase importante para dar aviso al sistema que se hizo correctamente la llamada de la informacion
 use Illuminate\Http\Response;
 
+//clases responsables para el manejo de los datos de las vistas con el controlador
 use DejandoHuella\Http\Requests;
 use DejandoHuella\Http\Requests\adminRequest;
 use DejandoHuella\Http\Controllers\Controller;
@@ -39,7 +42,7 @@ class adminController extends Controller
     private static $auth = null;
 
 
-//clase index para mostrar la primera vista al usuario
+//funcion index para mostrar la primera vista al usuario
     public function index(){
         if (Auth::check() > 0) {
 
@@ -123,7 +126,7 @@ class adminController extends Controller
         }
 
     }
-//clase para crear las vistas que tiene el sistema y mostrarla con el metodo view de laravel
+//funcion para crear las vistas que tiene el sistema y mostrarla con el metodo view de laravel
     public function createViewDinamyn($idView){
         if (Auth::check() > 0) {
 
@@ -291,7 +294,7 @@ class adminController extends Controller
     public function chequeoDatos(adminRequest $request){
        return dd($request->all());
     }
-//clase para ver mi perfil cuando se logea al sistema
+//funcion para ver mi perfil cuando se logea al sistema
     public function perfil($id){
 
         if ($id == null) {
@@ -396,7 +399,7 @@ class adminController extends Controller
 
         }
     }
-//clase para ver informacion del perfil del usuario
+//funcion para ver informacion del perfil del usuario
     public function perfilUserView($id){
 
       if ($id == null) {
@@ -547,7 +550,7 @@ class adminController extends Controller
       }
      }
 
-//clase para ver mis archivos subidos como fotos de perfil y banner
+//funcion para ver mis archivos subidos como fotos de perfil y banner
     public function myFilesView($id){
 
       if ($id == null) {
@@ -643,7 +646,7 @@ class adminController extends Controller
           return redirect('/'.$request['v_rollUserForm'].'/perfil/'.$request['v_idUserForm'].'');
     }
 
-//Clase para la busqueda de los usuarios registrados al sistema
+//funcion para la busqueda de los usuarios registrados al sistema
     public function buscarUsuario(adminRequest $rq){
 
       if ($rq->ajax()) {
@@ -684,19 +687,20 @@ class adminController extends Controller
         return \Response::json($data['dataForm']['usersSearch']);
     }
 
+    //funcion para verificar si un usuario esta logeado
     public function confirmAuth(adminRequest $rq){
       if ($rq->ajax()) {
         if(Auth::user()->us_id_datospersonales == $rq->input('v_formIdUser')){$auth = 1;}else{$auth = 0;}
       }
       return \Response::json(['datosAuth' => $auth]);
     }
-
+    //funcion para desactivar y activar los usuarios del sistema
     public function activeordesable(adminRequest $rq){
       if ($rq->ajax()) {
         return \DB::update('update estadopersonas set estadopersonas.estp_activeordesable ='.$rq->input('v_formUserStatus').' where estadopersonas.estp_id = ?', [$rq->input('v_formIdUser')]);
       }
     }
-
+    //funcion para buscar los eventos registrados (aun no se implementa)
     public function buscarAgenda(){
         return "Buscar Agenda";
     }

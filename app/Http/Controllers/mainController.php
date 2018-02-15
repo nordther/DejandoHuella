@@ -11,6 +11,8 @@ use Illuminate\Http\Request;
 use Illuminate\Database\Schema\Blueprint;
 use DejandoHuella\Http\Requests;
 use DejandoHuella\Http\Controllers\Controller;
+
+//clases primarias para inicializar los datos de la app
 use DejandoHuella\paise;
 use DejandoHuella\srcnav;
 use DejandoHuella\submoduls;
@@ -26,12 +28,16 @@ use DejandoHuella\guitype;
 use DejandoHuella\guitext;
 use DejandoHuella\moduls;
 use DejandoHuella\typedocument;
-use DejandoHuella\ClassCunstom\classChargenMainSistemPrimary;
-use DejandoHuella\ClassCunstom\classChargenGeographicSistemPrimary;
 use DejandoHuella\typeuser;
 use DejandoHuella\assistan;
 use DejandoHuella\categoriaprograma;
 use DejandoHuella\photoperfil;
+
+//clases que tienen un array con los datos pertinentes
+use DejandoHuella\ClassCunstom\classChargenMainSistemPrimary;
+use DejandoHuella\ClassCunstom\classChargenGeographicSistemPrimary;
+
+
 
 class mainController extends Controller
 {
@@ -39,7 +45,7 @@ class mainController extends Controller
     private static $classObj = null;
 
     public function index(){
-        
+
         if (!file_exists(base_path("/public/workspaceUsers/"))) {
             File::MakeDirectory(base_path('public/workspaceUsers'));
         }
@@ -55,36 +61,36 @@ class mainController extends Controller
             return Redirect::to($redirect['roll']);
 
         }else{
-           
-        
 
-        mainController::functionChargenPrimary();   
 
-        $dataLg = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);              
+
+        mainController::functionChargenPrimary();
+
+        $dataLg = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);
 
               $dataSistem = ['lang' => $dataLg];
-              
-              $idIdioma = \DB::table('languages')->select('lg_id')->where('lg_wordkey_language','=',$dataSistem['lang'])->take(1)->get();    
+
+              $idIdioma = \DB::table('languages')->select('lg_id')->where('lg_wordkey_language','=',$dataSistem['lang'])->take(1)->get();
 
               foreach ($idIdioma as $rows) {
                 $lgId = $rows->lg_id;
               }
- 
-            
-        $data = [ 
+
+
+        $data = [
             "idUserDataConfig" => null,
-            "title-modul" => null,              
+            "title-modul" => null,
             "authconfirm" => Auth::check(),
             "multimediaAuth" => false,
             "roll" => "",
-            "moduls"  => \DB::table('moduls')                                                        
+            "moduls"  => \DB::table('moduls')
                             ->select('*')
                             ->orderBy('mdls_paramt_name')
                             ->get(),
-            "submoduls"  => \DB::table('submoduls')                                                       
+            "submoduls"  => \DB::table('submoduls')
                             ->select('*')
                             ->orderBy('smdls_paramt_name')
-                            ->get() ,                                           
+                            ->get() ,
             "dll" => [  'css' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','css')->orderBy('srcapp_id', 'asc')->get(),
                         'js' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','js')->orderBy('srcapp_id', 'asc')->get(),
                         'icon' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','png','and','srcapp_dir','=','img/icon/nav/')->get(),
@@ -93,23 +99,26 @@ class mainController extends Controller
                                     ->join('guitypes','guitexts.gtxt_id_gtype','=','guitypes.gtype_id')
                                     ->join('languages','guitexts.gtxt_id_language','=','languages.lg_id')
                                     ->where('guitexts.gtxt_id_language','=',$lgId)->get()]
-                      
+
         ];
-                    
+
         return view('index',compact('data'));
 
         //return dd($data['moduls']$data['submoduls']);
 
         }
 
-    	 
-        
-    }    
+
+
+    }
+
+    //funcion para inicializar la app con sus vistas y contenido
+
    public static function functionChargenPrimary(){
         $v_f = [
             "class" => ['ChrM' => new classChargenMainSistemPrimary,
-                        'ChrG' => new classChargenGeographicSistemPrimary]            
-        ];  
+                        'ChrG' => new classChargenGeographicSistemPrimary]
+        ];
    	    $chargenData = [
             'paises' => \DB::table('paises')->get(),
             'generos' => \DB::table('generos')->get(),
@@ -117,7 +126,7 @@ class mainController extends Controller
             'users' => \DB::table('users')->get(),
             'permisos' => \DB::table('permisos')->get(),
             'estadopersonas' => \DB::table('estadopersonas')->get(),
-            'rolls' => \DB::table('rolls')->get(), 
+            'rolls' => \DB::table('rolls')->get(),
             'srcapps' => \DB::table('srcapps')->get(),
             'languages' => \DB::table('languages')->get(),
             'guitypes' => \DB::table('guitypes')->get(),
@@ -130,14 +139,14 @@ class mainController extends Controller
             'photoperfils' => \DB::table('photoperfils')->get(),
             'srcnavs' => \DB::table('srcnavs')->get(),
             'submoduls' => \DB::table('submoduls')->get()
-            ];   
+            ];
 
          if ($chargenData['categoriaprogramas'] == false) {
             $chargen = \DB::table('categoriaprogramas')->insert($v_f["class"]['ChrM']::createCategoPrograms());
         }else{
             $chargen = null;
-        }    
-        
+        }
+
         if ($chargenData['typeusers'] == false) {
             $chargen = \DB::table('typeusers')->insert($v_f['class']['ChrM']::createTypeUsers());
         }else{
@@ -148,25 +157,25 @@ class mainController extends Controller
             $chargen = \DB::table('typedocuments')->insert($v_f["class"]['ChrM']::createTypeDocument());
         }else{
             $chargen = null;
-        }   
+        }
 
         if ($chargenData['generos'] == false) {
             $chargen = \DB::table('generos')->insert($v_f["class"]['ChrM']::createGeneros());
         }else{
             $chargen = null;
-        } 
+        }
 
         if ($chargenData['rolls'] == false) {
             $chargen = \DB::table('rolls')->insert($v_f["class"]['ChrM']::createRolls());
         }else{
             $chargen = null;
-        }        
-        
+        }
+
         if ($chargenData['estadopersonas'] == false) {
                 $chargen = \DB::table('estadopersonas')->insert($v_f["class"]['ChrM']::createUserAdminStatus());
         }else{
             $chargen = null;
-        } 
+        }
 
         if ($chargenData['datospersonales'] == false) {
             $chargen = \DB::table('datospersonales')->insert($v_f["class"]['ChrM']::createUserAdminDataPersonal());
@@ -184,50 +193,50 @@ class mainController extends Controller
                 $chargen = \DB::table('permisos')->insert($v_f["class"]['ChrM']::createUserAdminPermi());
         }else{
             $chargen = null;
-        } 
+        }
 
         if ($chargenData['users'] == false) {
                 $chargen = \DB::table('users')->insert($v_f["class"]['ChrM']::createUserAdminLogin());
         }else{
             $chargen = null;
-        }   
+        }
 
         if ($chargenData['srcapps'] == false) {
             $chargen = \DB::table('srcapps')->insert($v_f["class"]['ChrM']::createSrcLibrary());
-            $chargen = \DB::table('srcapps')->insert($v_f["class"]['ChrM']::createSrcIcons());             
+            $chargen = \DB::table('srcapps')->insert($v_f["class"]['ChrM']::createSrcIcons());
         }else{
             $chargen = null;
-        } 
+        }
 
         if ($chargenData['srcnavs'] == false) {
                 $chargen = \DB::table('srcnavs')->insert($v_f["class"]['ChrM']::createSrcIconNav());
         }else{
             $chargen = null;
-        }        
+        }
 
         if ($chargenData['languages'] == false) {
                 $chargen = \DB::table('languages')->insert($v_f["class"]['ChrM']::createLaguanges());
         }else{
             $chargen = null;
-        } 
+        }
 
         if ($chargenData['guitypes'] == false) {
                 $chargen = \DB::table('guitypes')->insert($v_f["class"]['ChrM']::createGuiElements());
         }else{
             $chargen = null;
-        } 
+        }
 
         if ($chargenData['guitexts'] == false) {
                 $chargen = \DB::table('guitexts')->insert($v_f["class"]['ChrM']::createTextGui());
         }else{
             $chargen = null;
-        } 
+        }
 
         if ($chargenData['moduls'] == false) {
                 $chargen = \DB::table('moduls')->insert($v_f["class"]['ChrM']::createModuls());
         }else{
             $chargen = null;
-        } 
+        }
 
         if ($chargenData['submoduls'] == false) {
                 $chargen = \DB::table('submoduls')->insert($v_f["class"]['ChrM']::craeteSubModuls());
@@ -243,7 +252,7 @@ class mainController extends Controller
                     File::MakeDirectory(base_path('public/workspaceUsers/'.$rows['pp_id_datospersonales'].'/photon/'));
                     $Datafile = base_path('public/workspaceUsers/'.$rows['pp_id_datospersonales'].'/about.txt');
                     $Configfile = base_path('public/workspaceUsers/'.$rows['pp_id_datospersonales'].'/config.json');
-                    $fileData = fopen($Datafile,'a');                  
+                    $fileData = fopen($Datafile,'a');
                     $dataAbout = \DB::table('datospersonales')->select('*')->where('dp_id','=',$rows['pp_id_datospersonales'])->get();
                     foreach ($dataAbout as $rowsAbout) {
                         if($rowsAbout->dp_td_id == 1){$valueTD='Cedula de ciudadania';}
@@ -257,26 +266,15 @@ class mainController extends Controller
                         fwrite($fileData,'Tipod documento: '.$valueTD.'      '.PHP_EOL);
                         fwrite($fileData,'Nombre         : '.$rowsAbout->dp_nombre.'     '.PHP_EOL);
                         fwrite($fileData,'Apellido       : '.$rowsAbout->dp_apellido.'   '.PHP_EOL);
-                        fwrite($fileData,'Roll           : '.$valueR.'    '.PHP_EOL); 
-                        fwrite($fileData,'======================================================='.PHP_EOL); 
-                                                                     
+                        fwrite($fileData,'Roll           : '.$valueR.'    '.PHP_EOL);
+                        fwrite($fileData,'======================================================='.PHP_EOL);
+
                     }
                     fclose($fileData);
-
-                     
-
-                              
-
                 }
-
 
         }else{
             $chargen = null;
         }
-
-        
-        
-
    }
-   
 }
