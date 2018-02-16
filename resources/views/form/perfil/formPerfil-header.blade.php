@@ -31,7 +31,7 @@
 
 					@else	
 						
-						<img src="{{asset("img/iconUserSistem/".$data['id']."/".$data['icon'])}}" alt="{{$data['nombre']}}" >
+						<img src="{{asset("workspaceUsers/".$data['id']."/photon/".$data['icon'])}}" alt="{{$data['nombre']}}" >
 
 					@endif
 					</div>

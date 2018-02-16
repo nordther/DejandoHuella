@@ -156,7 +156,7 @@
 
 					@else	
 						
-						<img src="{{asset("img/iconUserSistem/".$data['id']."/".$data['icon'])}}" alt="{{$data['nombre']}}" id="btn-showPerfil">
+						<img src="{{asset("workspaceUsers/".$data['id']."/photon/".$data['icon'])}}" alt="{{$data['nombre']}}" id="btn-showPerfil">
 
 					@endif	
 
