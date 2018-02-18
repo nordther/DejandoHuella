@@ -54,6 +54,7 @@ class adminController extends Controller
                             ->join('permisos','datospersonales.dp_id','=','permisos.pm_id')
                             ->join('generos','datospersonales.dp_id_genero','=','generos.g_id_genero')
                             ->join('estadopersonas','datospersonales.dp_id','=','estadopersonas.estp_id')
+                            ->join('photoperfils','datospersonales.dp_id','=','photoperfils.pp_id_datospersonales')
                             ->where('datospersonales.dp_id','=',Auth::user()->us_id_datospersonales,'and','estadopersonas.estp_activeordesable','=',1)
                             ->take(1)
                             ->get();
@@ -71,6 +72,7 @@ class adminController extends Controller
                'genero'   => $rows->g_wordkey_genero,
                'status'   => $rows->estp_activeordesable,
                'email'    => $rows->us_email,
+               'photon'   => $rows->pp_src_filename,
                'permisos' => [
                         'create' => $rows->pm_create,
                         'ready'  => $rows->pm_ready,
@@ -92,7 +94,7 @@ class adminController extends Controller
             $data = [
                 "idUserDataConfig" => Auth::user()->us_id_datospersonales,
                 "id"        => $dataChargen['id'],
-                "icon"      => "",
+                "icon"      => $dataChargen['photon'],
                 "nombre"    => $dataChargen['nombre'],
                 "apellido"  => $dataChargen['apellido'],
                 "fe_naci"   => $dataChargen['fe_naci'],
