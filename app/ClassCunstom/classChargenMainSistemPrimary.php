@@ -1838,8 +1838,17 @@
 							 'gtxt_paramt_wordkey' =>'wordkey_not_check',
 							 'gtxt_text' =>'Not'],
 
+							 ['gtxt_id' => 211,
+							 'gtxt_id_gtype' =>2,
+							 'gtxt_id_language' =>1,
+							 'gtxt_paramt_wordkey' =>'wordkey_registrocivil',
+							 'gtxt_text' =>'Registro Civil'],
 
-
+							 ['gtxt_id' => 212,
+							 'gtxt_id_gtype' =>2,
+							 'gtxt_id_language' =>2,
+							 'gtxt_paramt_wordkey' =>'wordkey_registrocivil',
+							 'gtxt_text' =>'Civil registration']
 
 			];
 		}
@@ -2234,7 +2243,8 @@
 				['td_id' => 1, 'td_wordkey_name' => 'wordkey_cedulaciudadania'],
 				['td_id' => 2, 'td_wordkey_name' => 'wordkey_tarjetaextranjeria'],
 				['td_id' => 3, 'td_wordkey_name' => 'wordkey_tarjetaidentidad'],
-				['td_id' => 4, 'td_wordkey_name' => 'wordkey_tarjetapasaporte']
+				['td_id' => 4, 'td_wordkey_name' => 'wordkey_tarjetapasaporte'],
+				['td_id' => 5, 'td_wordkey_name' => 'wordkey_registrocivil']
 			];
 		}
 	}
