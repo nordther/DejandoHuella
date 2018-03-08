@@ -135,7 +135,7 @@
 	        	'srcapp_dir' => 'js/jsLogin/' ,
 	        	'srcapp_filename' =>'jsLogin-script.js',
 	        	'srcapp_fileformat' => 'js'],
-						
+
 	     [
 				'srcapp_id' => 18,
 				'srcapp_dir' => 'js/jsSlider/',
@@ -1951,7 +1951,7 @@
 					 'mdls_url' => '/Admin/ayuda',
 					 'mdls_patch' => 'modulos.functionAdministration.helper.index',
 					 'mdls_wordkey_modul_name' => 'mdls_helper_users',
-					 'mdls_paramt_name' => 'ayuda',
+					 'mdls_paramt_name' => 'manual',
 					 'mdls_id_srcnav' =>16],
 
 					 ['mdls_id' => 15,

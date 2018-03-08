@@ -4,7 +4,7 @@
 
 @extends('layouts.Master_Library_Include.library')
 
-@extends('layouts.Master_Header-Nav.nav')
+@extends('layouts.Master_Header-Nav.nav-develomen')
 
 @extends('form.contents.main-content-functionAdmin')
 
@@ -13,5 +13,3 @@
 @extends('form.perfil.formPerfil')
 
 @extends('layouts.Master_Footer.footer')
-
-	

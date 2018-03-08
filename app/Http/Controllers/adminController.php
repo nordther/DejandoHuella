@@ -129,7 +129,7 @@ class adminController extends Controller
 
     }
 
-    
+
 //funcion para crear las vistas que tiene el sistema y mostrarla con el metodo view de laravel
     public function createViewDinamyn($idView){
         if (Auth::check() > 0) {

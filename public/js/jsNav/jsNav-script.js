@@ -10,12 +10,15 @@ $(document).ready(function(){
 	$("button[id=btn-toolts-nav]").click(function(){
 		btn_nav.showMenu();
 	});
+	$("button[id=btn-toolts-back]").click(function(){
+		window.location.href = "/";
+	});
 	$("img[id=btn-showPerfil").click(function(){
 		btn_nav.showPerfil();
 
 	});
-	
-	$(selectorfrmlCtrl_closeWindows).click(function(){		
+
+	$(selectorfrmlCtrl_closeWindows).click(function(){
 		btn_nav.hidePerfil();
 	});
 	$("li[id=targetGestionUsers]").click(function(){
@@ -41,13 +44,13 @@ $(document).ready(function(){
 
 	$("#targetGestionAgenda").css({'cursor':'pointer'});
 
-	$("#targetGestionMultimedia").css({'cursor':'pointer'});	
+	$("#targetGestionMultimedia").css({'cursor':'pointer'});
 
 	$('#lang').attr({'lang':''+ln[0]+ln[1]+''});
-	
+
 	$('#frmlCtrl_perfil').click(function(){
 		window.location.href= $("#v_frmlUrl_perfil").val();
-	});	
+	});
 
 	$("#frmlCtrl_files").click(function(){
 		window.location.href= $('#v_frmlUrl_files').val();
@@ -66,17 +69,17 @@ $(document).ready(function(){
 
 
 	//==========================================================================================
-	
+
 	var v_Left = 1357;
 
 	$('#form-click-profile-me').mouseover(function(){
 		var v_IP = $('#form-click-profile-me').position();
-		$("#form-tooltip-information-user").css({'display':'block','top':+75+'px','left':+v_Left+'px'});	
+		$("#form-tooltip-information-user").css({'display':'block','top':+75+'px','left':+v_Left+'px'});
 	});
 
 	$('#form-click-my-files').mouseover(function(){
 		var v_IP = $('#form-click-my-files').position();
-		$("#form-tooltip-my-files").css({'display':'block','top':+134+'px','left':+v_Left+'px'});		
+		$("#form-tooltip-my-files").css({'display':'block','top':+134+'px','left':+v_Left+'px'});
 	});
 
 	$('#form-click-profile-out').mouseover(function(){
@@ -92,7 +95,7 @@ $(document).ready(function(){
 	});
 
 	$('#form-click-my-files').mouseout(function(){
-		$("#form-tooltip-my-files").css({'display':'none'});		
+		$("#form-tooltip-my-files").css({'display':'none'});
 	});
 
 	$('#form-click-profile-out').mouseout(function(){
@@ -104,8 +107,8 @@ $(document).ready(function(){
 
 function navFunction(){
 
-	
-	this.showMenu = function(){		
+
+	this.showMenu = function(){
 		if (showHideMenu == false) {
 			showHideMenu = true;
 			$("#main-menu").css({'transform':'translateX(0%)'});
@@ -119,12 +122,12 @@ function navFunction(){
 
 	this.showPerfil = function(){
 		setTimeout(function() {$("#frmlCtrl_closeWindows").css({'transform':'rotate(360deg)'});}, 500);
-				
+
 		$("#menuPerfil").css({'transform':'translateX(493%)'});
 	}
 	this.hidePerfil = function(){
 		setTimeout(function() {$("#frmlCtrl_closeWindows").css({'transform':'rotate(270deg)'});}, 500);
-			
+
 		$("#menuPerfil").css({'transform':'translateX(600%)'});
 	}
 
@@ -178,4 +181,3 @@ function f_social_twt(){
 function f_social_inst(){
 	alert('Instagram');
 }
-

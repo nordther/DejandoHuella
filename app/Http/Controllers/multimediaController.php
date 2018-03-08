@@ -11,21 +11,27 @@ use DejandoHuella\language;
 use DejandoHuella\guitype;
 use DejandoHuella\guitext;
 
+//Clases importantes para el manejo del login y el redirecionamiento
+use Auth;
+
 class multimediaController extends Controller
 {
-    
+
     public function index()
     {
         $data = [
+        'idUserDataConfig' => "",
         'multimediaAuth' => true,
         'authconfirm' => null,
         'roll' => 'Multimedia',
         "title-modul" => "Media",
         "dll" => [  'css' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','css')->orderBy('srcapp_id', 'asc')->get(),
                     'js' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','js')->orderBy('srcapp_id', 'asc')->get(),
-                    'icon' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','png','and','srcapp_dir','=','img/icon/nav/')->get()]
-       
-        ];    
+                    'icon' => \DB::table('srcapps')->select('*')->where('srcapp_fileformat','=','png','and','srcapp_dir','=','img/icon/nav/')->get(),
+                    'nav' => \DB::table('srcnavs')->select('*')->where('srcnav_fileformat','=','png','and','srcapp_dir','=','img/icon/nav/')->get()]
+
+
+        ];
         return view('modulos.functionMultimedia.index',compact('data'));
     }
 
@@ -34,7 +40,7 @@ class multimediaController extends Controller
         'multimediaAuth' => true,
         'authconfirm' => null,
         'roll' => 'Multimedia',
-        "title-modul" => "Media"       
+        "title-modul" => "Media"
         ];
         return view('modulos.functionMultimedia.watchFunction.index',compact('data'));
     }
@@ -44,7 +50,7 @@ class multimediaController extends Controller
         'multimediaAuth' => true,
         'authconfirm' => null,
         'roll' => 'Multimedia',
-        "title-modul" => "Media"       
+        "title-modul" => "Media"
         ];
         return view('modulos.functionMultimedia.audioFunction.index',compact('data'));
     }
@@ -54,7 +60,7 @@ class multimediaController extends Controller
         'multimediaAuth' => true,
         'authconfirm' => null,
         'roll' => 'Multimedia',
-        "title-modul" => "Media"       
+        "title-modul" => "Media"
         ];
         return view('modulos.functionMultimedia.galleryFunction.index',compact('data'));
     }
