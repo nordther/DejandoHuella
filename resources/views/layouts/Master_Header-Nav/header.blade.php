@@ -48,6 +48,7 @@
 						{!! Form::button('',['class' => 'btn btn-menu','id' => 'btn-toolts-nav','type' => 'button','style' => 'top: 0px;']); !!}
 					</div>
 
+					<label class="label-color-header-1 label-margin-top-1 label-font-size-4 label-hide-movil" style="cursor: pointer;">menu</label>
 
 					<a href="/" style="cursor: pointer;">
 
@@ -204,7 +205,7 @@
 						<label class="label-color-header-1 label-margin-left-2 label-margin-top-1 label-font-size-4 label-hide-movil" style="cursor: pointer;">Dejando Huellas kid's</label>
 
 					</a>
-					
+
 				</div>
 
 			</div>

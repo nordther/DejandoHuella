@@ -2057,186 +2057,154 @@
 		}
 
 		public static function createUserAdminDataPersonal(){
-			return $data = [
-				[
-					'dp_id' => 1144164149,
-					'dp_td_id' => 1,
-					'dp_nombre' => 'Daniel Leonardo',
-					'dp_apellido' => 'Arevalo Padilla',
-					'dp_fe_nacimiento' => '1992-11-27',
-					'dp_edad' => '24',
-					'dp_telefono' => '3050821',
-					'dp_direccion' => 'cll 84 #1A5 c bis - 56',
-					'dp_id_roll' => 1,
-					'dp_id_estp' => 1144164149,
-					'dp_id_genero' => 2,
-					'dp_id_type_user' => 1
-				],
-				[
-					'dp_id' => 16940133,
-					'dp_td_id' => 1,
-					'dp_nombre' => 'Javier',
-					'dp_apellido' => 'Perez',
-					'dp_fe_nacimiento' => '1981-11-27',
-					'dp_edad' => '24',
-					'dp_telefono' => '3050821',
-					'dp_direccion' => 'cll 84 #1A5 c bis - 56',
-					'dp_id_roll' => 1,
-					'dp_id_estp' => 16940133,
-					'dp_id_genero' => 2,
-					'dp_id_type_user' => 1
-				],
-				[
-					'dp_id' => 1151954263,
-					'dp_td_id' => 1,
-					'dp_nombre' => 'Esteban',
-					'dp_apellido' => 'Cardona',
-					'dp_fe_nacimiento' => '1994-06-14',
-					'dp_edad' => '23',
-					'dp_telefono' => '3127726799',
-					'dp_direccion' => 'Av 5 Oeste # 22-20',
-					'dp_id_roll' => 1,
-					'dp_id_estp' => 1151954263,
-					'dp_id_genero' => 2,
-					'dp_id_type_user' => 1
-				],
-				[
-					'dp_id' => 1107095631,
-					'dp_td_id' => 1,
-					'dp_nombre' => 'Sebastian',
-					'dp_apellido' => 'Bocanegra',
-					'dp_fe_nacimiento' => '1996-02-11',
-					'dp_edad' => '21',
-					'dp_telefono' => '3158349763',
-					'dp_direccion' => 'cll falsa #123',
-					'dp_id_roll' => 1,
-					'dp_id_estp' => 1107095631,
-					'dp_id_genero' => 2,
-					'dp_id_type_user' => 1
-				]
-			];
-		}
+	return $data = [
+		[
+			'dp_id' => 1144164149,
+			'dp_td_id' => 1,
+			'dp_nombre' => 'Daniel Leonardo',
+			'dp_apellido' => 'Arevalo Padilla',
+			'dp_fe_nacimiento' => '1992-11-27',
+			'dp_edad' => '24',
+			'dp_telefono' => '3050821',
+			'dp_direccion' => 'cll 84 #1A5 c bis - 56',
+			'dp_id_roll' => 1,
+			'dp_id_estp' => 1144164149,
+			'dp_id_genero' => 2,
+			'dp_id_type_user' => 1
+		],
+		[
+			'dp_id' => 16940133,
+			'dp_td_id' => 1,
+			'dp_nombre' => 'Javier',
+			'dp_apellido' => 'Perez',
+			'dp_fe_nacimiento' => '1981-11-27',
+			'dp_edad' => '24',
+			'dp_telefono' => '3050821',
+			'dp_direccion' => 'cll 84 #1A5 c bis - 56',
+			'dp_id_roll' => 1,
+			'dp_id_estp' => 16940133,
+			'dp_id_genero' => 2,
+			'dp_id_type_user' => 1
+		],
+		[
+			'dp_id' => 6227586,
+			'dp_td_id' => 1,
+			'dp_nombre' => 'John Jerry',
+			'dp_apellido' => 'Montero',
+			'dp_fe_nacimiento' => '1982-06-08',
+			'dp_edad' => '35',
+			'dp_telefono' => '3127910685',
+			'dp_direccion' => 'AV 2 EN #47 c 06',
+			'dp_id_roll' => 1,
+			'dp_id_estp' => 6227586,
+			'dp_id_genero' => 2,
+			'dp_id_type_user' => 1
+		],
+		
 
-		public static function createUserAdminStatus(){
-			return $data = [
-				[
-					'estp_id' => 1144164149,
-					'estp_activeordesable' => 1
-				],
-				[
-					'estp_id' => 16940133,
-					'estp_activeordesable' => 1
-				],
-				[
-					'estp_id' => 1151954263,
-					'estp_activeordesable' => 1
-				],
-				[
-					'estp_id' => 1107095631,
-					'estp_activeordesable' => 1
-				]
-			];
-		}
+	];
+}
 
-		public static function createUserAdminLogin(){
-			return $data = [
-				[
-					'us_id_datospersonales' => 1144164149,
-					'us_id_roll' => 1,
-					'us_id_permiso' => 1144164149,
-					'us_email' => 'kiminordther@gmail.com',
-					'us_password' => bcrypt('dlap1144164149')
-				],
-				[
-					'us_id_datospersonales' => 16940133,
-					'us_id_roll' => 1,
-					'us_id_permiso' => 16940133,
-					'us_email' => 'javierp@misena.edu.co',
-					'us_password' => bcrypt('123456')
-				],
-				[
-					'us_id_datospersonales' => 1151954263,
-					'us_id_roll' => 1,
-					'us_id_permiso' => 1151954263,
-					'us_email' => 'ecardona362@misena.edu.co',
-					'us_password' => bcrypt('123456')
-				],
-				[
-					'us_id_datospersonales' => 1107095631,
-					'us_id_roll' => 1,
-					'us_id_permiso' => 1107095631,
-					'us_email' => '1365@misena.edu.co',
-					'us_password' => bcrypt('123456')
-				]
-			];
-		}
+public static function createUserAdminStatus(){
+	return $data = [
+		[
+			'estp_id' => 1144164149,
+			'estp_activeordesable' => 1
+		],
+		[
+			'estp_id' => 16940133,
+			'estp_activeordesable' => 1
+		],
+		[
+			'estp_id' => 6227586,
+			'estp_activeordesable' => 1
+		],
 
-		public static function createUserAdminPermi(){
-			return $data = [
-				[
-					'pm_id' =>  1144164149,
-					'pm_create' => 1,
-					'pm_ready' => 1,
-					'pm_update' => 1,
-					'pm_delete' => 1
-				],
-				[
-					'pm_id' =>  16940133,
-					'pm_create' => 1,
-					'pm_ready' => 1,
-					'pm_update' => 1,
-					'pm_delete' => 1
-				],
-				[
-					'pm_id' =>  1151954263,
-					'pm_create' => 1,
-					'pm_ready' => 1,
-					'pm_update' => 1,
-					'pm_delete' => 1
-				],
-				[
-					'pm_id' =>  1107095631,
-					'pm_create' => 1,
-					'pm_ready' => 1,
-					'pm_update' => 1,
-					'pm_delete' => 1
-				]
-			];
-		}
+	];
+}
 
-		public static function createPhotoPerfilDir(){
-			return $data = [
-				[
-				'pp_src_filename' => '',
-				'pp_src_dir' => 'workspaceUsers/1144164149/photon/',
-				'pp_src_format_file' => '',
-				'pp_id_datospersonales' => 1144164149 ],
-				[
-				'pp_src_filename' => '',
-				'pp_src_dir' => 'workspaceUsers/16940133/photon/',
-				'pp_src_format_file' => '',
-				'pp_id_datospersonales' => 16940133 ],
-				[
-				'pp_src_filename' => '',
-				'pp_src_dir' => 'workspaceUsers/1151954263/photon/',
-				'pp_src_format_file' => '',
-				'pp_id_datospersonales' => 1151954263 ],
-				[
-				'pp_src_filename' => '',
-				'pp_src_dir' => 'workspaceUsers/1107095631/photon/',
-				'pp_src_format_file' => '',
-				'pp_id_datospersonales' => 1107095631 ]
-			];
-		}
+public static function createUserAdminLogin(){
+	return $data = [
+		[
+			'us_id_datospersonales' => 1144164149,
+			'us_id_roll' => 1,
+			'us_id_permiso' => 1144164149,
+			'us_email' => 'kiminordther@gmail.com',
+			'us_password' => bcrypt('dlap1144164149')
+		],
+		[
+			'us_id_datospersonales' => 16940133,
+			'us_id_roll' => 1,
+			'us_id_permiso' => 16940133,
+			'us_email' => 'javierp@misena.edu.co',
+			'us_password' => bcrypt('123456')
+		],
+		[
+			'us_id_datospersonales' => 6227586,
+			'us_id_roll' => 1,
+			'us_id_permiso' => 6227586,
+			'us_email' => 'johnjdm.ings@live.com',
+			'us_password' => bcrypt('123456')
+		],
 
-		public static function createUserAdminAssistan(){
-			return $data = [
-				['asst_id' => 1144164149],
-				['asst_id' => 16940133],
-				['asst_id' => 1151954263],
-				['asst_id' => 1107095631]
-			];
-		}
+	];
+}
+
+public static function createUserAdminPermi(){
+	return $data = [
+		[
+			'pm_id' =>  1144164149,
+			'pm_create' => 1,
+			'pm_ready' => 1,
+			'pm_update' => 1,
+			'pm_delete' => 1
+		],
+		[
+			'pm_id' =>  16940133,
+			'pm_create' => 1,
+			'pm_ready' => 1,
+			'pm_update' => 1,
+			'pm_delete' => 1
+		],
+		[
+			'pm_id' =>  6227586,
+			'pm_create' => 1,
+			'pm_ready' => 1,
+			'pm_update' => 1,
+			'pm_delete' => 1
+		],
+
+	];
+}
+
+public static function createPhotoPerfilDir(){
+	return $data = [
+		[
+		'pp_src_filename' => '',
+		'pp_src_dir' => 'workspaceUsers/1144164149/photon/',
+		'pp_src_format_file' => '',
+		'pp_id_datospersonales' => 1144164149 ],
+		[
+		'pp_src_filename' => '',
+		'pp_src_dir' => 'workspaceUsers/16940133/photon/',
+		'pp_src_format_file' => '',
+		'pp_id_datospersonales' => 16940133 ],
+		[
+		'pp_src_filename' => '',
+		'pp_src_dir' => 'workspaceUsers/6227586/photon/',
+		'pp_src_format_file' => '',
+		'pp_id_datospersonales' => 6227586 ],
+
+	];
+}
+
+public static function createUserAdminAssistan(){
+	return $data = [
+		['asst_id' => 1144164149],
+		['asst_id' => 16940133],
+		['asst_id' => 6227586],
+	];
+}
 
 		public static function createTypeDocument(){
 			return $data = [

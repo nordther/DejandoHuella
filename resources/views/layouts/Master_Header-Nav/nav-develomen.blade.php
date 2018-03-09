@@ -39,7 +39,7 @@
 					</a>
 
 				</li>
-				
+
 				@foreach($data['moduls'] as $rows)
 
 						@if (($rows->mdls_wordkey_modul_name =='mdls_newtopics')
