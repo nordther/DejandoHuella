@@ -2052,57 +2052,57 @@
 		public static function createGeneros(){
 			return $data = [
 				['g_id_genero' => 1 ,'g_wordkey_genero' => 'wordkey_fm'],
-       			['g_id_genero' => 2 ,'g_wordkey_genero' => 'wordkey_mc']
+       	['g_id_genero' => 2 ,'g_wordkey_genero' => 'wordkey_mc']
 			];
 		}
 
 		public static function createUserAdminDataPersonal(){
-	return $data = [
-		[
-			'dp_id' => 1144164149,
-			'dp_td_id' => 1,
-			'dp_nombre' => 'Daniel Leonardo',
-			'dp_apellido' => 'Arevalo Padilla',
-			'dp_fe_nacimiento' => '1992-11-27',
-			'dp_edad' => '24',
-			'dp_telefono' => '3050821',
-			'dp_direccion' => 'cll 84 #1A5 c bis - 56',
-			'dp_id_roll' => 1,
-			'dp_id_estp' => 1144164149,
-			'dp_id_genero' => 2,
-			'dp_id_type_user' => 1
-		],
-		[
-			'dp_id' => 16940133,
-			'dp_td_id' => 1,
-			'dp_nombre' => 'Javier',
-			'dp_apellido' => 'Perez',
-			'dp_fe_nacimiento' => '1981-11-27',
-			'dp_edad' => '24',
-			'dp_telefono' => '3050821',
-			'dp_direccion' => 'cll 84 #1A5 c bis - 56',
-			'dp_id_roll' => 1,
-			'dp_id_estp' => 16940133,
-			'dp_id_genero' => 2,
-			'dp_id_type_user' => 1
-		],
-		[
-			'dp_id' => 6227586,
-			'dp_td_id' => 1,
-			'dp_nombre' => 'John Jerry',
-			'dp_apellido' => 'Montero',
-			'dp_fe_nacimiento' => '1982-06-08',
-			'dp_edad' => '35',
-			'dp_telefono' => '3127910685',
-			'dp_direccion' => 'AV 2 EN #47 c 06',
-			'dp_id_roll' => 1,
-			'dp_id_estp' => 6227586,
-			'dp_id_genero' => 2,
-			'dp_id_type_user' => 1
-		],
-		
+			return $data = [
+				[
+					'dp_id' => 1144164149,
+					'dp_td_id' => 1,
+					'dp_nombre' => 'Daniel Leonardo',
+					'dp_apellido' => 'Arevalo Padilla',
+					'dp_fe_nacimiento' => '1992-11-27',
+					'dp_edad' => '24',
+					'dp_telefono' => '3050821',
+					'dp_direccion' => 'cll 84 #1A5 c bis - 56',
+					'dp_id_roll' => 1,
+					'dp_id_estp' => 1144164149,
+					'dp_id_genero' => 2,
+					'dp_id_type_user' => 1
+				],
+				[
+					'dp_id' => 16940133,
+					'dp_td_id' => 1,
+					'dp_nombre' => 'Javier',
+					'dp_apellido' => 'Perez',
+					'dp_fe_nacimiento' => '1981-11-27',
+					'dp_edad' => '24',
+					'dp_telefono' => '3050821',
+					'dp_direccion' => 'cll 84 #1A5 c bis - 56',
+					'dp_id_roll' => 1,
+					'dp_id_estp' => 16940133,
+					'dp_id_genero' => 2,
+					'dp_id_type_user' => 1
+				],
+				[
+					'dp_id' => 6227586,
+					'dp_td_id' => 1,
+					'dp_nombre' => 'John Jerry',
+					'dp_apellido' => 'Montero',
+					'dp_fe_nacimiento' => '1982-06-08',
+					'dp_edad' => '35',
+					'dp_telefono' => '3127910685',
+					'dp_direccion' => 'AV 2 EN #47 c 06',
+					'dp_id_roll' => 1,
+					'dp_id_estp' => 6227586,
+					'dp_id_genero' => 2,
+					'dp_id_type_user' => 1
+				],
 
-	];
+
+		];
 }
 
 public static function createUserAdminStatus(){

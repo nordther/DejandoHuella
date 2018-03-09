@@ -8,7 +8,7 @@
 
 				<li>
 
-					<a href="/{{ $data['roll'] }}" >
+					<a>
 
 					@foreach($data['dll']['nav'] as $dll)
 
@@ -17,7 +17,7 @@
 						@endif
 
 					@endforeach
-						Inicio
+						<label class="label-color-header-1 label-margin-top-1 label-font-size-5 label-hide-movil" style="cursor: pointer;">menu</label>
 					</a>
 
 				</li>
@@ -120,7 +120,7 @@
 
 				<li>
 
-					<a href="/{{ $data['roll'] }}" class="">
+					<a>
 
 						@foreach($data['dll']['nav'] as $dll)
 
@@ -130,7 +130,7 @@
 
 						@endforeach
 
-						Inicio
+						<label class="label-color-header-1 label-margin-top-1 label-font-size-5 label-hide-movil" style="cursor: pointer;">menu</label>
 
 					</a>
 
@@ -383,7 +383,7 @@
 
 				<li>
 
-					<a href="/{{ $data['roll'] }}" >
+					<a>
 
 					@foreach($data['dll']['nav'] as $dll)
 
@@ -392,7 +392,7 @@
 						@endif
 
 					@endforeach
-						Inicio
+						<label class="label-color-header-1 label-margin-top-1 label-font-size-5 label-hide-movil" style="cursor: pointer;">menu</label>
 					</a>
 
 				</li>
