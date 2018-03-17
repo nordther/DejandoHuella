@@ -8,8 +8,12 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 //clases responsables para el manejo de los datos de las vistas con el controlador
+//clase padre para los controladores hijos
 use DejandoHuella\Http\Requests;
+//controlador hijos
 use DejandoHuella\Http\Requests\adminRequest;
+use DejandoHuella\Http\Requests\exampleRequest;
+//estructura de herencia para le controlador
 use DejandoHuella\Http\Controllers\Controller;
 
 //clases para el manejo de las tablas de la base de datos.
@@ -284,7 +288,7 @@ class adminController extends Controller
             /*return var_dump($lgId);  */
 
 
-
+            //View maneja dos parametros uno el patch o destino del directorio del archivo y una variable
           return view($viewPatch,compact('data'));
 
         }else{
@@ -296,8 +300,9 @@ class adminController extends Controller
     }
 
     public function chequeoDatos(adminRequest $request){
-       return dd($request->all());
+        
     }
+
 //funcion para ver mi perfil cuando se logea al sistema
     public function perfil($id){
 
@@ -320,6 +325,8 @@ class adminController extends Controller
                             ->where('datospersonales.dp_id','=',Auth::user()->us_id_datospersonales,'and','estadopersonas.estp_activeordesable','=',1)
                             ->take(1)
                             ->get();
+
+
 
             foreach ($datasession as $rows) {
                $dataChargen = [
@@ -701,7 +708,9 @@ class adminController extends Controller
     //funcion para desactivar y activar los usuarios del sistema
     public function activeordesable(adminRequest $rq){
       if ($rq->ajax()) {
-        return \DB::update('update estadopersonas set estadopersonas.estp_activeordesable ='.$rq->input('v_formUserStatus').' where estadopersonas.estp_id = ?', [$rq->input('v_formIdUser')]);
+        return \DB::update('update estadopersonas set estadopersonas.estp_activeordesable
+        ='.$rq->input('v_formUserStatus').'
+         where estadopersonas.estp_id = ?', [$rq->input('v_formIdUser')]);
       }
     }
     //funcion para buscar los eventos registrados (aun no se implementa)

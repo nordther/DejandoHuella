@@ -142,7 +142,9 @@ class mainController extends Controller
             ];
 
          if ($chargenData['categoriaprogramas'] == false) {
-            $chargen = \DB::table('categoriaprogramas')->insert($v_f["class"]['ChrM']::createCategoPrograms());
+            $chargen = \DB::table('categoriaprogramas')->insert(
+              $v_f["class"]['ChrM']::createCategoPrograms()
+            );
         }else{
             $chargen = null;
         }

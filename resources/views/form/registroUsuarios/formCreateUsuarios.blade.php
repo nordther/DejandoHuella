@@ -129,6 +129,18 @@
 
 					</div>
 
+					<div class="col dm-col-1">
+
+						<div class="input-group">
+
+							{!! Form::date('v_formCtrl_User_fenacimiento',null,['id' => 'v_formCtrl_User_fenacimiento','autocomplete'=>'off']); !!}
+
+							{!! Form::label('v_formCtrl_User_fenacimiento','Apellido',['class' => 'label','id' => 'v_formCtrl_User_fenacimiento_title']) !!}
+
+						</div>
+
+					</div>
+
 					<div class="col dm-col-2">
 
 					</div>
