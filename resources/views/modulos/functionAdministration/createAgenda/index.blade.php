@@ -10,4 +10,6 @@
 
 @extends('form.Perfil.formPerfil-header')
 
+@extends('form.registerAgenda.form-crearagenda')
+
 @extends('layouts.Master_Footer.footer')
