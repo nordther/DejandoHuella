@@ -295,12 +295,13 @@ class adminController extends Controller
             return Redirect::to('/');
         }
     }
-    public function insertData(adminRequest $request){
 
+    public function registerAgenda(adminRequest $rq){
+        return dd($rq->all());
     }
 
-    public function chequeoDatos(adminRequest $request){
-        
+    public function registerUsers(adminRequest $request){
+
     }
 
 //funcion para ver mi perfil cuando se logea al sistema
@@ -715,6 +716,6 @@ class adminController extends Controller
     }
     //funcion para buscar los eventos registrados (aun no se implementa)
     public function buscarAgenda(){
-        return "Buscar Agenda";
+
     }
 }

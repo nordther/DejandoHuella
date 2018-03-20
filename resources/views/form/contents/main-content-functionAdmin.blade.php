@@ -1,7 +1,7 @@
-@section('main-content')	
-		
+@section('main-content')
+
 		@yield('content-perfil')
-		
+
 		@if ($data['id'] <> '')
 
 			@yield('content-perfil-form')
@@ -11,7 +11,7 @@
 		@yield('content-perfil-view-form')
 
 		@yield('content-stats')
-		
+
 		@yield('content-searchuser')
 
 		@yield('content-searchagenda')
@@ -22,12 +22,14 @@
 
 		@yield('content-createagenda')
 
-		@yield('content-manuals')	
+		@yield('content-manuals')
 
 		@yield('content-aboutDHK')
 
 		@yield('content-myfiles')
 
-		
+		@yield('content-registerAgenda')
+
+
 
 @endsection

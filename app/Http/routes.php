@@ -19,7 +19,9 @@
 	Route::get('/Admin/buscar-usuario/authConfirm',['uses' =>'adminController@confirmAuth']);
 	Route::get('/LoadConfig/{id}',['uses' => 'loginController@load']);
 
-	Route::post('/Admin/registrar/usuario',['uses' => 'adminController@chequeoDatos']);
+	Route::post('/Admin/registrar/usuario',['uses' => 'adminController@registerUsers']);
+
+	Route::post('/Admin/registrar/agenda',['uses' => 'adminController@registerAgenda']);
 
 	Route::get('/Admin/viewPerfil/{id}',['uses' => 'adminController@perfilUserView']);
 

@@ -2,7 +2,7 @@
 
 font-family: CFGeneralTao-Regular;
 
-src: url('../../../fonts/CFGeneralTao-Regular.ttf') format('truetype');	 
+src: url('../../../fonts/CFGeneralTao-Regular.ttf') format('truetype');
 
 }
 
@@ -13,17 +13,17 @@ p{
 }
 h1,h2,h3,h4,h5,h6{
 	font-family: 'CFGeneralTao-Regular';
-	text-align: center;	
+	text-align: center;
 	color: #FF5700;
 	text-shadow: 0 -1px 0 rgba(255,190,25,0.2);
 }
 label{
 	position: relative;
 	font-family: 'CFGeneralTao-Regular';
-	user-select: none;	
+	user-select: none;
 }
 img{
-	user-select: none;	
+	user-select: none;
 }
 a{
 	text-decoration: none;
@@ -40,16 +40,16 @@ a{
 .label-alert-color{
 	color:#FFFFFF;
 }
-.label-color-header-1{	
+.label-color-header-1{
 	color: #00E9E2;
 }
-.label-color-header-1:hover{	
+.label-color-header-1:hover{
 	color: #F5F5F5;
 }
-.label-color-header-2{	
+.label-color-header-2{
 	color: #00dfd8;
 }
-.label-color-header-2:hover{	
+.label-color-header-2:hover{
 	color: #06B4AF;
 }
 .label-font-size-1{
@@ -129,6 +129,11 @@ a{
 .label-font-family-neutro{
 	font-family: "Roboto",sans-serif;
 }
+.label-detail{
+	font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: #9e9e9e;
+}
 /***************************************/
 .footer-color-text{
 	color: #00dfd8;
@@ -147,7 +152,7 @@ a{
 	font-family: "Roboto",sans-serif;
 }
 
-.header-topic > h1{	
+.header-topic > h1{
 	font-family: 'CFGeneralTao-Regular';
 	color: #00dad8;
 }
