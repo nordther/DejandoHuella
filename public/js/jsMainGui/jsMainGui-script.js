@@ -90,10 +90,11 @@ function ClassMain() {
   this.bytesToSize = function(bytes) {
        sizeFiles = null;
        formatByte = null;
+       console.log(bytes);
        var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
        if (bytes == 0) return '0 Byte';
-       var i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
-       sizeFiles = Math.round(bytes / Math.pow(1024, i), 2);
+       var i = parseFloat(Math.floor(Math.log(bytes) / Math.log(1024)));
+       sizeFiles = parseFloat(Math.round(bytes / Math.pow(1024, i), 2)).toFixed(2);
        formatByte = sizes[i];
        //return  sizeFiles + ' ' + formatByte;
     };

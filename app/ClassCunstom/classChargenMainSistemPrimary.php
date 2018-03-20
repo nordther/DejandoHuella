@@ -381,6 +381,11 @@
 				'srcapp_id' => 63,
 				'srcapp_dir' => 'img/icon/form/',
 				'srcapp_filename' => 'folder.png',
+				'srcapp_fileformat' => 'png'],
+				[
+				'srcapp_id' => 64,
+				'srcapp_dir' => 'img/icon/form/',
+				'srcapp_filename' => 'photos.png',
 				'srcapp_fileformat' => 'png']
 
 

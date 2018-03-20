@@ -105,7 +105,7 @@
 
 						@foreach($data['dll']['icon'] as $rows)
 
-						@if($rows->srcapp_filename == 'folder.png')
+						@if($rows->srcapp_filename == 'photos.png')
 
 
 							<img src="{{ asset($rows->srcapp_dir.$rows->srcapp_filename) }}" alt="" width="25" height="25" style="border-radius: 50%;" id="frmlCtrl_files">
@@ -114,7 +114,7 @@
 
 						@endforeach
 
-						{!! Form::label(null,'Mi imagenes',['style' => 'left:10px; font-family:"Roboto",sanf-serif;','id' =>'frmlCtrl_files']) !!}
+						{!! Form::label(null,'Fotos de perfil',['style' => 'left:10px; font-family:"Roboto",sanf-serif;','id' =>'frmlCtrl_files']) !!}
 
 					</div>
 

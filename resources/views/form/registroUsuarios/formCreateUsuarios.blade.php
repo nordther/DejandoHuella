@@ -133,9 +133,9 @@
 
 						<div class="input-group">
 
-							{!! Form::date('v_formCtrl_User_fenacimiento',null,['id' => 'v_formCtrl_User_fenacimiento','autocomplete'=>'off']); !!}
+							{!! Form::date('v_formCtrl_User_fenacimiento',\Carbon\Carbon::now(),['id' => 'v_formCtrl_User_fenacimiento','autocomplete'=>'off']); !!}
 
-							{!! Form::label('v_formCtrl_User_fenacimiento','Apellido',['class' => 'label','id' => 'v_formCtrl_User_fenacimiento_title']) !!}
+							{!! Form::label('v_formCtrl_User_fenacimiento','Fecha de nacimiento',['class' => 'label','id' => 'v_formCtrl_User_fenacimiento_title']) !!}
 
 						</div>
 
