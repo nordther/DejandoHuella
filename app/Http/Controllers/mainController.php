@@ -9,6 +9,7 @@ use File;
 use Storage;
 use Illuminate\Http\Request;
 use Illuminate\Database\Schema\Blueprint;
+
 use DejandoHuella\Http\Requests;
 use DejandoHuella\Http\Controllers\Controller;
 
@@ -46,6 +47,8 @@ class mainController extends Controller
 
     public function index(){
 
+        
+
         if (!file_exists(base_path("/public/workspaceUsers/"))) {
             File::MakeDirectory(base_path('public/workspaceUsers'));
         }
@@ -76,7 +79,6 @@ class mainController extends Controller
                 $lgId = $rows->lg_id;
               }
 
-
         $data = [
             "idUserDataConfig" => null,
             "title-modul" => null,
@@ -104,12 +106,8 @@ class mainController extends Controller
 
         return view('index',compact('data'));
 
-        //return dd($data['moduls']$data['submoduls']);
-
+        //return dd($data['passData']);
         }
-
-
-
     }
 
     //funcion para inicializar la app con sus vistas y contenido

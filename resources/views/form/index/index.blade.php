@@ -14,8 +14,11 @@
 			<div class="input-group-btn input-circle-btn btn-dm-5 input-group-btn-top">
 				{!! Form::button('',['class' => 'btn btn-arrow-down','id' => 'start-noticias']) !!}			
 			</div>
-
+				
+				
 		</div>
+
+
 		
 	</div>
 

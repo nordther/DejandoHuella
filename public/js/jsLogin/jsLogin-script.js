@@ -2,9 +2,7 @@ var btn_login = new Login();
 var colorTarger = {active:"#6C6C6C",desactive:'#4B4B4B'};
 var articleActivate,articleDesactive;
 
-$(document).ready(function(){
-
-	
+$(document).ready(function(){	
 
 	$("#content-login-user").css({'display':'none'});
 	
@@ -45,43 +43,20 @@ function Login(){
 	this.showFormLoginUser = function(){
 		var v_windows_h = $(window).height();	
 		$("#form-article").css({'height':'0px'});	
-		if($('#content-login-user').css('display') == 'none'){	
-		    		
-				
-			$("#content-login-user").toggle(300, function() {
-				
-				$(".content-blurt").css({'height':v_windows_h+'px'});
+		if($('#content-login-user').css('display') == 'none'){				
+			$("#content-login-user").toggle(300, function() {				
+			$(".content-blurt").css({'height':v_windows_h+'px'});
 			$("#targetLoginUsers").fadeIn();
 			$("#targetLoginUsers").css({'background-color':''+colorTarger['active']+''});
 			});			
 		}
 
-	}
-	
-	this.resetArticle = function(){
-		var v_height = 0;
-		articleDesactive = setInterval(function(){
-			
-			v_height=$("#form-article").height()-10;
-
-			if (v_height == 0) {											
-				$("#form-article").css({'height':v_height+'px'}).fadeIn('slow');
-				console.log(v_height);
-			}
-
-		},10);
-		
-		
-		clearInterval(articleActivate);
-		clearInterval(articleDesactive);			
-	}
+	}	
 	this.closeLogin = function(){
-		if ($('#content-login-user').css('display') == 'block') {
-			this.resetArticle();
+		if ($('#content-login-user').css('display') == 'block') {			
 			$("#targetLoginUsers").fadeIn();
 			$("#targetLoginUsers").css({'background-color':''+colorTarger['desactive']+''});
 			$('#content-login-user').hide();
-
 		}
 	}
 	/*this.loginFormFunction = function(){
