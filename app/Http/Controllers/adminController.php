@@ -63,7 +63,7 @@ class adminController extends Controller
                             ->take(1)
                             ->get();
 
-            foreach ($datasession as $rows) {
+           foreach ($datasession as $rows) {
                $dataChargen = [
                'id'       => $rows->dp_id,
                'nombre'   => $rows->dp_nombre,
@@ -125,8 +125,6 @@ class adminController extends Controller
                         'nav' => \DB::table('srcnavs')->select('*')->where('srcnav_fileformat','=','png','and','srcapp_dir','=','img/icon/nav/')->get()          ]
              ];
             return view('modulos.functionAdministration.index',compact('data'));
-
-
         }else{
             return Redirect::to('/');
         }

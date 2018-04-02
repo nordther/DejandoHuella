@@ -6,22 +6,6 @@
 
 			<ul class="main-menu">
 
-				<li>
-
-					<a>
-
-					@foreach($data['dll']['nav'] as $dll)
-
-						@if ($dll->srcnav_filename == 'about.png')
-							<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
-						@endif
-
-					@endforeach
-						<label class="label-color-header-1 label-margin-top-1 label-font-size-5 label-hide-movil" style="cursor: pointer;">menu</label>
-					</a>
-
-				</li>
-
 				<li id="targetLoginUsers">
 
 					<a href="#ingresar"  data="/Ingresar" id="nav_btn_login" class="">
@@ -118,23 +102,6 @@
 
 			<ul class="main-menu">
 
-				<li>
-
-					<a>
-
-						@foreach($data['dll']['nav'] as $dll)
-
-							@if ($dll->srcnav_filename == 'about.png')
-								<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
-							@endif
-
-						@endforeach
-
-						<label class="label-color-header-1 label-margin-top-1 label-font-size-5 label-hide-movil" style="cursor: pointer;">menu</label>
-
-					</a>
-
-				</li>
 
 				<li id="targetGestionUsers">
 
@@ -381,21 +348,6 @@
 
 			<ul class="main-menu" class="">
 
-				<li>
-
-					<a>
-
-					@foreach($data['dll']['nav'] as $dll)
-
-						@if ($dll->srcnav_filename == 'about.png')
-							<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
-						@endif
-
-					@endforeach
-						<label class="label-color-header-1 label-margin-top-1 label-font-size-5 label-hide-movil" style="cursor: pointer;">menu</label>
-					</a>
-
-				</li>
 
 				<li>
 
