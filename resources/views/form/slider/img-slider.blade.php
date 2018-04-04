@@ -73,7 +73,7 @@
 
 					</div>
 
-					<img src="{{asset('img/slider/img-slider-1.jpg')}}" class="img-xl-dm-1" >
+						<img src="{{asset('img/slider/img-slider-1.jpg')}}" class="img-xl-dm-1" >
 
 			</div>
 
@@ -91,7 +91,7 @@
 
 								@foreach($data['dll']['nav'] as $dll)
 
-									@if ($dll->srcnav_filename == 'about.png')
+									@if ($dll->srcnav_filename == 'about.png')									
 
 										<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="Ingreso al sistema" class="icon-topic">
 

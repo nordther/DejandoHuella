@@ -10,12 +10,20 @@ p{
 	text-align: justify;
 	font-size: 16px;
 	font-family: "Roboto",sans-serif;
+	user-select: none;
 }
 h1,h2,h3,h4,h5,h6{
 	font-family: 'CFGeneralTao-Regular';
 	text-align: center;
 	color: #FF5700;
 	text-shadow: 0 -1px 0 rgba(255,190,25,0.2);
+	user-select: none;
+}
+div{
+	user-select: none;
+}
+div.card-img{
+	user-select: none;
 }
 label{
 	position: relative;
