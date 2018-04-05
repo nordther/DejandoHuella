@@ -48,7 +48,7 @@ form {
 	gris claro        : D1D1D1;
 	gris oscuro       : 2E2E2E;
 
-  
+
 
 /* Contenedores de la aplicacion*/
 
@@ -1167,15 +1167,15 @@ form {
 }
 
 .form-search-col-dm-w-1 {
-  width: 125px;
+  width: 5%;
 }
 
 .form-search-col-dm-w-2 {
-  width: 225px;
+  width: 20%;
 }
 
 .form-search-col-dm-w-3 {
-  width: 350px;
+  width: 20%;
 }
 
 .form-search-col-action {

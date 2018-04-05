@@ -105,14 +105,14 @@ $(document).ready(function() {
 
 
   $('#form-content-search-user').css({
-    'width': '1255px',
+    'width': '90%',
     'height': '550px'
   });
 
   $(".form-content-search").css({
     'height': '250px',
     'top': '40px',
-    'left': '185px',
+    'left': '7%',
     'position': 'fixed'
   });
 

@@ -25,8 +25,8 @@
 
 	Route::get('/Admin/viewPerfil/{id}',['uses' => 'adminController@perfilUserView']);
 
+  Route::get('/',['uses' => 'mainController@index']);
 
-	Route::get('/',['uses' => 'mainController@index']);
 	Route::get('/Multimedia',['uses' => 'multimediaController@index']);
 	Route::get('/Multimedia/Videos',['uses' => 'multimediaController@watch']);
 	Route::get('/Multimedia/Audios',['uses' => 'multimediaController@audio']);

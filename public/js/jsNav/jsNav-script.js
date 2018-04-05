@@ -183,6 +183,16 @@ function navFunction() {
         'transform': 'translateX(446%)'
       });
     }
+    if ($(window).width() <= 1280) {
+			setTimeout(function() {
+				$("#frmlCtrl_closeWindows").css({
+					'transform': 'rotate(360deg)'
+				});
+			}, 500);
+      $("#menuPerfil").css({
+        'transform': 'translateX(412%)'
+      });
+    }
   }
   this.hidePerfil = function() {
     setTimeout(function() {
