@@ -162,6 +162,42 @@
 
 					@endif
 
+					<li>
+
+						<a href="/{{$data['roll']}}/apadrinar" class="">
+
+							@foreach($data['dll']['nav'] as $dll)
+
+								@if ($dll->srcnav_filename == 'userSearchIcon.png')
+									<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
+								@endif
+
+							@endforeach
+
+							Gestion de apdrinación
+
+						</a>
+
+					</li>
+
+					<li>
+
+						<a href="/{{$data['roll']}}/familiares" class="">
+
+							@foreach($data['dll']['nav'] as $dll)
+
+								@if ($dll->srcnav_filename == 'userSearchIcon.png')
+									<img src="{{asset($dll->srcnav_dir.$dll->srcnav_filename)}}" alt="" class="img-dm-9 img-margin-top-4">
+								@endif
+
+							@endforeach
+
+							Gestion de familiares
+
+						</a>
+
+					</li>
+
 				</ul>
 
 				<li id="targetGestionAgenda">

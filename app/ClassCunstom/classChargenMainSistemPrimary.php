@@ -2031,7 +2031,25 @@
 			 'smdls_wordkey_modul_name' => 'mdls_upload_multimedia',
 			 'smdls_paramt_name' => 'subir-multimedia',
 
-			 'smdls_id_srcnav' =>23]
+			 'smdls_id_srcnav' =>23],
+
+			 ['smdls_id' => 7,
+ 			'smdls_id_mdls' => 3,
+ 			 'smdls_url' => '/Admin/apadrinar',
+ 			 'smdls_patch' => 'modulos.functionAdministration.apadrinar.index',
+ 			 'smdls_wordkey_modul_name' => 'mdls_parents_young',
+ 			 'smdls_paramt_name' => 'apadrinar',
+
+ 			 'smdls_id_srcnav' =>23],
+
+			 ['smdls_id' => 8,
+ 			'smdls_id_mdls' => 3,
+ 			 'smdls_url' => '/Admin/familiares',
+ 			 'smdls_patch' => 'modulos.functionAdministration.familiar.index',
+ 			 'smdls_wordkey_modul_name' => 'mdls_family',
+ 			 'smdls_paramt_name' => 'familiares',
+
+ 			 'smdls_id_srcnav' =>23]
 
 			];
 		}

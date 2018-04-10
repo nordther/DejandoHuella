@@ -210,7 +210,7 @@ function ClassMain() {
 
   }
   this.showNewTopics = function() {
-    console.log('algo');
+
     if ($("#content-noticias").css('display') == 'none') {
       $("#content-noticias").fadeIn('slow');
       $('#start-noticias').css({
@@ -226,7 +226,7 @@ function ClassMain() {
     }
   }
   this.showAbout = function() {
-    console.log('algo');
+
     if ($("#content-about").css('display') == 'none') {
       $("#content-about").fadeIn('slow');
       $('#start-about').css({

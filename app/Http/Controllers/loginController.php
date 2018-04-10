@@ -14,31 +14,33 @@ use DejandoHuella\http\Requests\LoginRequest;
 
 class loginController extends Controller
 {
-   
+
    public function load($id){
       $viewId = ['id'=>$id];
-      return view('buffering.formBuffering',compact('viewId'));      
+      return view('buffering.formBuffering',compact('viewId'));
    }
 
-   
+
     public function store(LoginRequest $request){
 
-        
-         if (Auth::attempt(['us_email' => $request['v_formUserNickEmail'], 'us_password' => $request['v_formUserPass']])) {  
+
+         if (Auth::attempt(['us_email' => $request['v_formUserNickEmail'], 'us_password' => $request['v_formUserPass']])) {
+
               return Redirect::to('/LoadConfig/Admin');
+
          }elseif(($request['v_formUserNickEmail'] == "") || ($request['v_formUserPass'] == "")){
           var_dump($request['v_formUserNickEmail'].$request['v_formUserPass']);
-             Session::flash('authmenssage','Llene los campos requeridos para el ingreso');           
+             Session::flash('authmenssage','Llene los campos requeridos para el ingreso');
              return Redirect::to('/');
 
          }else{
             $mgs = 'Sus credenciales son incorrectos correo ingresado: '.$request['v_formUserNickEmail'];
-            Session::flash('authmenssage',$mgs);           
+            Session::flash('authmenssage',$mgs);
              return Redirect::to('/');
          }
-         
 
-        
+
+
     }
 
     public function logout(){
@@ -46,6 +48,5 @@ class loginController extends Controller
         return Redirect::to('/');
     }
 
-   
-}
 
+}

@@ -8,10 +8,15 @@
 	<script type="text/javascript">
 		function render(id){
 			setTimeout(function(){
-			   document.location=location.protocol+"//"+location.host+'/'+id;				
+			   document.location=location.protocol+"//"+location.host+'/'+id;
+
+				 //document.location = redireccionamiento
+				 //location.protocol = http , https
+				 //location.host = IP mac o localhost con su puerto localhost:8000
+				 //id = Admin
 			}, 500);
 		}
-		
+
 	</script>
 </head>
 <body onLoad="render('{{$viewId['id']}}')">
